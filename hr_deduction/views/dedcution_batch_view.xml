@@ -1,0 +1,126 @@
+<odoo>
+
+    <record id="view_hr_deduction_batch_form" model="ir.ui.view">
+        <field name="name">hr.deduction.batch.form</field>
+        <field name="model">hr.deduction.batch</field>
+        <field name="arch" type="xml">
+            <form string="Deduction" version="7.0">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" states="draft" class="oe_highlight"/>
+                    <button type="object" name="compute_deduction" string="Compute" icon="fa-calculator" colspan="2"
+                            states="draft"/>
+                    <button name="action_approve" type="object" string="Approve" states="confirm" class="oe_highlight"/>
+                    <button name="action_refuse" type="object" string="Refuse" states="confirm" class="oe_highlight"/>
+                    <button name="action_set_to_draft" type="object" string="Set To Draft"
+                            states="confirm,refuse,cancel"/>
+                    <button name="action_cancel" type="object" string="Cancel" states="approve"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" class="oe_inline" attrs="{'readonly':True}"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="batch_type" attrs="{'readonly':[('state', '!=', 'draft')],'required':True}"/>
+                            <field name="employee_id"
+                                   attrs="{'invisible':[('batch_type', '!=', 'employee')] ,'readonly':[('state', '!=', 'draft')],'required':[('batch_type', '=', 'employee')]}"/>
+                            <field name="employee_ids"
+                                   attrs="{'invisible':[('batch_type', '!=', 'selected_employee')] ,'readonly':[('state', '!=', 'draft')],'required':[('batch_type', '=', 'selected_employee')]}"
+                                   widget="many2many_tags"/>
+                            <field name="type_id" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            <field name="deducted_by" widget="radio" attrs="{'invisible':True}"/>
+                            <field name="amount"
+                                   attrs="{'required': [('deducted_by', '!=', 'hours')],'invisible': [('deducted_by', '=', 'hours')], 'readonly':[('state', '!=', 'draft')]}"/>
+                            <field name="hours_ded"
+                                   attrs="{'required': [('deducted_by', '=', 'hours')],'invisible': [('deducted_by', '!=', 'hours')],'readonly':[('state', '!=', 'draft')]}"/>
+                            <field name="company_id" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            <label for="date" string="Period"/>
+                                    <div clas="o_row" colspan="2">
+                                        <field name="start_date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_end_date': 'end_date'}"/> TO
+                                        <field name="end_date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_start_date': 'start_date'}"/>
+                                    </div>
+
+                        </group>
+                        <group>
+                            <field name="date" attrs="{'readonly':[('state', '!=', 'draft')],'required':True}"/>
+                            <field name="approve_date" attrs="{'readonly':True}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Deductions">
+                            <group>
+                                <field name="dedcution_ids" nolabel="1" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="date"/>
+                                        <field name="employee_id"/>
+                                        <field name="type_id"/>
+                                        <field name="deducted_by" widget="radio"/>
+                                        <field name="amount"
+                                               attrs="{'required': [('deducted_by', '!=', 'hours')],'invisible': [('deducted_by', '!=', 'amount')]}"/>
+                                        <field name="hours_ded"
+                                               attrs="{'required': [('deducted_by', '=', 'hours')],'invisible': [('deducted_by', '!=', 'hours')]}"/>
+                                        <field name="company_id"/>
+                                        <field name="start_date"/>
+                                        <field name="end_date"/>
+
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+
+                        <page string="Deduction Template" groups="base.group_no_one">
+                            <group>
+                                <field name="deduction_website_description" nolabel="1"/>
+                            </group>
+                        </page>
+
+                        <page string="Reason">
+                            <group>
+                                <field name="description" colspan="4" nolabel="1"
+                                    attrs="{'readonly':[('state', '!=', 'draft')]}" required="1"/>
+                            </group>
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_deduction_batch_tree" model="ir.ui.view">
+        <field name="name">hr.deduction.tree</field>
+        <field name="model">hr.deduction.batch</field>
+        <field name="arch" type="xml">
+            <tree string="Deduction Batch ">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="type_id"/>
+                <field name="batch_type"/>
+                <field name="state"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_deduction_batch">
+        <field name="name">Deduction Batch</field>
+        <field name="res_model">hr.deduction.batch</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_hr_deduction_batch_tree"/>
+    </record>
+
+    <!-- <menuitem
+            id="menu_hr_deduction_batch"
+            parent="menu_hr_deduction"
+            action="action_hr_deduction_batch"
+            sequence="2"
+            groups="hr.group_hr_manager"/> -->
+
+</odoo>

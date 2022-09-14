@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_incentive_user,hr.incentive.user,model_hr_incentive,hr.group_hr_manager,1,1,1,1
+access_hr_incentive_user_config,hr.incentive.user.config,model_hr_incentive_type,hr.group_hr_manager,1,1,1,1
+access_hr_incentive_line,hr.incentive.line,model_hr_incentive_line,hr.group_hr_manager,1,1,1,1
+access_hr_incentive_validation,hr.incentive.validation,model_res_config_settings,hr.group_hr_manager,1,1,1,1

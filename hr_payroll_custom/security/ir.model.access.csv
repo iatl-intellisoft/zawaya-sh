@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_employee_payslip_wizard,access_employee_payslip_wizard,model_employee_payslip_wizard,,1,1,1,1
+
+access_employee_payslip_report_excel,employee_payslip_report_excel,model_employee_payslip_report_excel,,1,1,1,1

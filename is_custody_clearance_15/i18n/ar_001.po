@@ -1,0 +1,725 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* is_custody_clearance_15
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-11 12:13+0000\n"
+"PO-Revision-Date: 2022-09-11 12:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>استلام/سداد الفرق:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>الامضاء:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>التاريخ:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>الغرض:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>الفرق:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>المبلغ كتابتة:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>المبلغ:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>المجموع:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>المدير المالي:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>بيانات الطلب</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>رئيس الحسابات:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>مدير االادارة/القسم:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "<strong>مقدم الطلب:</strong>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid ""
+"<u>\n"
+"                                                                <strong>طلب تصفية عهدة</strong>\n"
+"                                                            </u>"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model,name:is_custody_clearance_15.model_custody_clearance
+msgid "A model for tracking custody clearance."
+msgstr "الجدول المستخدم لمتابعه تصفيه العهد."
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Accounting Details"
+msgstr "تفاصيل الحسابات"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__clearance_amount_words
+msgid "Amount in Words"
+msgstr "المبلغ بالحروف"
+
+#. module: is_custody_clearance_15
+#: code:addons/is_custody_clearance_15/account.py:0
+#, python-format
+msgid "An issue was faced when validating difference!"
+msgstr "هناك خطأ عند التحقق بسبب الفرق!"
+
+#. module: is_custody_clearance_15
+#: code:addons/is_custody_clearance_15/account.py:0
+#, python-format
+msgid "An issue was faced when validating!"
+msgstr "هناك خطأ اثناء التحقق!"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__analytic_account
+msgid "Analytic Account/Cost Center"
+msgstr "الحساب التحليلي / مركز التكلفه"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__approval_id
+msgid "Approval Reference"
+msgstr "مرجعية التصديق المالي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__clearance_no
+msgid "Auto-generated Clearance No. for custody clearances"
+msgstr "الرقم التسلسلي للعهدة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__journal_id
+msgid "Bank/Cash Journal"
+msgstr "يومية الخزنة أو البنك"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields.selection,name:is_custody_clearance_15.selection__custody_clearance__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__custody_clearance_line_ids
+msgid "Clearance Details"
+msgstr "تفاصيل التصفية"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__clearance_journal_id
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__clearance_journal_id
+msgid "Clearance Journal"
+msgstr "يومية التصفية"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__move_id
+msgid "Clearance Journal Entry"
+msgstr "قيد يوميه التصفية"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__clearance_no
+msgid "Clearance No."
+msgstr "رقم التصفية"
+
+#. module: is_custody_clearance_15
+#: code:addons/is_custody_clearance_15/account.py:0
+#, python-format
+msgid "Clearance journal must be selected!"
+msgstr "يومية التصفية يجب اختيارها اولا!"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__company_id
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__create_uid
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__create_date
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__cr_account
+msgid "Credit Account"
+msgstr "حساب الدائن"
+
+#. module: is_custody_clearance_15
+#: code:addons/is_custody_clearance_15/account.py:0
+#, python-format
+msgid "Credit account must be selected!"
+msgstr "حساب الدائن يجب اختيارة!"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__clearance_currency
+msgid "Currency"
+msgstr "العملة"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Custody Clearace Information"
+msgstr "تفاصيل تصفيه العهدة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__custody_clearance_id
+msgid "Custody Clearance"
+msgstr "تصفيه العهدة"
+
+#. module: is_custody_clearance_15
+#: model:ir.actions.act_window,name:is_custody_clearance_15.action_cc
+#: model:ir.actions.report,name:is_custody_clearance_15.report_clearance_approval_form
+#: model:ir.ui.menu,name:is_custody_clearance_15.menu_cc_child
+#: model:ir.ui.menu,name:is_custody_clearance_15.menu_cc_child_1
+#: model:ir.ui.menu,name:is_custody_clearance_15.menu_cc_child_child
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "Custody Clearance Approval"
+msgstr "تصفيه العهدة"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_custody_clearance_tree
+msgid "Custody Clearance Approvals"
+msgstr "تصفيه العهدة"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Custody Clearance Details"
+msgstr "تفاصيل تصفية العهدة"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Custody Clearance Management"
+msgstr "إدارة صفيه العهدة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__state
+msgid "Custody Clearance Status"
+msgstr "حالة صفيه العهدة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model,name:is_custody_clearance_15.model_custody_clearance_line
+msgid "Custody clearance details."
+msgstr "تفاصيل صفيه العهدة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__cc_date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__name
+msgid "Details"
+msgstr "تفاصيل"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__difference_amount
+msgid "Difference Amount"
+msgstr "مبلغ الفرق"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__display_name
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__display_name
+msgid "Display Name"
+msgstr "إسم العرض"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields.selection,name:is_custody_clearance_15.selection__custody_clearance__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__exp_account
+msgid "Expense or Debit Account"
+msgstr "حساب المدين او المصروف"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Finance Approval"
+msgstr "التصديق المالي"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Finance Approve"
+msgstr "التصديق المالي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__fm_remarks
+msgid "Finance Man. Remarks"
+msgstr "ملاحظات التصديق المالي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields.selection,name:is_custody_clearance_15.selection__custody_clearance__state__fm_app
+msgid "Financial Approval"
+msgstr "التصديق المالي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__fm_app_id
+msgid "Financial Approval By"
+msgstr " تصديق مالي من قبل"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields.selection,name:is_custody_clearance_15.selection__custody_clearance__state__gm_app
+msgid "General Manager Approval"
+msgstr "موافقة المدير العام"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__id
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__id
+msgid "ID"
+msgstr "رقم التعريف"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__activity_exception_icon
+msgid "Icon"
+msgstr "رمز"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى نشاط استثناء."
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__message_needaction
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__message_has_error
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__invoice_id
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance____last_update
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__write_uid
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__write_date
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__manager_id
+msgid "Manager"
+msgstr "المدير"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__mn_app_id
+msgid "Manager Approval By"
+msgstr "موافقة المدير بواسطة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__mn_remarks
+msgid "Manager Remarks"
+msgstr "ملاحظات المدير"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__name
+msgid "Narration"
+msgstr "السرد"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__origin
+msgid "Origin"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__is_partially_clearance
+msgid "Partially Clearance"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance_line__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: code:addons/is_custody_clearance_15/account.py:0
+#, python-format
+msgid "Payment journal must be selected!"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__journal_id
+msgid "Payment journal."
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__move2_id
+msgid "Payment/Receipt Journal Entry"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: code:addons/is_custody_clearance_15/account.py:0
+#, python-format
+msgid "Please select account!"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__reason
+msgid "Reason"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Reject"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields.selection,name:is_custody_clearance_15.selection__custody_clearance__state__reject
+msgid "Rejected"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__clearance_amount
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__clearance_amount_new
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__requested_amount
+msgid "Requested Amount"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__requester
+msgid "Requester"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__gm_app_id
+msgid "Reviewer Approval By"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__auditor_remarks
+msgid "Reviewer Remarks"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#: code:addons/is_custody_clearance_15/account.py:0
+#, python-format
+msgid "State Changed  Confirm -> <em>%s</em>."
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields.selection,name:is_custody_clearance_15.selection__custody_clearance__state__to_approve
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "To Approve"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__tot_cleared_amount
+msgid "Tot Cleared Amount"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_custody_clearance_tree
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Total"
+msgstr "المجموع"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__un_cleared_amount
+msgid "Uncleared Amount"
+msgstr "المبلغ الذي لم يتم مسحه"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__user_id
+msgid "User"
+msgstr "مستخدم"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.view_finance_approval_form
+msgid "Validate"
+msgstr "إعتماد"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields.selection,name:is_custody_clearance_15.selection__custody_clearance__state__validate
+msgid "Validated"
+msgstr "معتمدة"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__at_app_id
+msgid "Validated By"
+msgstr "معتمد من قبل"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__view_remarks
+msgid "View Remarks"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,field_description:is_custody_clearance_15.field_custody_clearance__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: is_custody_clearance_15
+#: model:ir.model.fields,help:is_custody_clearance_15.field_custody_clearance__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "البند"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "الرقم"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "المبلخ"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "مركز التكلفة"
+msgstr ""
+
+#. module: is_custody_clearance_15
+#: model_terms:ir.ui.view,arch_db:is_custody_clearance_15.report_clearance_approval
+msgid "ملاحظات"
+msgstr ""

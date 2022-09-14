@@ -1,0 +1,97 @@
+<odoo>
+    <data>
+        
+    <record id="hr_payroll_batch_report" model="ir.actions.report">
+            <field name="name">Payroll Batch Report</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hr_payroll_custom.payroll_report_template</field>
+            <field name="report_file">hr_payroll_custom.hr_payslip_report_qweb</field>
+            <field name="print_report_name">(object.name)</field>
+            <field name="binding_model_id" ref="model_hr_payslip_run"/>
+            <field name="binding_type">report</field>
+        </record>        
+
+    <template id="payroll_report_template">
+        <t t-set="data_report_landscape" t-value="True"/>
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+
+                          <strong>
+                            <h1 align="center" style="font-weight: bold;">Net Salary</h1>
+                            <h1 align="center" style="font-weight: bold;"> <span t-esc="o['name']"/></h1></strong>
+
+                        <table width="100%">
+                            <tr>
+                                <td style=" height:64px;margin-top: 4%;"  width="50%">
+                                    <h5 style="font-weight: bold;display:inline-block;">&#160; From:</h5>&#160;&#160;&#160;
+                                    <span t-field="o.date_start"/>
+                                </td>
+                                <td style=" height:64px;margin-top: 4%;"  width="50%">
+                                    <h5 style="font-weight: bold;display:inline-block;">&#160; To:</h5>;
+                                    <span t-field="o.date_end"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-bordered" style="width: 100%;border: 3px solid black;">
+                            <t t-set="total" t-value="0"/>
+                            <thead>
+                                    <td style="text-align: center;border-top: 0;border: 3px solid black;" width="25%">
+                                        <h5 style="font-weight: bold;display:inline-block;">&#160; Employees</h5>
+                                    </td>
+
+                                    <t t-foreach="o.slip_ids.struct_id.rule_ids" t-as="line">
+                                        <t t-if="line.appears_on_payslip == True">
+                                        <td style="text-align: center;border-top: 0;border: 3px solid black;" width="25%">
+                                         <p style="font-weight: bold;display:inline-block;">&#160;<span t-field="line.name"/></p>
+                                         
+
+                                     </td>
+                                 </t>
+                                    </t>
+                            </thead>
+                            <tbody>
+                                <t  t-foreach='o.slip_ids' t-as='line'>
+                                    <tr style="border: 3px solid black;">
+                                        <td style="text-align: center; border-top: 0;border: 3px solid black;" width="40%">
+                                         <t t-set="employee_name" t-value="list(line.employee_id.name.split())"/>
+                                            <t t-set="employee_name" t-value="employee_name[0] +' '+ employee_name[1]"/>
+                                            <p style="font-weight: bold;display:inline-block;">&#160;<span t-esc="employee_name"/> </p>
+                                        </td>
+
+                                        <t  t-foreach="line.line_ids" t-as='line2'>
+                                        <td style="text-align: center; border: 3px solid black;" width="25%">
+                                            <p style="font-weight: bold;display:inline-block;">&#160;<span t-field="line2.total"/></p>
+                                        </td>
+                                    </t>
+                                    </tr>
+                                </t>
+                                <tr>
+                                     <td  style="text-align: center;border-top: 0;" width="25%">
+                                        <h5 style="font-weight: bold;display:inline-block;">&#160; Total</h5>
+                                     </td>
+                                     
+                                     <t t-foreach="o.slip_ids.struct_id.rule_ids" t-as="line">
+                                        <t t-if="line.appears_on_payslip == True">
+                                        <td style="text-align: center;border-top: 0;border: 3px solid black;" width="25%">
+                                        
+                                          <strong><span t-esc="fun(line,o)" t-options="{'widget': 'float', 'precision': 2}"/></strong>
+                                        </td>
+                                        </t>
+                                    </t>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+             </t>
+        </t>
+    </template>
+  </data>
+</odoo>
+
+

@@ -1,0 +1,794 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_temporary_service
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-30 13:04+0000\n"
+"PO-Revision-Date: 2022-08-30 15:26+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields.selection,name:hr_temporary_service.selection__hr_temporary_service__state__approved_finance
+msgid " Finance Approve"
+msgstr "موافقة المدير المالي"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "<span class=\"o_form_labe\">Analytic Account</span>"
+msgstr "مركز التكلفة"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid ""
+"<span class=\"o_form_label\"> Account</span>\n"
+"                                             <span class=\"o_form_label\">Debit Account</span>"
+msgstr "الحسابات"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "<span class=\"o_form_label\">Credit Account</span>"
+msgstr "الحساب الدائن"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "<span class=\"o_form_label\">Journal</span>"
+msgstr "دفتر اليومية"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__active
+msgid "Active"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__address
+msgid "Address"
+msgstr "العنوان"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_department__analytic_account_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__tem_account_analytic_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_company__tem_account_analytic_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_config_settings__tem_account_analytic_id
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "Analytic Account"
+msgstr "مركز التكلفة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_attachment_count
+msgid "Attachment Count"
+msgstr "مرفقات"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__attachment_ids
+msgid "Attachments"
+msgstr "مرفقات"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields.selection,name:hr_temporary_service.selection__hr_temporary_service__state__cancel
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_service_partner
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_service_refuse
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_res_company
+msgid "Companies"
+msgstr "الشركات "
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "Compute"
+msgstr "إحتساب"
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: hr_temporary_service
+#: model:ir.ui.menu,name:hr_temporary_service.menu_temporary_service_config
+msgid "Configuration"
+msgstr "الإعدادت"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "Confirm"
+msgstr "تاكيد"
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "Create Journal Entries"
+msgstr "إنشاء قيود "
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__create_uid
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_partner__create_uid
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_refuse__create_uid
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__create_uid
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__create_uid
+msgid "Created by"
+msgstr "إنشاء بواسطة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__create_date
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_partner__create_date
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_refuse__create_date
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__create_date
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__create_date
+msgid "Created on"
+msgstr "إنشاء بواسطة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__temporary_ser_credit_account_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_company__temporary_ser_credit_account_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_config_settings__temporary_ser_credit_account_id
+msgid "Credit Account"
+msgstr "الحساب الدائن"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__date
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_temporary_service_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__date_from
+msgid "Date From"
+msgstr "من تاريخ"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__date_to
+msgid "Date To"
+msgstr "إلي تاريخ"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields.selection,name:hr_temporary_service.selection__hr_temporary_service__pay_type__days
+msgid "Days"
+msgstr "الأيام"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__temporary_ser_debit_account_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_company__temporary_ser_debit_account_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_config_settings__temporary_ser_debit_account_id
+msgid "Dedit Account"
+msgstr "حساب مدين"
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_hr_department
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__department_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_company__detailed_payment
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_config_settings__detailed_payment
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "Detailed Payment"
+msgstr "تفاصيل الدفعية"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__display_name
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_partner__display_name
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_refuse__display_name
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__display_name
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__display_name
+msgid "Display Name"
+msgstr "الإسم"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields.selection,name:hr_temporary_service.selection__hr_temporary_service__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__end_date_health
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__end_date_work
+msgid "End Date"
+msgstr "تاريخ الإنتهاء"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__extra_pay
+msgid "Extra Pay"
+msgstr "الأجر الإضافي"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_service_partner
+msgid "Generate Labor"
+msgstr "تحديد العمال"
+
+#. module: hr_temporary_service
+#: model:ir.actions.act_window,name:hr_temporary_service.action_hr_service_partner
+msgid "Generate Partners"
+msgstr "إنشاء شركاء"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_temporary_service_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields.selection,name:hr_temporary_service.selection__hr_temporary_service__state__approved_hr_adm
+msgid "HR admin Approve"
+msgstr "موافقة الموارد البشرية"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_labor_service_form
+msgid "Health Card"
+msgstr "الكرت الصحي"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields.selection,name:hr_temporary_service.selection__hr_temporary_service__pay_type__hours
+msgid "Hours"
+msgstr "بالساعات"
+
+#. module: hr_temporary_service
+#: model:ir.actions.act_window,name:hr_temporary_service.action_hr_temporary_service
+msgid "Hr Temporary Service"
+msgstr "عمليات العمالة المؤقتة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_partner__id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_refuse__id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__id
+msgid "ID"
+msgstr "رقم التعريف"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__message_needaction
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__message_has_error
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__job_id
+msgid "Job Position"
+msgstr "الوظيفة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__function
+msgid "Job position"
+msgstr "الوظيفة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__temporary_service_journal_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_company__temporary_service_journal_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_config_settings__temporary_service_journal_id
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_partner__labor
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_users__labor
+#: model:ir.ui.menu,name:hr_temporary_service.menu_temporary_labor
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_partner_form_inherit
+msgid "Labor"
+msgstr "العمال"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "Labor Temporary Service"
+msgstr "العمالة المؤقتة"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "Laborer"
+msgstr "العمال"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_service_partner
+msgid "Labors"
+msgstr "العمال"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor____last_update
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_partner____last_update
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_refuse____last_update
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service____last_update
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__write_uid
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_partner__write_uid
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_refuse__write_uid
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__write_uid
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__write_date
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_partner__write_date
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_refuse__write_date
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__write_date
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__move_id
+msgid "Move"
+msgstr "قيد اليومية"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__name
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__name
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__labor
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_temporary_service_search
+msgid "Name"
+msgstr "العامل"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "Nots"
+msgstr "ملاحظة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__no_days
+msgid "Number Of Days"
+msgstr "عدد الأيام"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__no_hours
+msgid "Number Of Hours"
+msgstr "عدد الساعات"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hr_temporary_service
+#: code:addons/hr_temporary_service/models/hr_temporary_service.py:0
+#, python-format
+msgid "Number of days is grater than duration between date from and date to !"
+msgstr "عدد الأيام أكبر من المدة بين تاريخ البداية والنهاية !"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_service_refuse
+msgid "Ok"
+msgstr "حسنا\""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__line_ids
+msgid "Partners"
+msgstr "الشركاء"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__pay_type
+msgid "Pay Type"
+msgstr "نوع الدفع"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "Period"
+msgstr "الفترة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: hr_temporary_service
+#: code:addons/hr_temporary_service/models/hr_temporary_service.py:0
+#, python-format
+msgid "Please configure temporary service's account and journal in settings"
+msgstr "يرجى تكوين حساب الخدمة المؤقتة ودفتر اليومية في الإعدادات"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_refuse__reason
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_service_refuse
+msgid "Reason"
+msgstr "السبب"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields.selection,name:hr_temporary_service.selection__hr_temporary_service__state__refuse
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: hr_temporary_service
+#: model:ir.actions.act_window,name:hr_temporary_service.action_hr_service_refuse
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_service_refuse
+msgid "Refuse Reason"
+msgstr "سبب الرفض"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسوؤل"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__service_id
+msgid "Service"
+msgstr "خدمة"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "Set To Draft"
+msgstr "إرجاع لي مسودة"
+
+#. module: hr_temporary_service
+#: model:ir.ui.menu,name:hr_temporary_service.temporary_server_menu_configuration
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__start_date_health
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__start_date_work
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.actions.act_window,name:hr_temporary_service.action_hr_labor
+msgid "Temporary Labor"
+msgstr "العمالة المؤقتة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_account_bank_statement_line__temporary_service_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_account_move__temporary_service_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_account_payment__temporary_service_id
+#: model:ir.ui.menu,name:hr_temporary_service.menu_temporary_service_root
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_labor_service_form
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_labor_tree
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_temporary_service_search
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.view_hr_temporary_service_tree
+msgid "Temporary Service"
+msgstr "العمالة المؤقتة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_account_move_line__tem_service_line_id
+msgid "Temporary Service Line"
+msgstr "بند الخدمة المؤقتة"
+
+#. module: hr_temporary_service
+#: model:ir.ui.menu,name:hr_temporary_service.menu_temporary_service_sub
+msgid "Temporary Service Payment"
+msgstr "دفعيات العمال"
+
+#. module: hr_temporary_service
+#: model:ir.actions.act_window,name:hr_temporary_service.hr_per_diem_config_settings_action
+msgid "Temporary Service Settings"
+msgstr "إعدادات الخدمة المؤقتة"
+
+#. module: hr_temporary_service
+#: code:addons/hr_temporary_service/models/hr_temporary_service.py:0
+#, python-format
+msgid ""
+"There is a Receipt linked with this record must be canceled first in order to cancel the "
+"record."
+msgstr ""
+"هناك إيصال مرتبط بهذا السجل يجب إلغاؤه أولا من أجل إلغاء السجل"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "To"
+msgstr "إلي "
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__total_amount
+msgid "Total Amount"
+msgstr "إجمالي المبلغ"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_temporary_service_line__wage
+msgid "Wage"
+msgstr "المستحق"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__wage_day
+msgid "Wage Days"
+msgstr "الأجر اليومي"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__wage_hour
+msgid "Wage Hours"
+msgstr "أجر الساعات"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "Way Detailed Payment to create Invoice"
+msgstr "طريقة الدفع التفصيلية لإنشاء فاتورة"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_labor__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,help:hr_temporary_service.field_hr_labor__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: hr_temporary_service
+#: code:addons/hr_temporary_service/models/hr_temporary_service.py:0
+#, python-format
+msgid "You can not  create two temporary service  the same period for same labor!"
+msgstr "لا يمكنك إنشاء خدمتين مؤقتتين في نفس الفترة لنفس العامل!"
+
+#. module: hr_temporary_service
+#: code:addons/hr_temporary_service/models/hr_temporary_service.py:0
+#, python-format
+msgid "You should Cancel Or Delete The Receipt linked to this record first!"
+msgstr "يجب عليك إلغاء أو حذف الإيصال المرتبط بهذا السجل أولا!"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_company__labor_account_id
+#: model:ir.model.fields,field_description:hr_temporary_service.field_res_config_settings__labor_account_id
+msgid "account"
+msgstr "الحساب"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_temporary_service_form
+msgid "approved"
+msgstr "موافقة"
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_hr_labor
+msgid "hr.labor"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_hr_service_partner
+msgid "hr.service.partner"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_hr_service_refuse
+msgid "hr.service.refuse"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_hr_temporary_service
+msgid "hr.temporary.service"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_service_partner__partner_ids
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__partner_ids
+msgid "partners"
+msgstr "شركاء"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields,field_description:hr_temporary_service.field_hr_temporary_service__reference
+msgid "ref"
+msgstr "رقم"
+
+#. module: hr_temporary_service
+#: model:ir.model.fields.selection,name:hr_temporary_service.selection__hr_temporary_service__state__confirmed_sup_labor
+msgid "supervisor Labor"
+msgstr "مشرف العمال"
+
+#. module: hr_temporary_service
+#: model:ir.model,name:hr_temporary_service.model_temporary_service_line
+msgid "temporary.service.line"
+msgstr ""
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.hr_labor_service_form
+msgid "work card"
+msgstr "كرت العمل"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "<span class=\"o_form_label\">Temporary Service</span>"
+msgstr "<span class=\"o_form_label\">العمالة المؤقتة</span>"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "Debit Account"
+msgstr "حساب مدين"
+
+#. module: hr_temporary_service
+#: model_terms:ir.ui.view,arch_db:hr_temporary_service.res_config_settings_per_diem_view_form
+msgid "Credit Account"
+msgstr "حساب الدائن"

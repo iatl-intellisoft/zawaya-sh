@@ -1,0 +1,108 @@
+<odoo>
+    <data>
+
+        <!-- Loan Postpone Tree -->
+        <record id="tree_hr_postpone_loan_view" model="ir.ui.view">
+            <field name="name">hr.loan.postpone.tree</field>
+            <field name="model">hr.loan.postpone</field>
+            <field name="arch" type="xml">
+                <tree string="Loan Postpones">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="employee_id"/>
+                    <field name="loan_id"/>
+                    <field name="amount"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Loan Postpones Form -->
+        <record id="hr_postpone_loan_form_view" model="ir.ui.view">
+            <field name="name">hr.loan.postpone.form</field>
+            <field name="model">hr.loan.postpone</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"
+                                states="draft"/>
+                        <button name="action_submit" class="oe_highlight" type="object" string="Submit"
+                                states="submit"/>
+
+                        <button name="action_dept_approve" class="oe_highlight" type="object" string="Department Approve"
+                                states="wait_dept_approve"
+                                />
+
+                        <button name="action_hr_approve" class="oe_highlight" type="object" string="HR Approve"
+                                states="wait_hr_approve"
+                                />
+                        <button name="action_approve" type="object" string="GM Approve" class="oe_highlight" groups="hr_loan.group_hr_general_manager" states="wait_gm_approve"/>
+                        <button name="action_cancel" type="object" string="Cancel" states="draft,submit"/>
+                        <button name="action_set_to_draft" type="object" string="Set To Draft" states="cancel"/>
+                        <field name="state" widget="statusbar" statusbar_visible='draft,submit,wait_dept_approve,wait_hr_approve,wait_gm_approve,approve'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h4>
+                                <field name="is_type" class="oe_inline" widget="radio" options="{'horizontal': true}" />
+                            </h4>
+                            <h1>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group colspan="4" col="4">
+                            <field name="employee_id" required="1" options="{'no_create_edit': True}"
+                                   attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="date" readonly="1"/>
+                            <field name="emp_id" readonly="1"/>
+                            <field name="department_id" readonly="1"/>
+                            <field name="loan_id" required="1" options="{'no_create_edit': True}"
+                                   attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="loan_amount"/>
+                            <field name="residual_amount" readonly="1"/>
+                            <field name="company_id" readonly="1"/>
+                            <field name="amount" readonly="1" attrs="{'invisible':[('is_type','=','stop')]}"/>
+                            <field name="reason"/>
+                            <!--<field name="move_id" attrs="{'invisible':[('move_id','=',False)]}" readonly="1"/>-->
+                            <field name="stop_months" attrs="{'readonly':[('state','!=','draft')],'invisible':[('is_type','!=','stop')],'required':[('is_type','=','stop')]}"/>
+                            <field name="due_date" attrs="{'invisible':[('is_type','!=','stop')]}"/>
+                            <field name="attachment_ids" attrs="{'invisible':[('is_type','=','stop')]}" widget="many2many_binary"/>
+                            
+                        </group>
+                        <notebook attrs="{'invisible':[('is_type','=','stop')]}">
+                            <page string="Installments">
+                                <field name="loan_line_ids" attrs="{'readonly':[('state','!=','draft')],'required':[('is_type','!=','stop')]}">
+                                    <tree editable="bottom">
+                                        <field name="payment_date" readonly="1"/>
+                                        <field name="paid_date" string="Postpone Date"/>
+                                        <field name="paid_amount" string="Postpone Amount" readonly="1"/>
+                                        <button name="postpone_month" type="object" string="Postpone" attrs="{'invisible':[('parent.state','not in',['draft','submit'])]}"/>
+                                        <!--<field name="paid"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action : HR Loan Postpone -->
+        <record id="action_hr_loan_postpone" model="ir.actions.act_window">
+            <field name="name">Loan postpone</field>
+            <field name="res_model">hr.loan.postpone</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Loans Postpones"
+                  parent="menu_hr_loans"
+                  id="menu_hr_loan_postpone"
+                  action="action_hr_loan_postpone"
+                  groups="hr.group_hr_manager,hr_loan.group_hr_general_manager"/>
+                  
+    </data>
+</odoo>

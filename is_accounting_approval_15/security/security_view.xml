@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+    <record model="ir.module.category" id="module_finance_approval">
+        <field name="name">Finance  &amp; Custody Clearance Approvals</field>
+    </record>
+        <!-- group of general manager -->
+        <record id="user_access_group" model="res.groups">
+            <field name="name">User</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="module_finance_approval"/>
+        </record>
+
+        <!-- group of general manager -->
+        <record id="general_manager_access_group" model="res.groups">
+            <field name="name">General Manager</field>
+            <field name="implied_ids" eval="[(4, ref('account.group_account_user')),(4, ref('is_accounting_approval_15.user_access_group'))]"/>
+            <field name="category_id" ref="module_finance_approval"/>
+        </record>
+        <!-- group of general manager assistant -->
+        <record id="general_manager_assistant_access_group" model="res.groups">
+            <field name="name">General Manager Assistant</field>
+            <field name="implied_ids" eval="[(4, ref('account.group_account_user')),(4, ref('is_accounting_approval_15.user_access_group'))]"/>
+            <field name="category_id" ref="module_finance_approval"/>
+        </record>
+
+        <record id="accounting_manager_access_group" model="res.groups">
+            <field name="name">Accounting Manager</field>
+            <field name="implied_ids" eval="[(4, ref('account.group_account_manager')),(4, ref('is_accounting_approval_15.user_access_group'))]"/>
+            <field name="category_id" ref="module_finance_approval"/>
+        </record>
+
+<!--        &lt;!&ndash; group of auditor &ndash;&gt;-->
+<!--        <record id="general_manager_access_group" model="res.groups">-->
+<!--            <field name="name">Account Auditor</field>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; group of manager approvers &ndash;&gt;-->
+<!--        <record id="manager_access_group" model="res.groups">-->
+<!--            <field name="name">Direct Manager</field>-->
+<!--            <field name="category_id" ref="module_finance_approval"/>-->
+<!--        </record>-->
+
+        <!-- group of validator -->
+        <record id="validator_access_group" model="res.groups">
+            <field name="name">Validator</field>
+            <field name="implied_ids" eval="[(4, ref('account.group_account_user'))]"/>
+            <field name="category_id" ref="module_finance_approval"/>
+        </record>
+
+        <!-- Record Rules -->
+        <record id="finance_access_rule_all" model="ir.rule">
+            <field name="name">Finance Access Rule</field>
+            <field name="model_id" ref="model_finance_approval"/>
+            <!--<field name="domain_force">['|',('user_id','=',user.id),('manager_id','=',user.id)]</field>-->
+            <field name="domain_force">['&amp;', '|',('user_id','=',user.id),('manager_id','=',user.id),
+                '|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="finance_access_rule_approvers" model="ir.rule">
+            <field name="name">Finance Access Rule Approvers</field>
+            <field name="model_id" ref="model_finance_approval"/>
+            <!--<field name="domain_force">[(1,'=',1)]</field>-->
+            <field name="domain_force">['&amp;',(1,'=',1),'|',
+                ('company_id','=',False),('company_id', 'in', company_ids)]</field>
+            <field name="groups"
+                   eval="[(4, ref('is_accounting_approval_15.general_manager_access_group')),
+                   (4, ref('is_accounting_approval_15.validator_access_group')),
+                   (4, ref('is_accounting_approval_15.general_manager_assistant_access_group')),
+                   (4, ref('account.group_account_manager')),
+                   (4, ref('is_accounting_approval_15.general_manager_access_group'))]"/>
+        </record>
+        <record id="finance_access_rule_user_access_group" model="ir.rule">
+            <field name="name">is_accounting_approval_15.user_access_group.finance_access_rule</field>
+            <field ref="model_finance_approval" name="model_id"/>
+            <field name="domain_force">[('requester', '!=', user.id)]</field>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <!-- You can attach this rule to a specific group, Or make it Global -->
+            <field name="groups" eval="[(4, ref('is_accounting_approval_15.user_access_group'))]"/>
+            <!--<field name="global" eval="1"/> -->
+        </record>
+
+<!--        <record id="finance_access_rule_user_access_group" model="ir.rule">-->
+<!--            <field name="name">is_accounting_approval_15.user_access_group.finance_access_rule</field>-->
+<!--            <field ref="model_finance_approval" name="model_id"/>-->
+<!--            <field name="domain_force">[('department_id.manager_id', '=', user.id)]</field>-->
+<!--            <field name="perm_write" eval="0"/>-->
+<!--            <field name="perm_create" eval="1"/>-->
+<!--            <field name="perm_read" eval="0"/>-->
+<!--            <field name="perm_unlink" eval="0"/>-->
+<!--            &lt;!&ndash; You can attach this rule to a specific group, Or make it Global &ndash;&gt;-->
+<!--            <field name="groups" eval="[(4, ref('is_accounting_approval_15.user_access_group'))]"/>-->
+<!--            &lt;!&ndash;<field name="global" eval="1"/> &ndash;&gt;-->
+<!--        </record>-->
+
+        <record id="finance_access_all_rule_" model="ir.rule">
+            <field name="name">finance_access_all_rule_</field>
+            <field ref="model_finance_approval" name="model_id"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <!-- You can attach this rule to a specific group, Or make it Global -->
+            <field name="groups" eval="[
+            (4, ref('is_accounting_approval_15.general_manager_assistant_access_group')),
+            (4, ref('is_accounting_approval_15.general_manager_access_group')),
+            (4, ref('is_accounting_approval_15.accounting_manager_access_group')),
+            (4, ref('is_accounting_approval_15.validator_access_group')
+            )]"/>
+            <!--<field name="global" eval="1"/> -->
+        </record>
+
+    </data>
+</odoo>

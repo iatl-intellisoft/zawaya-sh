@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="group_dept_manager" model="res.groups">
+        <field name="name">Department Manager</field>
+        <field name="category_id" ref="base.module_category_human_resources_employees"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+</odoo>

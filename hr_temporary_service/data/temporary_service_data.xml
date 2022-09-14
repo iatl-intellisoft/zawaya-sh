@@ -1,0 +1,10 @@
+<odoo>
+	<data>
+		<record id="temp_service_seq" model="ir.sequence">
+			<field name="name">Temporary Service Sequence</field>
+			<field name="code">labor.sequence</field>
+			<field name="padding">4</field>
+			<field name="prefix">TEP-Service/%(year)s/%(month)s/</field>
+		</record>
+	</data>
+</odoo>

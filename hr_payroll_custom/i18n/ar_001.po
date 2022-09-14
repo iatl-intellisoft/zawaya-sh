@@ -1,0 +1,532 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_payroll_custom
+#   * hr
+#   * hr_payroll
+#   * hr_work_entry
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-02 19:32+0000\n"
+"PO-Revision-Date: 2022-09-02 21:40+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_basic
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_basic2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_basic
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_basic2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_basic
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_basic2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_basic
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_basic2
+msgid "Basic Salary"
+msgstr "الراتب الأساسي"
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_bouns
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_bouns2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_bouns
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_bouns2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_bouns
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_bouns2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_bouns
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_bouns2
+msgid "Bouns"
+msgstr "الحافز"
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_breakfast
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_breakfast2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_breakfast
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_breakfast2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_breakfast
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_breakfast2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_breakfast
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_breakfast2
+msgid "Breakfast"
+msgstr "بدل وجبة"
+
+#. module: hr_payroll_custom
+#: model_terms:ir.ui.view,arch_db:hr_payroll_custom.employee_payslip_wizard_view
+#: model_terms:ir.ui.view,arch_db:hr_payroll_custom.view_employee_payslip_report_excel
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_hr_payroll_structure__company_id
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_hr_payslip_input_type__company_id
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_hr_rule_parameter__company_id
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_hr_rule_parameter_value__company_id
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_hr_salary_rule__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_cola
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_cola2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_cola
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_cola2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_cola
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_cola2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_cola
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_cola2
+msgid "Cost Of Living"
+msgstr "غلاء معيشة"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_report_excel__create_uid
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_wizard__create_uid
+msgid "Created by"
+msgstr "تم الإنشاء بواسطة"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_report_excel__create_date
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_wizard__create_date
+msgid "Created on"
+msgstr "تم الإنشاء بتاريخ"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_wizard__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_wizard__department_ids
+msgid "Departments"
+msgstr "الأقسام"
+
+#. module: hr_payroll_custom
+#: model:ir.ui.menu,name:hr_payroll_custom.employee_payslip_wizard_menu
+msgid "Departments Payslip Report"
+msgstr "تفرير التقسيمة بالأقسام"
+
+#. module: hr_payroll_custom
+#: code:addons/hr_payroll_custom/wizard/employee_payslip_report.py:0
+#, python-format
+msgid "Departments Payslip Report.xlsx"
+msgstr "xlsx.تقرير كشوف مرتبات الإدارات"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_report_excel__display_name
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_wizard__display_name
+msgid "Display Name"
+msgstr "الإسم"
+
+#. module: hr_payroll_custom
+#: model:ir.actions.act_window,name:hr_payroll_custom.employee_payslip_wizard_action
+msgid "Employees Report"
+msgstr "تقرير الموظفين"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_report_excel__name
+msgid "File Name"
+msgstr "إسم الملف"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_report_excel__file_download
+msgid "File to Download"
+msgstr "تنزيل الملف"
+
+#. module: hr_payroll_custom
+#: model_terms:ir.ui.view,arch_db:hr_payroll_custom.view_employee_payslip_report_excel
+msgid "File to Downloads"
+msgstr "تنزيل الملف"
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_hos
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_hos2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_hos
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_hos2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_hos
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_hos2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_hos
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_hos2
+msgid "Housing"
+msgstr "بدل سكن"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_report_excel____last_update
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_wizard____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل على"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_report_excel__write_uid
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_report_excel__write_date
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_wizard__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تحديث"
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_medical
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_medical2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_medical
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_medical2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_medical
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_medical2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_medical
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_medical2
+msgid "Medical Insurance"
+msgstr "ﻹستقطاع تأمين صحي"
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_net
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_net2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_net
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_net2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_net
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_net2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_net
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_net2
+msgid "Net Salary"
+msgstr "صافي الراتب"
+
+#. module: hr_payroll_custom
+#: model:ir.model,name:hr_payroll_custom.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال دفع "
+
+#. module: hr_payroll_custom
+#: model:ir.model,name:hr_payroll_custom.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr "دفعات إيصال الدفع "
+
+#. module: hr_payroll_custom
+#: model:ir.model,name:hr_payroll_custom.model_hr_payslip_input_type
+msgid "Payslip Input Type"
+msgstr "نوع مدخل إيصال الدفع "
+
+#. module: hr_payroll_custom
+#: code:addons/hr_payroll_custom/models/hr_payslip.py:0
+#: code:addons/hr_payroll_custom/models/hr_payslip_batch.py:0
+#, python-format
+msgid "Payslip Reports.xlsx"
+msgstr "xlsx.تقارير كشوف المرتبات"
+
+#. module: hr_payroll_custom
+#: model_terms:ir.ui.view,arch_db:hr_payroll_custom.employee_payslip_wizard_view
+msgid "Print"
+msgstr "طباعة"
+
+#. module: hr_payroll_custom
+#: model_terms:ir.ui.view,arch_db:hr_payroll_custom.hr_payslip_run_form_inherit
+#: model_terms:ir.ui.view,arch_db:hr_payroll_custom.view_hr_payslip_form_inherit
+msgid "Print Excel"
+msgstr "طباعة الأكسل"
+
+#. module: hr_payroll_custom
+#: model:ir.model,name:hr_payroll_custom.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "قاعدة الراتب "
+
+#. module: hr_payroll_custom
+#: model:ir.model,name:hr_payroll_custom.model_hr_rule_parameter
+msgid "Salary Rule Parameter"
+msgstr "معيار قاعدة الراتب "
+
+#. module: hr_payroll_custom
+#: model:ir.model,name:hr_payroll_custom.model_hr_rule_parameter_value
+msgid "Salary Rule Parameter Value"
+msgstr "قيمة معيار قاعدة الراتب "
+
+#. module: hr_payroll_custom
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_hr_payroll_structure__rule_ids
+msgid "Salary Rules"
+msgstr "قواعد  الراتب"
+
+#. module: hr_payroll_custom
+#: model:ir.model,name:hr_payroll_custom.model_hr_payroll_structure
+msgid "Salary Structure"
+msgstr "هيكل الراتب "
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_si
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_si2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_si
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_si2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_si
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_si2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_si
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_si2
+msgid "Social Insurance"
+msgstr "إستقطاع تأمين إجتماعي"
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_trans
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_trans2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_trans
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_trans2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_trans
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_trans2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_trans
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_trans2
+msgid "Transportation"
+msgstr "بدل ترحيل"
+
+#. module: hr_payroll_custom
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_injury
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_ajwaa_injury2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_injury
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_aldowlia_injury2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_injury
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_alwatania_injury2
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_injury
+#: model:hr.salary.rule,name:hr_payroll_custom.hr_salary_rule_injury2
+msgid "Work Injury"
+msgstr "إصابة عمل"
+
+#. module: hr_payroll_custom
+#: model:ir.model,name:hr_payroll_custom.model_employee_payslip_report_excel
+msgid "employee.payslip.report.excel"
+msgstr ""
+
+#. module: hr_payroll_custom
+#: model:ir.model,name:hr_payroll_custom.model_employee_payslip_wizard
+msgid "employee.payslip.wizard"
+msgstr ""
+
+#. module: hr_payroll_custom
+#: model_terms:ir.ui.view,arch_db:hr_payroll_custom.employee_payslip_wizard_view
+msgid "or"
+msgstr "أو"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_departure_wizard__departure_date
+#: model:ir.model.fields,field_description:hr.field_hr_employee__departure_date
+msgid "Departure Date"
+msgstr "تاريخ المغادرة"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee__employee_type
+#: model:ir.model.fields,field_description:hr.field_hr_employee_base__employee_type
+#: model:ir.model.fields,field_description:hr.field_hr_employee_public__employee_type
+#: model:ir.model.fields,field_description:hr.field_res_users__employee_type
+msgid "Employee Type"
+msgstr "نوع الموظف"
+
+#. module: hr
+#: model:ir.model.fields,help:hr.field_hr_employee__sinid
+msgid "Social Insurance Number"
+msgstr "رقم التأمين الاجتماعي"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_employee__registration_number
+msgid "Registration Number of the Employee"
+msgstr "رقم تسجيل الموظف"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee__work_permit_expiration_date
+msgid "Work Permit Expiration Date"
+msgstr "تاريخ انتهاء صلاحية تصريح العمل"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee__work_permit_scheduled_activity
+msgid "Work Permit Scheduled Activity"
+msgstr "تصريح العمل النشاط المجدول"
+
+#. module: hr_payroll
+#: model:ir.model,name:hr_payroll.model_hr_contract_history
+msgid "Contract history"
+msgstr "تاريخ العقد"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_salary_attachment__monthly_amount
+#: model_terms:ir.ui.view,arch_db:hr_payroll.hr_salary_attachment_view_tree
+msgid "Monthly Amount"
+msgstr "المبلغ الشهري"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_contract__wage_type
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_contract_history__wage_type
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_payroll_structure_type__wage_type
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_payslip__wage_type
+msgid "Wage Type"
+msgstr "نوع الأجر"
+
+#. module: hr_payroll
+#. openerp-web
+#: code:addons/hr_payroll/static/src/xml/hr_contract_tree_views.xml:0
+#, python-format
+msgid "Index Contracts"
+msgstr "عقود المؤشرات"
+
+#. module: hr_payroll
+#: model:ir.actions.act_window,name:hr_payroll.action_hr_payroll_index
+#: model:ir.actions.server,name:hr_payroll.action_index_contracts
+msgid "Index contract(s)"
+msgstr "عقود المؤشرات"
+
+#. module: hr_payroll
+#: model:ir.model,name:hr_payroll.model_hr_payroll_index
+msgid "Index contracts"
+msgstr "عقود المؤشرات"
+
+#. module: hr_payroll
+#: model_terms:ir.ui.view,arch_db:hr_payroll.hr_contract_search_inherit
+msgid "Change of Occupation"
+msgstr "تغيير المهنة"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_contract__hours_per_week
+#: model:ir.model.fields,field_description:hr_payroll.field_resource_calendar__hours_per_week
+msgid "Hours per Week"
+msgstr "ساعات في الأسبوع"
+
+#. module: hr
+#: model:ir.actions.act_window,name:hr.hr_work_location_action
+#: model:ir.ui.menu,name:hr.menu_hr_work_location_tree
+msgid "Work Locations"
+msgstr "مواقع العمل"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_work_location__location_number
+msgid "Location Number"
+msgstr "رقم الموقع"
+
+#. module: hr
+#: model:ir.actions.act_window,name:hr.hr_departure_reason_action
+#: model:ir.ui.menu,name:hr.menu_hr_departure_reason_tree
+msgid "Departure Reasons"
+msgstr "أسباب المغادرة"
+
+#. module: hr
+#: model_terms:ir.ui.view,arch_db:hr.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Presence Control</span>"
+msgstr "<span class=\"o_form_label\">التحكم في التواجد</span>"
+
+#. module: hr
+#: model_terms:ir.ui.view,arch_db:hr.res_config_settings_view_form
+msgid "Presence reporting screen, email and IP address control."
+msgstr ".IP شاشة إعداد تقارير التواجد والبريد الإلكتروني والتحكم في عنوان"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_res_config_settings__hr_employee_self_edit
+msgid "Employee Editing"
+msgstr "تحرير الموظف"
+
+#. module: hr_payroll
+#: code:addons/hr_payroll/models/hr_payslip.py:0
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_employee__salary_attachment_ids
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_payslip__salary_attachment_ids
+#: model:ir.ui.menu,name:hr_payroll.hr_menu_salary_attachments
+#: model_terms:ir.ui.view,arch_db:hr_payroll.hr_contract_history_view_form
+#: model_terms:ir.ui.view,arch_db:hr_payroll.hr_salary_attachment_view_tree
+#: model_terms:ir.ui.view,arch_db:hr_payroll.view_hr_payslip_form
+#, python-format
+msgid "Salary Attachments"
+msgstr "مرفقات الراتب"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee__driving_license
+msgid "Driving License"
+msgstr "رخصة القيادة"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee__id_card
+msgid "ID Card Copy"
+msgstr "نسخة من بطاقة الهوية"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_employee__internet_invoice
+msgid "Internet Subscription Invoice"
+msgstr "فاتورة الاشتراك في الإنترنت"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee__km_home_work
+#: model:ir.model.fields,field_description:hr.field_res_users__km_home_work
+msgid "Home-Work Distance"
+msgstr "المسافة بين المنزل والعمل"
+
+#. module: hr
+#: model:ir.model.fields,field_description:hr.field_hr_employee__lang
+msgid "Lang"
+msgstr "اللغة"
+
+#. module: hr
+#: model_terms:ir.ui.view,arch_db:hr.res_users_view_form_profile
+#: model_terms:ir.ui.view,arch_db:hr.view_employee_form
+msgid "Language"
+msgstr "اللغة"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_employee__mobile_invoice
+msgid "Mobile Subscription Invoice"
+msgstr "فاتورة اشتراك الهاتف المحمول"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_employee__sim_card
+msgid "SIM Card Copy"
+msgstr "SIMنسخة من بطاقة"
+
+#. module: hr, hr_payroll_custom
+#: model:ir.model.fields,field_description:hr.field_hr_department__id
+#: model:ir.model.fields,field_description:hr.field_hr_departure_reason__id
+#: model:ir.model.fields,field_description:hr.field_hr_departure_wizard__id
+#: model:ir.model.fields,field_description:hr.field_hr_employee__id
+#: model:ir.model.fields,field_description:hr.field_hr_employee_category__id
+#: model:ir.model.fields,field_description:hr.field_hr_employee_public__id
+#: model:ir.model.fields,field_description:hr.field_hr_job__id
+#: model:ir.model.fields,field_description:hr.field_hr_plan__id
+#: model:ir.model.fields,field_description:hr.field_hr_plan_activity_type__id
+#: model:ir.model.fields,field_description:hr.field_hr_plan_wizard__id
+#: model:ir.model.fields,field_description:hr.field_hr_work_location__id
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_report_excel__id
+#: model:ir.model.fields,field_description:hr_payroll_custom.field_employee_payslip_wizard__id
+msgid "ID"
+msgstr "رقم التعريف"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_contract__calendar_changed
+msgid "Calendar Changed"
+msgstr "تم تغيير التقويم"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_contract__full_time_required_hours
+#: model:ir.model.fields,field_description:hr_payroll.field_resource_calendar__full_time_required_hours
+msgid "Fulltime Hours"
+msgstr "ساعات الدوام الكامل"
+
+#. module: hr_payroll
+#: model_terms:ir.ui.view,arch_db:hr_payroll.hr_payslip_run_form
+msgid "Generated Payslips"
+msgstr "إنشاء كشوف المرتبات"
+
+#. module: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_contract__hourly_wage
+#: model:ir.model.fields.selection,name:hr_payroll.selection__hr_payroll_structure_type__wage_type__hourly
+msgid "Hourly Wage"
+msgstr "الأجر بالساعة"
+
+#. modules: hr_payroll
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_payslip__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_salary_attachment__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. modules: hr, hr_payroll, hr_work_entry
+#: model:ir.model.fields,field_description:hr.field_hr_departure_reason__sequence
+#: model:ir.model.fields,field_description:hr.field_hr_job__sequence
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_payroll_edit_payslip_line__sequence
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_payroll_edit_payslip_worked_days_line__sequence
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_payslip_input__sequence
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_payslip_line__sequence
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_payslip_worked_days__sequence
+#: model:ir.model.fields,field_description:hr_payroll.field_hr_salary_rule__sequence
+#: model:ir.model.fields,field_description:hr_work_entry.field_hr_work_entry_type__sequence
+msgid "Sequence"
+msgstr "تسلسل"

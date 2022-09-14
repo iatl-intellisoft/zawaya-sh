@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <report
+                id="payment_voucher"
+                model="finance.approval"
+                string="Payment Voucher"
+                report_type="qweb-pdf"
+                name="is_accounting_approval_15.report_payment_voucher"
+                file="is_accounting_approval_15.report_payment_voucher"
+        />
+        <template id="report_payment_voucher">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <!--                    <div class="page" style="font-family: 'Times New Roman', 'Times', 'serif';">-->
+                    <div class="page">
+                        <center>
+                            <h2>Payment Voucher</h2>
+                            <br/>
+                        </center>
+                        <t t-foreach="docs" t-as="o">
+                            <table style="width:100%; ">
+                                <tr>
+                                    <td style="text-align: left;">Voucher No:
+                                        <b>
+                                            <span t-esc="o.approval_no"/>
+                                        </b>
+                                    </td>
+                                    <td style="text-align: right;">Date:
+                                        <b>
+                                            <span t-esc="o.fa_date"/>
+                                        </b>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--                            <p class="pull-left">Voucher No:-->
+                            <!--                                <b>-->
+                            <!--                                    <span t-esc="o.approval_no"/>-->
+                            <!--                                </b>-->
+                            <!--                            </p>-->
+                            <!--                            <p class="pull-right">Date:-->
+                            <!--                                <b>-->
+                            <!--                                    <span t-esc="o.fa_date"/>-->
+                            <!--                                </b>-->
+                            <!--                            </p>-->
+                            <br/>
+                            <p>Pay To:
+                                <span t-esc="o.requester"/>.
+                            </p>
+                            <p>Requested Amount:
+                                <span t-esc="'%.2f'% o.request_amount"/>
+                                <span t-esc="o.request_currency.name"/>.
+                            </p>
+                            <p>Amount in Words:
+                                <span t-esc="o.request_amount_words"/>.
+                            </p>
+                            <p>Reason:
+                                <span t-esc="o.reason"/>.
+                            </p>
+                            <br/>
+                            <br/>
+                            <t t-if="o.move_id">
+                                <h4>Accounting Details:</h4>
+                                <table width="100%" border="1">
+                                    <tr>
+                                        <th height="10px">Account Description</th>
+                                        <th>Label</th>
+                                        <th>Currency</th>
+                                        <th>Debit</th>
+                                        <th>Credit</th>
+                                    </tr>
+                                    <t t-foreach="o.move_id.line_ids" t-as="line">
+                                        <tr height="30px">
+                                            <td><span t-esc="line.account_id.code"/>-
+                                                <span t-esc="line.account_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.name"/>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <span t-esc="line.currency_id.name"/>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <span t-esc="'%.2f'% line.debit"/>
+                                            </td>
+                                            <td style="text-align: center;">
+                                                <span t-esc="'%.2f'% line.credit"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td colspan="3">Total</td>
+                                        <th><span t-esc="'%.2f'% o.tot_lines_amount"/></th>
+                                        <th><span t-esc="'%.2f'% o.tot_lines_amount"/></th>
+                                    </tr>
+                                </table>
+                            </t>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <table style="text-align: center;;width:100%">
+                                <tr>
+                                    <th>
+                                        <strong>Financial Manager</strong>
+
+                                    </th>
+                                    <t t-if="o.gm_id">
+                                        <th>
+                                            <strong>General Manager</strong>
+
+
+                                        </th>
+                                    </t>
+                                    <th>
+                                        <strong>General Manager Assistant</strong>
+
+                                    </th>
+                                    <th>
+                                        <strong>Teller</strong>
+
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="o.fm_id.name"/>
+                                        <img t-if="o.fm_id.user_signature"
+                                             t-att-src="image_data_uri(o.fm_id.user_signature)"
+                                             style="max-height:130px;max-width:80px"/>
+                                    </td>
+                                    <t t-if="o.gm_id">
+                                        <td>
+                                            <span t-field="o.gm_id.name"/>
+                                            <img t-if="o.gm_id.user_signature"
+                                                 t-att-src="image_data_uri(o.gm_id.user_signature)"
+                                                 style="max-height:130px;max-width:80px"/>
+                                        </td>
+                                    </t>
+                                    <td>
+                                        <span t-field="o.gm_id.name"/>
+                                        <img t-if="o.gm_id.user_signature"
+                                             t-att-src="image_data_uri(o.gm_id.user_signature)"
+                                             style="max-height:130px;max-width:80px"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.tr_id.name"/>
+                                        <img t-if="o.tr_id.user_signature"
+                                             t-att-src="image_data_uri(o.tr_id.user_signature)"
+                                             style="max-height:130px;max-width:80px"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

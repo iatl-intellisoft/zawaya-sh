@@ -1,0 +1,2400 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_loan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-13 08:25+0000\n"
+"PO-Revision-Date: 2022-09-13 08:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_loan
+#: model:mail.template,report_name:hr_loan.loan_request_template_id
+#: model:mail.template,report_name:hr_loan.salary_advance_template_id
+msgid "${(object.name or '').replace('/','_')}"
+msgstr ""
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "(update)"
+msgstr "(تحديث)"
+
+#. module: hr_loan
+#: model:mail.template,body_html:hr_loan.loan_request_template_id
+msgid ""
+"<div class=\"page\">\n"
+"                    <html>\n"
+"                        <body>\n"
+"                            <font style=\"font-family:'serif';\">\n"
+"                                <div style=\"margin: 0px; padding: 0px;\">\n"
+"\n"
+"                                    <center>\n"
+"                                        <table width=\"800\">\n"
+"                                            <tbody>\n"
+"\n"
+"\n"
+"                                                <tr style=\"border: 1px solid black;\">\n"
+"                                                    <td class=\"text-left\">\n"
+"                                                        <strong class=\"text-left\">Employee Data</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">\n"
+"                                                            <font style=\"font-family:'serif';\">بيانات الموظف\n"
+"                                                            </font>\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Name</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.employee_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">\n"
+"                                                            <font style=\"font-family:'serif';\">الاسم</font>\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Job Title</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.employee_id.job_title\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">\n"
+"                                                            <font style=\"font-family:'serif';\">المسمى الوظيفي\n"
+"                                                            </font>\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Department/Section</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.employee_id.department_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">\n"
+"                                                            <font style=\"font-family:'serif';\">الادارة \\ القسم\n"
+"                                                            </font>\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Date of Join</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.employee_id.contract_id.date_start\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">\n"
+"                                                            <font style=\"font-family:'serif';\">بداية العمل\n"
+"                                                            </font>\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr style=\"border: 1px solid black;\">\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Loan Details</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">\n"
+"                                                            <font style=\"font-family:'serif';\">تفاصيل القرض\n"
+"                                                            </font>\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Loan Amount</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.loan_amount\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">\n"
+"                                                            <font style=\"font-family:'serif';\">قيمة القرض</font>\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Loan Purpose</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.loan_type.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">\n"
+"                                                            <font style=\"font-family:'serif';\">الغرض من القرض\n"
+"                                                            </font>\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">To be deducted in</strong>\n"
+"                                                        <span t-esc=\"object.no_month\"/>\n"
+"                                                        <strong>Month</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">\n"
+"                                                            <font style=\"font-family:'serif';\">تستقطع على</font>\n"
+"                                                        </strong>\n"
+"                                                        <span t-esc=\"object.no_month\"/>\n"
+"                                                        <strong>\n"
+"                                                            <font style=\"font-family:'serif';\">شهر</font>\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Signature</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">التوقيع</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Date</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">التاريخ</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr style=\"border: 1px solid black;\">\n"
+"                                                    <td style=\"width:50%\">\n"
+"                                                        <strong class=\"text-center\">For HR Use</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:50% \" class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">لاستخدام الموارد البشرية\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Monthly Deduction Amount\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.loan_amount\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">قسط الاستقطاع الشهري</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">To be deducted in</strong>\n"
+"                                                        <span t-esc=\"object.no_month\"/>\n"
+"                                                        <strong>Month</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">تستقطع على</strong>\n"
+"                                                        <span t-esc=\"object.no_month\"/>\n"
+"                                                        <strong>شهر</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Deduction period from\n"
+"                                                        </strong>\n"
+"                                                        <span t-esc=\"object.payment_start_date\"/>\n"
+"                                                        <strong>to</strong>\n"
+"                                                        <span t-esc=\"object.payment_end_date\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <!-- <strong> to </strong>  ${object.payment_end_date}  <strong>الى</strong> -->\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"\n"
+"                                                        <strong class=\"text-right\">فترة الخصم من</strong>\n"
+"                                                        <span t-esc=\"object.payment_start_date\"/>\n"
+"                                                        <strong>الى</strong>\n"
+"                                                        <span t-esc=\"object.payment_end_date\"/>\n"
+"\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">HR Officer Signature\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">توقيع ضابط اول شؤون\n"
+"                                                            العاملين\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Date</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">التاريخ</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr style=\"border: 1px solid black;\">\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Approval</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">التصديقات</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">CFO</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">المدير المالي للمجموعة\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Global HR head</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">مدير الموارد البشرية\n"
+"                                                            للمجموعة\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">CEO</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">الرئيس التنفيذي</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"\n"
+"                                            </tbody>\n"
+"                                        </table>\n"
+"                                    </center>\n"
+"\n"
+"                                    <br/>\n"
+"                                    <table width=\"800\">\n"
+"                                        <tr>\n"
+"                                            <td class=\"text-right\">\n"
+"                                                <p class=\"text-right\">\n"
+"                                                    <b>ارشادات عامة</b>\n"
+"                                                </p>\n"
+"                                            </td>\n"
+"                                        </tr>\n"
+"                                    </table>\n"
+"\n"
+"                                    <table width=\"800\">\n"
+"                                        <tbody>\n"
+"\n"
+"                                            <tr>\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    يسلم الطلب لادارة الموارد البشرية للبحث والتدقيق ثم التصديق\n"
+"                                                    من الرئيس التنفيذي\n"
+"                                                </td>\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    <strong class=\"text-right\">1</strong>\n"
+"                                                </td>\n"
+"\n"
+"\n"
+"                                            </tr>\n"
+"\n"
+"                                            <tr>\n"
+"\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    يستحق العامل قرض في حالات الحوجة لدرء خطر يهدد حياة او\n"
+"                                                    ممتلكات العامل او احد افراد اسرته التي يعول\n"
+"                                                </td>\n"
+"\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    <strong class=\"text-right\">2</strong>\n"
+"                                                </td>\n"
+"\n"
+"                                            </tr>\n"
+"\n"
+"                                            <tr>\n"
+"\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    لا تتجاوز قيمة القرض مرتب 5 شهور اساسي ؛ ويستقطع من نفس\n"
+"                                                    الشهر الذي تم فيه الحصول على القرض ( حسب تقدير اللجنة مع\n"
+"                                                    مراعاة الطلب المقدم من الموظف )\n"
+"                                                </td>\n"
+"\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    <strong class=\"text-right\">3</strong>\n"
+"                                                </td>\n"
+"\n"
+"                                            </tr>\n"
+"\n"
+"                                            <tr>\n"
+"\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    منح القرض بعد التصديقعليه من قبل لجنة مختصة تكون من 3 اعضاء\n"
+"                                                    ( ممثل لشؤون الافراد وممثل للادارة المالية وعضو ثالث يتم\n"
+"                                                    اختياره بواسطة العضويين الدائمين بعد الاطلاع على الطلب بما\n"
+"                                                    يسنده رسميا\n"
+"                                                </td>\n"
+"\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    <strong class=\"text-right\">4</strong>\n"
+"                                                </td>\n"
+"\n"
+"                                            </tr>\n"
+"\n"
+"                                            <tr>\n"
+"\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    لا يجوز التصديق المالي للقرض الا بعد توقيع الموظف على عقد\n"
+"                                                    مكتوب يشمل على جميع الشروط الخاصة بذلك ويرفق معه نموذج\n"
+"                                                    القروض بعد استيفاء جميع البيانات ( نموذج رقم (1) )\n"
+"                                                </td>\n"
+"\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    <strong class=\"text-right\">5</strong>\n"
+"                                                </td>\n"
+"\n"
+"                                            </tr>\n"
+"\n"
+"\n"
+"                                        </tbody>\n"
+"                                    </table>\n"
+"\n"
+"\n"
+"                                </div>\n"
+"\n"
+"\n"
+"                            </font>\n"
+"                        </body>\n"
+"                    </html>\n"
+"                </div>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: hr_loan
+#: model:mail.template,body_html:hr_loan.salary_advance_template_id
+msgid ""
+"<div class=\"page\">\n"
+"                    <html>\n"
+"                        <body>\n"
+"                            <font style=\"font-family:'serif';\">\n"
+"                                <div style=\"margin: 0px; padding: 0px;\">\n"
+"\n"
+"                                    <center>\n"
+"                                        <table width=\"800\">\n"
+"                                            <tbody>\n"
+"                                                <tr style=\"border: 1px solid black;\">\n"
+"                                                    <td class=\"text-left\">\n"
+"                                                        <strong class=\"text-left\">Employee Data</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">بيانات الموظف</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Name</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.employee_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">الاسم</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Job Title</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.employee_id.job_title\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">المسمى الوظيفي</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Department/Section</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.employee_id.department_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">الادارة \\ القسم</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Date of Join</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.employee_id.contract_id.date_start\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">بداية العمل</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Salary Advance Amount\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.loan_amount\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">قيمة السلفية</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Signature</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">التوقيع</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Date</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">التاريخ</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr style=\"border: 1px solid black;\">\n"
+"                                                    <td style=\"width:50%\">\n"
+"                                                        <strong class=\"text-center\">For HR Use</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:50% \" class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">لاستخدام الموارد البشرية\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Deduction Amount</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <span t-esc=\"object.loan_amount\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">قسط الاستقطاع الشهري</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Deduction period from\n"
+"                                                        </strong>\n"
+"                                                        <span t-esc=\"object.payment_start_date\"/>\n"
+"                                                        <strong>to</strong>\n"
+"                                                        <span t-esc=\"object.payment_end_date\"/>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        <!-- <strong> to </strong>  ${object.payment_end_date}  <strong>الى</strong> -->\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">فترة الخصم من</strong>\n"
+"                                                        <span t-esc=\"object.payment_start_date\"/>\n"
+"                                                        <strong>الى</strong>\n"
+"                                                        <span t-esc=\"object.payment_end_date\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">HR Officer Signature\n"
+"                                                        </strong>\n"
+"                                                        ...................\n"
+"                                                        <br/>\n"
+"                                                        Date ...................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        ...................\n"
+"                                                        <strong class=\"text-right\">توقيع ضابط اول شؤون\n"
+"                                                            العاملين\n"
+"                                                        </strong>\n"
+"                                                        <br/>\n"
+"                                                        ................... التاريخ\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">AGHR Signature</strong>\n"
+"                                                        ...................\n"
+"                                                        <br/>\n"
+"                                                        Date ...................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        ...................\n"
+"                                                        <strong class=\"text-right\">توقيع نائب مدير شؤون\n"
+"                                                            العاملين\n"
+"                                                        </strong>\n"
+"                                                        <br/>\n"
+"                                                        ................... التاريخ\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr style=\"border: 1px solid black;\">\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Approval</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">التصديقات</strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">CFO</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">المدير المالي للمجموعة\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <strong class=\"text-center\">Global HR head</strong>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-center\">\n"
+"                                                        ...........................\n"
+"                                                    </td>\n"
+"                                                    <td class=\"text-right\">\n"
+"                                                        <strong class=\"text-right\">مدير الموارد البشرية\n"
+"                                                            للمجموعة\n"
+"                                                        </strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                            </tbody>\n"
+"                                        </table>\n"
+"                                    </center>\n"
+"\n"
+"                                    <br/>\n"
+"\n"
+"                                    <table width=\"800\">\n"
+"                                        <tr>\n"
+"                                            <td class=\"text-right\">\n"
+"                                                <p class=\"text-right\">\n"
+"                                                    <b>ارشادات عامة</b>\n"
+"                                                </p>\n"
+"                                            </td>\n"
+"                                        </tr>\n"
+"                                    </table>\n"
+"\n"
+"                                    <table width=\"800\">\n"
+"                                        <tbody>\n"
+"                                            <tr>\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    يسلم الطلب لادارة الموارد البشرية بعد اليوم الخامس عشر من\n"
+"                                                    الشهر ، لاجراء اللازم خلال يوم عمل كامل\n"
+"                                                </td>\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    <strong class=\"text-right\">1</strong>\n"
+"                                                </td>\n"
+"                                            </tr>\n"
+"\n"
+"                                            <tr>\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    لا يستحق العامل طلب سلفة على المرتب ما لم يسوي جميع السلف\n"
+"                                                    السابقة\n"
+"                                                </td>\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    <strong class=\"text-right\">2</strong>\n"
+"                                                </td>\n"
+"                                            </tr>\n"
+"\n"
+"                                            <tr>\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    لا تتجاوز قيمة السلفة 30% من اجمالي الراتب\n"
+"                                                </td>\n"
+"\n"
+"                                                <td class=\"text-right\">\n"
+"                                                    <strong class=\"text-right\">3</strong>\n"
+"                                                </td>\n"
+"                                            </tr>\n"
+"                                        </tbody>\n"
+"                                    </table>\n"
+"                                </div>\n"
+"                            </font>\n"
+"                        </body>\n"
+"                    </html>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: hr_loan
+#: model:mail.template,body_html:hr_loan.loan_contract_template_id
+msgid ""
+"<div class=\"page\">\n"
+"                    <html>\n"
+"                        <body>\n"
+"                            <font style=\"font-family:'serif';\">\n"
+"                                <div style=\"margin: 0px; padding: 3px;\" class=\"text-right\" dir=\"rtl\">\n"
+"                                    <!-- <center> -->\n"
+"                                        <div width=\"800\">\n"
+"                                            <!-- <center style=\"font-weidght: bold;font-size: 25px;\"><u>عقد سلفية</u></center> -->\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">التاريخ : </span><span style=\"font-weidght: bold;\" class=\"text-right\" t-esc=\"object.date\"/>\n"
+"                                            <br/><br/>\n"
+"                                            <span style=\"font-weidght: bold;margin-right:10px\" class=\"text-right\">بموجب هذا العقد تم الاتفاق بين السادة /</span>\n"
+"\n"
+"                                            <strong><span style=\"font-weidght: bold;\" class=\"text-right\" t-esc=\"object.company_id.name\"/> </strong>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">ويسمى لأغراض هذا العقد بالطرف الأول والسيد</span>\n"
+"\n"
+"                                            <strong><span style=\"font-weidght: bold;\" class=\"text-right\" t-esc=\"object.employee_id.name\"/></strong>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">ويسمى لأغراض هذا العقد بالطرف الثاني بطوعهما واختيارهما اتفقا على الاتي :-</span>\n"
+"                                            <br/><br/>\n"
+"                                    \n"
+"                                            <span style=\"font-weidght: bold;margin-right:13px\" class=\"text-right\">1.</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">نوع الخدمة :</span>\n"
+"                                            <br/>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;margin-right:20px\" class=\"text-right\">سلفية طويلة الأجل بمبلغ</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">....(<span style=\"font-weidght: bold;\" class=\"text-right\" t-esc=\"object.loan_amount\"/>)....</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">أي فقط</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">...(<span style=\"font-weidght: bold;\" class=\"text-right\" t-esc=\"object.amount_words\"/>)...</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">لا غير.</span>\n"
+"                                            <br/>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;margin-right:13px\" class=\"text-right\">1.</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">طريقة السداد( الإستقطاع ):</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">................................................................</span>\n"
+"                                            <br/>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;margin-right:13px\" class=\"text-right\">2.</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">الشروط الجزائية :</span>\n"
+"                                            <br/>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;margin-right:20px\" class=\"text-right\">2.1.</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">في حال ترك الوظيفة لابد من سداد كافة المستحقات المتعلقة بالسلفية قبل المغادرة.</span>\n"
+"                                            <br/>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;margin-right:20px\" class=\"text-right\">2.2.</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">.............................................................................</span>\n"
+"                                            <br/>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;margin-right:20px\" class=\"text-right\">2.3.</span>\n"
+"                                            <span style=\"font-weidght: bold;\" class=\"text-right\">.............................................................................</span>\n"
+"                                            <br/><br/><br/><br/>\n"
+"\n"
+"                                            <strong>\n"
+"                                                <span style=\"font-weidght: bold;margin-right:150px\" class=\"text-right\">الطرف الأول:</span>\n"
+"\n"
+"                                                <span style=\"font-weidght: bold;margin-right:300px\" class=\"text-right\">الطرف الثاني:</span>\n"
+"                                            </strong>\n"
+"                                            <br/>\n"
+"                                            <span>\n"
+"                                                <span style=\"font-weidght: bold;margin-right:50px\" class=\"text-right\">الأسم</span>\n"
+"                                                <span style=\"font-weidght: bold;\" class=\"text-right\">................................................................</span>\n"
+"\n"
+"                                                <span style=\"font-weidght: bold;margin-right:100px\" class=\"text-right\">.................................................................</span>\n"
+"                                            </span>\n"
+"                                            <br/>\n"
+"                                            <span>\n"
+"                                                <span style=\"font-weidght: bold;margin-right:50px\" class=\"text-right\">التوقيع</span>\n"
+"                                                <span style=\"font-weidght: bold;\" class=\"text-right\">...............................................................</span>\n"
+"\n"
+"                                                <span style=\"font-weidght: bold;margin-right:100px\" class=\"text-right\">.................................................................</span>\n"
+"                                            </span>\n"
+"                                            <br/>\n"
+"                                            <span>\n"
+"                                                <span style=\"font-weidght: bold;margin-right:50px\" class=\"text-right\">التلفون</span>\n"
+"                                                <span style=\"font-weidght: bold;\" class=\"text-right\">...............................................................</span>\n"
+"\n"
+"                                                <span style=\"font-weidght: bold;margin-right:100px\" class=\"text-right\">.................................................................</span>\n"
+"                                            </span>\n"
+"                                        </div>\n"
+"                                    <!-- </center> -->\n"
+"                                </div>\n"
+"                            </font>\n"
+"                        </body>\n"
+"                    </html>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.report_loan_contract_document
+msgid "<font style=\"font-family:'serif';\"><u>طلب سلفية</u></font>"
+msgstr ""
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.report_loan_document
+msgid "<font style=\"font-family:'serif';\">Loan Request طلب سلفية</font>"
+msgstr ""
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_res_config_settings_form_inherit2
+msgid "<span class=\"o_form_label\">Loan Contract Template</span>"
+msgstr "<span class=\"o_form_label\">نموذج عقد السلفية</span>"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_res_config_settings_form_inherit2
+msgid "<span class=\"o_form_label\">Loan Request Template</span>"
+msgstr "<span class=\"o_form_label\">نموذج طلب سلفية</span>"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_res_config_settings_form_inherit2
+msgid "<span class=\"o_form_label\">Salary Advance Template</span>"
+msgstr "<span class=\"o_form_label\">نموذج سلفة الراتب</span>"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_loan_type_form
+msgid "<span>%</span>"
+msgstr ""
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.report_salary_document
+msgid ""
+"<strong>\n"
+"                                    <font style=\"font-family:'serif';\">Salary Advance طلب مقدم من المرتب</font>\n"
+"                                </strong>"
+msgstr ""
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_needaction
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_needaction
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_needaction
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_needaction
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء المطلوب"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_ids
+msgid "Activities"
+msgstr "الانشطة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_id
+msgid "Activity"
+msgstr "النشاط"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_exception_decoration
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_state
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_type_icon
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__amount
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__amount
+msgid "Amount To Pay"
+msgstr "المبلغ المطلوب دفعه"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__amount_words
+msgid "Amount in Words"
+msgstr "المبلغ بالكلمات"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_payment_loan_form_view
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__approve
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_batch__state__approve
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_postpone__state__approve
+#: model:ir.model.fields.selection,name:hr_loan.selection__loan_payment__state__approve
+msgid "Approved"
+msgstr "موافق علية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_attachment_count
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_attachment_count
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_attachment_count
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_attachment_count
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__balance_amount
+msgid "Balance Amount"
+msgstr "مبلغ الرصيد"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__batch_id
+msgid "Batch"
+msgstr "دفعة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__loan_contract_website_description
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__loan_request_website_description
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__salary_advance_website_description
+msgid "Body Template"
+msgstr "هيئة النموذج"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__cancel
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_batch__state__cancel
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_postpone__state__cancel
+#: model:ir.model.fields.selection,name:hr_loan.selection__loan_payment__state__cancel
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_payment_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_res_config_settings_form_inherit2
+msgid "Choose your Template"
+msgstr "اختر النموذج"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__close
+msgid "Close"
+msgstr "مغلق"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__code
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_res_company
+msgid "Companies"
+msgstr "الشركات "
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__company_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__company_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__company_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__company_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__company_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__company_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Compute"
+msgstr "حساب"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_payment_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__loan_payment__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__create_uid
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__create_uid
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__create_uid
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__create_uid
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__create_uid
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__create_uid
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__create_date
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__create_date
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__create_date
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__create_date
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__create_date
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__create_date
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__contract_id
+msgid "Current Contract"
+msgstr "العقد الحالي"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_loan_batch_line__contract_id
+msgid "Current contract of the employee"
+msgstr "العقد الحالي للموظف"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__date
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__date
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_search
+msgid "Date Request"
+msgstr "تاريخ الطلب"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__department_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__department_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__department_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_batch_form
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Department Approve"
+msgstr "موافقة القسم"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__loan_type__installment_type__depends_on_payroll
+msgid "Depends On Payroll "
+msgstr "يعتمد على المرتبات"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__display_name
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__display_name
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__display_name
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__display_name
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__display_name
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__display_name
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__draft
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_batch__state__draft
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_postpone__state__draft
+#: model:ir.model.fields.selection,name:hr_loan.selection__loan_payment__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_hr_employee
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__employee_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__employee_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__employee_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__employee_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__employee_id
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_search
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__emp_account_id
+msgid "Employee Account"
+msgstr "حساب الموظف"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__emp_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__emp_id
+msgid "Employee ID"
+msgstr "رقم الموظف"
+
+#. module: hr_loan
+#: model:ir.actions.act_window,name:hr_loan.act_employee_loan
+msgid "Employee Loan Details"
+msgstr "تفاصيل سلفية الموظف"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__emp_salary
+msgid "Employee Salary"
+msgstr "مرتب الموظف"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__emp_account_id
+msgid "Employee account"
+msgstr "حساب الموظف"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "Employee in trial period is not allowed To request loans!"
+msgstr "لا يسمح للموظف في الفترة التجريبية بطلب سلفية!"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_loan_batch_line__wage
+msgid "Employee's monthly gross wage."
+msgstr ""
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__loan_type__installment_type__fixed
+msgid "Fixed"
+msgstr "ثابت"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_follower_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_follower_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_follower_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_follower_ids
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_partner_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_partner_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_partner_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_partner_ids
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__activity_type_icon
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط رهيبة على سبيل المثال FA المهام"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__for_batch
+msgid "For Batch"
+msgstr "لمجموعة"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_batch_form
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "GM Approve"
+msgstr "موافقة المدير العام"
+
+#. module: hr_loan
+#: model:res.groups,name:hr_loan.group_hr_general_manager
+msgid "General Manager"
+msgstr "المدير العام"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: hr_loan
+#: model:res.groups,name:hr_loan.group_hr_loan_hr
+msgid "HR"
+msgstr "الموارد البشرية"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_batch_form
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "HR Approve"
+msgstr "الموافقة على الموارد البشرية"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_hr_loan
+msgid "HR Loan Request"
+msgstr "طلب السلفية من الموارد البشرية"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_hr_loan_line
+msgid "HR Loan Request Line"
+msgstr "بند طلب السلفية من الموارد البشرية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_account_bank_statement_line__hr_receipt
+#: model:ir.model.fields,field_description:hr_loan.field_account_move__hr_receipt
+#: model:ir.model.fields,field_description:hr_loan.field_account_payment__hr_receipt
+msgid "HR Receipt"
+msgstr "إيصال الموارد البشرية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__has_message
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__has_message
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__has_message
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__has_message
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_loan_type_form
+msgid "Hr Loan Type"
+msgstr "نوع سلفية الموارد البشرية"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_loan_type_tree
+msgid "Hr Loan Types"
+msgstr "انواع سلفية الموارد البشرية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_exception_icon
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__activity_exception_icon
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثناء."
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__message_needaction
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__message_unread
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__message_needaction
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__message_unread
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_line__message_needaction
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_line__message_unread
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_postpone__message_needaction
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_postpone__message_unread
+#: model:ir.model.fields,help:hr_loan.field_loan_payment__message_needaction
+#: model:ir.model.fields,help:hr_loan.field_loan_payment__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا حددته، سيتم إخطارك بالرسائل الجديدة."
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__message_has_error
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__message_has_sms_error
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__message_has_error
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__message_has_sms_error
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_line__message_has_error
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_line__message_has_sms_error
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_postpone__message_has_error
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_postpone__message_has_sms_error
+#: model:ir.model.fields,help:hr_loan.field_loan_payment__message_has_error
+#: model:ir.model.fields,help:hr_loan.field_loan_payment__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__paid_amount
+msgid "Installment Amount"
+msgstr "مبلغ القسط"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__payment_date
+msgid "Installment Date"
+msgstr "تاريخ القسط"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__loan_line_ids
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__loan_line_ids
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_payment_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Installments"
+msgstr "اقساط"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_employee__is_exception
+msgid "Is Exception"
+msgstr "هو استثناء؟"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_is_follower
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_is_follower
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_is_follower
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_is_follower
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__is_type
+msgid "Is Type"
+msgstr "هو نوع؟"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__job_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__emp_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__job_id
+msgid "Job Position"
+msgstr "المناصب الوظيفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__journal_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__journal_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__journal_id
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan____last_update
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch____last_update
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line____last_update
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone____last_update
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line____last_update
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment____last_update
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__write_uid
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__write_uid
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__write_uid
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__write_uid
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__write_uid
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__write_uid
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__write_date
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__write_date
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__write_date
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__write_date
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__write_date
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__write_date
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__line_ids
+msgid "Line"
+msgstr "بند"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__loan_id
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_salary_rule__use_type__loan
+#: model:ir.module.category,name:hr_loan.loan_management
+msgid "Loan"
+msgstr "سلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__loan_amount
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__amount
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__loan_amount
+msgid "Loan Amount"
+msgstr "مبلغ السلفية"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "Loan Amount should be larger than zero!"
+msgstr "يجب أن يكون مبلغ السلفية أكبر من الصفر!"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__attachment_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__attachment_ids
+msgid "Loan Attachments"
+msgstr "مرفقات السلفيات"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__loan_batch_id
+msgid "Loan Batch"
+msgstr "مجموعه السلفيات"
+
+#. module: hr_loan
+#: model:ir.actions.act_window,name:hr_loan.action_hr_loan_batch
+#: model:ir.ui.menu,name:hr_loan.menu_hr_loan_batch
+#: model_terms:ir.ui.view,arch_db:hr_loan.tree_hr_loan_batch_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_batch_form
+msgid "Loan Batchs"
+msgstr "مجموعة السلفيات"
+
+#. module: hr_loan
+#: model:ir.actions.report,name:hr_loan.action_loan_contract_report
+msgid "Loan Contract Forms"
+msgstr "نماذج عقود السلفيات"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__loan_contract_template_id
+#: model:ir.model.fields,field_description:hr_loan.field_res_company__loan_contract_template_id
+#: model:ir.model.fields,field_description:hr_loan.field_res_config_settings__loan_contract_template_id
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Loan Contract Template"
+msgstr "نموذج عقد السلف"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_employee__loan_count
+msgid "Loan Count"
+msgstr "عدد السلفيات"
+
+#. module: hr_loan
+#: model:res.groups,name:hr_loan.group_hr_loan_depart_mg
+msgid "Loan Department Manager"
+msgstr "مدير إدارة السلفيات"
+
+#. module: hr_loan
+#: model:ir.actions.act_window,name:hr_loan.action_hr_loan_line
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan__line_form
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+msgid "Loan Details"
+msgstr "تفاصيل السلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__loan_line_ids
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Loan Line"
+msgstr "بند السلفية"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_batch_form
+msgid "Loan Lines"
+msgstr "بنود السلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__name
+msgid "Loan Name"
+msgstr "اسم السلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_account_bank_statement_line__loan_payment_id
+#: model:ir.model.fields,field_description:hr_loan.field_account_move__loan_payment_id
+#: model:ir.model.fields,field_description:hr_loan.field_account_payment__loan_payment_id
+msgid "Loan Payment"
+msgstr "دفع سلفية"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.tree_payment_loan_view
+msgid "Loan Payments"
+msgstr "دفعات السلفيات"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_loan_payment
+msgid "Loan Payments as voucher"
+msgstr "دفعات السلفيات كسند"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.tree_hr_postpone_loan_view
+msgid "Loan Postpones"
+msgstr "تأجيل السلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__loan_id
+msgid "Loan Ref."
+msgstr "مرجع السلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_employee__loan_request_ids
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Loan Request"
+msgstr "طلب السلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__loan_request_template_id
+#: model:ir.model.fields,field_description:hr_loan.field_res_company__loan_request_template_id
+#: model:ir.model.fields,field_description:hr_loan.field_res_config_settings__loan_request_template_id
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Loan Request Template"
+msgstr "نموذج طلب السلفية"
+
+#. module: hr_loan
+#: model:ir.actions.act_window,name:hr_loan.action_hr_loan_request
+#: model:ir.ui.menu,name:hr_loan.menu_hr_loan_request
+#: model_terms:ir.ui.view,arch_db:hr_loan.tree_hr_loan_line_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.tree_hr_loan_view
+msgid "Loan Requests"
+msgstr "طلبات السلفية"
+
+#. module: hr_loan
+#: model:ir.actions.report,name:hr_loan.action_loan_requests_report
+msgid "Loan Requests Forms"
+msgstr "تقارير طلبات السلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__loan_type
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__loan_type
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__loan_type
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_search
+msgid "Loan Type"
+msgstr "نوع السلفية"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_loan_type_form
+msgid "Loan Type Name"
+msgstr "اسم نوع السلفية"
+
+#. module: hr_loan
+#: model:ir.ui.menu,name:hr_loan.loan_settings
+msgid "Loan Types"
+msgstr "انواع السلفية"
+
+#. module: hr_loan
+#: model:res.groups,name:hr_loan.group_hr_loan_users
+msgid "Loan User"
+msgstr "مستخدم السلفية"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "Loan amount exceeds the maximum loan amount %s !"
+msgstr "مبلغ السفلية يتجاوز الحد الأقصى لمبلغ السفلية %s!"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_employee__loan_ids
+msgid "Loan lines"
+msgstr "بنود السلفية"
+
+#. module: hr_loan
+#: model:ir.actions.act_window,name:hr_loan.action_hr_loan_postpone
+msgid "Loan postpone"
+msgstr "تأجيل السلفية"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+msgid "Loan type"
+msgstr "نوع السلفية"
+
+#. module: hr_loan
+#: model:ir.actions.act_window,name:hr_loan.action_hr_loan_type
+msgid "Loan types"
+msgstr "انواع السلفية"
+
+#. module: hr_loan
+#: model:ir.actions.act_window,name:hr_loan.act_hr_employee_loan_request
+#: model:ir.actions.act_window,name:hr_loan.act_hr_loan_request
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__loan_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_payslip__loan_ids
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__loan_id
+#: model:ir.ui.menu,name:hr_loan.menu_hr_loans
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_payslip_form_inherit_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_employee_form_loan_inherit
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_res_config_settings_form_inherit2
+msgid "Loans"
+msgstr "السلفيات"
+
+#. module: hr_loan
+#: model:ir.ui.menu,name:hr_loan.menu_hr_loan_batches
+msgid "Loans Details"
+msgstr "تفاصيل السلفيات"
+
+#. module: hr_loan
+#: model:ir.ui.menu,name:hr_loan.menu_hr_loan_payments1
+msgid "Loans Payments"
+msgstr "دفعيات السلفيات"
+
+#. module: hr_loan
+#: model:ir.ui.menu,name:hr_loan.menu_hr_loan_postpone
+msgid "Loans Postpones"
+msgstr "تأجيل السلفيات"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_main_attachment_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__parent_id
+msgid "Manager"
+msgstr "المدير"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__max_loan
+msgid "Max Loan"
+msgstr "اقصى سلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__max_loan_amount
+msgid "Max Loan Amount"
+msgstr "الحد الاقصى للسلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_has_error
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_has_error
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_has_error
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_has_error
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_ids
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__number_incerment
+msgid "Month Number Incerment"
+msgstr "رقم الشهر"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__move_id
+msgid "Move"
+msgstr "حركة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__my_activity_date_deadline
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__name
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__need_reason
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__need_reason
+msgid "Need Reason"
+msgstr "بحاجة إلى سبب"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/loan_postpone.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__due_date
+msgid "New Date of Payment"
+msgstr "تاريخ جديد للدفع"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_calendar_event_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "حدث تقويم النشاط التالي"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_date_deadline
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_summary
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_type_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__no_month
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__no_month
+msgid "No Of Month"
+msgstr "رقم الشهر"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+msgid "Not Paid"
+msgstr "غير مدفوع"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__no_unpaid
+msgid "Not allow old unpaid installment "
+msgstr "لا يسمح بوجود قسط قديم غير مدفوع ."
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__note
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan__line_form
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_needaction_counter
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_has_error_counter
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__message_needaction_counter
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__message_needaction_counter
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_line__message_needaction_counter
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_postpone__message_needaction_counter
+#: model:ir.model.fields,help:hr_loan.field_loan_payment__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اجراء"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__message_has_error_counter
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__message_has_error_counter
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_line__message_has_error_counter
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_postpone__message_has_error_counter
+#: model:ir.model.fields,help:hr_loan.field_loan_payment__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل مع خطأ في التسليم"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__message_unread_counter
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__message_unread_counter
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_line__message_unread_counter
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_postpone__message_unread_counter
+#: model:ir.model.fields,help:hr_loan.field_loan_payment__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__loan_old_amount
+msgid "Old Loan Not Paid"
+msgstr "سلفية قديمة غير مدفوعة"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Other Information"
+msgstr "معلومات أخرى"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__paid
+#: model:ir.model.fields.selection,name:hr_loan.selection__loan_payment__state__paid
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__paid_date
+msgid "Paid Date"
+msgstr "تاريخ الدفع"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+msgid "Paid Loans"
+msgstr "السلفيات المدفوعة"
+
+#. module: hr_loan
+#: model:ir.actions.server,name:hr_loan.ir_cron_pause_loan_ir_actions_server
+#: model:ir.cron,cron_name:hr_loan.ir_cron_pause_loan
+#: model:ir.cron,name:hr_loan.ir_cron_pause_loan
+msgid "Pause Loan"
+msgstr "إيقاف السلفية مؤقتا"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_hr_payslip
+msgid "Pay Slip"
+msgstr "قسيمة المرتب"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__payslip_id
+msgid "Payslip Ref."
+msgstr "مرجع دفعية المرتب"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__percentage
+msgid "Percentage"
+msgstr "النسبة"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/loan_payment.py:0
+#, python-format
+msgid "Please add Lines Installments."
+msgstr "يرجى إضافة بنود لاقساط."
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/loan_postpone.py:0
+#, python-format
+msgid "Please add Lines To Postpone."
+msgstr "يرجى إضافة بنود للتأجيل."
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#: code:addons/hr_loan/models/loan_postpone.py:0
+#, python-format
+msgid "Please add Loan Attachment."
+msgstr "يرجى إضافة مرفق السلفية."
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#: code:addons/hr_loan/models/loan_payment.py:0
+#, python-format
+msgid "Please add Partner for this Employee."
+msgstr "الرجاء اضافة شريك في هذا الموظف"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "Please compute Loan firstly."
+msgstr "يرجى حساب السلفية أولا."
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_postpone__is_type__postpone
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan__line_form
+msgid "Postpone"
+msgstr "مؤجل"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__amount
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+msgid "Postpone Amount"
+msgstr "المبلغ المؤجل"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+msgid "Postpone Date"
+msgstr "تاريخ التأجيل"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__reason
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__move_id
+msgid "Receipt"
+msgstr "إستلام"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Recompute Balance"
+msgstr "اعادة حساب الرصيد"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__name
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__name
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Refuse"
+msgstr "رفض"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__refuse
+msgid "Refused"
+msgstr "مرفوض"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__request_date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__residual_amount
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__residual_amount
+#: model_terms:ir.ui.view,arch_db:hr_loan.tree_hr_loan_view
+msgid "Residual Amount"
+msgstr "المبلغ المتبقي"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__activity_user_id
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_has_sms_error
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__salary_advance
+msgid "Salary Advance"
+msgstr "سلفة على الراتب"
+
+#. module: hr_loan
+#: model:ir.actions.report,name:hr_loan.action_salary_advance_report
+msgid "Salary Advance Forms"
+msgstr "تقارير السلفة على اراتب"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Salary Advance Report Template"
+msgstr "نموذج تقرير سلفة الراتب"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__salary_advance_template_id
+#: model:ir.model.fields,field_description:hr_loan.field_res_company__salary_advance_template_id
+#: model:ir.model.fields,field_description:hr_loan.field_res_config_settings__salary_advance_template_id
+msgid "Salary Advance Template"
+msgstr "نموذج سلفة الراتب"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "قاعدة مرتبات"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_salary_rule__struct_id
+msgid "Salary Structure"
+msgstr "هيكل المرتب"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__rule_id
+msgid "Salary rule"
+msgstr "قاعدة المرتب"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_batch_form
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Set To Draft"
+msgstr "وضع كمسودة"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid ""
+"Sorry! you can't cancel this record; There is a payslip /s for this record!"
+msgstr "لا تستطيع ان تلغي هذا السجل ، يوجد دفعية مرتب مرتبطة بهذا السجل"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__payment_start_date
+msgid "Start Date of Payment"
+msgstr "تاريخ البداية للدفع"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__state
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__state
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__state
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__activity_state
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة على أساس الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد تم تمريره بالفعل \n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط لها: الأنشطة المستقبلية."
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_postpone__is_type__stop
+msgid "Stop"
+msgstr "توقف"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__stop_months
+msgid "Stop Months"
+msgstr "أشهر التوقف"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__stop
+msgid "Stoped"
+msgstr "موقوف"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__confirm
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_batch__state__submit
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_postpone__state__submit
+#: model_terms:ir.ui.view,arch_db:hr_loan.hr_postpone_loan_form_view
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_batch_form
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "Submit"
+msgstr "تاكيد"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.report_loan_contract_document
+msgid "THIS FORM FOR LONG TERM LOAN ONLY."
+msgstr "هذا النموذج لسلفية طويل الأجل فقط."
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_res_config_settings_form_inherit2
+msgid "Template"
+msgstr "نموذج"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "The Loan amount cannot exceed twice the salary."
+msgstr "لا يمكن أن يتجاوز مبلغ السلفية ضعف الراتب."
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "The code of loan should be unique in company"
+msgstr "يجب أن يكون رمز السلفية فريدا في الشركة"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_loan_type__max_loan_amount
+msgid ""
+"The max loan amount requested must not be grate that formula in this rule "
+"Ex: Employee 5 Basic"
+msgstr ""
+"يجب ألا يكون الحد الأقصى لمبلغ القرض المطلوب أكبر من الصيغة في هذه القاعدة "
+"على سبيل المثال: الموظف 5 الاساس"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "The number of monthes must be more than zero!"
+msgstr "عدد الاشهر يجب ان يكون اكبر من 0"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "There Is A voucher In State %s You Shoud Cancel It Or Delet It First!"
+msgstr "هناك سند(دفعية) في الحالة %s يمكنك إلغاء ذلك أو السماح لها أولا!"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid ""
+"There is an a receipt in state %s, You Should cancel it Or delete it first!"
+msgstr ""
+"هناك إيصال في حالة %s ، يجب عليك إلغاؤه أو حذفه أولا!"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "This type of loan does not allow loans overlapping."
+msgstr "هذا النوع من السلفيات لا يسمح بتداخل السلفية."
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__total_amount
+msgid "Total Amount"
+msgstr "المبلغ الكلي"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "Total Installments can't be Bigger than Loan Amount!"
+msgstr "لا يمكن أن يكون إجمالي الأقساط أكبر من مبلغ السلفية!"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__total_loan
+msgid "Total Loan"
+msgstr "اجمالي السلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_payslip__total_amount_paid
+msgid "Total Loan Amount"
+msgstr "اجمالي مبلغ السلفية"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__total_paid_amount
+msgid "Total Paid Amount"
+msgstr "اجمالي المبلغ المدفوع"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__treasury_account_id
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__treasury_account_id
+msgid "Treasury Account"
+msgstr "حساب الخزينة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_type__installment_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__activity_exception_decoration
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستناء المسجل"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_line_search
+msgid "Un Paid Loans"
+msgstr "السلفيات غير المدفوعة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_unread
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_unread
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_unread
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_unread
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__message_unread_counter
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__message_unread_counter
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__message_unread_counter
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__message_unread_counter
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_salary_rule__use_type
+msgid "Use Type"
+msgstr "نوع الاستخدام"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_loan_batch_line__wage
+msgid "Wage"
+msgstr "الاجور"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__wait_dept_approve
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_batch__state__wait_dept_approve
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_postpone__state__wait_dept_approve
+msgid "Waiting Department Manager Approval"
+msgstr "في انتظار موافقة مدير القسم"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__wait_gm_approve
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_batch__state__wait_gm_approve
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_postpone__state__wait_gm_approve
+msgid "Waiting GM Approval"
+msgstr "في انتظار موافقة المدير العام"
+
+#. module: hr_loan
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan__state__wait_hr_approve
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_batch__state__wait_hr_approve
+#: model:ir.model.fields.selection,name:hr_loan.selection__hr_loan_postpone__state__wait_hr_approve
+msgid "Waiting HR Approval"
+msgstr "في انتظار موافقة الموارد البشرية"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#: code:addons/hr_loan/models/loan_payment.py:0
+#, python-format
+msgid ""
+"Warning\n"
+"You must compute Loan Request before Approved."
+msgstr ""
+"Warning\n"
+"يجب عليك حساب طلب السلفية قبل الموافقة عليه"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#: code:addons/hr_loan/models/loan_payment.py:0
+#, python-format
+msgid ""
+"Warning\n"
+"You must enter employee account & Treasury account and journal to approve."
+msgstr ""
+"Warning\n"
+"يجب عليك إدخال حساب الموظف وحساب الخزينة ودفتر اليومية للموافقة."
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__website_message_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_batch__website_message_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_line__website_message_ids
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan_postpone__website_message_ids
+#: model:ir.model.fields,field_description:hr_loan.field_loan_payment__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: hr_loan
+#: model:ir.model.fields,help:hr_loan.field_hr_loan__website_message_ids
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_batch__website_message_ids
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_line__website_message_ids
+#: model:ir.model.fields,help:hr_loan.field_hr_loan_postpone__website_message_ids
+#: model:ir.model.fields,help:hr_loan.field_loan_payment__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#: code:addons/hr_loan/models/loan_payment.py:0
+#, python-format
+msgid "You can not delete record not in draft state."
+msgstr "لا يمكنك حذف السجل ليس في حالة المسودة."
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "You can not postpone paid loan"
+msgstr "لا يمكنك تأجيل السلفية المدفوعة"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_search
+msgid "department"
+msgstr "القسم"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_search
+msgid "employee"
+msgstr "الموظف"
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_loan__payment_end_date
+msgid "end date of payment"
+msgstr "تاريخ انتهاء الدفع"
+
+#. module: hr_loan
+#: model:mail.template,name:hr_loan.loan_contract_template_id
+msgid "hr loan : Loan Contract Template"
+msgstr "السلفية : نموذج عقد سلفية "
+
+#. module: hr_loan
+#: model:mail.template,name:hr_loan.loan_request_template_id
+msgid "hr loan : Loan Request Template"
+msgstr "السلفية : نموذج طلب السلفية "
+
+#. module: hr_loan
+#: model:mail.template,name:hr_loan.salary_advance_template_id
+msgid "hr loan : Salary Advance Template"
+msgstr "السلفية : نموذج سلفية الراتب"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_hr_loan_batch
+msgid "hr.loan.batch"
+msgstr ""
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_hr_loan_postpone
+msgid "hr.loan.postpone"
+msgstr ""
+
+#. module: hr_loan
+#: model:ir.model.fields,field_description:hr_loan.field_hr_employee__loan_amount
+msgid "loan Amount"
+msgstr "مبلغ السلفية"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.loan_request_view_pivot
+#: model_terms:ir.ui.view,arch_db:hr_loan.loan_view_pivot
+msgid "loan Analysis Report"
+msgstr "تقرير تحليل السلفية"
+
+#. module: hr_loan
+#: model:ir.actions.act_window,name:hr_loan.action_hr_loan_payments1
+msgid "loan payment"
+msgstr "دفع السلفية"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_search
+msgid "loan type"
+msgstr "نوع السلفية"
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_loan_batch_line
+msgid "loan.batch.line"
+msgstr ""
+
+#. module: hr_loan
+#: model:ir.model,name:hr_loan.model_loan_type
+msgid "loan.type"
+msgstr ""
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_form
+msgid "postpone"
+msgstr "تاجيل"
+
+#. module: hr_loan
+#: model_terms:ir.ui.view,arch_db:hr_loan.view_hr_loan_search
+msgid "status"
+msgstr "الحالة"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "you can't cancel loan request after installement payment started"
+msgstr "لا يمكنك إلغاء طلب السلفية بعد بدء الدفعة"
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid "you can't refuse loan request after installement payment started"
+msgstr "لا يمكنك رفض طلب القرض بعد بدء الدفعة "
+
+#. module: hr_loan
+#: code:addons/hr_loan/models/hr_loan.py:0
+#, python-format
+msgid ""
+"you can't return loan request to draft state after installement payment "
+"started"
+msgstr "لايمكن ارجاع حالة طلب السلفية الى مسودة بعد بدء الدفعة"

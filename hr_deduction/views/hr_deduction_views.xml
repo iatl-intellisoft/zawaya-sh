@@ -1,0 +1,139 @@
+<odoo>
+
+    <record id="view_hr_deduction_form" model="ir.ui.view">
+        <field name="name">hr.deduction.form</field>
+        <field name="model">hr.deduction</field>
+        <field name="arch" type="xml">
+            <form string="Deduction" version="7.0">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" states="draft" class="oe_highlight"/>
+                    <button name="action_approve" type="object" string="Approve" states="confirm" class="oe_highlight"/>
+                    <button name="action_refuse" type="object" string="Refuse" states="confirm" class="oe_highlight"/>
+                    <button name="action_set_to_draft" type="object" string="Set To Draft"
+                            states="confirm,refuse,cancel"/>
+                    <button name="action_cancel" type="object" string="Cancel" states="approve"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" class="oe_inline" attrs="{'readonly':True}"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            <field name="employee_id" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            <field name="department_id"/>
+                            <field name="job_id"/>
+                            <field name="parent_id"/>
+                        </group>
+                        <group>
+
+                            <label for="date" string="Period"/>
+                                    <div clas="o_row" colspan="2">
+                                        <field name="start_date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_end_date': 'end_date'}"/> TO
+                                        <field name="end_date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_start_date': 'start_date'}"/>
+                                    </div>
+
+                            <field name="approve_date" readonly="1"/>
+                            <field name="type_id" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                            <field name="deducted_by" widget="radio" attrs="{'invisible':True}"/>
+                            <field name="amount"
+                                attrs="{'required': [('deducted_by', '!=', 'hours')],'invisible': [('deducted_by', '=', 'hours')], 'readonly':[('state', '!=', 'draft')]}"/>
+
+                            <field name="hours_ded"
+                                attrs="{'required': [('deducted_by', '=', 'hours')],'invisible': [('deducted_by', '!=', 'hours')],'readonly':[('state', '!=', 'draft')]}"/>
+                            
+
+                            <field name="de_amount"
+                                attrs="{'invisible':[('deducted_by', '=', 'amount')] ,'readonly':True}"/>
+                            <field name="company_id" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Reason">
+                            <group>
+                                <field name="description" colspan="4" nolabel="1"
+                                    attrs="{'readonly':[('state', '!=', 'draft')]}" required="1"/>
+                            </group>
+                        </page>
+                        <page string="Payslips" invisible="1">
+                            <group>
+                                <field name="payslip_id" readonly="1" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_deduction_tree" model="ir.ui.view">
+        <field name="name">hr.deduction.tree</field>
+        <field name="model">hr.deduction</field>
+        <field name="arch" type="xml">
+            <tree string="Deduction ">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="type_id"/>
+                <field name="deducted_by"/>
+                <field name="hours_ded"/>
+                <field name="de_amount"/>
+                <field name="state"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_deduction_pivot" model="ir.ui.view">
+        <field name="name">hr.deduction.pivot</field>
+        <field name="model">hr.deduction</field>
+        <field name="arch" type="xml">
+            <pivot string="Deduction">
+                <field name="approve_date" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_hr_deduction_search" model="ir.ui.view">
+        <field name="name">hr.deduction.search</field>
+        <field name="model">hr.deduction</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="Employee" name="employee_id" domain="[]" context="{'group_by':'employee_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_hr_deduction">
+        <field name="name">Deduction Request</field>
+        <field name="res_model">hr.deduction</field>
+        <field name="view_mode">tree,form,pivot</field>
+        <field name="view_id" ref="view_hr_deduction_tree"/>
+    </record>
+
+    <menuitem
+            id="menu_hr_deduction"
+            name="Deduction"
+            parent="hr_contract_kambal.menu_hr_employee_process"
+            sequence="4"
+            groups="hr.group_hr_manager"/>
+
+    <menuitem
+            id="menu_hr_deduction_request"
+            name="Deduction"
+            parent="menu_hr_deduction"
+            action="action_hr_deduction"
+            sequence="1"
+            groups="hr.group_hr_manager"/>
+            
+</odoo>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RTL have problem with ODOO v11  so we gonna use additional styles + IF-->
+<odoo>
+    <data>
+        <record id="overtime_template_id" model="mail.template">
+            <field name="name">overtime : Overtime Template</field>
+            <field name="model_id" ref="hr_overtime.model_hr_overtime_batch"/>
+            <field name="body_html" type="html">
+                <t t-call="web.html_container">
+                    <t t-set="data_report_margin_top" t-value="5"/>
+                    <t t-set="data_report_dpi" t-value="140"/>
+                    <t t-call="web.basic_layout">
+                        <div class="page">
+                            <font style="font-family:'serif';">
+                                <div style="margin: 0px; padding: 0px;">
+                                    <br></br>
+                                    <br></br>
+                                    <h1>${object.sequence}</h1>
+                                    <br></br>
+                                    <center>
+                                        <table width='800'>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-left">
+                                                        <strong>Description</strong>
+                                                    </td>
+                                                    <td>
+                                                        <strong>${object.name}</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <strong>From</strong>
+                                                        <strong>${object.start_date}</strong>
+                                                    </td>
+                                                    <td>
+                                                        <strong>To</strong>
+                                                        <strong>${object.end_date}</strong>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <br></br>
+                                        <br></br>
+                                        <div style="display:table;  width: 100%; text-align:center;">
+                                            <div style="display:table-header-group;">
+                                                <div style="display:table-row; font-weight: bold">
+                                                    <div style="display:table-cell;border: 1px solid black;">Employee
+                                                    </div>
+                                                    <div style="display:table-cell;border: 1px solid black;">Weekend
+                                                        hours
+                                                    </div>
+                                                    <div style="display:table-cell;border: 1px solid black;">Holidays
+                                                        hours
+                                                    </div>
+                                                    <div style="display:table-cell;border: 1px solid black;">Total
+                                                        hours
+                                                    </div>
+                                                    <div style="display:table-cell;border: 1px solid black;">Total
+                                                        amount
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="display:table-row-group;">
+                                                % for line in object.employee_overtime_ids:
+                                                <div style="display:table-row;">
+                                                    <div style="display:table-cell;border: 1px solid black;">
+                                                        ${line.employee_id.name}
+                                                    </div>
+                                                    <div style="display:table-cell;border: 1px solid black;">
+                                                        ${line.total_weekend}
+                                                    </div>
+                                                    <div style="display:table-cell;border: 1px solid black;">
+                                                        ${line.total_public_holiday}
+                                                    </div>
+                                                    <div style="display:table-cell;border: 1px solid black;">
+                                                        ${line.total_hours}
+                                                    </div>
+                                                    <div style="display:table-cell;border: 1px solid black;">
+                                                        ${line.total_amount}
+                                                    </div>
+                                                </div>
+                                                % endfor
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </font>
+                        </div>
+                    </t>
+                </t>
+
+            </field>
+            <field name="report_template" ref="hr_overtime.action_overtime_report"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}</field>
+            <field name="user_signature" eval="False"/>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

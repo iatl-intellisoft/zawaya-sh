@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_inherited_account_account_form_ii" model="ir.ui.view">
+        <field name="name">view.inherited.account.account.form.ii</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='deprecated']" position="after">
+                <field name="us_appear"/>
+            </xpath>
+        </field>
+    </record>
+    <!-- journal entries form view-->
+    <record id="view_inherited_account_move_form_ii" model="ir.ui.view">
+        <field name="name">view.inherited.account.move.form.ii</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page[@id='aml_tab']/field[@name='line_ids']/tree/field[@name='credit']" position="after">
+                <field name="us_debit" sum="Total US Debit"/>
+                <field name="us_credit" sum="Total US Credit"/>
+                <field name="us_balance" sum="US Balance"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- journal items tree view-->
+    <record id="view_inherited_account_move_line_tree_ii" model="ir.ui.view">
+        <field name="name">view.inherited.account.move.line.tree.ii</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="credit" position="after">
+                <field name="us_debit" sum="Total US Debit"/>
+                <field name="us_credit" sum="Total US Credit"/>
+                <field name="us_balance" sum="US Balance"/>
+            </field>
+        </field>
+    </record>
+    <record id="view_inherited_account_move_line_tree_grouped" model="ir.ui.view">
+        <field name="name">view.inherited.account.move.line.tree.ii</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree_grouped"/>
+        <field name="arch" type="xml">
+            <field name="credit" position="after">
+                <field name="us_debit" sum="Total US Debit" optional="hide"/>
+                <field name="us_credit" sum="Total US Credit" optional="hide"/>
+                <field name="us_balance" sum="US Balance" optional="hide"/>
+            </field>
+        </field>
+    </record>
+</odoo>

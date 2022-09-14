@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="voucher_report_template">
+            <t t-call="web.html_container">
+                <t t-if="docs and result" t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <link rel="stylesheet" href="/hr_payroll_custom/static/src/table.css"/>
+                        <div class="page">
+
+                            <div t-if="o.bank_id">
+                                <p class="text-center" style="font-size:16px; font-family:Arial">بِسْمِ اللَّهِ
+                                    الرَّحْمَٰنِ الرَّحِيمِ
+                                </p>
+                                <p class="text-right" style="font-size:16px; font-family:Arial;">
+                                    <u>التاريخ:
+                                        <span t-field="o.date"/>
+                                    </u>
+                                    <br/>
+                                    <!-- <span t-field="o.bank_id.name">الساده:</span -->
+                                </p>
+                                <p class="text-right" style="font-size:16px; font-family:Arial;">
+                                    <span t-field="o.bank_id.name"/>
+                                    <span>/الساده</span>
+                                </p>
+                                <p class="text-center" style="font-size:16px; font-family:Arial">،،،المحترمين</p>
+                                <p class="text-center" style="font-size:16px; font-family:Arial">السلام عليكم و رحمة
+                                    اللَّهِ و بركاته
+                                </p>
+                                <p class="text-center" style="font-size:16px; font-family:Arial">
+                                    <u>الموضوع: مرتبات لموظفين شركة <t
+                                            t-esc="o.company_id.name"/></u>
+                                </p>
+                                <br/>
+                                <br/>
+                                <p class="text-right"
+                                   style="margin-right:20px;margin-left:20px;font-size:16px; font-family:Arial;">
+                                    بالاشارة للموضوع اعلاه الرجاء التكرم بخصم مبلغ
+                                    <span t-esc="total"/>
+                                    (فقط
+                                    <span t-esc="total_text"/>
+                                    لا غير) عبارة عن مرتبات شهر<t t-esc="month"/>&#032;<t t-esc="date.year"/>
+                                    لموظفين شركة <t
+                                            t-esc="o.company_id.name"/> حسب الكشف المرفق و خصم العمولة من حسابنا
+                                    طرفكم بالرقم
+                                    <t t-if=" o.payment_id">
+                                        <span t-field="o.payment_id.journal_id.bank_account_id.acc_number"/>
+                                    </t>
+                                </p>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <p class="text-center" style="font-size:16px; font-family:Arial">،،،شاكرين لكم حسن
+                                    تعاملكم معنا
+                                </p>
+                                <br/>
+                                <br/>
+                                <br/>
+                            </div>
+                           
+                            <!-- New Page -->
+                            <div style="display: block;" t-if="not o.bank_id">
+                                <p class="text-center" style="font-size:16px; font-family:Arial">
+                                    <strong>عن شهر <t t-esc="month"/>&#032; <t
+                                            t-esc="date.year"/><t
+                                            t-esc="o.company_id.name"/>كشف مرتبات شركة
+                                    </strong>
+                                </p>
+                                <br/>
+                                <br/>
+                                <table>
+                                    <thead style="display: table-row-group">
+                                        <tr>
+                                            <td class="text-center" style="width: 30%" scope="col">المرتب</td>
+                                            <!-- <td class="text-center" style="width: 20%" scope="col">رقم الحساب</td> -->
+                                            <td class="text-center" style="width: 50%" scope="col">الإسم</td>
+                                            <td class="text-center" style="width: 50%" scope="col">الرقم</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-set="index" t-value="1"/>
+                                        <t t-foreach="result" t-as="pay">
+
+                                            <tr>
+                                                <td>
+                                                    <span t-esc="pay['amount']"/>
+                                                </td>
+                                                <!-- <td class="text-center"><span t-esc="pay['acc_number']"/></td> -->
+                                                <td class="text-right">
+                                                    <span t-esc="pay['employee']"/>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="index"/>
+                                                </td>
+                                            </tr>
+                                            <t t-set="index" t-value="index+1"/>
+                                        </t>
+                                        <tr>
+                                            <td>
+                                                <span t-esc="total"/>
+
+                                            </td>
+                                            <td colspan="3">
+                                                الإجمالي
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br/>
+                                <br/>
+                                <p class="text-center" style="font-size:16px; font-family:Arial">
+                                    <strong> فقط   <t t-esc="total_text"/>&#032; لا غير
+                                    </strong>
+                                </p>
+
+                            </div>
+                            <div style="display: block;break-before: always;page-break-before: always;"
+                                 t-if="o.bank_id">
+                                <br/>
+                                <br/>
+                                <table>
+                                    <thead style="display: table-row-group">
+                                        <tr>
+                                            <td class="text-center" style="width: 30%" scope="col">المرتب</td>
+                                            <td class="text-center" style="width: 20%" scope="col">رقم الحساب</td>
+                                            <td class="text-center" style="width: 50%" scope="col">الإسم</td>
+                                            <td class="text-center" style="width: 50%" scope="col">الرقم</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-set="index" t-value="1"/>
+                                        <t t-foreach="result" t-as="pay">
+
+                                            <tr>
+                                                <td>
+                                                    <span t-esc="pay['amount']"/>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="pay['acc_number']"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-esc="pay['employee']"/>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span t-esc="index"/>
+                                                </td>
+                                            </tr>
+                                            <t t-set="index" t-value="index+1"/>
+                                        </t>
+                                        <tr>
+                                            <td>
+                                                <span t-esc="total"/>
+
+                                            </td>
+                                            <td colspan="3">
+                                                الإجمالي
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br/>
+                                <br/>
+                                <p class="text-center" style="font-size:16px; font-family:Arial">
+                                    <strong> فقط <t t-esc="total_text"/>&#032; لا غير
+                                    </strong>
+                                </p>
+                                <br/>
+                                <br/>
+                               <t>
+                                <div class="row" style="font-size:16px;">
+                                    <div id="total" class="col-7 text-center" style="font-weight: bold;">
+                                        <strong>توقيع معتمد</strong>
+                                        <br/>
+                                        <span t-field="o.company_id.first_employee_id"/>
+                                        <br/>
+                                    </div>
+                                    <div id="total" class="col-7 text-center" style="font-weight: bold;">
+                                        <strong>توقيع معتمد</strong>
+                                         <br/>
+                                        <span t-field="o.company_id.second_employee_id"/>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                </div>
+                                 <div class="row" style="font-size:16px;">
+                                    <div id="total" class="col-7 text-center" style="font-weight: bold;">
+                                        <strong> ---------------------</strong>
+                                        <br/>
+                                    </div>
+                                    <div id="total" class="col-7 text-center" style="font-weight: bold;">
+                                        <strong>------------------------ </strong>
+                                         <br/>
+                                    </div>
+                                 </div>
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</data>
+        </odoo>

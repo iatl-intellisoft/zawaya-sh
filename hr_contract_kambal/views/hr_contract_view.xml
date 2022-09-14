@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_contract_form_inherit" model="ir.ui.view">
+            <field name="name">hr.contract.form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//header//field[@name='state']" position='replace'>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,wait_hr_approve,wait_gm_approve,open,close,cancel" options="{'clickable': '1'}"/>
+                </xpath>
+
+                <xpath expr="//header/field[@name='state']" position="before">
+                    <button string="Compute" name="compute_rules" type="object" attrs="{'invisible': [('state', 'in', ['close','cancel'])]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='date_end']" position="after">
+                    <field name="trial_date_end"/>
+                </xpath>
+
+                <xpath expr="//h1" position="after">
+                    <h3>
+                        <field name="sequence" readonly="1"/>
+                    </h3>
+                </xpath>
+                <xpath expr="//page[@name='information']" position="after">
+                    <page string="Salary Details" name="salary_details">
+                        <field name="contract_line_ids">
+                            <tree editable="bottom">
+                                <field name="salary_rule_id"/>
+                                <field name="total"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Medical Insurance" attrs="{'invisible':[('has_insurance','!=',True)]}">
+                        <field name="medical_insurance_ids">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="type_of_relatives"/>
+                                <field name="birth_date"/>
+                                <field name="gender"/>
+                                <field name="insurance_amount" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string='Contract Template' groups="base.group_no_one">
+                        <field name='employee_contract_website_description'/>
+                    </page>
+                </xpath>
+
+                <xpath expr="//group[@name='yearly_advantages']" position="inside">
+                    <field name="no_social"/>
+                </xpath>
+
+                <xpath expr="//field[@name='structure_type_id']" position="after">
+                    <field name="struct_id"/>
+                </xpath>
+
+                <xpath expr="//group[@name='salary_info']" position="after">
+                    <group>
+                        <group>
+                            <field name="bouns"/>
+                            <field name="bouns_2" invisible="1"/>
+                            <field name="wage_per_hour" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="has_insurance"/>
+                            <field name="insurance_categ_id" attrs="{'invisible':[('has_insurance','!=',True)],'required':[('has_insurance','=',True)]}"/>
+                            <field name="medical_amount" attrs="{'invisible':[('has_insurance','!=',True)],'required':[('has_insurance','=',True)]}"/>
+                        </group>
+                    </group>
+                </xpath>
+                
+
+            </field>
+        </record>
+
+        <record id="hr_contract_view_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.contract.form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="sequence" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--    Process MENU    -->
+        <menuitem
+            id="menu_hr_employee_process"
+            name="Employee Process"
+            parent="hr.menu_hr_root"
+            sequence="9"
+            groups="hr.group_hr_manager,hr.group_hr_user,base.group_user"/>
+
+
+
+        <record model="ir.ui.view" id="insurance_category_form_view">
+            <field name="name">medical.insurance.category.form.view</field>
+            <field name="model">medical.insurance.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="amount"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="insurance_category_tree_view">
+            <field name="name">medical.insurance.category.tree.view</field>
+            <field name="model">medical.insurance.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="insurance_category_action">
+            <field name="name">Medical Insurance categories</field>
+            <field name="res_model">medical.insurance.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new category
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_insurance_categ"
+            name="Insurance Categories"
+            parent="hr.menu_human_resources_configuration"
+            action="insurance_category_action"
+            />
+        
+
+    </data>
+</odoo>

@@ -1,0 +1,699 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ii_simple_check_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-10 12:11+0000\n"
+"PO-Revision-Date: 2022-09-10 12:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.vendor_payment_check
+msgid "<strong>Check the Name and Check Number.</strong>"
+msgstr "<strong> تحقق من الاسم ورقم الشيك. </ strong>"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_bank_template1
+msgid "<strong>طلب تصديق مالي</strong>"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__account_holder
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_view_search
+msgid "Account Holder"
+msgstr "صاحب الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__Account_Holder_Name
+msgid "Account Holder Name"
+msgstr "إسم صاحب الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__acc_holderx
+msgid "Account Holder X-axis"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__acc_holdery
+msgid "Account Holder Y-axis"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__Account_No
+msgid "Account No"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__account_number
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__account_number
+msgid "Account Number"
+msgstr "رقم الحساب"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,help:ii_simple_check_management.field_res_partner__property_account_check_id
+#: model:ir.model.fields,help:ii_simple_check_management.field_res_users__property_account_check_id
+msgid "Account used for Check Under Collection"
+msgstr "الحساب يستخدم للشيكات تحت التحصيل"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__amount
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__amount
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__amount
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__original_amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__Amount_in_word
+msgid "Amount In Word"
+msgstr "المبلغ كتابة"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__check_amount_in_words
+msgid "Amount In Words"
+msgstr "المبلغ كتابة"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__amount_lang
+msgid "Amount Language"
+msgstr "المبلغ لغة"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__amountx
+msgid "Amount X-axis"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__amounty
+msgid "Amount Y-axis"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__amount_textx
+msgid "Amount in Text X-axis"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__amount_texty
+msgid "Amount in Text Y-axis"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__payment_check_reports__amount_lang__ar
+msgid "Arabic"
+msgstr "العربية"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_res_bank
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__bank_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__bank_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__bank_id
+msgid "Bank"
+msgstr "البنك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__beneficiary_id
+msgid "Beneficiary"
+msgstr "المستفيد"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.vendor_payment_check
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.wizard_check_replacement_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__cancel
+msgid "Canceled"
+msgstr "ملغي"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__cash_replacement_ids
+msgid "Cash Replacement"
+msgstr "استبدال نقدي"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.wizard_check_replacement_view_form
+msgid "Cash Replacements:"
+msgstr "استبدال نقدي:"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__name
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__Check
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_partner__check_ids
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_users__check_ids
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.vendor_payment_check
+msgid "Check"
+msgstr "الشيك"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_view_search
+msgid "Check Amount"
+msgstr "مبلغ الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__clearance_date
+msgid "Check Clearance Date"
+msgstr "تاريخ تحصيل الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__check_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment_register__clearance_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__date
+msgid "Check Date"
+msgstr "تاريخ الشيك"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_companytemplate
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_customerformview
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_form
+msgid "Check Follow up"
+msgstr "الشيكات"
+
+#. module: ii_simple_check_management
+#: model:account.payment.method,name:ii_simple_check_management.account_payment_method_check_in
+#: model:account.payment.method,name:ii_simple_check_management.account_payment_method_check_out
+msgid "Check Followup"
+msgstr "شيك"
+
+#. module: ii_simple_check_management
+#: model:ir.actions.act_window,name:ii_simple_check_management.check_followups_customer
+#: model:ir.actions.act_window,name:ii_simple_check_management.check_followups_vendor
+msgid "Check Followups"
+msgstr "شيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_journal__Check_no
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__Check_no
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__check_no
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__check_no
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_view_search
+msgid "Check No"
+msgstr "رقم الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment_register__check_no
+msgid "Check No."
+msgstr "رقم الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__number
+msgid "Check Number"
+msgstr "رقم الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__rdc
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__rdv
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_customerformview
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_form
+msgid "Check Rejected"
+msgstr "تم رفض الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__check_replacement_ids
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.wizard_check_replacement_view_form
+msgid "Check Replacement"
+msgstr "استبدال نقدي"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.wizard_check_replacement_view_form
+msgid "Check Replacements:"
+msgstr "استبدال نقدي"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__check_type
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment_register__check_type
+msgid "Check Type"
+msgstr "نوع الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__return_check_move_id
+msgid "Check clearance move"
+msgstr "قيد التحصيل"
+
+#. module: ii_simple_check_management
+#: model:ir.actions.report,name:ii_simple_check_management.check_print
+msgid "Check print"
+msgstr "طباعة الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__check_ids
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.customer_inherit
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.payment_inherit
+msgid "Check(s)"
+msgstr "الشيكات"
+
+#. module: ii_simple_check_management
+#: code:addons/ii_simple_check_management/models/check.py:0
+#: code:addons/ii_simple_check_management/models/check1.py:0
+#, python-format
+msgid "Check_Wizard"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_partner__property_account_check_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_users__property_account_check_id
+msgid "Checks Account"
+msgstr "حساب الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_check_followups_check_followups
+msgid "Checks Followup"
+msgstr "شيكات"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__payment_method_code
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment_register__payment_method_code
+msgid "Code"
+msgstr "كود"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.wizard_check_replacement_view_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__create_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__create_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__create_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__create_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__create_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__create_uid
+msgid "Created by"
+msgstr "إنشى بواسطة"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__create_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__create_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__create_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__create_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__create_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__create_date
+msgid "Created on"
+msgstr "إنشئ في"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__currency_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__currency_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__currency_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__type__inbound
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_companytemplate
+msgid "Customer"
+msgstr "العميل"
+
+#. module: ii_simple_check_management
+#: model:ir.ui.menu,name:ii_simple_check_management.check_followups_customer_action
+msgid "Customer Checks "
+msgstr "شيكات العملاء"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__Date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__date
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_view_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__datex
+msgid "Date X-axis"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__datey
+msgid "Date Y-axis"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_customerformview
+msgid "Deposit In Bank"
+msgstr "إيداع في البنك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__name
+msgid "Description"
+msgstr "الوصف"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__account_payment__check_type__direct
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__account_payment_register__check_type__direct
+msgid "Direct"
+msgstr "توريد مباشر"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__display_name
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__display_name
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__display_name
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__display_name
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__display_name
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__display_name
+msgid "Display Name"
+msgstr "إسم العرض"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__donec
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__donev
+msgid "Done"
+msgstr "تم"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__payment_check_reports__amount_lang__en
+msgid "English"
+msgstr "الإنجليزية"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__id
+msgid "ID"
+msgstr "رقم التعريف"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__in_bank
+msgid "In Bank"
+msgstr "ورد في البنك"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_account_journal
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__journal_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__journal_id
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement____last_update
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups____last_update
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs____last_update
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement____last_update
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard____last_update
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports____last_update
+msgid "Last Modified on"
+msgstr "اخر تعديل في"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__Last_state
+msgid "Last State"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__write_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__write_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__write_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__write_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__write_uid
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__write_uid
+msgid "Last Updated by"
+msgstr "اخر تعديل بواسطة"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__write_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__write_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__write_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__write_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__write_date
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__write_date
+msgid "Last Updated on"
+msgstr "اخر تعديل في"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__log_ids
+msgid "Log"
+msgstr "سجل"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__memo
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__memo
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_customerformview
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_form
+msgid "Memo"
+msgstr "مذكرة"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__returning_memo
+msgid "Memo (Return to AC payment)"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__money_text_height
+msgid "Money Area Height"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__money_text_width
+msgid "Money Area Width"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__move_id
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_customerformview
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_form
+msgid "Move"
+msgstr "القيد"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_view_search
+msgid "Name"
+msgstr "إسم"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_res_bank__account_holder_width
+msgid "Name Width"
+msgstr "عرض الاسم"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement_wizard__original_check
+msgid "Original Check"
+msgstr "الشيك الأصلي"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_journal__out_standing
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__out_standing
+msgid "Out Standing"
+msgstr "معلقة"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__account_payment__check_type__indirect
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__account_payment_register__check_type__indirect
+msgid "PDC"
+msgstr "شيك آجل"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__partner_id
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__partner_bank_account
+msgid "Partner Account"
+msgstr "حساب الشريك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__Bank_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__partner_bank
+msgid "Partner Bank"
+msgstr "بنك الشريك"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.vendor_payment_check
+msgid "Pay To"
+msgstr "دفع إلى"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__payment_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_checklogs__payment_id
+msgid "Payment"
+msgstr "دفعيات"
+
+#. module: ii_simple_check_management
+#: code:addons/ii_simple_check_management/models/payment.py:0
+#, python-format
+msgid "Payment Cannot be cancelled, check should be either unused or rejected"
+msgstr "لايمكن إالغاء الدفعية يجب رفض الشيك اولا"
+
+#. module: ii_simple_check_management
+#: code:addons/ii_simple_check_management/models/payment.py:0
+#, python-format
+msgid "Payment Cannot be rest, check should be either unused or rejected"
+msgstr "الدفع لا يمكن إعادة تعيينه ، يجب أن يكون الشيك إما غير مستخدم أو مرفوض"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment__payment_method_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_payment_register__payment_method_id
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_account_payment_method
+msgid "Payment Methods"
+msgstr "طرق السداد"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: ii_simple_check_management
+#: model:ir.actions.act_window,name:ii_simple_check_management.action_check_payment_print
+#: model:ir.actions.report,name:ii_simple_check_management.action_check_report
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.vendor_payment_check
+msgid "Print Check"
+msgstr "طباعة الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__communication
+msgid "Ref"
+msgstr "مرجع"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_account_payment_register
+msgid "Register Payment"
+msgstr "تسجيل دفعة"
+
+#. module: ii_simple_check_management
+#: model:ir.actions.act_window,name:ii_simple_check_management.action_check_replacement_wizard
+msgid "Replace Check"
+msgstr "استبدال الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_payment_check_reports__reprint_flag
+msgid "Reprint Flag"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_journal__rdc
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_journal__rdv
+msgid "Return Checks"
+msgstr "إرجاع الشيك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__return_acc
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__return_acv
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_customerformview
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_form
+msgid "Return to Partner"
+msgstr "إرجاع إلي الشريك"
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_customerformview
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_form
+msgid "Set TO Done"
+msgstr "تم"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__state
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_view_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,help:ii_simple_check_management.field_account_payment__payment_method_code
+msgid ""
+"Technical field used to adapt the interface to the payment type selected."
+msgstr ""
+"حقل تقني يُستخدم لتهيئة الواجهة لنوع السداد المُختار."
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__type__transfer
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_followups_check_followups__type
+msgid "Type"
+msgstr "نوع"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_account_journal__under_collection
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__under_collection
+msgid "Under Collection"
+msgstr "تحت التحصيل"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__type__outbound
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_companytemplate
+msgid "Vendor"
+msgstr "المورد"
+
+#. module: ii_simple_check_management
+#: model:ir.ui.menu,name:ii_simple_check_management.check_followups_vendor_action
+msgid "Vendor Checks "
+msgstr "شيكات الموردين"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields.selection,name:ii_simple_check_management.selection__check_followups_check_followups__state__withdrawal
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.check_followups_form
+msgid "Withdraw From Bank"
+msgstr "سحب من البنك"
+
+#. module: ii_simple_check_management
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_cash_replacement__wizard_id
+#: model:ir.model.fields,field_description:ii_simple_check_management.field_check_replacement__wizard_id
+msgid "Wizard"
+msgstr "عرض"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_cash_replacement
+msgid "cash.replacement"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_check_replacement
+msgid "check.replacement"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_check_replacement_wizard
+msgid "check.replacement.wizard"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_check_followups_checklogs
+msgid "check_followups.checklogs"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.vendor_payment_check
+#: model_terms:ir.ui.view,arch_db:ii_simple_check_management.wizard_check_replacement_view_form
+msgid "or"
+msgstr "أو"
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_payment_check_reports
+msgid "payment.check_reports"
+msgstr ""
+
+#. module: ii_simple_check_management
+#: model:ir.model,name:ii_simple_check_management.model_report_check_followups_check_bank_template1
+msgid "report.check_followups.check_bank_template1"
+msgstr ""

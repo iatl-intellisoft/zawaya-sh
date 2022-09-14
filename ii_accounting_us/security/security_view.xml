@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- group of ceo -->
+        <record id="group_ceo" model="res.groups">
+            <field name="name">CEO</field>
+        </record>
+    </data>
+</odoo>

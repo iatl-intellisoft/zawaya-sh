@@ -1,0 +1,56 @@
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="employee_payslip_wizard_view">
+		    <field name="name">employee.payslip.wizard</field>
+		    <field name="model">employee.payslip.wizard</field>
+		    <field name="arch" type="xml">
+		      	<form>
+		      		<group>
+		      			<group><field name="date" /></group>
+		      			<group></group>
+		      		</group>
+		      		<group>
+		      			<field name="department_ids" widget="many2many_tags"/>
+		      		</group>
+		      		
+		      		<footer>
+		      			<button name='print' string='Print' type='object' class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+		      		</footer>
+		      	</form>
+		    </field>
+		</record>
+        
+		<record model="ir.actions.act_window" id="employee_payslip_wizard_action">
+		    <field name="name">Employees Report</field>
+		    <field name="res_model">employee.payslip.wizard</field>
+		    <field name="view_id" ref="hr_payroll_custom.employee_payslip_wizard_view"/>
+		    <field name="view_mode">form</field>
+		    <field name="target">new</field>
+		</record>
+
+        <menuitem id="employee_payslip_wizard_menu"
+            name="Departments Payslip Report"
+            parent="hr_payroll.menu_hr_payroll_report"
+            action="employee_payslip_wizard_action"
+            sequence="55"/>
+
+
+        <record model="ir.ui.view" id="view_employee_payslip_report_excel">
+			<field name="name">employee.payslip.report.excel</field>
+			<field name="model">employee.payslip.report.excel</field>
+			<field name="arch" type="xml">
+				<form string="File to Downloads">
+					<field name="name" invisible="1"/>
+					<field name="file_download" filename="name"/>
+					<footer>
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>

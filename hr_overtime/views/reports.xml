@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <report
+                string="Overtime Reports"
+                id="action_overtime_report"
+                model="hr.overtime.batch"
+                report_type="qweb-pdf"
+                name="hr_overtime.report_overtime_document"
+                file="hr_overtime.report_overtime_document"
+        />
+    </data>
+</odoo>

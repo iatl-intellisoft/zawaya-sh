@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <!--> Inherit Account Move Form View <-->
+    <record id="view_move_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+                <field name="move_type" invisible="1"/>
+                <field name="custom_rate" attrs="{'readonly': [('state', '!=', 'draft')],'invisible':[('move_type','=','entry')]}"/>
+            </field>
+
+            <xpath expr="//field[@name='invoice_line_ids']" position="attributes">
+                <attribute name="context">{'default_move_type': context.get('default_move_type'), 'journal_id': journal_id, 'default_partner_id': commercial_partner_id, 'default_currency_id': currency_id or company_currency_id,'default_custom_rate' : custom_rate}</attribute>
+            </xpath>
+
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="before">
+                <field name="custom_rate" invisible="1" force_save="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

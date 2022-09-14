@@ -1,0 +1,130 @@
+<odoo>
+    <template id="report_medical_insurance_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="object">
+                <t t-call="web.external_layout">
+                    <div style="margin: 0px; padding: 3px;" class="text-center" dir="rtl">
+                        <center>
+                            <table width='800'>
+                                <tbody>
+                                    <tr>
+                                        <td >
+                                            <span style="font-weidght: bold;">التاريخ : </span>
+                                            <span style="font-weidght: bold;" t-esc="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                                        </td>
+                                        <td>
+                                            <span style="font-weidght: bold;">الرقم المتسلسل : </span>
+                                            <span style="font-weidght: bold;" t-esc="object.sequence"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="font-weidght: bold;">إسم مقدم الطلب : </span>
+                                            <span style="font-weidght: bold;" t-esc="object.employee_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span style="font-weidght: bold;">القسم : </span>
+                                            <span style="font-weidght: bold;" t-esc="object.department_id.name"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <br/><br/>
+                            <table width='800'>
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">إسم مقدم الطلب </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;" t-esc="object.employee_id.name"/>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">الرقم الوظيفي </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;" t-esc="object.employee_id.emp_id"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">تاريخ التعيين </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;" t-esc="object.date_start"/>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">القسم </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;" t-esc="object.department_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">المسمى الوظيفي </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;" t-esc="object.job_id.name"/>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">الحالة الإجتماعية </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;" t-esc="object.employee_id.marital"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <br/><br/>
+                            <t t-set="count" t-value="1"/>
+                            <table width='800'>
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">الرقم </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">الاسم </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">صلة القرابة </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">تاريخ الميلاد </span>
+                                        </td>
+                                        <td style="border: 1px solid black" class="text-center">
+                                            <span style="font-weidght: bold;">الجنس </span>
+                                        </td>
+                                    </tr>
+                                    <t t-foreach="object.medical_insurance_ids" t-as="line">
+                                        <tr>
+                                            <td style="border: 1px solid black" class="text-center">
+                                                <span style="font-weidght: bold;" t-esc="count"/>
+                                            </td>
+                                            <td style="border: 1px solid black" class="text-center">
+                                                <span style="font-weidght: bold;" t-esc="line.name"/>
+                                            </td>
+                                            <td style="border: 1px solid black" class="text-center">
+                                                <span style="font-weidght: bold;" t-esc="line.type_of_relatives"/>
+                                            </td>
+                                            <td style="border: 1px solid black" class="text-center">
+                                                <span style="font-weidght: bold;" t-esc="line.birth_date"/>
+                                            </td>
+                                            <td style="border: 1px solid black" class="text-center">
+                                                <span style="font-weidght: bold;" t-esc="line.gender"/>
+                                            </td>
+                                        </tr>
+                                        <t t-set="count" t-value="count+1"/>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </center>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

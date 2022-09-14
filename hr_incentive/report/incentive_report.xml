@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+            string="Staff Payments Form"
+            id="action_report_incentive"
+            model="hr.incentive"
+            report_type="qweb-pdf"
+            name="hr_incentive.report_incentive"
+            file="hr_incentive.report_incentive"
+    />
+
+</odoo>
+

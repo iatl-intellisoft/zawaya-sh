@@ -1,0 +1,502 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ii_accounting_us
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-14 10:14+0000\n"
+"PO-Revision-Date: 2022-09-14 13:12+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.1.1\n"
+
+#. module: ii_accounting_us
+#: model:ir.ui.menu,name:ii_accounting_us.menu_action_account_report_general_ledger_usd
+msgid " General Ledger USD"
+msgstr " دفتر الأستاذ العام بالدولار"
+
+#. module: ii_accounting_us
+#: model:ir.ui.menu,name:ii_accounting_us.menu_action_account_report_partner_ledger_usd
+msgid " Partner Ledger USD"
+msgstr " دفتر الأستاذ العام للشركاء بالدولار"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_total_assets0_usd
+msgid "ASSETS"
+msgstr "الاصول"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#: model:ir.model,name:ii_accounting_us.model_account_account
+#, python-format
+msgid "Account"
+msgstr "الحساب"
+
+#. module: ii_accounting_us
+#: model:ir.model,name:ii_accounting_us.model_account_report
+msgid "Account Report"
+msgstr "تقرير الحساب"
+
+#. module: ii_accounting_us
+#: model:ir.model,name:ii_accounting_us.model_account_financial_html_report_line
+msgid "Account Report (HTML Line)"
+msgstr "تقرير الحساب (HTML Line)"
+
+#. module: ii_accounting_us
+#: model:ir.model,name:ii_accounting_us.model_account_financial_html_report
+msgid "Account Report (HTML)"
+msgstr "تقرير الحساب (HTML)"
+
+#. module: ii_accounting_us
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_move_line__us_amount_currency
+msgid "Amount in Currency"
+msgstr "المبلغ بالعملة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_bank_view0_usd
+msgid "Bank and Cash Accounts"
+msgstr "الحسابات المصرفية والنقدية"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "Base Amount"
+msgstr "المبلغ الاساسي"
+
+#. module: ii_accounting_us
+#: model:res.groups,name:ii_accounting_us.group_ceo
+msgid "CEO"
+msgstr "المدير التنفيذي"
+
+#. module: ii_accounting_us
+#: model:ir.model,name:ii_accounting_us.model_account_coa_report
+#: model:ir.model,name:ii_accounting_us.model_account_coa_usd_report
+msgid "Chart of Account Report"
+msgstr "تقرير مخطط الحسابات"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/ii_currency.py:0
+#, python-format
+msgid "Check your rate!"
+msgstr "تحقق من السعر الخاص بك!"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "Communication"
+msgstr "إتصال"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_cost_sales_usd
+msgid "Cost of Revenue USD"
+msgstr "تكلفة الإيرادات بالدولار الأمريكي"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_financial_html_report__currency_usd
+#, python-format
+msgid "Currency"
+msgstr "العملة"
+
+#. module: ii_accounting_us
+#: model:ir.model,name:ii_accounting_us.model_res_currency_rate
+msgid "Currency Rate"
+msgstr "سعر العملة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_current_assets0_usd
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_current_assets_view0_usd
+msgid "Current Assets"
+msgstr "الاصول المتداولة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_current_liabilities0_usd
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_current_liabilities1_usd
+msgid "Current Liabilities"
+msgstr "الخصومات المتداولة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_current_year_earnings_line_2_usd
+msgid "Current Year Allocated Earnings"
+msgstr "أرباح السنة الحالية المخصصة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_current_year_earnings_line_1_usd
+msgid "Current Year Earnings"
+msgstr "أرباح العام الحالي"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_current_year_earnings0_usd
+msgid "Current Year Unallocated Earnings"
+msgstr "أرباح العام الحالي غير المخصصة"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_depreciation_usd
+msgid "Depreciation USD"
+msgstr "الإهلاك بالدولار الأمريكي"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_equity0_usd
+msgid "EQUITY"
+msgstr "حقوق الملكية"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_expense_usd
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_less_expenses_usd
+msgid "Expenses USD"
+msgstr "المصروفات بالدولار الأمريكي"
+
+#. module: ii_accounting_us
+#: model:ir.model.fields,field_description:ii_accounting_us.field_res_currency_rate__flat_rate
+msgid "Flat Rate"
+msgstr "سعر موحد"
+
+#. module: ii_accounting_us
+#: model:ir.model,name:ii_accounting_us.model_account_general_ledger_usd
+msgid "General Ledger Report"
+msgstr "تقرير دفتر الأستاذ العام"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#: model:ir.actions.client,name:ii_accounting_us.action_account_report_general_ledger_usd
+#, python-format
+msgid "General Ledger USD"
+msgstr "تقرير دفتر الأستاذ العام بالدولار"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_gross_profit_usd
+msgid "Gross Profit USD"
+msgstr "إجمالي الربح بالدولار الأمريكي"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_totalincome_usd
+msgid "Income USD"
+msgstr "الدخل بالدولار الأمريكي"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_coa_usd.py:0
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr "الرصيد الافتتاحي"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "JRNL"
+msgstr ""
+
+#. module: ii_accounting_us
+#: model:ir.model,name:ii_accounting_us.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: ii_accounting_us
+#: model:ir.model,name:ii_accounting_us.model_account_move_line
+msgid "Journal Item"
+msgstr "عناصر اليومية"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_liabilities_view0_usd
+msgid "LIABILITIES"
+msgstr "الخصومات"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_liabilities_and_equity_view0_usd
+msgid "LIABILITIES + EQUITY"
+msgstr "الخصومات + حقوق الملكية"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Load more... (%s remaining)"
+msgstr "تحميل المزيد... ( المتبقية%s)"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Matching Number"
+msgstr "الرقم المطابق"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "Name"
+msgstr "الاسم"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_net_assets0_usd
+msgid "Net Assets"
+msgstr "صافي الأصول"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_net_profit_usd
+msgid "Net Profit USD"
+msgstr "صافي الربح بالدولار"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_off_sheet_usd
+msgid "OFF BALANCE SHEET ACCOUNTS"
+msgstr "الحسابات خارج الميزانية العمومية"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_income_usd
+msgid "Operating Income USD"
+msgstr "الدخل التشغيلي بالدولار"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_other_income_usd
+msgid "Other Income USD"
+msgstr "الإيرادات الأخرى بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Partner Ledger"
+msgstr "دفتر الأستاذ العام"
+
+#. module: ii_accounting_us
+#: model:ir.actions.client,name:ii_accounting_us.action_account_report_partner_ledger_usd
+msgid "Partner Ledger USD"
+msgstr "دفتر الأستاذ العام بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Payable"
+msgstr "المستحقه الدفع"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_current_liabilities_payable_usd
+msgid "Payables"
+msgstr ""
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_fixed_assets_view0_usd
+msgid "Plus Fixed Assets"
+msgstr "بالإضافة إلى الأصول الثابتة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_non_current_assets_view0_usd
+msgid "Plus Non-current Assets"
+msgstr "بالإضافة إلى الأصول غير المتداولة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_non_current_liabilities0_usd
+msgid "Plus Non-current Liabilities"
+msgstr "بالإضافة إلى الخصوم غير المتداولة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_prepayements0_usd
+msgid "Prepayments"
+msgstr "المدفوعات المسبقة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_previous_year_earnings0_usd
+msgid "Previous Years Unallocated Earnings"
+msgstr "الأرباح غير المخصصة للسنوات السابقة"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report,name:ii_accounting_us.account_financial_report_profitandloss_usd
+#: model:ir.actions.client,name:ii_accounting_us.account_financial_html_report_action_4
+#: model:ir.ui.menu,name:ii_accounting_us.account_financial_html_report_menu_4
+msgid "Profit and Loss USD"
+msgstr "الربح والخسارة بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Receivable"
+msgstr "المستحق"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_report_receivable0_usd
+msgid "Receivables"
+msgstr "المستحقات"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Ref"
+msgstr "مرجع"
+
+#. module: ii_accounting_us
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_account__us_appear
+msgid "Remove from US P&L Report"
+msgstr "إزالة من تقرير الربح والخسارة بالدولار"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_retained_earnings0_usd
+msgid "Retained Earnings"
+msgstr "الارباح"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "Tax Amount"
+msgstr "مبلغ الضريبة"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "Tax Declaration"
+msgstr "الإقرار الضريبي"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_coa_usd.py:0
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Total"
+msgstr "الاجمالي"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "Total %s"
+msgstr "المجموع %s"
+
+#. module: ii_accounting_us
+#: model_terms:ir.ui.view,arch_db:ii_accounting_us.view_inherited_account_move_form_ii
+#: model_terms:ir.ui.view,arch_db:ii_accounting_us.view_inherited_account_move_line_tree_grouped
+#: model_terms:ir.ui.view,arch_db:ii_accounting_us.view_inherited_account_move_line_tree_ii
+msgid "Total US Credit"
+msgstr "إجمالي الدائن بالدولار"
+
+#. module: ii_accounting_us
+#: model_terms:ir.ui.view,arch_db:ii_accounting_us.view_inherited_account_move_form_ii
+#: model_terms:ir.ui.view,arch_db:ii_accounting_us.view_inherited_account_move_line_tree_grouped
+#: model_terms:ir.ui.view,arch_db:ii_accounting_us.view_inherited_account_move_line_tree_ii
+msgid "Total US Debit"
+msgstr "إجمالي المدين بالدولار"
+
+#. module: ii_accounting_us
+#: model:ir.actions.client,name:ii_accounting_us.action_account_report_coa_usd
+#: model:ir.ui.menu,name:ii_accounting_us.menu_action_account_report_coa_usd
+msgid "Trial Balance USD"
+msgstr "ميزان المراجعة بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "US Amount Currency"
+msgstr "عملة المبلغ بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_move_line__us_balance
+#: model_terms:ir.ui.view,arch_db:ii_accounting_us.view_inherited_account_move_form_ii
+#: model_terms:ir.ui.view,arch_db:ii_accounting_us.view_inherited_account_move_line_tree_grouped
+#: model_terms:ir.ui.view,arch_db:ii_accounting_us.view_inherited_account_move_line_tree_ii
+#, python-format
+msgid "US Balance"
+msgstr "الرصيد بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_move_line__us_credit
+#, python-format
+msgid "US Credit"
+msgstr "الدائن بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_move_line__us_debit
+#, python-format
+msgid "US Debit"
+msgstr "المدين بالدولار"
+
+#. module: ii_accounting_us
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_bank_statement_line__us_rate
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_financial_html_report_line__us_rate
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_move__us_rate
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_move_line__us_rate
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_payment__us_rate
+msgid "US Rate"
+msgstr "معدل بالدولار"
+
+#. module: ii_accounting_us
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_move_line__us_amount_residual
+msgid "US Residual Amount"
+msgstr "المبلغ المتبقي بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "USD Balance"
+msgstr "الرصيد بالدولار"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report,name:ii_accounting_us.account_financial_report_balancesheet0_usd
+#: model:ir.actions.client,name:ii_accounting_us.account_financial_html_report_action_5
+#: model:ir.ui.menu,name:ii_accounting_us.account_financial_html_report_menu_5
+msgid "USD Balance Sheet"
+msgstr "الميزانية العمومية بالدولار الأمريكي"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_coa_usd.py:0
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "USD Credit"
+msgstr "الدائن بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_coa_usd.py:0
+#: code:addons/ii_accounting_us/models/account_report_genaral_ledger_usd.py:0
+#, python-format
+msgid "USD Debit"
+msgstr "المدين بالدولار"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_coa_usd.py:0
+#, python-format
+msgid "USD Trial Balance"
+msgstr "ميزان المراجعة بالدولار الأمريكي"
+
+#. module: ii_accounting_us
+#: model:account.financial.html.report.line,name:ii_accounting_us.account_financial_unaffected_earnings0_usd
+msgid "Unallocated Earnings"
+msgstr "أرباح غير مخصصة"
+
+#. module: ii_accounting_us
+#: code:addons/ii_accounting_us/models/account_report_partner_ledger.py:0
+#, python-format
+msgid "Unknown Partner"
+msgstr "شريك غير معروف"
+
+#. module: ii_accounting_us
+#: model:ir.model.fields,field_description:ii_accounting_us.field_account_financial_html_report_line__us_formulas
+msgid "Us Formulas"
+msgstr "صيغ الدولار الأمريكي"
+
+#. module: ii_accounting_us
+#: model:ir.model,name:ii_accounting_us.model_account_partner_ledger_usd
+msgid "partner Ledger Report"
+msgstr "تقرير دفتر الاستاذ العام للشركاء"

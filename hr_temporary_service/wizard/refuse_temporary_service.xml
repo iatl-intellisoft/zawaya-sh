@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_hr_service_refuse" model="ir.ui.view">
+            <field name="name">hr.service.refuse.form</field>
+            <field name="model">hr.service.refuse</field>
+            <field name="arch" type="xml">
+                <form string="Refuse Reason">
+
+                    <group colspan="4">
+                        <separator string="Reason" colspan="4"/>
+                        <newline/>
+                        <field name="reason" nolabel="1"/>
+                    </group>
+                    <footer>
+                        <button icon="fa-cogs" string="Ok" name="action_service_refuse" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <record id="action_hr_service_refuse" model="ir.actions.act_window">
+            <field name="name">Refuse Reason</field>
+            <field name="res_model">hr.service.refuse</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_hr_service_refuse"/>
+            <field name="target">new</field>
+        </record>
+
+</odoo>

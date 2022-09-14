@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- >Inherit Account Payment Form View <-->
+    <record id="account_invoice_form_inherit" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+                <field name="custom_rate" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

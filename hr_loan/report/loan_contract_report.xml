@@ -1,0 +1,30 @@
+<odoo>
+    <template id="report_loan_contract_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <t t-if="o.no_month == 1">
+                        <div class="header2">
+                            <br/><br/><br/><br/>
+                            <h3><center> THIS FORM FOR LONG TERM LOAN ONLY.</center></h3>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <div class="header2">
+                            <center>
+                                <strong>
+                                    <h1 class="text-center">
+                                        <font style="font-family:'serif';"><u>طلب سلفية</u></font>
+                                    </h1>
+                                </strong>
+                            </center>
+                        </div>
+
+                        <div id="template_introduction" t-field="docs.loan_contract_website_description" class='oe_no_empty'>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

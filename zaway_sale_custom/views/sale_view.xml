@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_inherit_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_quotation_send']" position="after">
+                    <field name="check_discount" invisible="1"/>
+                    <button name="action_dep_manger" class="oe_highlight" type="object" string="Send To Department Manger"
+                    attrs="{'invisible':['|',('check_discount','=',False),('state', 'in', ['dep_manger','sale','done','approve','cancel'])]}"/>
+
+                    <button name="action_dep_manger_approve" class="oe_highlight" type="object" string="Approve"
+                    attrs="{'invisible':[('state', '!=','dep_manger')]}" groups="zaway_sale_custom.group_sale_department_manager"/>
+
+                </xpath>
+                <xpath expr="//button[@name='action_confirm'][2]" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|',('check_discount','=',True),('state', '!=','draft')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm'][2]" position="after">
+                    <button name="action_confirm" data-hotkey="v" string="Confirm" type="object" attrs="{'invisible': ['|',('check_discount','=',False),('state', '!=','approve')]}" />
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                    <field name="price_unit_usd"/>
+                </xpath>   
+                <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="statusbar_visible"> draft,sent,dep_manger</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

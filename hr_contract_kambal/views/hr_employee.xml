@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<record id="view_employee_form_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='job_title']" position="after">
+                	<h3>
+                        <field name="emp_id" placeholder="Employee ID"/>
+                    </h3>
+                </xpath>
+
+                <xpath expr="//field[@name='country_of_birth']" position="after">
+                    <field name="home_address"/>
+                    <field name="have_car"/>
+                    <field name="have_linces"/>
+                </xpath>
+
+                <xpath expr="//field[@name='lang']" position="after">
+                    <field name="religion"/>
+                </xpath>
+
+                <xpath expr="//field[@name='job_id']" position="after">
+                     <field name="social_insurance_no"/>
+                </xpath>
+            </field>
+                
+        </record>
+    </data>
+</odoo>

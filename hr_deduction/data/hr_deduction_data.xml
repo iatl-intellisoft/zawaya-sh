@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_seq_hr_deduction" model="ir.sequence">
+            <field name="name">deduction</field>
+            <field name="code">hr.deduction.req</field>
+            <field name="prefix">DED NO</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <record id="ir_seq_hr_deduction_batch" model="ir.sequence">
+            <field name="name">deduction batch</field>
+            <field name="code">hr.deduction.batch.req</field>
+            <field name="prefix">DED BATCH NO</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="implementation">standard</field>
+        </record>
+    </data>
+
+
+    <data noupdate="1">
+        <record id="hr_deduction_rule" model="hr.salary.rule">
+            <field name="name">Employee Deductions</field>
+            <field name="sequence" eval="100"/>
+            <field name="code">DED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="hr_payroll_custom.structure_employee_almoshraf_1"></field>
+            <field name="amount_python_compute">result=payslip.total_deduct_amount</field>
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+        </record>
+        <record id="hr_deduction_alwatania_rule" model="hr.salary.rule">
+            <field name="name">Employee Deductions</field>
+            <field name="sequence" eval="100"/>
+            <field name="code">DED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="hr_payroll_custom.structure_employee_alwatania_1"></field>
+            <field name="amount_python_compute">result=payslip.total_deduct_amount</field>
+            <!-- <field name="company_id" ref="base_custom.alwatania_company"/> -->
+        </record>
+        <record id="hr_deduction_aldowlia_rule" model="hr.salary.rule">
+            <field name="name">Employee Deductions</field>
+            <field name="sequence" eval="100"/>
+            <field name="code">DED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="hr_payroll_custom.structure_employee_aldowlia_1"></field>
+            <field name="amount_python_compute">result=payslip.total_deduct_amount</field>
+            <!-- <field name="company_id" ref="base_custom.aldowlia_company"/> -->
+        </record>
+        <record id="hr_deduction_ajwaa_rule" model="hr.salary.rule">
+            <field name="name">Employee Deductions</field>
+            <field name="sequence" eval="100"/>
+            <field name="code">DED</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="hr_payroll_custom.structure_employee_ajwaa_1"></field>
+            <field name="amount_python_compute">result=payslip.total_deduct_amount</field>
+            <!-- <field name="company_id" ref="base_custom.ajwaa_company"/> -->
+        </record>
+    </data>
+</odoo>

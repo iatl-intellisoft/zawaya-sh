@@ -1,0 +1,605 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_incentive
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-14 18:00+0000\n"
+"PO-Revision-Date: 2019-11-14 18:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__department_id
+msgid " Department"
+msgstr "القسم"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__percentage
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__percentage
+msgid " Percentage (%)"
+msgstr "النسبة"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.res_config_settings_view_form_inh
+msgid "<span class=\"o_form_label\">Incentive Validation Amount</span>"
+msgstr "<span class=\"o_form_label\">مبلغ التحقق من الحافز</span>"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.res_config_settings_view_form_inh
+msgid "<span class=\"o_form_label\">Incentive Validation</span>"
+msgstr "<span class=\"o_form_label\">التحقق من الحافز</span>"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.report_incentive
+msgid "<strong>Company:</strong>"
+msgstr "<strong>المؤسسة:</strong>"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.report_incentive
+msgid "<strong>Date:</strong>"
+msgstr "<strong>التاريخ:</strong>"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.report_incentive
+msgid "<strong>Incentive Type:</strong>"
+msgstr "<strong>نوع الحافز:</strong>"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.report_incentive
+msgid "<strong>Requester:</strong>"
+msgstr "<strong>الطالب:</strong>"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.report_incentive
+msgid "<strong>Types:</strong>"
+msgstr "<strong>الانواع:</strong>"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__account_id
+msgid "Account"
+msgstr "الحساب"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive__types__all_staff
+msgid "All Staff"
+msgstr "جميع الموظفين"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__amountx
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__amountx
+#: model_terms:ir.ui.view,arch_db:hr_incentive.report_incentive
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_form_view
+msgid "Amount Incentive"
+msgstr "مبلغ الحافز"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_form_view
+msgid "Approve"
+msgstr "قبول"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__approve_date
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__approve_date
+msgid "Approve Date"
+msgstr "تاريخ القبول"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive__state__approved
+msgid "Approved"
+msgstr "تم القبول"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive__state__cancel
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: hr_incentive
+#: model:ir.model,name:hr_incentive.model_res_company
+msgid "Companies"
+msgstr "المؤسسات"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__company_id
+#: model:ir.model.fields,field_description:hr_incentive.field_res_config_settings__company_id
+msgid "Company"
+msgstr "المؤسسة"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "Compute"
+msgstr "حساب"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__rule_id
+msgid "Compute base on"
+msgstr "حساب بناء على"
+
+#. module: hr_incentive
+#: model:ir.model,name:hr_incentive.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الإعدادات"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__res_company__incentive_double_validation__one_step
+msgid "Confirm Incentive in one step"
+msgstr "تاكيد الحافز في خطوة واحدة"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__create_uid
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__create_uid
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__create_date
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__create_date
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_res_config_settings__company_currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__date
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.res_config_settings_view_form_inh
+msgid "Default amount to Validation"
+msgstr "المبلغ الافتراضي للتحقق"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_search_view
+#: model_terms:ir.ui.view,arch_db:hr_incentive.report_incentive
+msgid "Department"
+msgstr "القسم"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_form_view
+msgid "Detail"
+msgstr "تفاصيل"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__display_name
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__display_name
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__employee_id
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__employee_id
+#: model_terms:ir.ui.view,arch_db:hr_incentive.report_incentive
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: hr_incentive
+#: model:hr.salary.rule,name:hr_incentive.hr_incentive_rule
+msgid "Employee Incentive"
+msgstr "حافز الموظف"
+
+#. module: hr_incentive
+#: model:ir.actions.act_window,name:hr_incentive.act_employee_incentive
+msgid "Employee Incentive Details"
+msgstr "تفاصيل حافز الموظف"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__employee_ids
+msgid "Employees"
+msgstr "الموظفون"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive_type__type_in__fix
+msgid "Fixed Amount"
+msgstr "مبلغ ثابت"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__res_company__incentive_double_validation__two_step
+msgid "Get 2 levels of approvals to confirm Incentive"
+msgstr "الحصول على مستويين للموافقة على تاكيد الحافز"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_search_view
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_search_view
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: hr_incentive
+#: model:ir.model,name:hr_incentive.model_hr_incentive
+msgid "HR Incentive"
+msgstr "حافز الموارد البشرية"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__hours
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive_type__type_in__hours
+msgid "Hours"
+msgstr "ساعات"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__id
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__id
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: hr_incentive
+#: model:ir.actions.act_window,name:hr_incentive.incentive_action
+#: model:ir.actions.report,name:hr_incentive.action_report_incentive
+#: model:ir.ui.menu,name:hr_incentive.incentive_menu
+#: model:ir.ui.menu,name:hr_incentive.incentive_sub_menu
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_tree_view
+#: model_terms:ir.ui.view,arch_db:hr_incentive.res_config_settings_view_form_inh
+msgid "Incentive"
+msgstr "حافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__type_in
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__type_in
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__type_in
+msgid "Incentive By"
+msgstr "تحفيز بواسطة"
+
+#. module: hr_incentive
+#: model:ir.ui.menu,name:hr_incentive.detail_incentive_menu
+msgid "Incentive Detail"
+msgstr "تفاصيل الحافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_res_company__incentive_double_validation_amount
+msgid "Incentive Double validation amount"
+msgstr "مقدار التحقق المزدوج من الحوافز "
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_res_config_settings__incentive_double_validation_amount
+msgid "Incentive Double validation amount *"
+msgstr "مقدار التحقق المزدوج من الحوافز *"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_form_view
+msgid "Incentive Form"
+msgstr "نموذج الاحافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_res_config_settings__incentive_double_validation
+msgid "Incentive Levels of Approvals *"
+msgstr "مستويات الموافقة على الحافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__incentive_line
+msgid "Incentive Line"
+msgstr "بند الحافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__types
+msgid "Incentive Scope"
+msgstr "نطاق الحوافز"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_search_view
+msgid "Incentive Search"
+msgstr "البحث عن الحوافز"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.form_hr_deduction_conf_view
+msgid "Incentive Structure"
+msgstr "هيكلية الحوافز"
+
+#. module: hr_incentive
+#: model:ir.actions.act_window,name:hr_incentive.incentive_type_action
+#: model:ir.ui.menu,name:hr_incentive.incentive_type_menu
+msgid "Incentive Type"
+msgstr "نوع الحافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__amount
+msgid "Incentive amount"
+msgstr "مقدار الحافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_payslip__incentive_ids
+#: model_terms:ir.ui.view,arch_db:hr_incentive.hr_payslip_form_inherit_view
+msgid "Incentives"
+msgstr "الحوافز"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_search_view
+msgid "Job"
+msgstr "الوظيفة"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__job_id
+#: model_terms:ir.ui.view,arch_db:hr_incentive.report_incentive
+msgid "Job Title"
+msgstr "المسمى الوظيفي"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__journal_id
+msgid "Journal"
+msgstr "دفتر اليومية"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive____last_update
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line____last_update
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__write_uid
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__write_uid
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__write_date
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__write_date
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_res_company__incentive_double_validation
+msgid "Levels of Approvals"
+msgstr "مستويات القبول"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "Lines"
+msgstr "بنود"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__manager_id
+msgid "Manager"
+msgstr "المدير"
+
+#. module: hr_incentive
+#: model:ir.model.fields,help:hr_incentive.field_res_company__incentive_double_validation_amount
+#: model:ir.model.fields,help:hr_incentive.field_res_config_settings__incentive_double_validation_amount
+msgid "Minimum amount for which a double validation is required"
+msgstr "اقل مبلغ يتطلب تحقق مزدوج"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__name
+msgid "Number"
+msgstr "الرقم"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive__state__draft
+msgid "Open"
+msgstr "مفتوح"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_form_view
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "Other"
+msgstr "غير ذلك"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: hr_incentive
+#: model:ir.model,name:hr_incentive.model_hr_payslip
+msgid "Pay Slip"
+msgstr "قسيمة المرتب"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__payslip_id
+msgid "Payslip Ref."
+msgstr "مرجع الدفعية"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive_type__type_in__percentage
+msgid "Percentage (%)"
+msgstr "نسبة(%)"
+
+#. module: hr_incentive
+#: code:addons/hr_incentive/models/hr_incentive.py:94
+#, python-format
+msgid "Please compute the incentive line by press compute button"
+msgstr "قم بحساب بندود الحافز عن طريق ضغط زر حساب"
+
+#. module: hr_incentive
+#: model:ir.model.fields,help:hr_incentive.field_res_company__incentive_double_validation
+#: model:ir.model.fields,help:hr_incentive.field_res_config_settings__incentive_double_validation
+msgid "Provide a double validation mechanism for purchases"
+msgstr "توفير آلية التحقق المزدوج للمشتريات"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__reason
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__reason
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_form_view
+msgid "Reason"
+msgstr "السبب"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive__state__reject
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__request_id
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_search
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "Requestor"
+msgstr "الطالب"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "Period"
+msgstr "الفترة"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive__types__selected
+msgid "Selected Employees"
+msgstr "الموظفين المختارين"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_form_view
+msgid "Set to Draft"
+msgstr "تعيين كمسودة"
+
+#. module: hr_incentive
+#: code:addons/hr_incentive/models/hr_incentive.py:215
+#, python-format
+msgid "Sorry! you can't cancel this record; There is a payslip /s for this record!"
+msgstr "لا تستطيع الغاء هذا السجل ، هذا السجل مرتبط بدفعيات مرتب"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__incentive_state
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_search_view
+msgid "Status"
+msgstr "الحالة"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_search_view
+msgid "Status incentive"
+msgstr "حالة الحافز"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.res_config_settings_view_form_inh
+msgid "Steps To Incentive Validation"
+msgstr "خطوات التحقق من الحافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive__state__submit
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "Submit"
+msgstr "تاكيد"
+
+#. module: hr_incentive
+#: code:addons/hr_incentive/models/hr_incentive.py:212
+#, python-format
+msgid "There is an a voucher in state %s, You Shoud cancel it Or delete it first!"
+msgstr "هناك قسيمة في الحالة٪ s ، يجب عليك إلغاؤها أو حذفها أولاً!"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_type__payroll
+msgid "Through Payroll"
+msgstr "من خلال الرواتب"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_payslip__total_incentive_amount
+msgid "Total incentive Amount"
+msgstr "المبلغ الكلي للحافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__incentive_type_id
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__incentive_type_id
+msgid "Type"
+msgstr "النوع"
+
+#. module: hr_incentive
+#: model:ir.model.fields,help:hr_incentive.field_res_config_settings__company_currency_id
+msgid "Utility field to express amount currency"
+msgstr "مستوى الفائدة للتعبير عن عملة المبلغ"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__voucher_id
+msgid "Voucher"
+msgstr "إيصال"
+
+#. module: hr_incentive
+#: code:addons/hr_incentive/models/hr_incentive.py:229
+#, python-format
+msgid "You can not delete an incentive which is not draft or cancelled."
+msgstr "لا تسطيع ان تحذف حافز ليس ملغي او في الحالة المبدئية"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__active
+msgid "active"
+msgstr "نشط"
+
+#. module: hr_incentive
+#: model:ir.model.fields.selection,name:hr_incentive.selection__hr_incentive__types__employee
+msgid "certain Employee"
+msgstr "موظف معين"
+
+#. module: hr_incentive
+#: model:ir.model,name:hr_incentive.model_hr_incentive_line
+msgid "hr.incentive.line"
+msgstr ""
+
+#. module: hr_incentive
+#: model:ir.model,name:hr_incentive.model_hr_incentive_type
+msgid "hr.incentive.type"
+msgstr ""
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__incentive_id
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_search_view
+msgid "incentive"
+msgstr "حافز"
+
+#. module: hr_incentive
+#: model:ir.actions.act_window,name:hr_incentive.incentive_line_action
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_form_view
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_tree_view
+msgid "incentive Detail"
+msgstr "تفاصيل الحافز"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_form_view
+msgid "incentive Detail Form"
+msgstr "نموذج تفاصيل الحافز"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.incentive_line_search_view
+msgid "incentive Line Search"
+msgstr "بحث عن بند الحافز"
+
+#. module: hr_incentive
+#: code:addons/hr_incentive/models/hr_incentive.py:175
+#, python-format
+msgid "please define account with typ liquidity."
+msgstr "يرجى تحديد الحساب بنوع السيولة."
+
+#. module: hr_incentive
+#: model:ir.actions.act_window,name:hr_incentive.action_hr_incentive_view
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__incentive_id
+#: model:ir.ui.menu,name:hr_incentive.incentive_menu
+#: model:ir.ui.menu,name:hr_incentive.incentive_sub_menu
+msgid "Staff Payments"
+msgstr "الحوافز"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_res_config_settings__incentive_template_id
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "Staff Payments Template"
+msgstr "نموذج حوافز الموظفين"
+
+#. module: hr_incentive
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"

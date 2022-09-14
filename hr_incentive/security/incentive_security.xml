@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="Incentive_multi_company" model="ir.rule">
+         <field name="name">Incentive Multi Company</field>
+         <field name="model_id" ref="model_hr_incentive"/>
+         <field name="global" eval="True"/>
+         <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+     </record>
+     <record id="Incentive_Line_multi_company" model="ir.rule">
+         <field name="name">Incentive Line Multi Company</field>
+         <field name="model_id" ref="model_hr_incentive_line"/>
+         <field name="global" eval="True"/>
+         <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+     </record>
+   
+
+
+</odoo>

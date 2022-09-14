@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RTL have problem with ODOO v11  so we gonna use additional styles + IF-->
+<odoo>
+
+    <data>
+        <record id="loan_contract_template_id" model="mail.template">
+            <field name="name">hr loan : Loan Contract Template</field>
+            <field name="model_id" ref="hr_loan.model_hr_loan"/>
+            <field name="body_html" type="html">
+                <div class="page">
+                    <html>
+                        <body>
+                            <font style="font-family:'serif';">
+                                <div style="margin: 0px; padding: 3px;" class="text-right" dir="rtl">
+                                    <!-- <center> -->
+                                        <div width='800'>
+                                            <!-- <center style="font-weidght: bold;font-size: 25px;"><u>عقد سلفية</u></center> -->
+                                            <span style="font-weidght: bold;" class="text-right">التاريخ : </span><span style="font-weidght: bold;" class="text-right" t-esc="object.date"></span>
+                                            <br/><br/>
+                                            <span style="font-weidght: bold;margin-right:10px" class="text-right">بموجب هذا العقد تم الاتفاق بين السادة /</span>
+
+                                            <strong><span style="font-weidght: bold;" class="text-right" t-esc="object.company_id.name"></span> </strong>
+
+                                            <span style="font-weidght: bold;" class="text-right">ويسمى لأغراض هذا العقد بالطرف الأول والسيد</span>
+
+                                            <strong><span style="font-weidght: bold;" class="text-right" t-esc="object.employee_id.name"></span></strong>
+
+                                            <span style="font-weidght: bold;" class="text-right">ويسمى لأغراض هذا العقد بالطرف الثاني بطوعهما واختيارهما اتفقا على الاتي :-</span>
+                                            <br/><br/>
+                                    
+                                            <span style="font-weidght: bold;margin-right:13px" class="text-right">1.</span>
+                                            <span style="font-weidght: bold;" class="text-right">نوع الخدمة :</span>
+                                            <br/>
+
+                                            <span style="font-weidght: bold;margin-right:20px" class="text-right">سلفية طويلة الأجل بمبلغ</span>
+                                            <span style="font-weidght: bold;" class="text-right">....(<span style="font-weidght: bold;" class="text-right" t-esc="object.loan_amount"></span>)....</span>
+                                            <span style="font-weidght: bold;" class="text-right">أي فقط</span>
+                                            <span style="font-weidght: bold;" class="text-right">...(<span style="font-weidght: bold;" class="text-right" t-esc="object.amount_words"></span>)...</span>
+                                            <span style="font-weidght: bold;" class="text-right">لا غير.</span>
+                                            <br/>
+
+                                            <span style="font-weidght: bold;margin-right:13px" class="text-right">1.</span>
+                                            <span style="font-weidght: bold;" class="text-right">طريقة السداد( الإستقطاع ):</span>
+                                            <span style="font-weidght: bold;" class="text-right">................................................................</span>
+                                            <br/>
+
+                                            <span style="font-weidght: bold;margin-right:13px" class="text-right">2.</span>
+                                            <span style="font-weidght: bold;" class="text-right">الشروط الجزائية :</span>
+                                            <br/>
+
+                                            <span style="font-weidght: bold;margin-right:20px" class="text-right">2.1.</span>
+                                            <span style="font-weidght: bold;" class="text-right">في حال ترك الوظيفة لابد من سداد كافة المستحقات المتعلقة بالسلفية قبل المغادرة.</span>
+                                            <br/>
+
+                                            <span style="font-weidght: bold;margin-right:20px" class="text-right">2.2.</span>
+                                            <span style="font-weidght: bold;" class="text-right">.............................................................................</span>
+                                            <br/>
+
+                                            <span style="font-weidght: bold;margin-right:20px" class="text-right">2.3.</span>
+                                            <span style="font-weidght: bold;" class="text-right">.............................................................................</span>
+                                            <br/><br/><br/><br/>
+
+                                            <strong>
+                                                <span style="font-weidght: bold;margin-right:150px" class="text-right">الطرف الأول:</span>
+
+                                                <span style="font-weidght: bold;margin-right:300px" class="text-right">الطرف الثاني:</span>
+                                            </strong>
+                                            <br/>
+                                            <span>
+                                                <span style="font-weidght: bold;margin-right:50px" class="text-right">الأسم</span>
+                                                <span style="font-weidght: bold;" class="text-right">................................................................</span>
+
+                                                <span style="font-weidght: bold;margin-right:100px" class="text-right">.................................................................</span>
+                                            </span>
+                                            <br/>
+                                            <span>
+                                                <span style="font-weidght: bold;margin-right:50px" class="text-right">التوقيع</span>
+                                                <span style="font-weidght: bold;" class="text-right">...............................................................</span>
+
+                                                <span style="font-weidght: bold;margin-right:100px" class="text-right">.................................................................</span>
+                                            </span>
+                                            <br/>
+                                            <span>
+                                                <span style="font-weidght: bold;margin-right:50px" class="text-right">التلفون</span>
+                                                <span style="font-weidght: bold;" class="text-right">...............................................................</span>
+
+                                                <span style="font-weidght: bold;margin-right:100px" class="text-right">.................................................................</span>
+                                            </span>
+                                        </div>
+                                    <!-- </center> -->
+                                </div>
+                            </font>
+                        </body>
+                    </html>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

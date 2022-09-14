@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_hr_incentive_type_form" model="ir.ui.view">
+            <field name="name">hr.incentive.form</field>
+            <field name="model">hr.incentive.type</field>
+            <field name="arch" type="xml">
+                <form tring="Incentive Structure">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="payroll"/>
+                                <field name="account_id"
+                                       attrs="{'required': [('payroll', '=', False )],
+                                       'invisible': [('payroll', '!=', False)]}"/>
+                                <field name="journal_id"
+                                       attrs="{'required': [('payroll', '=', False )],
+                                       'invisible': [('payroll', '!=', False)]}"/>
+                                <field name="type_in" required="True"/>
+                                <field name="rule_id"
+                                       attrs="{'invisible': [('type_in', '=', 'fix')],
+                                       'required': [('type_in', '!=', 'fix')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_incentive_type_tree" model="ir.ui.view">
+            <field name="name">view.hr.incentive.tree</field>
+            <field name="model">hr.incentive.type</field>
+            <field name="arch" type="xml">
+                <tree string="Incentive Structure">
+                    <field name="name"/>
+                    <field name="payroll"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="incentive_type_action">
+            <field name="name">Staff Payments Type</field>
+            <field name="res_model">hr.incentive.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="view_hr_incentive_form">
+            <field name="name">hr.incentive.form</field>
+            <field name="model">hr.incentive</field>
+            <field name="arch" type="xml">
+                <form string="Incentive Form">
+                    <header>
+                        <button name="action_submit" type="object" string="Submit" states="draft" class="oe_highlight"/>
+                        <button type="object" name="compute_incentive_line" string="Compute" icon="fa-calculator"
+                                colspan="2" states="draft"/>
+                        <button name="action_approve" type="object" string="Approve" states="submit"
+                                class="oe_highlight"/>
+                        <button name="action_reject" type="object" string="Reject" states="submit"
+                                class="oe_highlight"/>
+                        <button name="action_cancel" type="object" string="Cancel" states="approved"
+                                class="oe_highlight" />
+                        <button name="action_draft" type="object" string="Set to Draft" states="cancel"/>
+                        <button name="action_draft" type="object" string="Set to Draft" states="reject"
+                                groups="base.group_no_one"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_get_move_ids"
+                                class="oe_stat_button"
+                                icon="fa-bars"
+                                type="object"
+                                string="Recipts"
+                                attrs="{'invisible':[('move_id','=',[])]}">
+                                <field name="move_id" invisible="1"/>
+
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="types"/>
+                                <field name="employee_id"
+                                       attrs="{'invisible':[ ('types', '!=', 'employee' )],'required':[('types', '=', 'employee' )]}"/>
+                                <field name="employee_ids" widget="many2many_tags"
+                                       attrs="{'invisible':[ ('types', '!=', 'selected' )],'required':[('types', '=', 'selected' )]}"/>
+                                <field name="incentive_type_id" attrs="{'readonly':[ ('state', '!=', 'draft' )]}"/>
+                                <field name="type_in"/>
+                                <field name="amountx"
+                                       attrs="{'invisible':[ ('type_in', '!=', 'fix' )],'required':[('type_in', '=', 'fix' )]}"/>
+                                <field name="percentage"
+                                       attrs="{'invisible':[ ('type_in', '!=', 'percentage' )],'required':[('type_in', '=', 'percentage' )]}"/>
+                            </group>
+                            <group>
+
+                                    <label for="date" string="Period"/>
+                                    <div clas="o_row" colspan="2">
+                                        <field name="date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_end_date': 'end_date'}"/> TO
+                                        <field name="end_date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_start_date': 'date'}"/>
+                                    </div>
+
+                                <field name="approve_date" readonly="1"/>
+                                <field name="request_id" readonly="1"/>
+                                <field name="company_id" attrs="{'readonly':[ ('state', '!=', 'draft' )]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="incentive_line">
+                                    <tree string="Detail" editable="bottom" create="false">
+                                        <field name="employee_id" readonly="True"/>
+                                        <field name="job_id" options="{'no_open': True}"/>
+                                        <field name="department_id" options="{'no_open': True}"/>
+                                        <field name="hours"
+                                               attrs="{'column_invisible':[('parent.type_in', '!=', 'hours' )],
+                                               'required':[('parent.type_in', '=', 'hours' )],
+                                               'readonly':[ ('parent.type_in', '!=', 'hours' )],}"
+                                               widget="float_time"/>
+                                        <field name="amount" sum="Amount Incentive" attrs="{'readonly':True}"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string='Staff Payments Template' groups="base.group_no_one">
+                                <field name='incentive_website_description'/>
+                            </page>
+                            <page string="Other">
+                                <group>
+                                    <field name="reason"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_hr_incentive_tree">
+            <field name="name">hr.incentive.tree</field>
+            <field name="model">hr.incentive</field>
+            <field name="arch" type="xml">
+                <tree string="Incentive">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="request_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_hr_incentive_search">
+            <field name="name">Incentive.search</field>
+            <field name="model">hr.incentive</field>
+            <field name="arch" type="xml">
+                <search string="Incentive Search">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="request_id" string="Requestor"/>
+                    <field name="state"/>
+                    <field name="incentive_line"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_state" string="Status" context="{'group_by':'state'}"/>
+                        <filter name="group_by_request_id" string="Requestor" context="{'group_by':'request_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_hr_incentive_view">
+            <field name="name">Staff Payments</field>
+            <field name="res_model">hr.incentive</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--    END OF TUNJANGAN LAIN-LAIN    -->
+        <record model="ir.actions.act_window" id="incentive_line_action">
+            <field name="name">Staff Payments Detail</field>
+            <field name="res_model">hr.incentive.line</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="incentive_line_search_view">
+            <field name="name">incentive.line.search</field>
+            <field name="model">hr.incentive.line</field>
+            <field name="arch" type="xml">
+                <search string="incentive Line Search">
+                    <field name="incentive_id"/>
+                    <field name="employee_id"/>
+                    <field name="job_id"/>
+                    <field name="department_id"/>
+                    <field name="date"/>
+                    <field name="incentive_state"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_incentive" string="incentive" context="{'group_by':'incentive_id'}"/>
+                        <filter name="group_by_job_id" string="Job" context="{'group_by':'job_id'}"/>
+                        <filter name="group_by_department_id" string="Department"
+                                context="{'group_by':'department_id'}"/>
+                        <filter name="group_by_incentive_state" string="Status incentive"
+                                context="{'group_by':'incentive_state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="incentive_line_tree_view">
+            <field name="name">incentive.line.tree</field>
+            <field name="model">hr.incentive.line</field>
+            <field name="arch" type="xml">
+                <tree create="false" string="Staff Payments Detail">
+                    <field name="incentive_id"/>
+                    <field name="date"/>
+                    <field name="employee_id"/>
+                    <field name="job_id"/>
+                    <field name="department_id"/>
+                    <field name="incentive_type_id"/>
+                    <field name="amount"/>
+                    <field name="incentive_state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="incentive_line_form_view">
+            <field name="name">incentive.line.form</field>
+            <field name="model">hr.incentive.line</field>
+            <field name="arch" type="xml">
+                <form string="incentive Detail Form" create="false">
+                    <sheet string="incentive Detail">
+                        <div class="oe_title">
+                            <h1>
+                                <field name="incentive_id" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date" attrs="{'readonly':True}"/>
+                                <field name="employee_id" attrs="{'readonly':True}"/>
+                                <field name="job_id" options="{'no_open': True}" attrs="{'readonly':True}"/>
+                                <field name="department_id" options="{'no_open': True}" attrs="{'readonly':True}"/>
+                                <field name="type_in" attrs="{'readonly':True}"/>
+                                <field name="incentive_state" attrs="{'readonly':True}"/>
+                            </group>
+                            <group>
+                                <field name="amountx" readonly="True"
+                                       attrs="{'invisible':[ ('type_in', '=', 'amountx' )]}"/>
+                                <field name="percentage" readonly="True"
+                                       attrs="{'invisible':[ ('type_in', '=', 'percentage' )]}"/>
+                                <field name="hours" widget="float_time" readonly="True"
+                                       attrs="{'invisible':[ ('type_in', '=', 'hours' )]}"/>
+                                <field name="incentive_type_id" attrs="{'readonly':True}"/>
+                                <field name="amount" attrs="{'readonly':True}"/>
+                                <field name="company_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Reason">
+                                <field name="reason"/>
+                            </page>
+                            <page string="Payslips" invisible="1">
+                                <field name="payslip_id" readonly="1" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--    START MENU ITEM    -->
+        <menuitem id="incentive_type_menu" name="Staff Payments Type" parent="hr.menu_human_resources_configuration"
+                  action="incentive_type_action" sequence="1" groups="hr.group_hr_manager"/>
+
+
+        <menuitem id="incentive_sub_menu" name="Staff Payments" parent="hr_contract_kambal.menu_hr_employee_process"
+                  sequence="0" groups="hr.group_hr_manager"/>
+        <menuitem id="incentive_menu" name="Staff Payments" parent="incentive_sub_menu"
+                  action="action_hr_incentive_view"
+                  sequence="1" groups="hr.group_hr_manager"/>
+        <menuitem id="detail_incentive_menu" name="Staff Payments Detail" parent="incentive_sub_menu"
+                  action="incentive_line_action" sequence="2" groups="hr.group_hr_manager"/>
+    
+    </data>
+</odoo>

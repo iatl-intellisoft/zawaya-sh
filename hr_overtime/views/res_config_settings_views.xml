@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_res_config_settings_view_form_inherit11" model="ir.ui.view">
+            <field name="name">hr_res_config_settings_view_form</field>
+            <field name="name">hr_res_config_settings_view_form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@data-key='hr']" position="inside">
+                    <h2>OverTime</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <div>
+                                    <span class="o_form_label">Working Day Rate</span>
+                                    <field name="working_day_rate"/>
+                                </div>
+                                <div>
+                                    <span class="o_form_label">Weekend Rate</span>
+                                    <field name="weekend_rate"/>
+                                </div>
+                                <div>
+                                    <span class="o_form_label">Public Holiday Rate</span>
+                                    <field name="public_holiday_rate"/>
+                                </div>
+                                
+                                <div>
+                                    <span class="o_form_label">OverTime Type</span>
+                                    <field name="overtime_type"/>
+                                </div>
+                                <div attrs="{'invisible' : [('overtime_type' , '=' , 'payroll')]}">
+                                    <span class="o_form_label">Salary Rule</span>
+                                    <field name="overtime_rule_id"/>
+                                </div>
+                                <div attrs="{'invisible' : [('overtime_type' , '=' , 'payroll')]}">
+                                    <span class="o_form_label">Journal</span>
+                                    <field name="journal_id"/>
+
+                                </div>
+                                <div attrs="{'invisible' : [('overtime_type' , '=' , 'payroll')]}">
+                                    <span class="o_form_label">Account</span>
+                                    <field name="account_id"/>
+                                </div>
+                                <div attrs="{'invisible' : [('overtime_type' , '=' , 'payroll')]}">
+                                    <span class="o_form_label">Compnay Overtime Partner</span>
+                                    <field name="overtime_partner_id"/>
+                                </div>
+                                <div>
+                                    <field name="company_id" invisible="1"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Overtime Template</span>
+                                <div class="text-muted">
+                                    Choose your Template
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <label for="overtime_template_id" string="Template"
+                                               class="col-3 col-lg-3 o_light_label"/>
+                                        <field name="overtime_template_id" class="oe_inline"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

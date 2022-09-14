@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+
+        <!-- Loan Tree -->
+        <record id="tree_hr_loan_batch_view" model="ir.ui.view">
+            <field name="name">hr.loan.batch.tree</field>
+            <field name="model">hr.loan.batch</field>
+            <field name="arch" type="xml">
+                <tree string="Loan Batchs">
+                    <field name="request_date"/>
+                    <field name="code"/>
+                    <field name="amount"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Loan Form -->
+        <record id="view_hr_loan_batch_form" model="ir.ui.view">
+            <field name="name">hr.loan.batch.form</field>
+            <field name="model">hr.loan.batch</field>
+            <field name="arch" type="xml">
+                <form string="Loan Batchs">
+                    <header>
+                        <button name="action_submit" class="oe_highlight" type="object" string="Submit"
+                                states="draft"/>
+
+                        <button name="action_dept_approve" class="oe_highlight" type="object" string="Department Approve"
+                                states="wait_dept_approve"
+                                />
+
+                        <button name="action_hr_approve" class="oe_highlight" type="object" string="HR Approve"
+                                states="wait_hr_approve"
+                                />
+                        <button name="action_approve" type="object" string="GM Approve" class="oe_highlight" groups="hr_loan.group_hr_general_manager" states="wait_gm_approve"/>
+                        
+                        <button name="action_set_to_draft" type="object" string="Set To Draft"
+                                states="confirm,cancel"/>
+                        <!-- <button name="action_cancel" type="object" string="Cancel" states="approve"/> -->
+                        
+                        <field name="state" widget="statusbar" statusbar_visible='draft,submit,wait_dept_approve,wait_hr_approve,wait_gm_approve,approve'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="code" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <field name="loan_type" attrs="{'readonly':[('state','!=','draft')]}" domain="[('for_batch','=',True)]"/>
+                            <field name="request_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="amount" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </group>
+                        <group>
+                            <field name="note" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </group>
+                        <notebook>
+                            <page string="Loan Lines">
+                                <field name="line_ids" attrs="{'readonly':[('state','!=','draft')]}">
+                                    <tree editable="bottom">
+                                        <field name="employee_id"/>
+                                        <field name="emp_id"/>
+                                        <field name="department_id"/>
+                                        <field name="job_id"/>
+                                        <field name="wage"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_hr_loan_batch" model="ir.actions.act_window">
+            <field name="name">Loan Batchs</field>
+            <field name="res_model">hr.loan.batch</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Loan Batchs"
+                  parent="menu_hr_loans"
+                  id="menu_hr_loan_batch"
+                  action="action_hr_loan_batch"
+                  sequence="0"
+                  groups="hr.group_hr_manager,base.group_user"/>
+
+    </data>
+</odoo>

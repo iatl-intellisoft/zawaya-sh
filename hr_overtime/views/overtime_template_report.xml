@@ -1,0 +1,55 @@
+<odoo>
+    <template id="report_overtime_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+
+                    <div class="header2">
+                        <center>
+                            <strong>
+                                <h1 class="text-center">
+                                    <font style="font-family:'serif';">Overtime Batch</font>
+                                </h1>
+                            </strong>
+                        </center>
+                    </div>
+
+                    <div id="template_introduction" t-field="docs.overtime_website_description" class='oe_no_empty'>
+                    </div>
+                    <br/>
+                    <br/>
+                    <table>
+                        <t t-foreach="o.mail_track.getStateTriggers('hr.overtime.batch',o.id,[['Draft','Confirmed'],['Confirmed','Approved']])"
+                           t-as="track">
+
+                            <tr>
+                                <t t-if="track['state'] == 'Confirmed'">
+                                    <td>
+                                        <strong>Confirmed By:</strong>
+                                        <t t-esc="track['username']"/>
+                                    </td>
+                                    <td>
+                                        <strong>At:</strong>
+                                        <t t-esc="track['date']"/>
+                                    </td>
+                                </t>
+                            </tr>
+                            <tr>
+                                <t t-if="track['state'] == 'Approved'">
+                                    <td>
+                                        <strong>Approved By:</strong>
+                                        <t t-esc="track['username']"/>
+                                    </td>
+                                    <td>
+                                        <strong>At:</strong>
+                                        <t t-esc="track['date']"/>
+                                    </td>
+                                </t>
+                            </tr>
+                        </t>
+                    </table>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

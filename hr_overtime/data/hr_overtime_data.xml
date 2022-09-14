@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="hr_overtime_rule" model="hr.salary.rule">
+            <field name="name">Employee Overtime</field>
+            <field name="sequence" eval="100"/>
+            <field name="code">OVERTIME</field>
+            <field name="use_type">over_time</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="hr_payroll_custom.structure_employee_almoshraf_1"></field>
+            <field name="amount_python_compute">if payslip.over_time_ids:
+ result=sum(payslip.over_time_ids.mapped('total_amount'))
+else:
+ result = 0.0
+            </field>
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+        </record>
+
+        <record id="hr_overtime_alwatania_rule" model="hr.salary.rule">
+            <field name="name">Employee Overtime</field>
+            <field name="sequence" eval="100"/>
+            <field name="code">OVERTIME</field>
+            <field name="use_type">over_time</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="hr_payroll_custom.structure_employee_alwatania_1"></field>
+            <field name="amount_python_compute">if payslip.over_time_ids:
+ result=sum(payslip.over_time_ids.mapped('total_amount'))
+else:
+ result = 0.0
+            </field>
+            <!-- <field name="company_id" ref="base_custom.alwatania_company"/> -->
+        </record>
+
+        <record id="hr_overtime_aldowlia_rule" model="hr.salary.rule">
+            <field name="name">Employee Overtime</field>
+            <field name="sequence" eval="100"/>
+            <field name="code">OVERTIME</field>
+            <field name="use_type">over_time</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="hr_payroll_custom.structure_employee_aldowlia_1"></field>
+            <field name="amount_python_compute">if payslip.over_time_ids:
+ result=sum(payslip.over_time_ids.mapped('total_amount'))
+else:
+ result = 0.0
+            </field>
+            <!-- <field name="company_id" ref="base_custom.aldowlia_company"/> -->
+        </record>
+
+        <record id="hr_overtime_ajwaa_rule" model="hr.salary.rule">
+            <field name="name">Employee Overtime</field>
+            <field name="sequence" eval="100"/>
+            <field name="code">OVERTIME</field>
+            <field name="use_type">over_time</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="hr_payroll_custom.structure_employee_ajwaa_1"></field>
+            <field name="amount_python_compute">if payslip.over_time_ids:
+ result=sum(payslip.over_time_ids.mapped('total_amount'))
+else:
+ result = 0.0
+            </field>
+            <!-- <field name="company_id" ref="base_custom.ajwaa_company"/> -->
+        </record>
+
+    </data>
+</odoo>
