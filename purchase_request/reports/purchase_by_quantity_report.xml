@@ -1,0 +1,166 @@
+<odoo>
+    <record id="report_purchase_quantity_id" model="ir.actions.report">
+        <field name="name">Purchase By Quantity Report</field>
+        <field name="model">report.purchase_request.template_purchase_quantity</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">purchase_request.template_purchase_quantity</field>
+        <field name="report_file">purchase_request.template_purchase_quantity</field>
+    </record>
+
+    <template id="template_purchase_quantity">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <!--            <div t-attf-class="article o_report_layout_standard" t-att-data-oe-model="docs "-->
+                <!--                 t-att-data-oe-id="docs">-->
+                <!--                <t t-call="admin_module.custom_header"/>-->
+                <!--                <t t-call="admin_module.custom_footer"/>-->
+                <div class="page" style="margin-top:-0.1%">
+                    <br/>
+                    <div style="text-align:center">
+                        <div>
+                            <strong>
+                                <h3>المشتريات بالكميات</h3>
+                            </strong>
+                        </div>
+                        <br/>
+                        <br/>
+                        <strong>
+                            من تاريخ:
+                        </strong>
+                        <span t-esc="from_date"/>
+                        <strong>
+                            إلى تاريخ:
+                        </strong>
+                        <span t-esc="to_date"/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <table dir="rtl" width="100%">
+                            <thead style="display:table-header-group">
+                            </thead>
+                            <td style="text-align: right;"
+                                class="text-right">الصنف/الأصناف:
+                            </td>
+                            <tbody>
+                                <t t-foreach="docs" t-as="doc">
+                                    <t t-if="doc.product_id.id in product_ids">
+                                        <td style="text-align:right"
+                                            class="text-right" t-att-colspan="2">
+                                            <t t-esc="doc.product_id.name"/>
+                                        </td>
+                                    </t>
+                                </t>
+                                <t t-foreach="partner_dict" t-as="obj">
+                                    <t t-foreach="partner_dict[obj]" t-as="loan">
+                                        <td style="text-align:right"
+                                            class="text-right" t-att-colspan="2">
+                                            <t t-esc="loan[5]"/>
+                                        </td>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    </br>
+                    <table dir="rtl" width="100%" style=" border: 1px solid black; ">
+                        <thead style="display:table-header-group">
+                            <tr style="text-align: center;">
+                                <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                    class="text-center">المورد
+                                </td>
+                                <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                    class="text-center">الرقم
+                                </td>
+                                <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                    class="text-center">التاريخ
+                                </td>
+                                <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                    class="text-center">الكمية
+                                </td>
+                                <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                    class="text-center">السعر
+                                </td>
+                                <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                    class="text-center">الإجمالي
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="counter" t-value="1"/>
+                            <t t-foreach="docs" t-as="doc">
+                                <t t-foreach="doc.order_id" t-as="line">
+                                    <tr style="background-color:white;color:black;text-align: center;">
+                                        <t t-if="counter == 1">
+                                            <td style=" border: 1px solid black;text-align: center;"
+                                                class="text-center">
+                                                <t t-esc="line.partner_id.name"/>
+                                            </td>
+                                            <td style="border: 1px solid black;position:relative;text-align:center"
+                                                class="text-center">
+                                                <t t-esc="line.id"/>
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;"
+                                                class="text-center">
+                                                <t t-esc="line.date_approve"/>
+                                            </td>
+                                        </t>
+                                        <td style=" border: 1px solid black;text-align: center;"
+                                            class="text-center">
+                                            <t t-esc="doc.product_qty"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;text-align: center;"
+                                            class="text-center">
+                                            <t t-esc="doc.price_unit"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;text-align: center;"
+                                            class="text-center">
+                                            <t t-esc="doc.price_subtotal"/>
+                                        </td>
+                                        <t t-set="counter" t-value="counter+1"/>
+                                    </tr>
+                                </t>
+                                <t t-set="counter" t-value="1"/>
+                            </t>
+                            <br/>
+                            <br/>
+                            <!--                            <t t-if="info['product'] == True"/>-->
+                            <t t-set="counter" t-value="1"/>
+                            <t t-foreach="partner_dict" t-as="obj">
+                                <t t-foreach="partner_dict[obj]" t-as="loan">
+                                    <tr style="background-color:white;color:black;text-align: center;">
+                                        <t t-if="counter == 1">
+                                            <td style=" border: 1px solid black;text-align: center;"
+                                                class="text-center" t-att-rowspan="len(partner_dict[obj])">
+                                                <t t-esc="obj"/>
+                                            </td>
+                                        </t>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">
+                                            <t t-esc="loan[0]"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;text-align: center;"
+                                            class="text-center">
+                                            <t t-esc="loan[1]"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">
+                                            <t t-esc="loan[3]"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">
+                                            <t t-esc="loan[2]"/>
+                                        </td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">
+                                            <t t-esc="loan[4]"/>
+                                        </td>
+                                        <t t-set="counter" t-value="counter+1"/>
+                                    </tr>
+                                </t>
+                                <t t-set="counter" t-value="1"/>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

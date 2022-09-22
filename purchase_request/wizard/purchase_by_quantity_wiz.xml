@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--     Purchase Quantity wizard form view-->
+    <record id="purchase_quantity_wiz" model="ir.ui.view">
+        <field name="name">purchase.quantity.wiz</field>
+        <field name="model">purchase.quantity.wiz</field>
+        <field name="arch" type="xml">
+            <form>
+                <group col="4">
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="product_ids" widget="many2many_tags"/>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" class="btn-primary" type="object"
+                            data-hotkey="2"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="2"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+
+    <!--purchase by quantity_action-->
+    <record id="action_purchase_quantity_report" model="ir.actions.act_window">
+        <field name="name">Purchase By Quantity Report</field>
+        <field name="res_model">purchase.quantity.wiz</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="purchase_by_quantity_report" name="Purchase By Quantity" parent="purchase.purchase_report_main"
+              sequence="100"
+              groups="purchase.group_purchase_manager" action="action_purchase_quantity_report"/>
+</odoo>
