@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--   purchase request print report-->
+    <report
+            id="report_purchase_request"
+            model="purchase.request"
+            report_type="qweb-pdf"
+            string="Purchase Request Report"
+            name="purchase_request.template_purchase_request"
+            file="purchase_request.template_purchase_request"/>
+
+    <template id="template_purchase_request">
+        <t t-call="web.html_container">
+            <div t-attf-class="article o_report_layout_standard" t-att-data-oe-model="docs and docs._name"
+                 t-att-data-oe-id="docs and docs.id">
+                <t t-call="purchase_request.custom_header"/>
+                <div class="page" style="margin-top:-0.1%">
+                    <br/>
+                    <div style="text-align:center">
+                        <t t-set="info" t-value="get_header_info"/>
+                        <div>
+                            <strong>
+                                <h3>طلب شراء</h3>
+                            </strong>
+                        </div>
+                        <br/>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <div>
+                    <table dir="rtl" width="100%">
+                        <tr style="text-align: center;">
+                            <td style="text-align: right;"
+                                class="text-right">طلب رقم:
+                                <t t-esc="docs.name"/>
+                            </td>
+                            <td style=" text-align: right;"
+                                class="text-right" t-att-colspan="1">القسم الطالب:
+                                <t t-esc="docs.department_id.name"/>
+                            </td>
+                            <td style="text-align: right;"
+                                class="text-center" t-att-colspan="2">التاريخ:
+                                <t t-esc="docs.date_start"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    </br>
+                </div>
+                <table dir="rtl" width="100%" style=" border: 1px solid black; black;" t-att-colspan="12">
+                    <thead style="display:table-header-group ">
+                        <tr style="text-align: center; background-color:#cc6666 ;">
+                            <td style=" border: 1px solid black;text-align: center;"
+                                class="text-center">الرقم
+                            </td>
+                            <td style=" border: 1px solid black;text-align: center;"
+                                class="text-center" t-att-colspan="2">البيان
+                            </td>
+                            <td style=" border: 1px solid black;text-align: center;"
+                                class="text-center">المواصفات
+                            </td>
+                            <td style=" border: 1px solid black;text-align: center;"
+
+                                class="text-center">وحدة القياس
+                            </td>
+                            <td style=" border: 1px solid black;text-align: center;"
+                                class="text-center">الكمية المتوفرة
+                            </td>
+                            <td style=" border: 1px solid black;text-align: center;"
+                                class="text-center">الكمية المطلوبة
+                            </td>
+                            <td style=" border: 1px solid black;text-align: center;"
+                                class="text-center">سعر الوحدة
+                            </td>
+                            <td style=" border: 1px solid black;text-align: center;"
+                                class="text-center">الإجمالي
+                            </td>
+                            <td class="text-center" style=" border: 1px solid black;text-align: center;"
+                                t-att-colspan="2">الغرض من الشراء
+                            </td>
+                            <td style=" border: 1px solid black;text-align: center;"
+                                class="text-center">ملاحظات
+                            </td>
+                        </tr>
+                    </thead>
+                    <t t-set="no" t-value="1"/>
+                    <tbody dir="rtl" width="100%" style=" border: 1px solid black; ">
+                        <t t-foreach="docs" t-as="doc">
+                            <t t-foreach="doc.line_ids" t-as="line">
+                                <tr>
+                                    <td style="border: 1px solid black;position:relative;text-align:center">
+                                        <t t-esc="no"/>
+                                        <t t-set="no" t-value="no+1"/>
+                                    </td>
+                                    <td style=" border: 1px solid black;text-align: right;"
+                                        class="text-center" t-att-colspan="2">
+                                        <t t-esc="line.product_id.name"/>
+                                    </td>
+                                    <td style=" border: 1px solid black;text-align: right;"
+                                        class="text-center">
+                                        <t t-esc="line.name"/>
+                                    </td>
+                                    <td style=" border: 1px solid black;text-align: right;"
+                                        class="text-center">
+                                        <t t-esc="line.product_uom_id.name"/>
+                                    </td>
+                                    <td style=" border: 1px solid black;text-align: right;"
+                                        class="text-center">
+                                        <t t-esc="line.qty_available"/>
+                                    </td>
+                                    <td style=" border: 1px solid black;text-align: right;"
+                                        class="text-center">
+                                        <t t-esc="line.product_qty"/>
+                                    </td>
+                                    <td style=" border: 1px solid black;text-align: right;"
+                                        class="text-center">
+                                        <t t-esc="line.price_unit"/>
+                                    </td>
+                                    <td style=" border: 1px solid black;text-align: right;"
+                                        class="text-center">
+                                        <t t-esc="line.price_subtotal"/>
+                                    </td>
+                                    <td style=" border: 1px solid black;text-align: right;"
+                                        class="text-center" t-att-colspan="2">
+                                        <t t-esc="line.purpose_purpose"/>
+                                    </td>
+                                    <td style=" border: 1px solid black;text-align: right;"
+                                        class="text-center">
+                                        <t t-esc="line.notes"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </t>
+                    </tbody>
+                </table>
+                <table dir="rtl" width="100%">
+                    <t t-foreach="docs" t-as="doc">
+                        <tr style="text-align: right;">
+                            <td style="text-align: right;"
+                                class="text-right">يرجى توفير المواد أعلاه في موعد أقصاه :
+                                <!--                                <td style="text-align: right;" width="15%" colspan="1">-->
+                                <t t-esc="doc.last_date"/>
+                                <!--                                </td>-->
+                            </td>
+                        </tr>
+                    </t>
+                </table>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <table dir="rtl" width="100%">
+                    <t t-foreach="docs" t-as="doc">
+                        <tr style="text-align: center;">
+                            <td style="text-align: right;" width="35%"
+                                class="text-right">اسم مقدم الطلب:
+                                <t t-esc="doc.requester_sign.name"/>
+                            </td>
+
+                            <td style="text-align: right;" width="35%"
+                                class="text-right">التوقيع :
+                            </td>
+                            <td style="text-align: right;" width="35%"
+                                class="text-right" t-att-colspan="2">التاريخ:
+                                <t t-esc="doc.requester_sign_date"/>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td style="text-align: right;" width="35%"
+                                class="text-right">المدير المباشر:
+                                <t t-esc="doc.dir_mgn_sign.name"/>
+                            </td>
+                            <td style="text-align: right;" width="35%"
+                                class="text-right">التوقيع :
+                            </td>
+                            <td style="text-align: right;" width="35%"
+                                class="text-right" t-att-colspan="2">التاريخ:
+                                <t t-esc="doc.dir_mgn_sign_date"/>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td style="text-align: right;" width="35%"
+                                class="text-right">مدير المصنع:
+                                <t t-esc="doc.factory_sign.name"/>
+                            </td>
+                            <td style="text-align: right;" width="35%"
+                                class="text-right">التوقيع :
+                            </td>
+                            <td style="text-align: right;" width="35%"
+                                class="text-right" t-att-colspan="2">التاريخ:
+                                <t t-esc="doc.factory_sign_date"/>
+                            </td>
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td style="text-align: right;" width="35%"
+                                class="text-right">المدير العام :
+                                <t t-esc="doc.gm_sign.name"/>
+                            </td>
+                            <td style="text-align: right;" width="35%"
+                                class="text-right">التوقيع :
+                            </td>
+                            <td style="text-align: right;" width="35%"
+                                class="text-right" t-att-colspan="2">التاريخ:
+                                <t t-esc="doc.gm_sign_sign_date"/>
+                            </td>
+                        </tr>
+                    </t>
+                </table>
+            </div>
+        </t>
+
+    </template>
+</odoo>

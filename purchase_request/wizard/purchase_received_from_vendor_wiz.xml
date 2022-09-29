@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--     Purchase Received by Vendor wizard form view-->
+    <record id="purchase_received_by_vendor_wiz" model="ir.ui.view">
+        <field name="name">purchase.received.vendor.wiz.form</field>
+        <field name="model">purchase.received.vendor.wiz</field>
+        <field name="arch" type="xml">
+            <form>
+                <group col="4">
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="vendor_id"/>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" class="btn-primary" type="object"
+                            data-hotkey="2"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="2"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+
+    <!--purchase received by vendor action-->
+    <record id="action_purchase_received_vendor_report" model="ir.actions.act_window">
+        <field name="name">Purchase Received By Vendor Report</field>
+        <field name="res_model">purchase.received.vendor.wiz</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="purchase_received_by_vendor_report" name="Purchase Received By Vendor"
+              parent="purchase.purchase_report_main"
+              sequence="100"
+              groups="purchase.group_purchase_manager" action="action_purchase_received_vendor_report"/>
+</odoo>

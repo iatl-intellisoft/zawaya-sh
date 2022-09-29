@@ -1,0 +1,274 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_purchase_request_view">
+        <field name="name">Request for Quotation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">purchase.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('purchase_request_id','=',active_id)]</field>
+        <field name="context">{
+            "default_purchase_request_id":active_id,
+            "default_purchase_type":'external',
+            }
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_purchase_requisition_view">
+        <field name="name">Purchase Requisition</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">purchase.requisition</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('purchase_request_id','=',active_id)]</field>
+        <field name="context">{
+            "default_purchase_request_id":active_id,
+            }
+        </field>
+    </record>
+
+    <record id="view_purchase_request_form" model="ir.ui.view">
+        <field name="name">purchase.request.form</field>
+        <field name="model">purchase.request</field>
+        <field name="arch" type="xml">
+            <form string="Purchase Request">
+                <header>
+                    <button
+                            name="button_set_draft"
+                            states="canceled,rejected,done,confirm"
+                            string="Reset To Draft"
+                            type="object"
+                            groups="purchase_request.group_purchase_request_user,purchase_request.group_direct_manager"/>
+                    <button
+                            name="button_confirm"
+                            states="draft"
+                            string="Confirm by Requester"
+                            type="object"
+                            class="oe_highlight"
+                            groups="purchase_request.group_purchase_request_user"/>
+
+                    <button
+                            name="button_direct_manager_approve"
+                            string="Direct Manager Approve"
+                            type="object"
+                            states="confirm"
+                            class="oe_highlight"
+                            groups="purchase_request.group_direct_manager"/>
+                    <!--                            attrs="{'invisible': ['|','&amp;', ('is_department_manager', '!=', True),('state','in',['draft','canceled','rejected','done','direct_manager','purchase_approve']),'&amp;',('is_department_manager', '=', True),('state','!=',('direct_manager'))]}"/>-->
+                    <!--##################################-->
+                    <button
+                            name="button_factory_manager_approve"
+                            string="Factory Manager Approve"
+                            type="object"
+                            states="direct_manager"
+                            class="oe_highlight"
+                            groups="purchase_request.group_factory_manager"/>
+                    <!--                            attrs="{'invisible': ['|','&amp;', ('is_department_manager', '!=', True),('state','in',['draft','canceled','rejected','done','direct_manager','purchase_approve']),'&amp;',('is_department_manager', '=', True),('state','!=',('direct_manager'))]}"/>-->
+
+
+                    <button
+                            name="button_gm_approve"
+                            string="General Manager Approve"
+                            type="object"
+                            states="factory_manager"
+                            class="oe_highlight"
+                            groups="purchase_request.group_general_manager"
+                    />
+                    <button
+                            name="button_rejected"
+                            states="confirm,direct_manager,factory_manager,done"
+                            string="Reject"
+                            type="object"
+                            groups="purchase_request.group_direct_manager,
+                            purchase_request.group_purchase_manager,purchase_request.group_factory_manager,purchase_request.group_general_manager"/>
+
+                    <button
+                            name="create_po"
+                            states="done"
+                            string="Create Purchase Quotation"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('purchase_count','=', 0),('state','!=','done'),'|',('vendor_type','!=','multi')]}"
+                            groups="purchase_request.group_purchase_request_user,purchase_request.group_purchase_request_manager"
+                    />
+                    <button
+                            name="create_requisition"
+                            states="done"
+                            string="Create Purchase Tender"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('Requisition_count','=', 0),('state','!=','done'),'|',('vendor_type','!=','single')]}"
+                            groups="purchase_request.group_purchase_request_user,purchase_request.group_purchase_request_manager"
+                    />
+                    <field
+                            name="state"
+                            widget="statusbar"
+                            statusbar_visible="draft,confirm,direct_manager,factory_manager,done,rejected"
+                            statusbar_colors='{"approved":"blue"}'
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+
+                        <button name="%(action_purchase_request_view)d" type="action"
+                                icon="fa-pencil-square-o"
+                                attrs="{'invisible': [('state', '!=', 'po_create')]}">
+                            <field name="purchase_count" widget="statinfo" string="RFQs/Orders"/>
+                        </button>
+
+
+                        <button name="%(action_purchase_requisition_view)d" type="action"
+                                icon="fa-pencil-square-o"
+                                attrs="{'invisible': [('state', '!=', 'Requisition_create')]}">
+                            <field name="Requisition_count" widget="statinfo" string="Purchase Requisition"/>
+                        </button>
+
+                    </div>
+                    <div class="oe_edit_only">
+                        <label for="name" class="oe_inline"/>
+                    </div>
+                    <h1>
+                        <field name="name" class="oe_inline"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="is_department_manager" invisible="1"/>
+                            <field name="vendor_id" attrs="{'required': [('state','=','purchase_approve')]}"/>
+                            <field name="date_start"/>
+<!--                            <field name="requester_sign_date"/>-->
+                            <field name="requested_by"/>
+                            <field name="department_id"/>
+                        </group>
+                        <group>
+                            <field name="request_type"/>
+                            <field name="vendor_type" attrs="{'required': [('state','=','purchase_approve')]}"/>
+                            <field name="description"/>
+                            <field name="last_date"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Products">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                                    <field name="name"/>
+                                    <field name="product_uom_id"/>
+                                    <field name="qty_available"/>
+                                    <field name="product_qty"/>
+                                    <field name="price_unit"/>
+                                    <field name="price_subtotal" widget="monetary"/>
+                                    <field name="company_id" groups="base.group_multi_company" widget="selection"
+                                           invisible="1"/>
+                                    <field name="purpose_purpose"/>
+                                    <field name="notes"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_purchase_request_tree" model="ir.ui.view">
+        <field name="name">purchase.request.tree</field>
+        <field name="model">purchase.request</field>
+        <field name="arch" type="xml">
+            <tree
+                    decoration-bf="message_needaction==True"
+                    decoration-info="state in ('draft')"
+                    decoration-muted="state in ('rejected')"
+                    string="Purchase Request"
+            >
+                <field name="message_needaction" invisible="1"/>
+                <field name="name"/>
+                <field name="date_start"/>
+                <field name="requested_by"/>
+                <!--                <field name="product_type"/>-->
+                <field name="vendor_type"/>
+                <field name="department_id"/>
+                <field
+                        name="company_id"
+                        groups="base.group_multi_company"
+                        widget="selection"
+                />
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="origin"/>
+                <field
+                        name="state"
+                        widget="badge"
+                        decoration-success="state in ('done', 'approved')"
+                        decoration-muted="state == 'draft'"
+                        decoration-danger="state == 'rejected'"
+                />
+            </tree>
+        </field>
+    </record>
+    <record id="view_purchase_request_search" model="ir.ui.view">
+        <field name="name">purchase.request.list.select</field>
+        <field name="model">purchase.request</field>
+        <field name="arch" type="xml">
+            <search string="Search Purchase Request">
+                <field name="name" string="Purchase Request"/>
+                <separator/>
+                <field name="state"/>
+                <filter name="state_draft" string="Draft" domain="[('state','=','draft')]"
+                        help="Request is to be approved"/>
+                <filter name="state_approved" string="Approved" domain="[('state','=','approved')]"
+                        help="Request is approved"/>
+                <filter name="state_rejected" string="Rejected" domain="[('state','=','rejected')]"
+                        help="Request is rejected"/>
+                <filter name="state_done" string="Done" domain="[('state','=','done')]" help="Request is done"/>
+                <filter name="request_type" string="Local Request" domain="[('request_type','=','local')]"
+                        help="Local Request"/>
+                <filter name="external_request_type" string="External Request"
+                        domain="[('request_type','=','external')]" help="External Request"/>
+                <field name="requested_by"/>
+                <group expand="0" string="Group By...">
+                    <filter name="requested_by" string="Requested by" icon="fa-user" domain="[]"
+                            context="{'group_by':'requested_by'}"/>
+                    <filter name="request_type" string="Request Type" icon="fa-user" domain="[]"
+                            context="{'group_by':'request_type'}"/>
+                    <filter name="start_date" string="Start Date" icon="fa-calendar" domain="[]"
+                            context="{'group_by':'date_start'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="purchase_request_action">
+        <field name="name">Purchase Requests</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">purchase.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to start a new purchase request process.
+            </p>
+            <p>
+                A purchase request is an instruction to Purchasing to procure
+                a certain quantity of materials services, so that they are
+                available at a certain point in time.
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem
+            id="root_purchase_request_id" sequence="0"
+            name="Purchase Request" parent="purchase.menu_purchase_root"
+            groups="group_purchase_request_manager,group_purchase_request_user"
+    />
+
+    <menuitem
+            id="root_purchase_request_menue"
+            sequence="0"
+            name="Purchase Request" action="purchase_request_action" parent="root_purchase_request_id"
+            groups="group_purchase_request_manager,group_purchase_request_user"
+    />
+
+</odoo>
