@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_permission_received_search" model="ir.ui.view">
+            <field name="name">permission.received.search</field>
+            <field name="model">stock.picking</field>
+            <field name="arch" type="xml">
+                <search string="Picking Lists">
+
+                    <field name="partner_id" filter_domain="[('partner_id', 'child_of', self)]"/>
+                    <field name="origin"/>
+                    <field name="product_id"/>
+                    <field string="Scheduled Date" name="scheduled_date"/>
+                   
+                    <filter name="backorder" string="Backorders" domain="[('backorder_id', '!=', False), ('state', 'in', ('assigned', 'waiting', 'confirmedelelelel'))]" help="Remaining parts of picking partially processed"/>
+                    <separator/>
+                    <filter string="Late Activities" name="activities_overdue" domain="[('my_activity_date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]" help="Show all records which has next action date is before today"/>
+                    <filter string="Today Activities" name="activities_today" domain="[('my_activity_date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Future Activities" name="activities_upcoming_all" domain="[('my_activity_date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
+                    <separator/>
+                   
+                    <group expand="0" string="Group By">
+                        <filter string="Status" name="status" domain="[]" context="{'group_by': 'state'}"/>
+                        <filter string="Customer" name="partner_id" domain="[]" context="{'group_by': 'partner_id'}"/>
+                        <filter string="Scheduled Date" name="scheduled_date" domain="[]" context="{'group_by': 'scheduled_date'}"/>
+                        <filter string="Source Document" name="origin" domain="[]" context="{'group_by': 'origin'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>        
+
+        <record id="action_picking_permission_received" model="ir.actions.act_window">
+            <field name="name">Permission Received</field>
+            <field name="res_model">stock.picking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,kanban,form,pivot</field>
+            <field name="domain">[('state','=','done'),('sale_id','!=', None)]</field>
+            <field name="context">{'create': False,'contact_display': 'partner_address', 'default_company_id': allowed_company_ids[0]}</field>
+            <field name="search_view_id" ref="view_permission_received_search"/>
+        </record>
+
+        <record id="action_permission_not_received" model="ir.actions.act_window">
+            <field name="name">Permission Not Received</field>
+            <field name="res_model">stock.picking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,kanban,form,pivot</field>
+            <field name="domain">
+                [('state', 'not in', ('done', 'cancel')),('sale_id','!=', None)]</field>
+            <field name="context">{'create': False,'contact_display': 'partner_address', 'default_company_id': allowed_company_ids[0]}</field>
+            <field name="search_view_id" ref="view_permission_received_search"/>
+        </record>
+
+         <menuitem id="permission_menu"
+            name="Permissions"
+            parent="sale.sale_menu_root"
+            sequence="5"/>
+
+        <menuitem name="Permission Received" 
+        action="action_picking_permission_received" 
+        id="menu_permission_received_action"
+        sequence ="1"
+        parent="zaway_sale_custom.permission_menu"/>
+
+        <menuitem name="Permission Not Received" 
+        action="action_permission_not_received" 
+        id="menu_permission_not_received_action" 
+        sequence ="2"
+        parent="zaway_sale_custom.permission_menu"/>
+    </data>
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="daily_sales_report_id"
+            model="daily.sales.wizard"
+            string="Product Validity Report"
+            report_type="qweb-pdf"
+            name="zaway_sale_custom.daily_sales_template"
+            file="zaway_sale_custom.daily_sales_template"
+            menu="False"/>
+
+        <template id="daily_sales_template">
+            <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <div class="page" style="margin-top:-0.1%" dir="rtl">
+                    <div style="text-align:center">
+                        <t t-set="info" t-value="get_info"/>
+                            <div>
+                                <strong>المبيعات اليومية</strong>
+                            </div>
+                            من (<t t-esc="info['date_from']"/> إلي <t t-esc="info['date_to']"/>) 
+                            
+                    </div>
+                    <br/>
+                    
+                    <table width="100%" style=" border: 1px solid black ; margin-top:5px background-color:#f2f2f2;">
+                        <thead style="display:table-header-group; background-color:#f2f2f2;">
+                            <tr style="text-align: center;">
+                                <td style=" border: 1px solid black;text-align: center;" width="10%" class="text-center">رقم الفاتورة</td>
+
+                                <td style=" border: 1px solid black;text-align: center;" width="10%" class="text-center">التاريخ</td>
+                                <td style=" border: 1px solid black;text-align: center;" width="15%" class="text-center">الزبون</td>
+                                <td style=" border: 1px solid black;text-align: center;" width="15%" class="text-center">إجمالي الفاتورة</td>
+                                <td style=" border: 1px solid black;text-align: center;" width="10%" class="text-center">النقد</td>
+                                <td style=" border: 1px solid black;text-align: center;" width="10%" class="text-center">الشيك</td>
+                            </tr>
+                        </thead>
+                        <t t-foreach="get_report" t-as="line">
+                            <tr style="background-color:white;color:black;text-align: center;">
+                                <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line['no']"/></td>
+                                <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="line['date']"/></td>
+                                <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="line['customer']"/></td>
+                                <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="line['total_invoice']"/></td>
+                                <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="line['cash']"/></td>
+                                <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="line['check']"/></td>
+                                
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</data>
+</odoo>
+                  

@@ -1,0 +1,539 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* zaway_sale_custom
+# 	* sale
+# 	* sales_team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-07 07:57+0000\n"
+"PO-Revision-Date: 2022-09-07 07:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order__validity_date
+msgid "Expiration"
+msgstr "تاريخ الصلاحية"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid "Update Prices"
+msgstr "تجديد الأسعار"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid "Disc.%"
+msgstr "الخصم.%"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid ""
+"<span class=\"o_stat_text\">Customer</span>\n"
+"                                <span class=\"o_stat_text\">Preview</span>"
+msgstr ""
+"<span class=\"o_stat_text\">العميل</span>\n"
+"                                <span class=\"o_stat_text\">معاينة</span>"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order__signed_by
+msgid "Signed By"
+msgstr "موقعة من قبل"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order__signed_on
+msgid "Signed On"
+msgstr "وقع على"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid "Customer Signature"
+msgstr "توقيع العميل"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order__payment_term_id
+msgid "Payment Terms"
+msgstr "شروط الدفع"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Payment terms"
+msgstr "شروط الدفع"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Pricing"
+msgstr "التسعير"
+
+#. module: sale, zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "Invoicing and Shipping Address:"
+msgstr "الفواتير و عنوان الشحن:"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.report_invoice_document_inherit_sale
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+msgid "<strong>Shipping Address:</strong>"
+msgstr "<strong>عنوان الشحن:</strong>"
+
+#. module: sale
+#: model:ir.actions.server,name:sale.model_sale_order_action_quotation_sent
+msgid "Mark Quotation as Sent"
+msgstr "وضع طلب الشراء على أنه مرسل"
+
+#. module: sale
+#: model_terms:ir.actions.act_window,help:sale.action_orders_upselling
+msgid "No orders to upsell found."
+msgstr "لم يتم العثور على أوامر البيع."
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_sale_order_generate_link
+msgid "Generate a Payment Link"
+msgstr "أنشئ رابط الدفع"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_accrued_revenue_entry
+msgid "Accrued Revenue Entry"
+msgstr "إدخال الإيرادات المستحقة"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "History"
+msgstr "سجل"
+
+#. module: sales_team
+#: model_terms:ir.ui.view,arch_db:sales_team.crm_team_view_form
+msgid "Team Details"
+msgstr "تفاصيل الفريق"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.product_template_action
+#: model:ir.ui.menu,name:sale.menu_product_template_action
+#: model:ir.ui.menu,name:sale.prod_config_main
+#: model:ir.ui.menu,name:sale.product_menu_catalog
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Products"
+msgstr "المنتجات"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid "Quantity:"
+msgstr "الكمية:"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line__price_unit
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid "Unit Price:"
+msgstr "سعر الوحدة:"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<span>Taxes</span>"
+msgstr "الضرائب"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order__amount_tax
+#: model:ir.model.fields,field_description:sale.field_sale_order_line__tax_id
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+msgid "Taxes"
+msgstr "الضرائب"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line__product_uom_qty
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">المبلغ</span>\n"
+"                                <span groups=\"account.group_show_line_subtotals_tax_included\">المبلغ الكلي</span>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                            <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">المبلغ</span>\n"
+"                            <span groups=\"account.group_show_line_subtotals_tax_included\">المبلغ الكلي</span>"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<strong>Quotation Date:</strong>"
+msgstr "<strong>تاريخ الطلب:</strong>"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_report_all_channels_sales__price_total
+#: model:ir.model.fields,field_description:sale.field_sale_order__amount_total
+#: model:ir.model.fields,field_description:sale.field_sale_order_line__price_total
+#: model:ir.model.fields,field_description:sale.field_sale_report__price_total
+#: model_terms:ir.ui.view,arch_db:sale.portal_my_orders
+#: model_terms:ir.ui.view,arch_db:sale.portal_my_quotations
+#: model_terms:ir.ui.view,arch_db:sale.view_order_line_tree
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_sale_order_line__name
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale.view_order_form
+msgid "Description"
+msgstr "التفاصيل"
+
+#. modules: sale, sales_team
+#: model:ir.model.fields,field_description:sale.field_report_all_channels_sales__user_id
+#: model:ir.model.fields,field_description:sale.field_sale_order__user_id
+#: model:ir.model.fields,field_description:sale.field_sale_order_line__salesman_id
+#: model:ir.model.fields,field_description:sale.field_sale_report__user_id
+#: model:ir.model.fields,field_description:sales_team.field_crm_team_member__user_id
+#: model_terms:ir.ui.view,arch_db:sale.view_order_product_search
+#: model_terms:ir.ui.view,arch_db:sale.view_sales_order_filter
+#: model_terms:ir.ui.view,arch_db:sale.view_sales_order_line_filter
+msgid "Salesperson"
+msgstr "مندوب مبيعات"
+
+#. module: sales_team
+#: model:crm.team,name:sales_team.crm_team_1
+msgid "Pre-Sales"
+msgstr "قبل المبيعات"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_template
+msgid "<strong class=\"text-muted\">Salesperson</strong>"
+msgstr "<strong class=\"text-muted\">مندوب مبيعات</strong>"
+
+#. module: zaway_sale_custom
+#: model:ir.actions.report,print_report_name:zaway_sale_custom.action_report_saleorder_without_customer
+msgid ""
+"(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or "
+"'Order - %s' % (object.name)"
+msgstr ""
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view__sale_custom_res_config_setting_form
+msgid "<span class=\"o_form_label\">Specific Time Period</span>"
+msgstr "<span class=\"o_form_label\">تحديد زمن الموردين</span>"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_inherit_order_form
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: zaway_sale_custom
+#: model:ir.model.fields,field_description:zaway_sale_custom.field_sale_order__check_discount
+msgid "Check Discount"
+msgstr "الخصم"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view__sale_custom_res_config_setting_form
+msgid "Clarify The Time Period for not Dealing With The Customer"
+msgstr "توضيح فترة زمنية لمعرفة التعامل مع المورد"
+
+#. module: zaway_sale_custom
+#: model:ir.model,name:zaway_sale_custom.model_res_company
+msgid "Companies"
+msgstr "شركاء"
+
+#. module: zaway_sale_custom
+#: model:ir.model,name:zaway_sale_custom.model_res_config_settings
+msgid "Config Settings"
+msgstr "التهيئة"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_inherit_order_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: zaway_sale_custom
+#: model:ir.model.fields,field_description:zaway_sale_custom.field_res_company__compute_day
+#: model:ir.model.fields,field_description:zaway_sale_custom.field_res_config_settings__compute_day
+msgid "Days"
+msgstr "أيام"
+
+#. module: zaway_sale_custom
+#: model:ir.model.fields.selection,name:zaway_sale_custom.selection__sale_order__state__dep_manger
+msgid "Department Manager"
+msgstr "مدير القسم"
+
+#. module: zaway_sale_custom
+#: model:ir.model.fields,field_description:zaway_sale_custom.field_sale_order__new_price
+msgid "New Price"
+msgstr ""
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_permission_received_search
+msgid "Customer"
+msgstr "الزبون"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_permission_received_search
+msgid "Today Activities"
+msgstr "أنشطة اليوم"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.actions.act_window,help:zaway_sale_custom.action_picking_permission_received
+msgid "Transfers allow you to move products from one location to another."
+msgstr "تسمح لك عمليات النقل بنقل المنتجات من موقع إلى آخر."
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_permission_received_search
+msgid "Source Document"
+msgstr "مصدر"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_permission_received_search
+msgid "Scheduled Date"
+msgstr "التاريخ"
+
+#. module: zaway_sale_custom
+#: model:ir.actions.act_window,name:zaway_sale_custom.action_permission_not_received
+#: model:ir.ui.menu,name:zaway_sale_custom.menu_permission_not_received_action
+msgid "Permission Not Received"
+msgstr "الاذونات الغير مستلمة"
+
+#. module: zaway_sale_custom
+#: model:ir.actions.act_window,name:zaway_sale_custom.action_picking_permission_received
+#: model:ir.ui.menu,name:zaway_sale_custom.menu_permission_received_action
+msgid "Permission Received"
+msgstr "الاذونات المستلمة"
+
+#. module: zaway_sale_custom
+#: model:ir.ui.menu,name:zaway_sale_custom.permission_menu
+msgid "Permissions"
+msgstr "الأذونات"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.actions.act_window,help:zaway_sale_custom.action_picking_permission_received
+msgid "No transfer found. Let's create one!"
+msgstr "لا توجد أذونات"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_permission_received_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_open_sale_onboarding_payment_acquirer_wizard
+msgid "Choose how to confirm quotations"
+msgstr "اختر كيفية تأكيد الطلبات"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_onboarding_order_confirmation_step
+msgid "Order Confirmation"
+msgstr "تأكيد الأوامر"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.sale_onboarding_order_confirmation_step
+msgid "Choose between electronic signatures or online payments."
+msgstr "اختر بين التوقيعات الإلكترونية أو المدفوعات عبر الإنترنت."
+
+#. module: sale
+#: model:ir.model.fields.selection,name:sale.selection__sale_payment_acquirer_onboarding_wizard__payment_method__digital_signature
+msgid "Electronic signature"
+msgstr "التوقيعات الإلكترونية"
+
+#. module: sale
+#: model:ir.model.fields.selection,name:sale.selection__sale_payment_acquirer_onboarding_wizard__payment_method__other
+msgid "Other payment acquirer"
+msgstr "جهة اقتناء مدفوعات أخرى"
+
+#. module: sale
+#: model:ir.model.fields.selection,name:sale.selection__sale_payment_acquirer_onboarding_wizard__payment_method__stripe
+msgid "Credit & Debit card (via Stripe)"
+msgstr "بطاقة الائتمان والخصم (عبر Stripe)"
+
+#. module: zaway_sale_custom
+#: model:ir.actions.report,name:zaway_sale_custom.action_report_saleorder_without_customer
+msgid "Quotation / Order Without Customer"
+msgstr "عرض السعر /الطلب بدون إسم العميل"
+
+#. module: zaway_sale_custom
+#: model:ir.actions.server,name:zaway_sale_custom.ir_cron_customer_time_ir_actions_server
+#: model:ir.cron,cron_name:zaway_sale_custom.ir_cron_customer_time
+#: model:ir.cron,name:zaway_sale_custom.ir_cron_customer_time
+msgid "Sale : Customer Expiration Notification"
+msgstr "المبيعات: إشعار انتهاء صلاحية المورد"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "Taxes"
+msgstr "الضرائب"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_inherit_order_form
+msgid "Send To Department Manger"
+msgstr "إرسال إلي مدير القسم"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "Quotation #"
+msgstr "الطلب #"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "Description"
+msgstr "التفاصيل"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "Invoicing Address:"
+msgstr "عنوان الفواتير:"
+
+#. module: zaway_sale_custom, sale
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+#: model:ir.model.fields,field_description:sale.field_sale_report__order_id
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+msgid "Order #"
+msgstr "الأمر #"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: zaway_sale_custom
+#: model:ir.model.fields.selection,name:zaway_sale_custom.selection__sale_order__state__approve
+msgid "Approved"
+msgstr "موافقة"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">المبلغ</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">الإجمالي</span>"
+
+#. module: zaway_sale_custom, sale
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<span>Disc.%</span>"
+msgstr "<span>خصم.%</span>"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "<span>Pro-Forma Invoice # </span>"
+msgstr "<span>الفاتورة المبدئية # </span>"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">الاجمالي</strong>"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "<strong>Expiration:</strong>"
+msgstr "<strong>انتهاء الصلاحية:</strong>"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>ملاحظة المدير المالي:</strong>"
+
+#. module: zaway_sale_custom, sale
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:sale.sale_order_portal_content
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>تاريخ الأمر:</strong>"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "<strong>Quotation Date:</strong>"
+msgstr "<strong>تاريخ الطلب:</strong>"
+
+#. module: zaway_sale_custom, sale
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+msgid "<strong>Salesperson:</strong>"
+msgstr "<strong>مندوب المبيعات:</strong>"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "<strong>Shipping Address:</strong>"
+msgstr "<strong>عنوان الشحن:</strong>"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "<strong>Signature</strong>"
+msgstr "<strong>التوقيع:</strong>"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.report_saleorder_document_without_cus
+msgid "<strong>Your Reference:</strong>"
+msgstr "<strong>المرجع:</strong>"
+
+#. module: zaway_sale_custom
+#: model:res.groups,name:zaway_sale_custom.group_sale_department_manager
+msgid "Sale Department Manager"
+msgstr "مدير قسم المبيعات"
+
+#. module: zaway_sale_custom
+#: model:ir.module.category,name:zaway_sale_custom.module_category_sale_discount
+msgid "Sale Discount"
+msgstr "خصم البيع"
+
+#. module: zaway_sale_custom
+#: model:ir.model,name:zaway_sale_custom.model_sale_order
+msgid "Sales Order"
+msgstr "اوامر البيع"
+
+#. module: zaway_sale_custom
+#: model:ir.model,name:zaway_sale_custom.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: zaway_sale_custom
+#: model:ir.model.fields,field_description:zaway_sale_custom.field_sale_order__state
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_permission_received_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_permission_received_search
+msgid "Late Activities"
+msgstr "الأنشطة المتأخرة"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_permission_received_search
+msgid "Future Activities"
+msgstr "الأنشطة المستقبلية"
+
+#. module: zaway_sale_custom
+#: model_terms:ir.ui.view,arch_db:zaway_sale_custom.view_permission_received_search
+msgid "Backorders"
+msgstr "أوامر العودة"
+
+#. module: zaway_sale_custom
+#: model:ir.model.fields,field_description:zaway_sale_custom.field_sale_order_line__price_unit_usd
+msgid "Unit Price USD"
+msgstr "سعر الوحدة بالدولار"

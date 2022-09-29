@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Kambal HR Management',
+    'name': 'Zaway HR Management',
     'version': '15.0.1.0',
     'license': 'LGPL-3',
     'category': 'Human Resources/Employees',
@@ -22,7 +22,7 @@
         'security/ir.model.access.csv',
         'data/sequance_data.xml',
         'data/employee_contract_template.xml',
-        'data/contract_end_cron.xml',
+        # 'data/contract_end_cron.xml',
         'data/salary_details.xml',
         'views/hr_contract_view.xml',
         'views/hr_employee.xml',
