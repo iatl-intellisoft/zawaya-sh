@@ -20,10 +20,12 @@ class StockMove(models.Model):
 
     thickness = fields.Float(string="Thickness",related="product_id.thickness")
     # package_domain = fields.Many2many('stock.quant.package','stock_quant_package_rel', 'domain_id', 'package_id',string="Package", compute='_compute_package',readonly=False,store=True)
-    packag_product = fields.Many2many('stock.quant.package','stock_package_rel', 'packag_product_id', 'quant_package_id',string="Package")
+    # packag_product = fields.Many2many('stock.quant.package','stock_package_rel', 'packag_product_id', 'quant_package_id',string="Package")
+    #packag_product = fields.Many2many('stock.quant.package','stock_package_rel', 'packag_product_id', 'quant_package_id',string="Package", domain=lambda self: [('id','=',self.env['stock.quant.package'].search([]).filtered(lambda x: x.quant_ids.product_id == self.product_id.id))])
     
     tape_number = fields.Float(string="Tape Number")
-    count_package = fields.Integer(string="Number of Packages",compute='compute_product_uom_qty')
+    # count_package = fields.Integer(string="Number of Packages",compute='compute_product_uom_qty')
+
 
 
     # @api.onchange('product_id','raw_material_production_id.product_id')
@@ -31,20 +33,23 @@ class StockMove(models.Model):
     #   self.package_domain = None
     #   for rec in self:
     #       package = self.env['stock.quant.package'].search([('quant_ids.product_id','=',rec.product_id.id)])
+    #       print("_____________________________",package.ids)
     #       rec.package_domain =  package
+    #       return [('packag_product','in',package.ids)]
 
 
-    @api.onchange('packag_product','product_id','raw_material_production_id.bom_id')
-    def compute_product_uom_qty(self):
-        self.product_uom_qty = 0
-        product_uom_qty_package = 0
-        count = 0
-        # self.count_package =len(self.packag_product.quant_ids.filtered(lambda r:r.product_id == self.product_id))
-        for rec in self.packag_product.quant_ids.filtered(lambda r:r.product_id == self.product_id):
-            product_uom_qty_package+= rec.quantity
-            count+= 1 
+
+    # @api.onchange('packag_product','product_id','raw_material_production_id.bom_id')
+    # def compute_product_uom_qty(self):
+    #     self.product_uom_qty = 0
+    #     product_uom_qty_package = 0
+    #     count = 0
+    #     # self.count_package =len(self.packag_product.quant_ids.filtered(lambda r:r.product_id == self.product_id))
+    #     for rec in self.packag_product.quant_ids.filtered(lambda r:r.product_id == self.product_id):
+    #         product_uom_qty_package+= rec.quantity
+    #         count+= 1 
    
-        self.write({'product_uom_qty':product_uom_qty_package,'count_package':count})
+    #     self.write({'product_uom_qty':product_uom_qty_package,'count_package':count})
 
 
     # def action_show_details(self):

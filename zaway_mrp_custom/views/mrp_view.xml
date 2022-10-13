@@ -9,8 +9,10 @@
                 <xpath expr="//page[@name='components']/field[@name='move_raw_ids']/tree/field[@name='location_id']" position="after">
                 	<field name="thickness"/>
                     <field name ="tape_number"/>
-                    <field name="packag_product"  widget="many2many_tags"  options ="{'no_create': True}"/>
+                    <!-- <field name="packag_product"  widget="many2many_tags"  options ="{'no_create': True}"/>
                     <field name="count_package"/>
+
+                    <field name="package_domain"  widget="many2many_tags"/> -->
 
                 </xpath>
                  <!-- <xpath expr="//page[@name='components']/field[@name='move_raw_ids']/tree/field[@name='product_uom_qty']" position="replace">
