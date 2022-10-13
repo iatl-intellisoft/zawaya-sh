@@ -1,0 +1,132 @@
+<odoo>
+
+    <template id="stock_card_report.report_stock_card_report_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                 <t t-call="web.external_layout">
+                    <t t-call="stock_card_report.report_stock_card_report_base" />
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="stock_card_report.report_stock_card_report_base">
+        <t t-foreach="o.product_ids" t-as="product">
+            <div class="page">
+                <table class="table table-condensed table-bordered" style="border: 1px solid black;">
+                    
+                    <tr>
+                        <th>Date From</th>
+                        <td>
+                           <span t-field="o.date_from" />
+                        </td>
+                        <th>Date To</th>
+                        <td>
+                            <span t-field="o.date_to" />
+                        </td> 
+                        <th>Location</th>
+                        <td>
+                            <span t-field="o.location_id" />
+                        </td>    
+                    </tr>
+                    <tr>
+                        <th>Company Name</th>
+                       <!--  <td>
+                            <span t-field="product.product_company_id.name" />
+                        </td> -->
+                        <th>Item Name</th>
+                        <td>
+                            <span t-field="product.name" />
+                        </td>                        
+                    </tr>
+                    <tr>
+                          <t
+                        t-set="initial"
+                        t-value="o._get_initial(o.results.filtered(lambda l: l.product_id == product and l.is_initial))"
+                        />
+                        <t
+                            t-set="closing"
+                            t-value="o._get_closing(o.results)"
+                        />
+                        <th>
+                            Openinig
+                        </th>
+                        <td>
+                            <t t-esc="'{0:,.3f}'.format(initial)" />
+                        </td>
+                        <th>
+                            Closing
+                        </th>
+                        <td>
+                            <t t-esc="'{0:,.3f}'.format(closing)" />
+                        </td>
+                    </tr>
+                </table>
+              
+                <table class="table table-condensed table-bordered" style="border: 1px solid black;">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>REF.No.</th>
+                            <th>IN</th>
+                            <th>OUT</th>
+                            <th>BALANCE</th>
+                            <th>REMARKS</th>
+                            <th>EXP</th>
+                            <th>BATCH NO.</th>
+                            <th>NOTE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <t t-set="product_balance" t-value="initial" />
+                        <t
+                        t-foreach="o.results.filtered(lambda l: l.product_id == product and not l.is_initial)"
+                        t-as="product_line" >
+                            <tr>
+                                <td>
+                                    <t t-esc="product_line.date.strftime('%Y-%m-%d')" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.reference" />
+                                </td>
+                                <td>
+                                    <t t-esc="'{0:,.3f}'.format(product_line.product_in)" />
+                                </td>
+                                <td>
+                                    <t t-esc="'{0:,.3f}'.format(product_line.product_out)" />
+                                </td>
+                                <t
+                                    t-set="product_balance"
+                                    t-value="product_balance + product_line.product_in - product_line.product_out"
+                                />
+                                <td>
+                                    <t t-esc="'{0:,.3f}'.format(product_balance)" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.move_id.picking_id.sale_id.invoice_number" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.lot_id.expiration_date" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.lot_id.name" />
+                                </td>
+                                <td>
+                                    <!-- <t t-esc="product_line.lot_id.name" /> -->
+                                </td>
+                            
+                            </tr>
+                        </t>
+                    </tbody>
+
+                </table>
+                <p style="page-break-before:always;" />
+            </div>
+        </t>
+    </template>
+
+    
+
+
+
+</odoo>

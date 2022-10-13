@@ -76,34 +76,11 @@ class SaleOrder(models.Model):
                     acvtivity_id = self.env['mail.activity'].sudo().create(vals)
                     print("***********************",acvtivity_id)
 
-
-
-
-
-
-
-
-
-
-
-
-
-                        # body = ('<strong>Customer Expiration<br/> Dear : %s<br/> contract<br/></strong>') % (cus.name)
-                        # message =self.env['mail.message']
-                        # vals={    
-                        #     'message_type': 'notification',
-                        #     'author_id' : self.env.user.id,
-                        #     'body': body,
-                        #     'model': 'sale.order',
-                        #     'res_id' :rec.id,
-                        #     'partner_ids':[(6, 0, [user.partner_id.id])] 
-                        #     }
-                        # message_id = message.create(vals)
-                        # notification_id = self.env['mail.notification'].create({
-                        #     'mail_message_id' : message_id.id, 
-                        #     'notification_type' :'inbox',
-                        #     'res_partner_id' : user.partner_id.id or self.env.user.partner_id.id})
-
+    def action_confirm(self):
+        res = super(SaleOrder, self).action_confirm()
+        if self.picking_ids:
+            self.picking_ids.write({'state': 'draft'})
+        return res
 
 
 class SaleOrderLine(models.Model):
@@ -119,8 +96,3 @@ class SaleOrderLine(models.Model):
                 for currency in rates:
                     rec.price_unit_usd = currency.currency_id.symbol + ' '+ str(rec.price_unit / currency.inverse_company_rate)
 
-# class ProductPricelist(models.Model):
-#     _inherit = 'product.pricelist'
-
-#     use_two_currency = fields.Boolean(string="Use Two Currency?")
-#     currency_id_usd = fields.Many2one('res.currency',string="Second Currency")

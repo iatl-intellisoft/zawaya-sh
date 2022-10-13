@@ -1,0 +1,38 @@
+<odoo>
+<!-- Production Report Wizard Pdf  -->
+    <record id="production_wizard_form" model="ir.ui.view">
+        <field name="name">Production Wizard</field>
+        <field name="model">production.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Production Wizard">
+                <group>
+                    <group>
+                        <field name="date_from"/>
+                    </group>
+                    <group >
+                        <field name="equipment_id" options="{'no_create': True}"/>
+                        <field name="company_id"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print"  type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="production_wizard_action" model="ir.actions.act_window">
+        <field name="name">تقرير الإنتاج</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">production.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="production_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="تقرير الإنتاج" 
+        action="production_wizard_action" 
+        id="menu_production__action" 
+        parent="mrp.menu_mrp_reporting"/>
+
+</odoo>

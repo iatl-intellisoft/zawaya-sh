@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_raw_material_recall_order">
+    <t t-call="web.html_container">
+        <t t-foreach="inside_foreach_docs or docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page" dir="rtl">
+                    <t t-if="o.picking_type_id.pick_components == True">
+                        <div style="text-align:center">
+                            <div>
+                                <h2 style="text-align:center;">
+                                    <b style="text-decoration-line: underline;border-bottom:5px double black;">
+                                    أمر سحب مواد خام
+                                    </b>
+                                </h2>
+                            </div>
+                            <table class="table table-nonborderless" style="margin-top: 5%">
+                                <tr>
+                                    <td style="text-align:right;">
+                                        <strong>رقم أمر السحب : </strong>
+                                        <span t-field="o.name"/>
+                                    </td>
+
+                                    <td  style="text-align:right;">
+                                        <strong>التاريخ:</strong>
+                                        <span t-field="o.scheduled_date"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table table-borderless" style=" border: 1px solid black; width: 50%; height: 50%;">
+                                <thead  style ="border-collapse: collapse; background-color:#f2f2f2">
+                                    <tr style="text-align: center;">
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">الرقم</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">سماكة الصنف</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">عدد الصنف</td>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="o.move_ids_without_package" t-as="line">
+                                    <tr style="background-color:white;color:black;text-align: left;">
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc="line_index + 1"/></td>
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line.product_id.name"/></td>
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line.quantity_done"/></td>
+                                    </tr>
+                                 </t>
+                            </table>
+                            <table style=" border: 1px solid black;  border-collapse: collapse;" class="table table-borderless">
+                                <thead  style ="border-collapse: collapse; background-color:#f2f2f2">
+                                    <tr style="text-align: center;">
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">رقم الصنف</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">طول الصنف</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center"> الوزن الصافي</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">ملاحظات</td>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="o.move_line_ids_without_package" t-as="line">
+                                    <tr style="background-color:white;color:black;text-align: left;">
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line.package_id.name"/></td>
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line.package_id.package_type_id.packaging_length"/></td>
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line.qty_done"/></td>
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "o.note"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                            <div class="text-right" style="margin-top: 5%">
+                                <strong>السيد/ رئيس قسم المخازن الرجاء السماح بسحب الكويلات الموضحة أعلاه:  </strong>
+                             </div>
+                            <table class="table table-borderless">
+                                <tr class="text-right">
+                                    <td>توقيع رئيس قسم المخازن</td>
+                                    <td><t t-esc= "o.stock_manger_sign.name"/></td>
+                                    <td>.......................................</td>
+                                    <td>التاريخ: <t t-esc= "o.stock_manger_date"/></td>
+                                </tr>
+                                <tr class="text-right">
+                                    <td>توقيع مدير المصنع</td>
+                                    <td><t t-esc= "o.manufac_sign.name"/></td>
+                                    <td>.......................................</td>
+                                    <td>التاريخ: <t t-esc= "o.manufac_date"/></td>
+                                </tr>
+                                <tr class="text-right">
+                                    <td>تم الإدخال والأرشفة توقيع مسوؤل النظام</td>
+                                    <td><t t-esc= "o.it_sign.name"/></td>
+                                    <td>.......................................</td>
+                                    <td>التاريخ: <t t-esc= "o.it_date"/></td>
+                                </tr>
+                            </table>
+                            <!-- <img t-if="o.sign_purchase_manger.user_signature" t-att-src="image_data_uri(o.sign_purchase_manger.user_signature)" style="max-height:130px;max-width:80px"/> -->
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+
+
+<record id="action_report_raw_material_order" model="ir.actions.report">
+    <field name="name">أمر سحب مواد خام</field>
+    <field name="model">stock.picking</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">zaway_stock_custom.report_raw_material_recall_order</field>
+    <field name="report_file">zaway_stock_custom.report_raw_material_recall_order</field>
+    <!-- <field name="print_report_name">'Payslip - %s' % (object.employee_id.name)</field> -->
+    <field name="binding_model_id" ref="zaway_stock_custom.model_stock_picking"/>
+    <field name="binding_type">report</field>
+</record>
+</odoo>

@@ -192,5 +192,11 @@
             </t>
         </t>
     </template>
+
+    <template id="zaway_inherit_sale_report_doc" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//t[@t-set='address']/div" position="after">
+                <p t-if="doc.partner_id.code">Code: <span t-field="doc.partner_id.code"/></p>
+        </xpath>
+    </template>
     </data>
 </odoo>

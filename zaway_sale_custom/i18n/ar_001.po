@@ -3,6 +3,7 @@
 # 	* zaway_sale_custom
 # 	* sale
 # 	* sales_team
+#	* product
 #
 msgid ""
 msgstr ""
@@ -537,3 +538,74 @@ msgstr "أوامر العودة"
 #: model:ir.model.fields,field_description:zaway_sale_custom.field_sale_order_line__price_unit_usd
 msgid "Unit Price USD"
 msgstr "سعر الوحدة بالدولار"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_res_config_settings__module_sale_product_configurator
+msgid "Product Configurator"
+msgstr "مكون المنتج"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "Select product attributes and optional products from the sales order"
+msgstr "حدد سمات المنتج والمنتجات الاختيارية من أمر المبيعات"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "Sell variants of a product using attributes (size, color, etc.)"
+msgstr "بيع موديلات المنتج باستخدام سمات (الحجم واللون وما إلى ذلك)"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "Variant Grid Entry"
+msgstr "متغير دخول الشبكة"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "Add several variants to an order from a grid"
+msgstr "أضف العديد من المتغيرات إلى أمر من شبكة"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "Send a product-specific email once the invoice is validated"
+msgstr "أرسل بريدًا إلكترونيًا خاصًا بالمنتج بمجرد التحقق من صحة الفاتورة"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "Select specific invoice and delivery addresses"
+msgstr "حدد فاتورة محددة وعناوين التسليم"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_config_settings__automatic_invoice
+msgid "Automatic Invoice"
+msgstr "فاتورة تلقائية"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "Automatic email sent after the customer has signed or paid online"
+msgstr "يتم إرسال بريد إلكتروني تلقائي بعد أن يقوم العميل بالتوقيع أو الدفع عبر الإنترنت"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_config_settings__confirmation_mail_template_id
+msgid "Confirmation Email Template"
+msgstr "نموذج البريد الإلكتروني للتأكيد"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "Import Amazon orders and sync deliveries"
+msgstr "استيراد طلبات أمازون ومزامنة عمليات التسليم"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_config_settings__module_sale_amazon
+msgid "Amazon Sync"
+msgstr "مزامنة أمازون"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "Connectors"
+msgstr "موصلات"
+
+#. module: sale
+#: model_terms:ir.ui.view,arch_db:sale.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Confirmation Email</span>"
+msgstr "<span class=\"o_form_label\">البريد الإلكتروني للتأكيد</span>"
+

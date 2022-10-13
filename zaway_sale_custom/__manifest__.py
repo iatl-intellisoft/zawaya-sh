@@ -11,7 +11,7 @@
     'author': "IATL International",
     'website': "http://www.iatl-sd.com",
     'category': 'Sales',
-    'depends': ['sale','sale_stock'],
+    'depends': ['sale_stock','contacts','sale_management'],
     'data': [
         'security/ir.model.access.csv',
         'security/sale_security.xml',

@@ -16,3 +16,9 @@ class ResCompanySaleCustom(models.Model):
     _inherit = 'res.company'
 
     compute_day = fields.Integer(string="Days")
+
+
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    code = fields.Char(string="Code")

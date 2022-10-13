@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="production_report_id"
+            model="production.wizard"
+            string="Production Report"
+            report_type="qweb-pdf"
+            name="zaway_mrp_custom.production_template"
+            file="zaway_mrp_custom.production_template"
+            menu="False"/>
+
+        <template id="production_template">
+            <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <div class="page" style="margin-top:-0.1%" dir="rtl">
+                    <div style="text-align:center">
+                        <t t-set="info" t-value="get_info"/>
+                            <div>
+                                <strong>تقرير الإنتاج</strong>
+                            </div> 
+                            
+                    </div>
+                    <table class="table table-borderless">
+                        <tr>
+                            <t t-if ="info['equipment_name']">
+                                <td style="text-align:right;">
+                                    <strong>ماكينة : </strong>
+                                    <span t-esc="info['equipment_name']"/>
+                                </td>
+                            </t>
+                            <td  style="text-align:right;">
+                                <strong>التاريخ: </strong>
+                                <span t-esc="info['date_from']"/>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <t t-foreach="get_report" t-as="obj">
+                        <div class="text-right" t-if ="not info['equipment_name']" style="margin-top:20px">
+                            <strong>ماكينة: </strong>
+                            <span t-esc="obj['name']"/>
+                        </div>
+                        <t t-if ="obj['maintenance_list']">
+                            <div class="text-right">
+                                <strong>الأعطال</strong>
+                            </div>
+                            <table width="90%" style=" border: 1px solid black ; margin-top:5px background-color:#f2f2f2;">
+                                <thead style="display:table-header-group; background-color:#f2f2f2;">
+                                    <tr style="text-align: center;">
+                                        <td style=" border: 1px solid black;text-align: center;"  class="text-center">العطل</td>
+
+                                        <td style=" border: 1px solid black;text-align: center;"  class="text-center">الزمن</td>
+                                        <td style=" border: 1px solid black;text-align: center;"  class="text-center">ملاحظات</td>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="obj['maintenance_list']" t-as="main">
+                                    <tr style="background-color:white;color:black;text-align: center;">
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "main['name']"/></td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="main['duration']"/></td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="main['description']"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                        <t t-if ="obj['components']">
+                            <div class="text-right">
+                                <strong>المواد الخام</strong>
+                            </div>
+                            <table width="90%" style=" border: 1px solid black ; margin-top:5px background-color:#f2f2f2;">
+                                <thead style="display:table-header-group; background-color:#f2f2f2;">
+                                    <tr style="text-align: center;">
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">الصنف</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">السماكة</td>
+                                        <td style=" border: 1px solid black;text-align: center;"  class="text-center">عدد الصنف</td>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="obj['components']" t-as="comp">
+                                    <tr style="background-color:white;color:black;text-align: center;">
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "comp['product']"/></td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="comp['thickness']"/></td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="comp['tape_number']"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                        <t t-if ="obj['production']">
+                            <div class="text-right">
+                                <strong>الإنتاج</strong>
+                           </div>
+
+                            <table width="90%" style=" border: 1px solid black ; margin-top:5px background-color:#f2f2f2;">
+                                <thead style="display:table-header-group; background-color:#f2f2f2;">
+                                    <tr style="text-align: center;">
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">الصنف</td>
+                                        <td style=" border: 1px solid black;text-align: center;"  class="text-center">عدد الصنف</td>
+                                        <td style=" border: 1px solid black;text-align: center;"  class="text-center">الجيد</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">التألف</td>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="obj['production']" t-as="product">
+                                    <tr style="background-color:white;color:black;text-align: center;">
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "product['product']"/></td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="product['tape_number']"/></td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="product['quantity_done']"/></td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center"><t t-esc="product['scrap']"/></td>
+                                    </tr>
+                                </t>
+                            </table>
+                        </t>
+                    </t>
+                    <table class="table table-borderless" width="50%" style="margin-top: 10px">
+                        <!-- style="margin-top: 25%" -->
+                        <tr class="text-right">
+                            <td> </td>
+                            <td><strong>مشغل الخط</strong></td>
+                            <td><strong>راقب الإنتاج</strong></td>
+                            <td><strong>مدير الإنتاج</strong></td>
+                        </tr>
+                        <tr class="text-right">
+                            <td><strong>الإسم</strong></td>
+                            <td>
+                            .......................................
+                            </td>
+                            <td>
+                            .......................................
+
+                            </td>
+                            <td>
+                            .......................................
+
+                            </td>
+                        </tr>
+                        <tr class="text-right">
+                            <td><strong>التوقيع</strong></td>
+                            <td>.......................................</td>
+                            <td>.......................................</td>
+                            <td>
+                            .......................................
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</data>
+</odoo>

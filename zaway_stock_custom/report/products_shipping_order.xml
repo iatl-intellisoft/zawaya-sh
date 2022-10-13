@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_products_shipping_order">
+    <t t-call="web.html_container">
+        <t t-foreach="inside_foreach_docs or docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page" dir="rtl">
+                    <t t-if="o.picking_type_id.code == 'outgoing' and o.sale_id != None">
+                        <div style="text-align:center">
+                            <div>
+                                <h2 style="text-align:center;">
+                                    <b style="text-decoration-line: underline;border-bottom:5px double black;">
+                                        أمر شحن منتجات
+                                    </b>
+                                </h2>
+                            </div>
+                            <table class="table table-borderless"  style="margin-top: 5%">
+                                <tr>
+                                    <td style="text-align:right;">
+                                        <strong>رقم أمر الشحن : </strong>
+                                        <span t-field="o.name"/>
+                                    </td>
+                                    <td  style="text-align:right;">
+                                        <strong>التاريخ: </strong>
+                                        <span t-field="o.scheduled_date"/>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <strong>الوجهة : </strong>
+                                        <span t-field="o.address"/>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right;">
+                                        <strong>إسم السائق:</strong>
+                                        <span t-field="o.driver_name"/>
+                                    </td>
+                                    <td  style="text-align:right;">
+                                        <strong>رقم اللوحة:</strong>
+                                        <span t-field="o.plate_number"/>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <strong>سائق الفوركلفت:</strong>
+                                        <span t-field="o.forklift_driver"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table table-borderless" style=" border: 1px solid black;">
+                                <thead  style ="border-collapse: collapse; background-color:#f2f2f2">
+                                    <tr style="text-align: center;">
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">الرقم</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">الصنف</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">السماكة</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">عدد الربط</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">الكمية</td>
+                                        <td style=" border: 1px solid black;text-align: center;" class="text-center">ملاحظات</td>
+                                    </tr>
+                                </thead>
+                                <t t-foreach="o.move_ids_without_package" t-as="line">
+                                    <tr style="background-color:white;color:black;text-align: left;">
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc="line_index + 1"/></td>
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line.product_id.name"/></td>
+                                         <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line.product_id.thickness"/></td>
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line.units_sale.name"/></td>
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "line.qty_sale"/></td>
+                                        <td style="border: 1px solid black;position:relative;text-align:center"><t t-esc= "o.note"/></td>
+                                    </tr>
+                                 </t>
+                            </table>
+                            <div class="text-right" style="margin-top: 5%">
+                                <strong>السيد/ رئيس قسم المخازن الرجاء إستلام الكويلات الموضحة أعلاه:  </strong>
+                            </div>
+                            <table class="table table-borderless">
+                                 
+                                <tr class="text-right">
+                                    <td>توقيع رئيس قسم المخازن</td>
+                                    <td><t t-esc= "o.stock_manger_sign.name"/></td>
+                                    <td>.......................................</td>
+                                    <td>التاريخ: <t t-esc= "o.stock_manger_date"/></td>
+                                </tr>
+                                <tr class="text-right">
+                                    <td>توقيع مدير المصنع</td>
+                                    <td><t t-esc= "o.manufac_sign.name"/></td>
+                                    <td>.......................................</td>
+                                    <td>التاريخ: <t t-esc= "o.manufac_date"/></td>
+                                </tr>
+                                <tr class="text-right">
+                                    <td>تم الإدخال والأرشفة توقيع مسوؤل النظام</td>
+                                    <td><t t-esc= "o.it_sign.name"/></td>
+                                    <td>.......................................</td>
+                                    <td>التاريخ: <t t-esc= "o.it_date"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+
+
+<record id="action_report_products_shipping_order" model="ir.actions.report">
+    <field name="name">أمر شحن منتجات</field>
+    <field name="model">stock.picking</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">zaway_stock_custom.report_products_shipping_order</field>
+    <field name="report_file">zaway_stock_custom.report_products_shipping_order</field>
+    <!-- <field name="print_report_name">'Payslip - %s' % (object.employee_id.name)</field> -->
+    <field name="binding_model_id" ref="zaway_stock_custom.model_stock_picking"/>
+    <field name="binding_type">report</field>
+</record>
+</odoo>

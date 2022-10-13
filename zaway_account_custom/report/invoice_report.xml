@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <template id="invoice_repair_inherit" inherit_id='account.report_invoice_document'>
+        	<xpath expr="//t[@t-set='address']/address" position="after">
+
+        		<p t-if="o.partner_id.code">Code: <span t-field="o.partner_id.code"/></p>
+        	</xpath>
+        </template>
+    </data>
+</odoo>

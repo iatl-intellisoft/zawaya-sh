@@ -19,17 +19,19 @@ class StockMove(models.Model):
     _inherit = 'stock.move'
 
     thickness = fields.Float(string="Thickness",related="product_id.thickness")
-    packag_product = fields.Many2many('stock.quant.package',string="Package", compute='_compute_package',readonly=False,store=True)
+    # package_domain = fields.Many2many('stock.quant.package','stock_quant_package_rel', 'domain_id', 'package_id',string="Package", compute='_compute_package',readonly=False,store=True)
+    packag_product = fields.Many2many('stock.quant.package','stock_package_rel', 'packag_product_id', 'quant_package_id',string="Package")
+    
     tape_number = fields.Float(string="Tape Number")
     count_package = fields.Integer(string="Number of Packages",compute='compute_product_uom_qty')
 
 
-    @api.onchange('product_id','raw_material_production_id.product_id')
-    def _compute_package(self):
-      self.packag_product = None
-      for rec in self:
-          package = self.env['stock.quant.package'].search([('quant_ids.product_id','=',rec.product_id.id)])
-          rec.packag_product =  package
+    # @api.onchange('product_id','raw_material_production_id.product_id')
+    # def _compute_package(self):
+    #   self.package_domain = None
+    #   for rec in self:
+    #       package = self.env['stock.quant.package'].search([('quant_ids.product_id','=',rec.product_id.id)])
+    #       rec.package_domain =  package
 
 
     @api.onchange('packag_product','product_id','raw_material_production_id.bom_id')
@@ -45,30 +47,30 @@ class StockMove(models.Model):
         self.write({'product_uom_qty':product_uom_qty_package,'count_package':count})
 
 
-    def action_show_details(self):
-        self.ensure_one()
-        action = super().action_show_details()
-        if self.raw_material_production_id:
-            action['views'] = [(self.env.ref('mrp.view_stock_move_operations_raw').id, 'form')]
-            action['context']['show_destination_location'] = False
+    # def action_show_details(self):
+    #     self.ensure_one()
+    #     action = super().action_show_details()
+    #     if self.raw_material_production_id:
+    #         action['views'] = [(self.env.ref('mrp.view_stock_move_operations_raw').id, 'form')]
+    #         action['context']['show_destination_location'] = False
             
-        elif self.production_id:
-            action['views'] = [(self.env.ref('mrp.view_stock_move_operations_finished').id, 'form')]
-            action['context']['show_source_location'] = False
+    #     elif self.production_id:
+    #         action['views'] = [(self.env.ref('mrp.view_stock_move_operations_finished').id, 'form')]
+    #         action['context']['show_source_location'] = False
 
-        ids = []
-        for package in self.packag_product:
-            new_id = self.env['stock.move.line'].create({
-                'location_id':self.location_id.id,
-                'package_id':package.id,
-                'move_id':self.id,
-                'product_uom_id':self.product_id.uom_id.id
-            })
-            ids.append(new_id.id)
-        self.write({
-            'move_line_ids':[(6,0,ids)]
-            })
-        return action
+    #     ids = []
+    #     for package in self.packag_product:
+    #         new_id = self.env['stock.move.line'].create({
+    #             'location_id':self.location_id.id,
+    #             'package_id':package.id,
+    #             'move_id':self.id,
+    #             'product_uom_id':self.product_id.uom_id.id
+    #         })
+    #         ids.append(new_id.id)
+    #     self.write({
+    #         'move_line_ids':[(6,0,ids)]
+    #         })
+    #     return action
 
 
 

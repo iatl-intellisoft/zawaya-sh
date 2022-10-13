@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_maintenance_completion" model="ir.actions.report">
+        <field name="name">Maintenance Completion</field>
+        <field name="model">maintenance.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">zaway_maintenance_custom.report_maintenance_completion</field>
+        <field name="report_file">zaway_maintenance_custom.report_maintenance_completion</field>
+        <field name="binding_model_id" ref="model_maintenance_request"/>
+        <!-- maintenance. -->
+        <field name="binding_type">report</field>
+    </record>
+        <template id="report_maintenance_completion">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page" dir="rtl" style=" margin-top:-2%">
+                            <font style="font-size: 12px;">
+                                <div style="text-align:center">
+                                    <h4>تقرير إكمال الصيانة</h4>
+                                </div>
+                                <table class="table table-borderless">
+                                    <tr class="text-right" dir="rtl">
+                                        <td>
+                                            <strong>التاريخ</strong>
+                                            <span t-field="o.request_date"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-right" dir="rtl">
+                                        <td>
+                                            <strong>بيانات الآلة المصانة :</strong>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr class="text-center">
+                                        <!-- <td> -->
+                                        <tr class="text-center" dir="rtl">
+                                            <td>
+                                                <strong>النوع:</strong>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.request_date"/>
+                                            </td>
+                                            <td>
+                                                <strong>الإدارة:</strong>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.department_id.name"/>
+                                            </td>
+                                            <td>
+                                                <strong>المكان</strong>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.request_date"/>
+                                            </td>
+                                                    
+                                        </tr>
+                                        <tr class="text-center" dir="rtl">
+                                            <td>
+                                                <strong>الشركة المصنعة</strong>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.manufacture_company"/>
+                                            </td>
+                                            <td>
+                                                <strong>سنة التصنيع</strong>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.model"/>
+                                            </td>
+                                            <td>
+                                                <strong>رقم اللوحة:</strong>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.serial_no"/>
+                                            </td>
+                                        </tr>
+                                        <tr class="text-center" dir="rtl">
+                                            <td>
+                                                <strong>الوقت الغعلي لاكمال الصيانة:</strong>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.duration"/>
+                                            </td>
+                                            <td>
+                                                <strong>الكود</strong>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.code"/>
+                                            </td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <td  class="text-right" dir="rtl">
+                                            <strong>قطع الغيار المستخدمة:</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <table style="border: 1px solid black;width: 90%; height: 90%; margin-top:-3%">
+                                            <thead style="background-color: #5F5F5F;border: 1px solid black;">
+                                                <th class="text-center" style="border: 1px solid black;">المنتج</th>
+                                                <th class="text-center" style="border: 1px solid black;">الكمية</th>
+                                            </thead>
+                                            <tr t-foreach="o.spart_line_ids" t-as="line" style="border: 1px solid black;">
+                                                <td style="border-left: 1px solid black;" class="text-center">
+                                                    <span t-field="line.product_id"/>
+                                                </td>
+                                                <td style="border-left: 1px solid black;" class="text-center">
+                                                    <span t-field="line.quantity"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </tr>
+                                </table>
+                                <table style="width: 50%; height: 50%;">
+                                    
+                                    <tr>
+                                        <td  class="text-right" dir="rtl">
+                                            <strong>الوصف الفني للعطل</strong>
+                                            <span t-field="o.description_problem"></span>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td  class="text-right" dir="rtl">
+                                            <strong>أعمال الصيانة التي تمت:</strong>
+                                            <span t-field="o.Work_required"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td  class="text-right" dir="rtl">
+                                            <strong>الحالة الفنية بعد الصيانة:</strong>
+                                            <p>.................................................................................................................................................................................................................................</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td  class="text-right" dir="rtl">
+                                            <strong>التوصيات:</strong>
+                                            <span>.................................................................................................................................................................................................................................
+                                        </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table style="width: 80%; height: 90%; margin-top: 10px">
+                                    <tr>
+                                        <td>
+                                            <strong>إسم المستلم</strong>
+                                        </td>
+                                        <td>
+                                           ....................................................
+                                        </td>
+                                        <td>
+                                            <strong>التوقيع</strong>
+                                        </td>
+                                        <td>
+                                           ....................................................
+                                        </td>
+                                        <td>
+                                            <strong>الوظيفة</strong>
+                                        </td>
+                                        <td >
+                                           ....................................................
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>المشرف الفني</strong>
+                                        </td>
+                                        <td>
+                                            ....................................................
+                                        </td>
+                                        <td>
+                                            <strong>التوقيع</strong>
+                                        </td>
+                                        <td>
+                                           ....................................................
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td >
+                                        </td>
+                                    </tr>
+                                </table>
+                            </font>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

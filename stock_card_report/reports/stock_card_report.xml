@@ -1,0 +1,150 @@
+<odoo>
+    <template id="stock_card_report.report_stock_card_report_pdf">
+     <t t-call="web.external_layout"> 
+        <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="stock_card_report.report_stock_card_report_base" />
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="stock_card_report.report_stock_card_report_base">
+        <t t-foreach="o.product_ids" t-as="product">
+            <div class="page" dir= "rtl" style="margin-top:15px">
+                <div style="text-align:center">
+                    <strong>تقرير حركة الأصناف</strong>
+
+                </div>
+                <div class="text-right" style="margin-top:-10px">
+                    <br/><br/>
+                    <h4>
+                        الصنف : <span t-field="product.name" />
+                    </h4>
+                    <table class="table table-sm table-bordered" >
+                        
+                        <tr class="text-center">
+                            <th style="background-color:#f2f2f2;">تاريخ من</th>
+                            <td>
+                            <span t-field="o.date_from" />
+                            </td>
+                            <th style="background-color:#f2f2f2;">إلي</th>
+                            <td>
+                                <span t-field="o.date_to" />
+                            </td> 
+                             
+                        </tr>
+                        <tr class="text-center">
+                            <th style="background-color:#f2f2f2;">الموقع</th>
+                            <td>
+                                <span t-field="o.location_id" />
+                            </td>                         
+                        </tr>
+                        <tr class="text-center">
+                            <t
+                            t-set="initial"
+                            t-value="o._get_initial(o.results.filtered(lambda l: l.product_id == product and l.is_initial))"
+                            />
+                            <t
+                                t-set="closing"
+                                t-value="o._get_closing(o.results)"
+                            />
+                            <th style="background-color:#f2f2f2;" colspan="2">
+                                الرصيد الإفتتاحي
+                            </th>
+                            <td colspan="2">
+                                <t t-esc="'{0:,.3f}'.format(initial)" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+              
+                <table class="table table-sm table-bordered" style="border: 1px solid black;">
+                    <thead>
+                        <tr>
+                            <th style="background-color:#f2f2f2;" class="text-center">التاريخ</th>
+                            <th style="background-color:#f2f2f2;" class="text-center">البيان</th>
+                            <th style="background-color:#f2f2f2;" class="text-center">الوارد</th>
+                            <th style="background-color:#f2f2f2;" class="text-center">المسحوب</th>
+                            <th style="background-color:#f2f2f2;" class="text-center">الرصيد</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-right">
+                        <t t-set="product_balance" t-value="initial" />
+                        <t
+                        t-foreach="o.results.filtered(lambda l: l.product_id == product and not l.is_initial)"
+                        t-as="product_line" >
+                            <tr>
+                                <td>
+                                    <t t-esc="product_line.date.strftime('%Y-%m-%d')" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.reference" />
+                                </td>
+                                <td>
+                                    <t t-esc="'{0:,.3f}'.format(product_line.product_in)" />
+                                </td>
+                                <td>
+                                    <t t-esc="'{0:,.3f}'.format(product_line.product_out)" />
+                                </td>
+                                <t
+                                    t-set="product_balance"
+                                    t-value="product_balance + product_line.product_in - product_line.product_out"
+                                />
+                                <td>
+                                    <t t-esc="'{0:,.3f}'.format(product_balance)" />
+                                </td>
+                                <!-- <td>
+                                    <t t-esc="product_line.move_id.picking_id.sale_id.partner_id.name" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.move_id.picking_id.sale_id.invoice_ids" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.move_id.picking_id.sale_id.invoice_ids.invoice_date" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.lot_id.expiration_date" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.lot_id.name" />
+                                </td>
+                                <td>
+                                    <t t-esc="product_line.move_id.origin" />
+                                </td>
+                             -->
+                            </tr>
+                        </t>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <strong>المجموع</strong>
+                            </td>
+                            <td>
+                                <t t-esc="'{0:,.2f}'.format(float(sum(p['product_in'] for p in o.results.filtered(lambda l: l.product_id == product and not l.is_initial)
+                                )))"/>
+                               
+                            </td>
+                            <td>
+                                <t t-esc="'{0:,.2f}'.format(float(sum(p['product_out'] for p in o.results.filtered(lambda l: l.product_id == product and not l.is_initial)
+                                )))"/>
+                            </td>
+                            <td>
+                            </td>
+                            
+                        </tr>
+                        <!-- <tr>
+                            <th style="background-color:#f2f2f2;" colspan="3">
+                                Closing Balance:
+                            </th>
+                            <td colspan="4">
+                                <t t-esc="'{0:,.3f}'.format(closing)" />
+                            </td>
+                        </tr> -->
+                    </tbody>
+
+                </table>
+            </div>
+            <p style="page-break-before:always;" />
+        </t>
+    </template>
+</odoo>

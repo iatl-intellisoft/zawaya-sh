@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="maintenance_equipment_inherit_view" model="ir.ui.view">
+            <field name="name">maintenance.equipment.inherit.view</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='serial_no']" position="after">
+                    <field name="manufacture_company"/>   
+                </xpath>
+                <xpath expr="//field[@name='warranty_date']" position="before">
+                    <field name="code"/>
+                </xpath>
+            </field>
+        </record>
+<!-- Maintenance Stage -->
+        <record id="maintenance_stage_inherit_form" model="ir.ui.view">
+            <field name="name">maintenance.stage.inherit.form</field>
+            <field name="model">maintenance.stage</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_stage_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='fold']" position="after">
+                    <field name="in_progress"/>   
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
