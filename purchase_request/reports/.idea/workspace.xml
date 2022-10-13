@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b8785903-7b12-4b57-bd68-e4e21d6c1e32" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../addons/hr_contract/models/hr_contract.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../addons/hr_contract/models/hr_contract.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../addons/purchase/i18n/ar.po" beforeDir="false" afterPath="$PROJECT_DIR$/../../../addons/purchase/i18n/ar.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../addons/stock/report/report_stockinventory.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../addons/stock/report/report_stockinventory.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../debian/odoo.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../debian/odoo.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/data/seq_seq.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/data/seq_seq.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/i18n/ar_001.po" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/i18n/ar_001.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/adding_worker_to_transport_line.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/adding_worker_to_transport_line.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/apartment_req.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/apartment_req.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/cars_warning.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/cars_warning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/cleaning_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/cleaning_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/countdays.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/loan_car_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/loan_car_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/product_health.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/product_health.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/sim_card_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/sim_card_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/testdays.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/transportation_cars_attendance.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/transportation_cars_attendance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/transportation_line_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/transportation_line_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/worker_meal_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/models/worker_meal_management.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/car_att_abs_report.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/car_move_action_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/car_move_action_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/compare_garbage_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/compare_garbage_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/compare_sanitation_action_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/compare_sanitation_action_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/excel_form_car_report.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/garbage_report_action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/garbage_report_action.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/inventory_scrap_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/inventory_scrap_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/loan_car_action_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/loan_car_action_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/report_car_xls.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/total_car_move.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/total_car_move.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/total_tanker_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/reports/total_tanker_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/security/security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/security/security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/adding_worker_to_transport_line.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/adding_worker_to_transport_line.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/all_actions_menus.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/all_actions_menus.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/apartment_req.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/apartment_req.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/car_contract.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/car_contract.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/car_fuel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/car_fuel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/cars_warning.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/cars_warning.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/cleaning_follow_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/cleaning_follow_up.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/garbage_calculation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/garbage_calculation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/garbage_follow_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/garbage_follow_up.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/loan_car_clearance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/loan_car_clearance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/loan_car_monthly_fees.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/loan_car_monthly_fees.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/loan_car_request.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/loan_car_request.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/loan_car_stop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/loan_car_stop.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/product_health.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/product_health.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/sanitation_calculations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/sanitation_calculations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/sanitation_follow_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/sanitation_follow_up.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/sim_card.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/sim_card.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/transportation_cars_attendance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/transportation_cars_attendance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/transportation_line_request.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/transportation_line_request.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/w_employee_meal_cost.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/w_employee_meal_cost.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/worker_meal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/worker_meal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/worker_meal_cost_calculation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/worker_meal_cost_calculation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/worker_meal_subsidy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/worker_meal_subsidy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/worker_meal_subsidy_cancel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/worker_meal_subsidy_cancel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/x_meal_cost_calculation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/views/x_meal_cost_calculation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/car_attendance_absent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/car_attendance_absent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/car_move_wiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/car_move_wiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/car_move_wiz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/car_move_wiz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/compare_garbage_wiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/compare_garbage_wiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/compare_garbage_wiz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/compare_garbage_wiz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/compare_sanitation_wiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/compare_sanitation_wiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/garbage_report_wiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/garbage_report_wiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/inventory_scrap_wiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/inventory_scrap_wiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/loan_car_report_wiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/loan_car_report_wiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/loan_car_wiz_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/loan_car_wiz_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/total_car_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/total_car_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/total_car_move_wiz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/total_car_move_wiz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/total_tanker_wiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/total_tanker_wiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/total_tanker_wiz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/total_tanker_wiz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/xxxx.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../kambal_addons/admin_module/wizard/xxxx.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2FIGhBZfQg9fyATg8LPAofmYVIg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/mohamed/Desktop/raghdah/odoo15/zawaya_addons"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8785903-7b12-4b57-bd68-e4e21d6c1e32" name="Changes" comment="" />
+      <created>1664172333051</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664172333051</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
