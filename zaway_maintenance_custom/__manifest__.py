@@ -11,7 +11,7 @@
     'author': "IATL International",
     'website': "http://www.iatl-sd.com",
     'category': 'Manufacturing/Maintenance',
-    'depends': ['maintenance','mrp_maintenance'],
+    'depends': ['maintenance','mrp_maintenance','hr_maintenance','base'],
     'data': [
         'security/ir.model.access.csv',
         'security/maintenance_group.xml',

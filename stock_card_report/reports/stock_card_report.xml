@@ -3,7 +3,7 @@
      <t t-call="web.external_layout"> 
         <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="stock_card_report.report_stock_card_report_base" />
+                    <t t-call="stock_card_report.report_stock_card_report_base"/>
                 </t>
             </t>
         </t>

@@ -27,6 +27,20 @@ class MaintenanceRequestInherit(models.Model):
     stock_picking_id= fields.One2many('stock.picking','maintenance_request_id',string="picking")
     check_picking = fields.Boolean(default=False)
     stage_check = fields.Boolean(related="stage_id.in_progress")
+    is_requested = fields.Boolean(default=True)
+    wait_manger = fields.Boolean(default=False)
+    is_approve = fields.Boolean(default=False)
+    # state = fields.Selection([
+    #     ('draft', 'Waiting Department Manager'),
+    #     ('dep_manger','Approved')])
+
+    def action_send_manger(self):
+        for rec in self:
+            rec.write({'is_requested': False,'wait_manger': True})
+
+    def action_dep_manger(self):
+        for rec in self:
+            rec.write({'wait_manger': False,'is_approve': True})
 
     def create_picking(self):
         lines = []

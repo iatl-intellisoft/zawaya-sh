@@ -11,7 +11,7 @@
     'author': "IATL International",
     'website': "http://www.iatl-sd.com",
     'category': 'Manufacturing/Manufacturing',
-    'depends': ['mrp','zaway_stock_custom'],
+    'depends': ['mrp','zaway_stock_custom','maintenance'],
     'data': [
         'security/ir.model.access.csv',
         'views/mrp_view.xml',

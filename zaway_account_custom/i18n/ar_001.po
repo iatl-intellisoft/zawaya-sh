@@ -3,6 +3,7 @@
 # 	* zaway_account_custom
 #	* account_accountant
 #	* account
+#	* account_invoice_extract
 #
 msgid ""
 msgstr ""
@@ -96,7 +97,16 @@ msgstr "فرق سعر الصرف"
 msgid "Cash Basis Taxes"
 msgstr "ضرائب الأساس النقدي"
 
+#. module: account_invoice_extract
+#: model:ir.model.fields,field_description:account_invoice_extract.field_res_company__extract_single_line_per_tax
+#: model:ir.model.fields,field_description:account_invoice_extract.field_res_config_settings__extract_single_line_per_tax
+msgid "OCR Single Invoice Line Per Tax"
+msgstr "فاتورة واحدة لكل ضريبة"
 
+#. module: account_invoice_extract
+#: model_terms:ir.ui.view,arch_db:account_invoice_extract.res_config_settings_view_form
+msgid "Enable to get only one invoice line per tax"
+msgstr "قم بتمكين الحصول على بند فاتورة واحد فقط لكل ضريبة"
 
 
 

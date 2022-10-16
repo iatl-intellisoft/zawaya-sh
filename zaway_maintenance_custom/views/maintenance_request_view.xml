@@ -7,8 +7,18 @@
             <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
             <field name="arch" type="xml">
                  <xpath expr="//header" position="inside">
+                    <field name ="is_requested" invisible="1"/>
+                    <field name ="wait_manger" invisible="1"/>
+                    <field name="is_approve" invisible="1"/>
                     <field name="stage_check" invisible="1"/>
                     <button name="create_picking" string="Create Picking" type="object" class="btn-primary" attrs="{'invisible': [('stage_check', '=', False)]}"/>
+
+                    <button name="action_send_manger" class="oe_highlight" type="object" string="Send To Department" attrs="{'invisible': [('is_requested', '=', False)]}"/>
+
+                    <button name="action_dep_manger" class="oe_highlight" type="object" string="Approve"  groups="zaway_maintenance_custom.group_maintenance_department_manager" attrs="{'invisible': [('wait_manger', '=', False)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('is_approve', '=', False)]}</attribute>
                 </xpath>
 
                 <xpath expr="//field[@name='email_cc']" position="after">

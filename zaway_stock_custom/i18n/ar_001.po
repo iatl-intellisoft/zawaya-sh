@@ -2,31 +2,43 @@
 # This file contains the translation of the following modules:
 # 	* zaway_stock_custom
 # 	* stock
+#	* sale_stock
+# 	* stock_sms
+#	* stock_enterprise
+# 	* stock_account
+# 	* product
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-13 12:19+0000\n"
-"PO-Revision-Date: 2022-10-13 12:19+0000\n"
+"PO-Revision-Date: 2022-10-14 21:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"X-Generator: Poedit 3.1.1\n"
 
 #. module: zaway_stock_custom
 #: model:ir.model.fields,help:zaway_stock_custom.field_stock_picking__state
 msgid ""
 " * Draft: The transfer is not confirmed yet. Reservation doesn't apply.\n"
-" * Waiting another operation: This transfer is waiting for another operation before being ready.\n"
+" * Waiting another operation: This transfer is waiting for another "
+"operation before being ready.\n"
 " * Waiting: The transfer is waiting for the availability of some products.\n"
-"(a) The shipping policy is \"As soon as possible\": no product could be reserved.\n"
-"(b) The shipping policy is \"When all products are ready\": not all the products could be reserved.\n"
+"(a) The shipping policy is \"As soon as possible\": no product could be "
+"reserved.\n"
+"(b) The shipping policy is \"When all products are ready\": not all the "
+"products could be reserved.\n"
 " * Ready: The transfer is ready to be processed.\n"
-"(a) The shipping policy is \"As soon as possible\": at least one product has been reserved.\n"
-"(b) The shipping policy is \"When all products are ready\": all product have been reserved.\n"
+"(a) The shipping policy is \"As soon as possible\": at least one product "
+"has been reserved.\n"
+"(b) The shipping policy is \"When all products are ready\": all product "
+"have been reserved.\n"
 " * Done: The transfer has been processed.\n"
 " * Cancelled: The transfer has been cancelled."
 msgstr ""
@@ -34,7 +46,8 @@ msgstr ""
 #. module: zaway_stock_custom
 #: model_terms:ir.ui.view,arch_db:zaway_stock_custom.report_raw_receipt_order
 msgid ""
-"<b style=\"text-decoration-line: underline;border-bottom:5px double black;\">\n"
+"<b style=\"text-decoration-line: underline;border-bottom:5px double black;"
+"\">\n"
 "                                        أمر استلام خام\n"
 "                                    </b>"
 msgstr ""
@@ -42,7 +55,8 @@ msgstr ""
 #. module: zaway_stock_custom
 #: model_terms:ir.ui.view,arch_db:zaway_stock_custom.report_products_shipping_order
 msgid ""
-"<b style=\"text-decoration-line: underline;border-bottom:5px double black;\">\n"
+"<b style=\"text-decoration-line: underline;border-bottom:5px double black;"
+"\">\n"
 "                                        أمر شحن منتجات\n"
 "                                    </b>"
 msgstr ""
@@ -50,7 +64,8 @@ msgstr ""
 #. module: zaway_stock_custom
 #: model_terms:ir.ui.view,arch_db:zaway_stock_custom.report_raw_material_recall_order
 msgid ""
-"<b style=\"text-decoration-line: underline;border-bottom:5px double black;\">\n"
+"<b style=\"text-decoration-line: underline;border-bottom:5px double black;"
+"\">\n"
 "                                    أمر سحب مواد خام\n"
 "                                    </b>"
 msgstr ""
@@ -80,8 +95,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:zaway_stock_custom.report_products_shipping_order
 #: model_terms:ir.ui.view,arch_db:zaway_stock_custom.report_raw_receipt_order
 msgid ""
-"<strong>السيد/ رئيس قسم المخازن الرجاء إستلام الكويلات الموضحة أعلاه:  "
-"</strong>"
+"<strong>السيد/ رئيس قسم المخازن الرجاء إستلام الكويلات الموضحة أعلاه:  </"
+"strong>"
 msgstr ""
 
 #. module: zaway_stock_custom
@@ -344,7 +359,7 @@ msgstr "في إنتظار عملية اخر"
 #. module: zaway_stock_custom
 #: model:ir.model.fields.selection,name:zaway_stock_custom.selection__stock_picking__state__wait_it_approve
 msgid "Waiting IT Approval"
-msgstr "في إنتظارموافقة مسؤول النظام "
+msgstr "في إنتظارموافقة مسؤول النظام"
 
 #. module: zaway_stock_custom
 #: model:ir.model.fields.selection,name:zaway_stock_custom.selection__stock_picking__state__wait_manufac_approve
@@ -536,5 +551,370 @@ msgstr "تأكيد البريد الإلكتروني"
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 msgid "Send an automatic confirmation email when Delivery Orders are done"
-msgstr ""
+msgstr "إرسال رسالة تأكيد بالبريد الإلكتروني تلقائيًا عند إتمام أوامر التسليم"
 
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid ""
+"Send an automatic confirmation SMS Text Message when Delivery Orders are "
+"done"
+msgstr ""
+"إرسال رسالة نصية قصيرة SMS للتأكيد التلقائي عندما تكون طلبات التسليمفعله"
+
+#. modules: stock_sms, stock
+#: model:ir.model.fields,field_description:stock.field_res_config_settings__module_stock_sms
+#: model:ir.model.fields,field_description:stock_sms.field_res_company__stock_move_sms_validation
+#: model_terms:ir.ui.view,arch_db:stock_sms.res_config_settings_view_form_stock
+msgid "SMS Confirmation"
+msgstr "تأكيد الرسائل القصيرة"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "Compute shipping costs"
+msgstr "احسب تكاليف الشحن"
+
+#. module: stock
+#: model:res.groups,name:stock.group_stock_sign_delivery
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "Require a signature on your delivery orders"
+msgstr "تتطلب التوقيع على أوامر التسليم الخاصة بك"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_res_config_settings__module_delivery_dhl
+msgid "DHL Express Connector"
+msgstr "موصل سريع DHL"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "Get a full traceability from vendors to customers"
+msgstr "احصل على إمكانية تتبع كاملة من الموردين إلى العملاء"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_res_config_settings__group_lot_on_delivery_slip
+msgid "Display Lots & Serial Numbers on Delivery Slips"
+msgstr "عرض الأرقام التسلسلية على قسائم التسليم"
+
+#. module: stock_account
+#: model_terms:ir.ui.view,arch_db:stock_account.res_config_settings_view_form
+msgid ""
+"Add additional cost (transport, customs, ...) in the value of the product."
+msgstr "أضف تكلفة إضافية (نقل ، جمارك ، ...) في قيمة المنتج."
+
+#. module: stock_account
+#: model:ir.model.fields,field_description:stock_account.field_res_config_settings__group_lot_on_invoice
+msgid "Display Lots & Serial Numbers on Invoices"
+msgstr "عرض الأرقام التسلسلية على الفواتير"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "Use your own routes"
+msgstr "استخدم مساراتك الخاصة"
+
+#. module: product
+#: model_terms:ir.ui.view,arch_db:product.res_config_settings_view_form
+msgid "Define your volume unit of measure"
+msgstr "حدد وحدة القياس الخاصة بك"
+
+#. module: product
+#: model_terms:ir.ui.view,arch_db:product.res_config_settings_view_form
+msgid "Define your weight unit of measure"
+msgstr "حدد وزنك وحدة القياس"
+
+#. module: product
+#: model:ir.model.fields.selection,name:product.selection__res_config_settings__product_volume_volume_in_cubic_feet__1
+msgid "Cubic Feet"
+msgstr "قدم مكعب"
+
+#. module: product
+#: model:ir.model.fields.selection,name:product.selection__res_config_settings__product_volume_volume_in_cubic_feet__0
+msgid "Cubic Meters"
+msgstr "متر مكعب"
+
+#. modules: stock, sale_stock, product
+#: model:ir.actions.server,name:stock.action_view_inventory_tree
+#: model:ir.actions.server,name:stock.action_view_quants
+#: model:ir.model.fields,field_description:stock.field_stock_move__is_inventory
+#: model:ir.model.fields,field_description:stock.field_stock_move_line__is_inventory
+#: model:ir.ui.menu,name:stock.menu_stock_root
+#: model_terms:ir.ui.view,arch_db:sale_stock.res_users_view_form
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:stock.stock_move_line_view_search
+#: model_terms:ir.ui.view,arch_db:stock.view_move_search
+#: model_terms:ir.ui.view,arch_db:stock.view_partner_stock_form
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_pivot
+#: model_terms:ir.ui.view,arch_db:product.product_template_form_view
+msgid "Inventory"
+msgstr "المخازن"
+
+#. module: product
+#: model_terms:ir.ui.view,arch_db:product.res_config_settings_view_form
+msgid "Get product pictures using Barcode"
+msgstr "احصل على صور للمنتج باستخدام الباركود"
+
+#. module: stock
+#: model:ir.model,name:stock.model_stock_storage_category
+#: model:ir.model.fields,field_description:stock.field_stock_location__storage_category_id
+#: model:ir.model.fields,field_description:stock.field_stock_putaway_rule__storage_category_id
+#: model:ir.model.fields,field_description:stock.field_stock_storage_category__name
+#: model:ir.model.fields,field_description:stock.field_stock_storage_category_capacity__storage_category_id
+#: model_terms:ir.ui.view,arch_db:stock.stock_storage_category_form
+msgid "Storage Category"
+msgstr "فئة التخزين"
+
+#. module: stock
+#: model:ir.actions.act_window,name:stock.action_storage_category_capacity
+#: model:ir.model,name:stock.model_stock_storage_category_capacity
+#: model:ir.model.fields,field_description:stock.field_product_product__storage_category_capacity_ids
+#: model:ir.model.fields,field_description:stock.field_stock_package_type__storage_category_capacity_ids
+#: model:ir.ui.menu,name:stock.menu_storage_categoty_capacity_config
+#: model_terms:ir.ui.view,arch_db:stock.stock_storage_category_capacity_tree
+msgid "Storage Category Capacity"
+msgstr "سعة فئة التخزين"
+
+#. module: stock
+#: model:ir.actions.act_window,name:stock.action_orderpoint_replenish
+#: model:ir.actions.server,name:stock.action_replenishment
+#: model:ir.ui.menu,name:stock.menu_reordering_rules_replenish
+#: model_terms:ir.ui.view,arch_db:stock.report_product_product_replenishment
+msgid "Replenishment"
+msgstr "قواعد إعادة الطلب"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_warehouse_orderpoint__route_id
+msgid "Preferred Route"
+msgstr "طريقة الطلب"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_product_replenish__route_ids
+msgid "Preferred Routes"
+msgstr "طريقة الطلب"
+
+#. module: stock
+#: model:ir.model.fields,help:stock.field_stock_move__route_ids
+msgid "Preferred route"
+msgstr "طريقة الطلب"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_warehouse_orderpoint__product_min_qty
+msgid "Min Quantity"
+msgstr "أقل كمية"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_warehouse_orderpoint__product_max_qty
+msgid "Max Quantity"
+msgstr "أكبر كمية"
+
+#. module: stock
+#: model:ir.actions.act_window,name:stock.report_stock_quantity_action
+#: model:ir.actions.act_window,name:stock.report_stock_quantity_action_product
+#: model:ir.ui.menu,name:stock.menu_forecast_inventory
+#: model_terms:ir.ui.view,arch_db:stock.report_product_product_replenishment
+msgid "Forecasted Inventory"
+msgstr "تقرير الكمية المحجوزة"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_form
+msgid "Receive From"
+msgstr "إستلام من"
+
+#. module: stock
+#: code:addons/stock/models/stock_warehouse.py:0
+#, python-format
+msgid "Returns"
+msgstr "عائدات"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_internal_search
+msgid "My Transfers"
+msgstr "التحويلات الخاصة بي"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_tree
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_tree_editable
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_tree_inventory_editable
+msgid "On Hand Quantity"
+msgstr "الكمية في اليد"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_quant__inventory_quantity
+#: model_terms:ir.ui.view,arch_db:stock.stock_inventory_conflict_form_view
+msgid "Counted Quantity"
+msgstr "الكمية المقترحة"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_quant__available_quantity
+#: model_terms:ir.ui.view,arch_db:stock.view_stock_quant_tree_inventory_editable
+msgid "Available Quantity"
+msgstr "الكمية المتوفرة"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.report_inventory
+msgid "<strong>Available Quantity</strong>"
+msgstr "<strong>الكمية المتوفرة</strong>"
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.view_procurement_compute_wizard
+msgid ""
+"The stock will be reserved for operations waiting for availability and the "
+"reordering rules will be triggered."
+msgstr ""
+"سيتم حجز المخزن للعمليات التي تنتظر التوفر و"
+"سيتم تشغيل إعادة ترتيب القواعد."
+
+#. module: stock
+#: code:addons/stock/models/product.py:0
+#: model_terms:ir.ui.view,arch_db:stock.product_form_view_procurement_button
+#: model_terms:ir.ui.view,arch_db:stock.product_product_view_form_easy_inherit_stock
+#: model_terms:ir.ui.view,arch_db:stock.product_template_form_view_procurement_button
+#, python-format
+msgid "Update Quantity"
+msgstr "تحديث الكمية"
+
+#. module: product
+#: model_terms:ir.ui.view,arch_db:product.product_template_form_view
+msgid "Upsell & Cross-Sell"
+msgstr "حتى البيع والبيع العابر"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_product__description_sale
+#: model:ir.model.fields,field_description:product.field_product_template__description_sale
+#: model_terms:ir.ui.view,arch_db:product.product_template_form_view
+msgid "Sales Description"
+msgstr "وصف المبيعات"
+
+#. module: product
+#: model_terms:ir.ui.view,arch_db:product.product_template_only_form_view
+msgid "Attributes & Variants"
+msgstr "السمات والموديلات"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_move__date
+#: model_terms:ir.ui.view,arch_db:stock.view_move_form
+msgid "Date Scheduled"
+msgstr "التاريخ الجدولة"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_move__product_uom_qty
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_form
+#: model_terms:ir.ui.view,arch_db:stock.view_picking_move_tree
+msgid "Demand"
+msgstr "الطلب"
+
+#. module: product
+#: model:ir.model.fields,field_description:product.field_product_attribute__create_variant
+msgid "Variants Creation Mode"
+msgstr "وضع إنشاء الموديلات"
+
+#. module: product
+#: model:ir.model.fields.selection,name:product.selection__product_attribute__create_variant__always
+msgid "Instantly"
+msgstr "فورا"
+
+#. module: product
+#: model:ir.model.fields.selection,name:product.selection__product_attribute__create_variant__dynamic
+msgid "Dynamically"
+msgstr "ديناميكيًا"
+
+#. module: product
+#: model:ir.model.fields.selection,name:product.selection__product_attribute__create_variant__no_variant
+msgid "Never (option)"
+msgstr "أبدا (خيار)"
+
+#. module: product
+#: model_terms:ir.ui.view,arch_db:product.product_attribute_view_form
+msgid "<span class=\"o_stat_text\">Related Products</span>"
+msgstr "<span class=\"o_stat_text\">منتجات ذات صله</span>"
+
+#. module: product
+#: code:addons/product/models/product_attribute.py:0
+#: model:ir.model.fields,field_description:product.field_product_attribute__product_tmpl_ids
+#, python-format
+msgid "Related Products"
+msgstr "منتجات ذات صله"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_picking_type__reservation_method
+msgid "Reservation Method"
+msgstr "طريقة الحجز"
+
+#. module: stock
+#: model:ir.model.fields.selection,name:stock.selection__stock_picking_type__reservation_method__at_confirm
+msgid "At Confirmation"
+msgstr "عند التأكيد"
+
+#. module: stock
+#: model:ir.model.fields.selection,name:stock.selection__stock_picking_type__reservation_method__by_date
+msgid "Before scheduled date"
+msgstr "قبل الموعد المقرر"
+
+#. module: stock
+#: code:addons/stock/models/stock_warehouse.py:0
+#, python-format
+msgid ""
+"Creating a new warehouse will automatically activate the Storage Locations "
+"setting"
+msgstr ""
+"إنشاء مستودع جديد سيؤدي تلقائيًا إلى تنشيط مواقع التخزين"
+"ضبط"
+
+#. module: stock
+#: code:addons/stock/models/stock_picking.py:0
+#, python-format
+msgid ""
+"You need to activate storage locations to be able to do internal operation "
+"types."
+msgstr ""
+"تحتاج إلى تنشيط مواقع التخزين لتتمكن من القيام بعملية داخلية"
+"أنواع."
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_picking__show_reserved
+#: model:ir.model.fields,field_description:stock.field_stock_picking_type__show_reserved
+msgid "Pre-fill Detailed Operations"
+msgstr "ملء العمليات التفصيلية مسبقًا"
+
+#. module: stock_enterprise
+#: model:ir.actions.act_window,name:stock_enterprise.stock_report_dashboard_action
+#: model:ir.ui.menu,name:stock_enterprise.stock_dashboard_menuitem
+msgid "Warehouse Analysis"
+msgstr "تحليل المخازن"
+
+#. module: stock_enterprise
+#: model_terms:ir.ui.view,arch_db:stock_enterprise.stock_report_dashboard_view
+msgid "Receipts Cycle Time"
+msgstr "وقت دورة الإيصالات"
+
+#. module: stock_enterprise
+#: model_terms:ir.ui.view,arch_db:stock_enterprise.stock_report_dashboard_view
+msgid "Receipts Delay"
+msgstr "تأخير الإيصالات"
+
+#. module: stock_enterprise
+#: model_terms:ir.ui.view,arch_db:stock_enterprise.stock_report_dashboard_view
+msgid "Deliveries Cycle Time"
+msgstr "وقت دورة التسليم"
+
+#. module: stock_enterprise
+#: model_terms:ir.ui.view,arch_db:stock_enterprise.stock_report_dashboard_view
+msgid "Deliveries Delay"
+msgstr "تأخير التسليم"
+
+#. module: stock_enterprise
+#: model:ir.model.fields,field_description:stock_enterprise.field_stock_report__date_done
+msgid "Transfer Date"
+msgstr "تاريخ التحويل"
+
+#. module: stock_enterprise
+#: model_terms:ir.ui.view,arch_db:stock_enterprise.stock_report_search_view
+msgid "Done Deliveries"
+msgstr "عمليات التسليم التي تمت"
+
+#. module: stock_enterprise
+#: model_terms:ir.ui.view,arch_db:stock_enterprise.stock_report_search_view
+msgid "Done Receipts"
+msgstr "الإيصالات المنفذة"
+
+#. module: stock_enterprise
+#: model_terms:ir.ui.view,arch_db:stock_enterprise.stock_report_search_view
+msgid "Done Transfers"
+msgstr "التحويلات التي تمت"

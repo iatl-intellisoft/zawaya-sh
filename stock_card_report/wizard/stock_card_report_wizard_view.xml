@@ -26,12 +26,12 @@
                     
                     <button
                         name="button_export_pdf"
-                        string="Export PDF"
+                        string="طباعة"
                         type="object"
                         class="oe_highlight"
                     />
                    
-                    <button string="Cancel" class="oe_link" special="cancel" />
+                    <button string="إلغاء" class="oe_link" special="cancel" />
                 </footer>
             </form>
         </field>

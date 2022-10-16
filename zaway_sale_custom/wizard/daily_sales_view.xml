@@ -15,8 +15,8 @@
                     </group>
                 </group>
                 <footer>
-                    <button name="print_report" string="Print"  type="object" class="btn-primary"/>
-                    <button string="Cancel" class="btn-default" special="cancel" />
+                    <button name="print_report" string="طباعة"  type="object" class="btn-primary"/>
+                    <button string="إلغاء" class="btn-default" special="cancel" />
                 </footer>
             </form>
         </field>
