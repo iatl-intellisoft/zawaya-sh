@@ -13,7 +13,7 @@
     'website': "http://www.iatl-sd.com",
     'category': 'base',
     'version': '0.1',
-    'depends': ['hr_contract_kambal','hr_payroll_custom'
+    'depends': ['zaway_hr_contract','hr_payroll_custom'
                # 'hr_custom', 'hr_contract_custom','hr_payroll_custom'
     ],
     'data': [

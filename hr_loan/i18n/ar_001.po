@@ -2253,7 +2253,7 @@ msgid ""
 "Warning\n"
 "You must compute Loan Request before Approved."
 msgstr ""
-"Warning\n"
+"خطأ\n"
 "يجب عليك حساب طلب السلفية قبل الموافقة عليه"
 
 #. module: hr_loan

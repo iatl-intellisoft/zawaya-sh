@@ -1,0 +1,8 @@
+<odoo>
+    <record id="penalty_multi_company" model="ir.rule">
+        <field name="name">Penalty global rule</field>
+        <field name="model_id" ref="model_hr_penalty"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>
+

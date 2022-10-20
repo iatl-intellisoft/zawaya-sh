@@ -14,7 +14,7 @@
     'description': """
 	""",
 
-    'depends': ['base_custom','mail','account','hr_payroll','hr_contract_kambal','hr_payroll_custom'],
+    'depends': ['base_custom','mail','account','hr_payroll','zaway_hr_contract','hr_payroll_custom'],
                 # 'hr_custom', 'hr_payroll_custom'],
     'data': [
         'security/Loan_security.xml',

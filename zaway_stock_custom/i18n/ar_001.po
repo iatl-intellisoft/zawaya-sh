@@ -197,6 +197,8 @@ msgstr "سائق الفوركلفت"
 
 #. module: zaway_stock_custom
 #: model:ir.model.fields,field_description:zaway_stock_custom.field_product_category__has_weigth
+#: model:ir.model.fields,field_description:zaway_stock_custom.field_product_product__weight_categ
+#: model:ir.model.fields,field_description:zaway_stock_custom.field_product_template__weight_categ
 msgid "Has Weight?"
 msgstr "لديه وزن؟"
 

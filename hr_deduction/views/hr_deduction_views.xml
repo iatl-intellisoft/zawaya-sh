@@ -124,14 +124,14 @@
     <menuitem
             id="menu_hr_deduction"
             name="Deduction"
-            parent="hr_contract_kambal.menu_hr_employee_process"
+            parent="zaway_hr_contract.menu_hr_employee_process"
             sequence="4"
             groups="hr.group_hr_manager"/>
 
     <menuitem
             id="menu_hr_deduction_request"
             name="Deduction"
-            parent="menu_hr_deduction"
+            parent="hr_deduction.menu_hr_deduction"
             action="action_hr_deduction"
             sequence="1"
             groups="hr.group_hr_manager"/>

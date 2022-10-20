@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_service_termination_hr_service_termination,hr_service_termination.hr_service_termination,hr_service_termination.model_hr_service_termination,,1,1,1,1
+access_hr_service_termination_reasons,hr_service_termination.hr_service_termination,model_hr_service_termination_reasons,,1,1,1,1
+access_hr_service_termination_clearance_line,hr_service_termination.hr_service_termination_clearance_line,model_service_termination_clearance_line,,1,1,1,1
+access_hr_payslip,access_hr_payslip,model_hr_payslip,,1,1,1,1
+

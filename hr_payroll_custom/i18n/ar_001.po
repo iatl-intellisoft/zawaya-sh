@@ -4,6 +4,7 @@
 #   * hr
 #   * hr_payroll
 #   * hr_work_entry
+#	* hr_skills
 #
 msgid ""
 msgstr ""
@@ -530,3 +531,34 @@ msgstr "خطأ في تسليم الرسائل القصيرة"
 #: model:ir.model.fields,field_description:hr_work_entry.field_hr_work_entry_type__sequence
 msgid "Sequence"
 msgstr "تسلسل"
+
+#. module: hr
+#: model_terms:ir.ui.view,arch_db:hr.res_config_settings_view_form
+msgid "<span class=\"ml8 mr-2\">IP Addresses (comma-separated)</span>"
+msgstr "<span class=\"ml8 mr-2\">عناوين IP (مفصولة بفواصل)</span>"
+
+#. module: hr
+#: model_terms:ir.ui.view,arch_db:hr.res_config_settings_view_form
+msgid "<span class=\"ml8 mr-2\">Minimum number of emails to sent </span>"
+msgstr "<span class=\"ml8 mr-2\">الحد الأدنى لعدد رسائل البريد الإلكتروني المرسلة </span>"
+
+#. module: hr_skills
+#: model:ir.ui.menu,name:hr_skills.menu_human_resources_configuration_resume
+#: model_terms:ir.ui.view,arch_db:hr_skills.hr_employee_public_view_form_inherit
+#: model_terms:ir.ui.view,arch_db:hr_skills.hr_employee_public_view_search
+#: model_terms:ir.ui.view,arch_db:hr_skills.hr_employee_view_form
+#: model_terms:ir.ui.view,arch_db:hr_skills.hr_employee_view_search
+#: model_terms:ir.ui.view,arch_db:hr_skills.res_users_view_form
+#: model_terms:ir.ui.view,arch_db:hr_skills.resume_line_view_form
+msgid "Resumé"
+msgstr "سيرة ذاتية"
+
+#. module: hr_skills
+#: model:ir.actions.act_window,name:hr_skills.hr_resume_type_action
+msgid "Resumé Line Types"
+msgstr "أنواع خطوط السيرة الذاتية"
+
+#. module: hr_skills
+#: model:ir.ui.menu,name:hr_skills.hr_resume_line_type_menu
+msgid "Types"
+msgstr "أنواع"

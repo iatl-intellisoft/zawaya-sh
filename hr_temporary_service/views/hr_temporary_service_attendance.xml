@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_labor_attend" model="ir.ui.view">
+            <field name="name">hr_labor_attend</field>
+            <field name="model">hr.service.partner</field>
+            <field name="arch" type="xml">
+                <form string="Labors">
+                    <group colspan="4">
+                        <separator string="Labors" colspan="4"/>
+                        <newline/>
+                        <field name="partner_ids" nolabel="1"/>
+                    </group>
+                    <footer>
+                        <button icon="fa-cogs" string="Generate Attendance" name="get_partner_line" type="object"
+                                class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+    </record>
+
+    <record id="action_hr_labor_attend" model="ir.actions.act_window">
+        <field name="name">Generate Labors</field>
+        <field name="res_model">hr.service.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_hr_labor_attend"/>
+        <field name="target">new</field>
+
+    </record>
+
+        <record id="hr_temporary_service_attendance_tree" model="ir.ui.view">
+            <field name="name">HR Temporary Service Attendance Tree</field>
+            <field name="model">hr.temporary.service.attendance</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <!-- <field name="location"/> -->
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="hr_temporary_service_attendance_from" model="ir.ui.view">
+            <field name="name">HR Temporary Service Attendance From</field>
+            <field name="model">hr.temporary.service.attendance</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <button name="confirm" type="object" string="Confirm" states="draft"
+                                class="oe_highlight"/>
+                        <button name="cancel" type="object" string="Cancel" states="confirmed"
+                                class="oe_inline" groups="hr_temporary_service.hr_temporary_service_manager"/>
+                        <button name="reset" type="object" string="Set To Draft" class="oe_inline"
+                                states="cancel" groups="hr_temporary_service.hr_temporary_service_manager"/>
+                        <button name="%(action_hr_labor_attend)d" type="action" string="Generate Labor"
+                                class="oe_highlight"
+                                attrs="{'invisible':[('state','!=','draft')]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+
+                        <div class="oe_title">
+                            <h2>
+                                <field name="name" readonly="1" nolabel="1"/>
+                            </h2>
+                        </div>
+                        <group col="4">
+                            <field name="date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <!-- <field name="location" attrs="{'readonly':[('state','!=','draft')]}"/> -->
+                        </group>
+                        <notebook>
+                            <page string="Laborer">
+                                <field name="attendance_ids" attrs="{'readonly':[('state','!=','draft')]}">
+                                    <tree editable="bottom">
+                                        <field name="labor_id"/>
+                                        <field name="extra_hour" widget="float_time"/>
+                                        <!--                                        <field name="extra_hour_holiday" widget="float_time"/>-->
+                                        <field name="extra_pay"/>
+                                        <field name="note"/>
+                                        <!-- <field name="location" invisible="1"/> -->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="hr_temporary_service_attendance_action" model="ir.actions.act_window">
+            <field name="name">HR Temporary Service Attendance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.temporary.service.attendance</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+        <menuitem id="hr_temporary_service_attendance_menu_root"
+                  parent="hr_temporary_service.menu_temporary_service_root"
+                  name="Attendance" sequence="1"/>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="hr_temporary_service_attendance_menu" name="Attendance"
+                  parent="hr_temporary_service_attendance_menu_root"
+                  action="hr_temporary_service_attendance_action" sequence="1"/>
+        <!--       #####################################################3 hr_temporary_service_attendance_line-->
+        <record id="hr_temporary_service_attendance_line_tree" model="ir.ui.view">
+            <field name="name">hr_temporary_service_attendance_line_tree</field>
+            <field name="model">hr.temporary.service.attendance.line</field>
+            <field name="arch" type="xml">
+                <tree string="" create="false">
+                    <field name="labor_id"/>
+                    <field name="date"/>
+                    <field name="extra_hour" widget="float_time"/>
+                    <field name="extra_pay"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+        <record id="hr_temporary_service_attendance_line_action" model="ir.actions.act_window">
+            <field name="name">Attendance Line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.temporary.service.attendance.line</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="hr_temporary_service_attendance_line_menu" name="Attendance Line"
+                  parent="hr_temporary_service_attendance_menu_root"
+                  action="hr_temporary_service_attendance_line_action" sequence="2"/>
+
+
+    </data>
+</odoo>

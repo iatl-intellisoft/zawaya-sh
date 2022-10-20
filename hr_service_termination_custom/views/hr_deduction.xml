@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_deduction_custom_form_inherit" model="ir.ui.view">
+        <field name="name">Deduction Custom Custom</field>
+        <field name="model">hr.deduction</field>
+        <field name="inherit_id" ref="hr_deduction.view_hr_deduction_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="in_term_payslip"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

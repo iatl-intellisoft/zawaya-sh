@@ -1,0 +1,799 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ii_custody
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-31 08:30+0000\n"
+"PO-Revision-Date: 2022-08-31 08:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_needaction
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_needaction
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_ids
+msgid "Activities"
+msgstr "النشاطات"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__acvtivity_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__acvtivity_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__acvtivity_id
+msgid "Activity"
+msgstr "النشاط"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_exception_decoration
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_exception_decoration
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "النشاط المستثني"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_state
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_state
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_type_icon
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_type_icon
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: ii_custody
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_request_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_return_view_form
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_attachment_count
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_attachment_count
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__brand
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+#. module: ii_custody
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_request_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_return_view_form
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange__state__cancel
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_request__state__cancel
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_return__state__cancel
+msgid "Cancelled"
+msgstr "تم الالغاء"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_return__type__clearance_req
+msgid "Clearance Request"
+msgstr "طلب تصفية العهدة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__type
+msgid "Clearance Type"
+msgstr "نوع التصفية"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__company_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__company_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: ii_custody
+#: model:ir.model,name:ii_custody.model_res_config_settings
+msgid "Config Settings"
+msgstr "اعدادات التكوين"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__cost
+msgid "Cost"
+msgstr "التكلفة"
+
+#. module: ii_custody
+#: model_terms:ir.actions.act_window,help:ii_custody.custody_return_action
+msgid "Create a new custody clearance entry"
+msgstr "انشاء تصفية عهدة جديدة"
+
+#. module: ii_custody
+#: model_terms:ir.actions.act_window,help:ii_custody.custody_exchange_action
+msgid "Create a new custody exchange entry"
+msgstr "انشاء تبادل عهدة جديد"
+
+#. module: ii_custody
+#: model_terms:ir.actions.act_window,help:ii_custody.custody_request_action
+msgid "Create a new custody request entry"
+msgstr "انشاء طلب عهدة جديد"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__create_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__create_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__create_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__create_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__create_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__create_uid
+msgid "Created by"
+msgstr "تم الانشاء بوسطة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__create_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__create_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__create_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__create_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__create_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__create_date
+msgid "Created on"
+msgstr "تم الانشاء على"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__custody_id
+#: model:ir.ui.menu,name:ii_custody.menu_asset_custody_root
+msgid "Custody"
+msgstr "العهدة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__custody_request_ids
+msgid "Custody  Clear Details"
+msgstr "تفاصيل تصفية العهدة"
+
+#. module: ii_custody
+#: model:ir.actions.act_window,name:ii_custody.custody_return_action
+#: model:ir.ui.menu,name:ii_custody.custody_return_menu
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_return_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_return_view_tree
+msgid "Custody Clearance"
+msgstr "تصفية العهدة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__custody_details_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__custody_request_ids
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_request_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_return_view_form
+msgid "Custody Details"
+msgstr "تفاصيل العهدة"
+
+#. module: ii_custody
+#: model:ir.actions.act_window,name:ii_custody.custody_exchange_action
+#: model:ir.model,name:ii_custody.model_custody_exchange
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__custody_exchange_id
+#: model:ir.ui.menu,name:ii_custody.custody_exchange_menu
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_tree
+msgid "Custody Exchange"
+msgstr "تبادل العهدة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_stock_scrap__custody_exchange_line_id
+msgid "Custody Exchange Line Ref"
+msgstr "مرجع خط العهد المتبادلة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_hr_loan__custody_exchange_id
+msgid "Custody Exchange Ref"
+msgstr "مرجع تبادل العهد"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__custody_details_ids
+msgid "Custody More Details"
+msgstr "تفاصيل العهدة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_stock_picking__custody_clear_id
+#: model:ir.model.fields,field_description:ii_custody.field_stock_picking__custody_dispensing_id
+#: model:ir.model.fields,field_description:ii_custody.field_stock_picking__custody_ex_dispensing_id
+msgid "Custody Ref"
+msgstr "مرجع العهدة"
+
+#. module: ii_custody
+#: model:ir.actions.act_window,name:ii_custody.custody_request_action
+#: model:ir.model,name:ii_custody.model_custody_request
+#: model:ir.model,name:ii_custody.model_custody_return
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__custody_request_id
+#: model:ir.ui.menu,name:ii_custody.custody_request_menu
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_request_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_request_view_tree
+msgid "Custody Request"
+msgstr "طلب العهدة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__custody_return_id
+msgid "Custody Return"
+msgstr "ارجاع العهدة"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange_line__exchange_reason__damage
+msgid "Damage"
+msgstr "الضرر"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__destination_location_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__destination_location_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__destination_location_id
+msgid "Destination Location"
+msgstr "موقع الوجهة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__display_name
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__display_name
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__display_name
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__display_name
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__display_name
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__display_name
+msgid "Display Name"
+msgstr "عرض الاسم"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange__state__done
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_request__state__done
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_return__state__done
+msgid "Done"
+msgstr "تم"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__requester_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__employee_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__employee_id
+msgid "Employee Owed"
+msgstr "مستحقات الموظف"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__employee_id_job_title
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__employee_id_job_title
+msgid "Employee Owed Job Title"
+msgstr "عنوان وظيفة مستحقات الموظف"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__custody_exchange_ids
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+msgid "Exchange Custody Details"
+msgstr "تفاصيل العهد المتبادلة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__exchange_reason
+msgid "Exchange Reason"
+msgstr "سبب التبادل"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_follower_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_follower_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_follower_ids
+msgid "Followers"
+msgstr "متابعين"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_partner_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_partner_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "متابعين"
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__activity_type_icon
+#: model:ir.model.fields,help:ii_custody.field_custody_request__activity_type_icon
+#: model:ir.model.fields,help:ii_custody.field_custody_return__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ii_custody
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+msgid "Generate Loan Request"
+msgstr "انشاء طلب قرض"
+
+#. module: ii_custody
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+msgid "Generate Picking"
+msgstr "انشاء الاختيار"
+
+#. module: ii_custody
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+msgid "Generate Scrap"
+msgstr "انشاء خردة"
+
+#. module: ii_custody
+#: model:ir.model,name:ii_custody.model_hr_loan
+msgid "HR Loan Request"
+msgstr "طلب قرض"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__has_message
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__has_message
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__id
+msgid "ID"
+msgstr "رقم"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_exception_icon
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_exception_icon
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_exception_icon
+msgid "Icon"
+msgstr "ايقونة"
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__activity_exception_icon
+#: model:ir.model.fields,help:ii_custody.field_custody_request__activity_exception_icon
+#: model:ir.model.fields,help:ii_custody.field_custody_return__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى النشاط المستثني"
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__message_needaction
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__message_unread
+#: model:ir.model.fields,help:ii_custody.field_custody_request__message_needaction
+#: model:ir.model.fields,help:ii_custody.field_custody_request__message_unread
+#: model:ir.model.fields,help:ii_custody.field_custody_return__message_needaction
+#: model:ir.model.fields,help:ii_custody.field_custody_return__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "اذا تم التأكد, رسالة جديدة ستلفت انتباهك. "
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__message_has_error
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__message_has_sms_error
+#: model:ir.model.fields,help:ii_custody.field_custody_request__message_has_error
+#: model:ir.model.fields,help:ii_custody.field_custody_request__message_has_sms_error
+#: model:ir.model.fields,help:ii_custody.field_custody_return__message_has_error
+#: model:ir.model.fields,help:ii_custody.field_custody_return__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "اذا تم التأكد, سيكون هنالك خطأ في تسليم بعض الرسائل."
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_is_follower
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_is_follower
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details____last_update
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange____last_update
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line____last_update
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request____last_update
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line____last_update
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل علي"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__write_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__write_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__write_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__write_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__write_uid
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة "
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__write_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__write_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__write_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__write_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__write_date
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث علي"
+
+#. module: ii_custody
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+msgid "Loan Request"
+msgstr "طلب قرض"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange_line__exchange_reason__loss
+msgid "Loss"
+msgstr "خسارة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_main_attachment_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_main_attachment_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسى"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_has_error
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_has_error
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في استلام الرسالة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: ii_custody
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_request_view_form
+msgid "More Details"
+msgstr "تفاصيل أكثر"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__my_activity_date_deadline
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي للنشاط"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__product_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__product_id
+msgid "Name"
+msgstr "الاسم"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange__state__new
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_request__state__new
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_return__state__new
+msgid "New"
+msgstr "جديد"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_calendar_event_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_calendar_event_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "تقويم حدث الناط التالي"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_date_deadline
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_date_deadline
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط "
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_summary
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_summary
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_type_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_type_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange_line__type__non_refunded
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_request_line__type__non_refunded
+msgid "Non Refunded"
+msgstr "غير مستردة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__requster_note
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__requster_note
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__number
+msgid "Number"
+msgstr "رقم"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_needaction_counter
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_needaction_counter
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الأحداث"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_has_error_counter
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_has_error_counter
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__message_needaction_counter
+#: model:ir.model.fields,help:ii_custody.field_custody_request__message_needaction_counter
+#: model:ir.model.fields,help:ii_custody.field_custody_return__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء "
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__message_has_error_counter
+#: model:ir.model.fields,help:ii_custody.field_custody_request__message_has_error_counter
+#: model:ir.model.fields,help:ii_custody.field_custody_return__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__message_unread_counter
+#: model:ir.model.fields,help:ii_custody.field_custody_request__message_unread_counter
+#: model:ir.model.fields,help:ii_custody.field_custody_return__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الغير مقروءة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__picking_type_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__picking_type_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__picking_type_id
+#: model:ir.model.fields,field_description:ii_custody.field_res_config_settings__picking_type_id
+msgid "Operation Type"
+msgstr "نوع العملية"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__picking_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__picking_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__picking_id
+msgid "Picking"
+msgstr "الاختيار"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__delivery_count
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__delivery_count
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__delivery_count
+msgid "Pickings"
+msgstr "الفروع"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__presented_department_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__presented_department_id
+msgid "Presented Department"
+msgstr "القسم المقدم"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_details__presented_department_note
+msgid "Presented Department Notes"
+msgstr "ملاحظات القسم المقدم"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__available_qty
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__available_qty
+msgid "QTY Available"
+msgstr "الكمية المتاحة"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange_line__type__refunded
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_request_line__type__refunded
+msgid "Refunded"
+msgstr "مسترد"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__custody_request_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__custody_request_id
+msgid "Request No."
+msgstr "رقم الطلب"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__requested
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__requested
+msgid "Requested"
+msgstr "الطلب"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__requester_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__requester_id
+msgid "Requester"
+msgstr "الشخص الطالب"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__requester_department_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__requester_department_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__requester_department_id
+msgid "Requester Department"
+msgstr "الادارة الطالبة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__requester_job_title
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__requester_job_title
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__requester_job_title
+msgid "Requester Job Title"
+msgstr "عنوان وظيفة الشخص الطالب"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__activity_user_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__activity_user_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__activity_user_id
+msgid "Responsible User"
+msgstr "الشخص المسؤول"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__returned_to_department_id
+msgid "Returned To Department"
+msgstr "ارجاع الي القسم"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_has_sms_error
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_has_sms_error
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في توصيل الرسائل"
+
+#. module: ii_custody
+#: model:ir.model,name:ii_custody.model_stock_scrap
+msgid "Scrap"
+msgstr "خردة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__name
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__name
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__name
+msgid "Sequence"
+msgstr "الرقم التسلسلي"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_return__type__service_ter
+msgid "Service Termination"
+msgstr "انهاء الخدمة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__location_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__location_id
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__location_id
+msgid "Source Location"
+msgstr "الموقع المصدر"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__state
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__state
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__state
+msgid "Stage"
+msgstr "مرحلة"
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__activity_state
+#: model:ir.model.fields,help:ii_custody.field_custody_request__activity_state
+#: model:ir.model.fields,help:ii_custody.field_custody_return__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "الحالة على أساس الأنشطة \ و "
+"متأخر: تاريخ الاستحقاق فات بالفعل \ n"
+"اليوم: تاريخ النشاط هو اليوم \ a"
+"مخطط لها: الأنشطة المستقبلية"
+
+#. module: ii_custody
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_request_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_return_view_form
+msgid "Stock Pickings"
+msgstr "اختيار المخزن"
+
+#. module: ii_custody
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_exchange_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_request_view_form
+#: model_terms:ir.ui.view,arch_db:ii_custody.custody_return_view_form
+msgid "Submit"
+msgstr "تقديم"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__total_cost
+msgid "Total Cost"
+msgstr "التكلفة الكلية"
+
+#. module: ii_custody
+#: model:ir.model,name:ii_custody.model_stock_picking
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange_line__type
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request_line__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__activity_exception_decoration
+#: model:ir.model.fields,help:ii_custody.field_custody_request__activity_exception_decoration
+#: model:ir.model.fields,help:ii_custody.field_custody_return__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_unread
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_unread
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الغير مقروءة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__message_unread_counter
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__message_unread_counter
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الغير مقروءة"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange__state__waiting_dm_approve
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_request__state__waiting_dm_approve
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_return__state__waiting_dm_approve
+msgid "Waiting Department Manager Approval"
+msgstr "انتظار موافقة مدير الادارة"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange__state__waiting_picking_validate
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_request__state__waiting_picking_validate
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_return__state__waiting_picking_validate
+msgid "Waiting Picking Validate"
+msgstr "في انتظار التحقق من الصحة"
+
+#. module: ii_custody
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_exchange__state__waiting_department_approve
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_request__state__waiting_department_approve
+#: model:ir.model.fields.selection,name:ii_custody.selection__custody_return__state__waiting_department_approve
+msgid "Waiting Presented Department Approval"
+msgstr "في انتظار موافقة الدائرة المقدمة"
+
+#. module: ii_custody
+#: model:ir.model.fields,field_description:ii_custody.field_custody_exchange__website_message_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_request__website_message_ids
+#: model:ir.model.fields,field_description:ii_custody.field_custody_return__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: ii_custody
+#: model:ir.model.fields,help:ii_custody.field_custody_exchange__website_message_ids
+#: model:ir.model.fields,help:ii_custody.field_custody_request__website_message_ids
+#: model:ir.model.fields,help:ii_custody.field_custody_return__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: ii_custody
+#: model:ir.model,name:ii_custody.model_custody_details
+msgid "custody.details"
+msgstr ""
+
+#. module: ii_custody
+#: model:ir.model,name:ii_custody.model_custody_exchange_line
+msgid "custody.exchange.line"
+msgstr ""
+
+#. module: ii_custody
+#: model:ir.model,name:ii_custody.model_custody_request_line
+msgid "custody.request.line"
+msgstr ""

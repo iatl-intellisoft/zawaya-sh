@@ -10,71 +10,18 @@
                 <div class="app_settings_block" data-string="Labor Per Diem" string="Labor Temporary Service"
                      data-key="hr_temporary_service" groups="hr.group_hr_manager">
                     <h2>Temporary Service</h2>
-                    <div class="row mt16 o_settings_container">
+                    <div class="row mt16 o_settings_container" data-key="hr_temporary_service_class">
                         <div class="col-12 col-lg-6 o_setting_box">
                             <div class="o_setting_right_pane">
-                                <span class="o_form_label">Temporary Service</span>
+                                <label for="labor_account_id"/>
                                 <div class="content-group">
                                     <div class="mt16">
-                                        <label for="temporary_ser_debit_account_id" string="Debit Account"
-                                               class="col-3 col-lg-3 o_light_label"/>
-                                        <field name="temporary_ser_debit_account_id" class="oe_inline"/>
-                                    </div>
-                                    <div class="mt16">
-                                        <label for="temporary_ser_credit_account_id" string="Credit Account"
-                                               class="col-3 col-lg-3 o_light_label"/>
-                                        <field name="temporary_ser_credit_account_id" class="oe_inline"/>
-                                    </div>
-                                    <div class="mt16">
-                                        <label for="temporary_service_journal_id" string="Journal"
-                                               class="col-3 col-lg-3 o_light_label"/>
-                                        <field name="temporary_service_journal_id" class="oe_inline"/>
-                                    </div>
-                                    <div class="mt16">
-                                        <label for="tem_account_analytic_id" string="Analytic Account"
-                                               class="col-3 col-lg-3 o_light_label"/>
-                                        <field name="tem_account_analytic_id" class="oe_inline"/>
+                                        <field name="labor_account_id" class="o_light_label"/>
                                     </div>
                                 </div>
                             </div>
                         </div>
-<!-- 
                         <div class="col-12 col-lg-6 o_setting_box">
-                            <div class="o_setting_right_pane">
-                                
-                                <div class="o_setting_right_pane">
-                                <div class="content-group">
-                                    <div class="mt16">
-                                        <div>
-                                             <span class="o_form_label"> Account</span>
-                                             <span class="o_form_label">Debit Account</span>
-                                        <field name="temporary_ser_debit_account_id" class="o_light_label"/>
-                                        </div>
-                                        <div>
-                                             <span class="o_form_label">Credit Account</span>
-                                        <field name="temporary_ser_credit_account_id" class="o_light_label"/>
-                                        </div>
-                                        <div>
-                                        <span class="o_form_label">Journal</span>
-                                        <field name="temporary_service_journal_id" class="o_light_label"/>
-                                        <span class="o_form_labe">Analytic Account</span>
-
-                                        <field name="tem_account_analytic_id" class="o_light_label"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div> -->
-<!--                        <div>-->
-<!--                                        <span class="o_form_label">Training Analytic Account</span>-->
-<!--                                        <field name="training_account_analytic_id"/>-->
-<!--                                        <br/>-->
-<!--                                        <span class="o_form_label">Training Account</span>-->
-<!--                                        <field name="training_account_id" />-->
-<!--                                        &lt;!&ndash; domain="[('user_type_id','=','Expenses')]"  &ndash;&gt;-->
-<!--                                    </div>-->
-                        <!-- <div class="col-12 col-lg-6 o_setting_box">
                             <div class="o_setting_right_pane">
                                 <label for="analytic_account_id"/>
                                 <div class="content-group">
@@ -83,7 +30,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                     <h2>Detailed Payment</h2>
                     <div class="row mt16 o_settings_container">
@@ -134,15 +81,43 @@
         </field>
     </record>
 
-    <record id="view_department_form_inh" model="ir.ui.view">
-        <field name="name">hr.department.view.inherit</field>
-        <field name="model">hr.department</field>
-        <field name="inherit_id" ref="hr.view_department_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='company_id']" position="after">
-                <field name="analytic_account_id"/>
-            </xpath>
-        </field>
-    </record>
+    <record id="hr_temporary_service_res_config_settings_per_diem_view_form" model="ir.ui.view">
+            <field name="name">hr_temporary_service_res_config_settings_per_diem_view_form</field>
+            <field name="name">hr_temporary_service_res_config_settings_per_diem_view_form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr_temporary_service.res_config_settings_per_diem_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@data-key='hr_temporary_service_class']" position="inside">
+                    <!-- Add your fields or attributes here -->
+                    <div class="row mt16 o_settings_container">
+<!--                        <div class="col-12 col-lg-6 o_setting_box">-->
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Overtime Hour Rate:</span>
+                                <div>
+                                    <field name="ov_hour_in_work_day_rate" class="o_light_label"/>
+                                </div>
+                            </div>
+<!--                        </div>-->
+
+<!--                        <div class="col-12 col-lg-6 o_setting_box">-->
+<!--                            <div class="o_setting_right_pane">-->
+<!--                                <span class="o_form_label">Daily Working Hours:</span>-->
+<!--                                <div>-->
+<!--                                    <field name="working_hours" class="o_light_label"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 col-lg-6 o_setting_box">-->
+<!--                            <div class="o_setting_right_pane">-->
+<!--                                <span class="o_form_label">Hour In a Holiday:</span>-->
+<!--                                <div>-->
+<!--                                    <field name="ov_hour_in_holiday_rate" class="o_light_label"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                </xpath>
+            </field>
+        </record>
 
 </odoo>

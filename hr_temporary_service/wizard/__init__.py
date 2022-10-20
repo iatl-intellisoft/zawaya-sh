@@ -7,4 +7,3 @@
 ###############################################################################
 
 from . import hr_partener_service
-from . import refuse_temporary_service

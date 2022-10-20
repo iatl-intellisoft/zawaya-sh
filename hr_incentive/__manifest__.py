@@ -18,7 +18,7 @@
     'website': "http://www.iatl-intellisoft.com",
     'category': 'Human Resource',
 
-    'depends': ['base_custom','account','hr_payroll','hr_contract_kambal','hr_payroll_custom'],
+    'depends': ['base_custom','account','hr_payroll','zaway_hr_contract','hr_payroll_custom'],
 
     'data': [
         'security/ir.model.access.csv',

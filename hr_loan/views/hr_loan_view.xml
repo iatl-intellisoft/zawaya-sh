@@ -88,13 +88,13 @@
                         </group>
                         <notebook>
                             <page string="Installments">
-                                <field name="loan_line_ids" readonly="1">
-                                    <tree string="Loan Line" editable="top">
-                                        <field name="paid_date" attrs="{'readonly':[('paid','=', True)]}"/>
+                                <field name="loan_line_ids">
+                                    <tree string="Loan Line" editable="bottom">
+                                        <field name="paid_date" attrs="{'readonly': True}"/>
                                         <field name="payment_date" invisible="1"/>
                                         <field name="paid_amount" attrs="{'readonly':[('paid','=', True)]}"/>
                                         <field name="paid" readonly="1"/>
-                                        <field name="notes" attrs="{'readonly':[('paid','=', True)]}"/>
+                                        <field name="notes" attrs="{'readonly':True}"/>
                                         <button name='postpone_month' string='postpone' type='object' attrs="{'invisible':['|',('paid','=',True),('parent.state','in',['stop','close','refuse','cancel','draft'])]}"/>
                                     </tree>
                                 </field>
@@ -389,7 +389,7 @@
 
         <!-- loan menu -->
         <menuitem name="Loans"
-                  parent="hr_contract_kambal.menu_hr_employee_process"
+                  parent="zaway_hr_contract.menu_hr_employee_process"
                   id="menu_hr_loans"
                   sequence="2"/>
 

@@ -37,11 +37,12 @@
                             <field name="hours_ded"
                                    attrs="{'required': [('deducted_by', '=', 'hours')],'invisible': [('deducted_by', '!=', 'hours')],'readonly':[('state', '!=', 'draft')]}"/>
                             <field name="company_id" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
-                            <label for="date" string="Period"/>
-                                    <div clas="o_row" colspan="2">
-                                        <field name="start_date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_end_date': 'end_date'}"/> TO
-                                        <field name="end_date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_start_date': 'start_date'}"/>
-                                    </div>
+                            
+                            <label for="start_date" string="Period"/>
+                                <div clas="o_row" name="deduction_batch">
+                                    <field name="start_date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_end_date': 'end_date'}"/> TO
+                                    <field name="end_date" class="oe_inline" widget="daterange"  attrs="{'readonly':[('state', '!=', 'draft')],'required':True}" options="{'related_start_date': 'start_date'}"/>
+                                </div>
 
                         </group>
                         <group>
@@ -116,11 +117,11 @@
         <field name="view_id" ref="view_hr_deduction_batch_tree"/>
     </record>
 
-    <!-- <menuitem
+    <menuitem
             id="menu_hr_deduction_batch"
-            parent="menu_hr_deduction"
+            parent="hr_deduction.menu_hr_deduction"
             action="action_hr_deduction_batch"
             sequence="2"
-            groups="hr.group_hr_manager"/> -->
+            groups="hr.group_hr_manager"/>
 
 </odoo>

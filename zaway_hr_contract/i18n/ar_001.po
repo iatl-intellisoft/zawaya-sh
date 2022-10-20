@@ -1,0 +1,1331 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* zaway_hr_contract
+#   * hr_work_entry_contract_enterprise
+#   * hr_work_entry_contract
+#   * hr_contract
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-02 18:14+0000\n"
+"PO-Revision-Date: 2022-09-02 20:32+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: zaway_hr_contract
+#: model:mail.template,body_html:zaway_hr_contract.employee_contract_template_id
+msgid ""
+"<div class=\"page\">\n"
+"                    <html>\n"
+"                        <body>\n"
+"                            <font style=\"font-family:'serif';\">\n"
+"                                <div style=\"margin: 0px; padding: 3px;\" "
+"class=\"text-right\" dir=\"rtl\">\n"
+"                                    <center>\n"
+"                                        <table width=\"800\">\n"
+"                                            <tbody>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">التاريخ : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.date_start\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">الرقم المتسلسل : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.sequence\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إسم العقد : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        \n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr style=\"height:20px;"
+"\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\"> </span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">بيانات الموظف </span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إسم العامل : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.employee_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إسم الوظيفة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.job_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">مكان السكن : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.employee_id.home_address\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">القسم : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.department_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">الحالة الإجتماعية : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.employee_id.marital\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">مكان الوظيفة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.job_id.work_location\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">رقم الهاتف : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.employee_id.phone\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr style=\"height:20px;"
+"\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\"> </span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">تاريخ العقد من : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.date_start\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إلى : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.date_end\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">تاريخ الفترة التجريبية من : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.date_start\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إلى : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.date_end\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">ساعات العمل : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.resource_calendar_id."
+"full_time_required_hours\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">أيام الإجازة السنوية : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.employee_id.remaining_leaves\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">الأجر الشهري : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.wage\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">بالحروف : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.wage_in_words\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                            </tbody>\n"
+"                                        </table>\n"
+"                                        <br/><br/>\n"
+"                                        <table width=\"500\">\n"
+"                                            <tbody>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\" "
+"style=\"border: 1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">تفاصيل الأجر الشهري</span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">البيان</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">المبلغ بالجنيه</span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">الأجر الأبتدائي</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">غلاء المعيشة</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">بدل ترحيل</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">بدل سكن</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">الحافز</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                            </tbody>\n"
+"                                        </table>\n"
+"                                        <br/>\n"
+"                                        <table width=\"500\">\n"
+"                                            <tbody>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\" "
+"style=\"border: 1px solid black;width:15%\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">مخصصات إضافية</span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">البيان</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                       \n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">بدل ترحيل</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">بدل وقود</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">عربة</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr style=\"height:20px;"
+"\">\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr style=\"height:20px;"
+"\">\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"border: "
+"1px solid black;width:15%\" class=\"text-right\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                            </tbody>\n"
+"                                        </table>\n"
+"                                        <br/><br/>\n"
+"                                        <table width=\"800\">\n"
+"                                            <tbody>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"width:20%;"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">الطرف الأول :</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">الطرف الثاني</span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"width:20%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">الأسم</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">......................................</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">......................................</span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"width:20%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">التوقيع</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">......................................</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">......................................</span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr style=\"height:30px;"
+"\">\n"
+"                                                    <td colspan=\"3\" "
+"style=\"width:20%\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"3\" "
+"style=\"width:20%\" class=\"text-right\">\n"
+"                                                        <strong><span "
+"style=\"font-weight: bold;\">الشهود</span></strong>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"width:20%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">الشاهد الأول :</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">الشاهد الثاني</span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"width:20%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">الأسم</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">......................................</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">......................................</span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td style=\"width:20%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">التوقيع</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">......................................</span>\n"
+"                                                    </td>\n"
+"                                                    <td style=\"width:40%"
+"\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\">......................................</span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr style=\"height:50px;"
+"\">\n"
+"                                                    <td colspan=\"3\" "
+"style=\"width:20%\" class=\"text-center\">\n"
+"                                                        <span style=\"font-"
+"weight: bold;\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"3\" "
+"style=\"width:20%\" class=\"text-right\">\n"
+"                                                        <ul>\n"
+"                                                            <li>\n"
+"                                                                <span "
+"style=\"font-weight: bold;\">بعد تعيين الموظف يتم انشاء عهدة وإستلامها "
+"والتوقيع على العهدة المستلمة.</span>\n"
+"                                                            </li>\n"
+"                                                            <li>\n"
+"                                                                <span "
+"style=\"font-weight: bold;\">هنالك بعض المرفقات يتم استلامها عند توقيع "
+"العقد كشيك الضمان بالنسبة للمناديب.</span>\n"
+"                                                            </li>\n"
+"                                                        </ul>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                \n"
+"                                            </tbody>\n"
+"                                        </table>\n"
+"                                    </center>\n"
+"                                </div>\n"
+"                            </font>\n"
+"                        </body>\n"
+"                    </html>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_employee_contract_document
+msgid "<font style=\"font-family:'serif';\">عقد عمل</font>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_employee_contract_document
+msgid "<font style=\"font-family:'serif';\">قسم الموارد البشرية</font>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.view_res_config_settings_form_inherit2
+msgid "<span class=\"o_form_label\">Employee Contract Template</span>"
+msgstr "<span class=\"o_form_label\">نموذج عقد الموظف</span>"
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">إسم مقدم الطلب : </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">إسم مقدم الطلب </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">الاسم </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">التاريخ : </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">الجنس </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">الحالة الإجتماعية </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">الرقم </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">الرقم المتسلسل : </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">الرقم الوظيفي </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">القسم : </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">القسم </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">المسمى الوظيفي </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">تاريخ التعيين </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">تاريخ الميلاد </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.report_medical_insurance_document
+msgid "<span style=\"font-weidght: bold;\">صلة القرابة </span>"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__amount
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__insurance_amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_medical_insurance_category__amount
+msgid "Amount Per Person"
+msgstr "المبلغ لكل شخص"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__medical_amount
+msgid "Amount To Deduct"
+msgstr "المبلغ المستقطع"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__amount_select
+msgid "Amount Type"
+msgstr "نوع المبلغ"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__wage_in_words
+msgid "Amount in Words"
+msgstr "المبلغ كتابة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_employee__bank_id
+msgid "Bank"
+msgstr "البنك"
+
+#. module: zaway_hr_contract
+#: code:addons/zaway_hr_contract/models/hr_contract.py:0
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_basic
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_basic2
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_basic3
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_basic4
+#, python-format
+msgid "Basic Salary"
+msgstr "الراتب الأساسي"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__birth_date
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__employee_contract_website_description
+msgid "Body Template"
+msgstr "محتوي النموذج"
+
+#. module: zaway_hr_contract
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_bouns
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_bouns2
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_bouns3
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_bouns4
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__bouns
+msgid "Bouns"
+msgstr "الحافز"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__bouns_2
+msgid "Bouns 2"
+msgstr "الحافز2"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_contract__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__category_id
+msgid "Category"
+msgstr "الفئة"
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.view_res_config_settings_form_inherit2
+msgid "Choose your Template"
+msgstr "اختر القالب الخاص بك"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_employee__religion__christianity
+msgid "Christianity"
+msgstr "مسيحية"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: zaway_hr_contract
+#: model:ir.model,name:zaway_hr_contract.model_res_company
+msgid "Companies"
+msgstr "الشركات "
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.view_hr_contract_form_inherit
+msgid "Compute"
+msgstr "إحتساب"
+
+#. module: zaway_hr_contract
+#: model:ir.model,name:zaway_hr_contract.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__contract_id
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+#. module: zaway_hr_contract
+#: model:ir.model,name:zaway_hr_contract.model_hr_contract_line
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__contract_line_ids
+msgid "Contract Line"
+msgstr "بند العقد"
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.view_hr_contract_form_inherit
+msgid "Contract Template"
+msgstr "نموذج العقد"
+
+#. module: zaway_hr_contract
+#: model:ir.model,name:zaway_hr_contract.model_hr_contract_history
+msgid "Contract history"
+msgstr "سِجل العقد "
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.view_res_config_settings_form_inherit2
+msgid "Contracts"
+msgstr "العقودات"
+
+#. module: zaway_hr_contract
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_cola
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_cola2
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_cola3
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_cola4
+msgid "Cost Of Living"
+msgstr "غلاء المعيشة"
+
+#. module: zaway_hr_contract
+#: model_terms:ir.actions.act_window,help:zaway_hr_contract.insurance_category_action
+msgid "Create a new category"
+msgstr "إنشاء فئة جديدة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__create_uid
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__create_uid
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_medical_insurance_category__create_uid
+msgid "Created by"
+msgstr "إنشاء بواسطة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__create_date
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__create_date
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_medical_insurance_category__create_date
+msgid "Created on"
+msgstr "تم الإنشاء بتاريخ"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: zaway_hr_contract
+#: code:addons/zaway_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Deduction"
+msgstr "الإستقطاع"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: zaway_hr_contract
+#: model:res.groups,name:zaway_hr_contract.group_dept_manager
+msgid "Department Manager"
+msgstr "مدير القسم"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__note
+msgid "Description"
+msgstr "شرح"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__display_name
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__display_name
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_medical_insurance_category__display_name
+msgid "Display Name"
+msgstr "الإسم"
+
+#. module: zaway_hr_contract
+#: code:addons/zaway_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Double Holiday Pay"
+msgstr "دفع عطلة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_employee__emp_id
+msgid "Emp"
+msgstr "الموظف"
+
+#. module: zaway_hr_contract
+#: model:ir.model,name:zaway_hr_contract.model_hr_employee
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__employee_id
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__employee_id
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: zaway_hr_contract
+#: model:ir.model,name:zaway_hr_contract.model_hr_contract
+msgid "Employee Contract"
+msgstr "عقد الموظف"
+
+#. module: zaway_hr_contract
+#: model:ir.actions.report,name:zaway_hr_contract.action_employee_contract_report
+msgid "Employee Contract Forms"
+msgstr "نماذج عقود الموظفين"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__employee_contract_template_id
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_res_company__employee_contract_template_id
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_res_config_settings__employee_contract_template_id
+msgid "Employee Contract Template"
+msgstr "نموذج عقد الموظف"
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.view_employee_form_inherit
+msgid "Employee ID"
+msgstr "رقم الموظف"
+
+#. module: zaway_hr_contract
+#: model:ir.ui.menu,name:zaway_hr_contract.menu_hr_employee_process
+msgid "Employee Process"
+msgstr "عمليات الموظفين"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,help:zaway_hr_contract.field_hr_contract_line__partner_id
+msgid "Eventual third party involved in the salary payment of the employees."
+msgstr "طرف ثالث يشارك في دفع رواتب الموظفين."
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_contract__state__close
+msgid "Expired"
+msgstr "منتهي الصلاحية"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_medical_insurance__type_of_relatives__father
+msgid "Father"
+msgstr "الأب"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_medical_insurance__gender__female
+msgid "Female"
+msgstr "أنثى"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__amount_fix
+msgid "Fixed Amount"
+msgstr "مبلغ ثابت"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,help:zaway_hr_contract.field_hr_contract_line__amount_percentage
+msgid "For example, enter 50.0 to apply a percentage of 50%"
+msgstr "على سبيل المثال، أدخل 50.0 لتطبيق نسبة مئوية قدرها %50"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__gender
+msgid "Gender"
+msgstr "النوع"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_salary_rule__use_type__general
+msgid "General"
+msgstr "عام"
+
+#. module: zaway_hr_contract
+#: code:addons/zaway_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Gross"
+msgstr "الإجمالي"
+
+#. module: zaway_hr_contract
+#: model:ir.actions.server,name:zaway_hr_contract.ir_cron_contract_end_cron_ir_actions_server
+#: model:ir.cron,cron_name:zaway_hr_contract.ir_cron_contract_end_cron
+#: model:ir.cron,name:zaway_hr_contract.ir_cron_contract_end_cron
+msgid "HR Contract: End Contract Notification"
+msgstr "عقد الموارد البشرية: إخطار نهاية العقد"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_employee__have_car
+msgid "Have Car"
+msgstr "هل لديه سيارة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_employee__have_linces
+msgid "Have Linces"
+msgstr "هل لديه رخصة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__has_insurance
+msgid "Have Medical Insurance"
+msgstr "هل لديه تأمين صحي"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__no_social
+msgid "Have No Social Insurance"
+msgstr "ليس لديه تأمين إجتماعي"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_employee__home_address
+msgid "Home Address"
+msgstr "عنوان المنزل"
+
+#. module: zaway_hr_contract
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_hos
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_hos2
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_hos3
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_hos4
+msgid "Housing"
+msgstr "بدل سكن"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_medical_insurance__type_of_relatives__husband
+msgid "Husband"
+msgstr "زوج"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__id
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__id
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_medical_insurance_category__id
+msgid "ID"
+msgstr "رقم التعريف"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__insurance_categ_id
+msgid "Insurance Categ"
+msgstr "فئة التأمين"
+
+#. module: zaway_hr_contract
+#: model:ir.ui.menu,name:zaway_hr_contract.menu_insurance_categ
+msgid "Insurance Categories"
+msgstr "فئة التأمين"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_employee__religion__islam
+msgid "Islam"
+msgstr "مسلم"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line____last_update
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance____last_update
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_medical_insurance_category____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل على"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__write_uid
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__write_uid
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_medical_insurance_category__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__write_date
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__write_date
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_medical_insurance_category__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تحديث"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_medical_insurance__gender__male
+msgid "Male"
+msgstr "رجل"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__medical_insurance_ids
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.view_hr_contract_form_inherit
+msgid "Medical Insurance"
+msgstr "تأمين صحي"
+
+#. module: zaway_hr_contract
+#: model:ir.actions.report,name:zaway_hr_contract.action_medical_insurance_report
+msgid "Medical Insurance Form"
+msgstr "فورم التأمين الصحي"
+
+#. module: zaway_hr_contract
+#: model:ir.actions.act_window,name:zaway_hr_contract.insurance_category_action
+msgid "Medical Insurance categories"
+msgstr "فئة التامين الصحي"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_medical_insurance__type_of_relatives__mother
+msgid "Mother"
+msgstr "أم"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__name
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__name
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_medical_insurance_category__name
+msgid "Name"
+msgstr "الإسم"
+
+#. module: zaway_hr_contract
+#: code:addons/zaway_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Net Salary"
+msgstr "إجمالي الراتب"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_contract__state__draft
+msgid "New"
+msgstr "جديد"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_employee__religion__other
+msgid "Other"
+msgstr "غير"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__partner_id
+msgid "Partner"
+msgstr "شريك"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__amount_percentage
+msgid "Percentage (%)"
+msgstr "بالنسبة"
+
+#. module: zaway_hr_contract
+#: code:addons/zaway_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Prorated end-of-year bonus"
+msgstr "مكافأة نهاية العام التناسبية"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__quantity
+msgid "Quantity"
+msgstr "العدد"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__rate
+msgid "Rate (%)"
+msgstr "معدل"
+
+#. module: zaway_hr_contract
+#: code:addons/zaway_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Reimbursement"
+msgstr "السداد"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_employee__religion
+msgid "Religion"
+msgstr "الديانة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__salary_rule_id
+msgid "Rule"
+msgstr "قاعدة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_contract__state__open
+msgid "Running"
+msgstr "جاري"
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.view_hr_contract_form_inherit
+msgid "Salary Details"
+msgstr "تفاصيل الراتب"
+
+#. module: zaway_hr_contract
+#: model:ir.model,name:zaway_hr_contract.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "قاعدة الراتب "
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__struct_id
+msgid "Salary Structure"
+msgstr "هيكل الراتب"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__sequence
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_employee__social_insurance_no
+msgid "Social Insurance No"
+msgstr "رقم التأمين الاجتماعي"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_salary_rule__use_type__special
+msgid "Special"
+msgstr "خاص"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__state
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_history__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,help:zaway_hr_contract.field_hr_contract__state
+msgid "Status of the contract"
+msgstr "حالة العقد"
+
+#. module: zaway_hr_contract
+#: model_terms:ir.ui.view,arch_db:zaway_hr_contract.view_res_config_settings_form_inherit2
+msgid "Template"
+msgstr "نموذج"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,help:zaway_hr_contract.field_hr_contract_line__code
+msgid ""
+"The code of salary rules can be used as reference in computation of other "
+"rules. In that case, it is case sensitive."
+msgstr ""
+"يمكن استخدام مدونة قواعد المرتبات كمرجع في حساب قواعد الرواتب الأخرى"
+"القواعد. في هذه الحالة ، يكون حساسا لحالة الأحرف."
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,help:zaway_hr_contract.field_hr_contract_line__amount_select
+msgid "The computation method for the rule amount."
+msgstr "طريقة الحساب لمبلغ القاعدة."
+
+#. module: zaway_hr_contract
+#: code:addons/zaway_hr_contract/models/hr_salary_rule.py:0
+#, python-format
+msgid "There is no running contract for this Employee %s."
+msgstr "لا يوجد عقد قيد التشغيل لهذا الموظف %s."
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract_line__total
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: zaway_hr_contract
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_trans
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_trans2
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_trans3
+#: model:hr.salary.rule,name:zaway_hr_contract.hr_salary_trans4
+msgid "Transportation"
+msgstr "بدل مواصلات"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_medical_insurance__type_of_relatives
+msgid "Type Of Relatives"
+msgstr "نوع الأقارب"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_salary_rule__use_type
+msgid "Use Type"
+msgstr "نوع الاستخدام"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,help:zaway_hr_contract.field_hr_contract_line__sequence
+msgid "Use to arrange calculation sequence"
+msgstr "يستخدم لترتيب تسلسل الحساب"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields,field_description:zaway_hr_contract.field_hr_contract__wage_per_hour
+msgid "Wage Per Hour"
+msgstr "سعر الساعة"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_contract__state__wait_gm_approve
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_contract_history__state__wait_gm_approve
+msgid "Waiting GM Approval"
+msgstr "في إنتظار موافقة المدير العام"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_contract__state__wait_hr_approve
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_contract_history__state__wait_hr_approve
+msgid "Waiting HR Approval"
+msgstr "إنتظار موافقة الموارد البشرية"
+
+#. module: zaway_hr_contract
+#: model:ir.model.fields.selection,name:zaway_hr_contract.selection__hr_medical_insurance__type_of_relatives__wife
+msgid "Wife"
+msgstr "زوجة"
+
+#. module: zaway_hr_contract
+#: model:mail.template,name:zaway_hr_contract.employee_contract_template_id
+msgid "hr contract : Employee Contract Template"
+msgstr "العقود: نموذج عقد الموظف "
+
+#. module: zaway_hr_contract
+#: model:ir.model,name:zaway_hr_contract.model_hr_medical_insurance
+msgid "hr.medical.insurance"
+msgstr ""
+
+#. module: zaway_hr_contract
+#: model:ir.model,name:zaway_hr_contract.model_medical_insurance_category
+msgid "medical.insurance.category"
+msgstr ""
+
+#. module: hr_work_entry_contract_enterprise
+#: model:ir.ui.menu,name:hr_work_entry_contract_enterprise.hr_menu_contract
+msgid "All Contracts"
+msgstr "جميع العقود"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_history__date_hired
+msgid "Hire Date"
+msgstr "تاريخ التعيين"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_view_form
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_departure_wizard_view_form
+msgid "Contract End Date"
+msgstr "تاريخ إنتهاء العقد"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_history__name
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_form
+msgid "Contract Name"
+msgstr "إسم العقد"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_history__contract_count
+msgid "# Contracts"
+msgstr "# عقود"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_history__active_employee
+msgid "Active Employee"
+msgstr "موظف نشط"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_search
+msgid "Active Employees"
+msgstr "الموظفون النشطون"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_history__under_contract_state
+msgid "Contractual Status"
+msgstr "وضع العقد"
+
+#. module: hr_contract
+#: model:ir.model,name:hr_contract.model_hr_payroll_structure_type
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract__structure_type_id
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_history__structure_type_id
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_search
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_view_search
+msgid "Salary Structure Type"
+msgstr "نوع هيكل الراتب"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_list
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_search
+msgid "Reference Working Time"
+msgstr "وقت العمل"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_form
+msgid "Monthly Wage"
+msgstr "اجر شهري"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_form
+msgid "Employee Information"
+msgstr "معلومات الموظف"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_view_search
+msgid "Not Running"
+msgstr "مسودة"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_view_search
+msgid "Employed"
+msgstr "مستخدم"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_employee__contract_warning
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_employee_view_search
+msgid "Contract Warning"
+msgstr "عقد إنذار"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_form
+msgid "Contract History"
+msgstr "تاريخ العقد"
+
+#. module: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract_history__is_under_contract
+msgid "Is Currently Under Contract"
+msgstr "قيد التعاقد حاليا"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_search
+msgid "Currently Under Contract"
+msgstr "قيد التعاقد حاليا"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_search
+msgid "No Contracts"
+msgstr "بدون عقود"
+
+#. module: hr_contract
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_search
+msgid "Running Contracts"
+msgstr "العقود الجارية"
+
+#. module: hr_contract
+#: model:ir.actions.act_window,name:hr_contract.hr_contract_history_to_review_view_list_action
+#: model_terms:ir.ui.view,arch_db:hr_contract.hr_contract_history_view_search
+msgid "Contracts to Review"
+msgstr "مراجعة العقود"
+
+#. module: hr_work_entry_contract
+#: model:ir.model.fields,field_description:hr_work_entry_contract.field_hr_contract__date_generated_from
+msgid "Generated From"
+msgstr "تم إنشاؤها من"
+
+#. module: hr_work_entry_contract
+#: model:ir.model.fields,field_description:hr_work_entry_contract.field_hr_contract__date_generated_to
+msgid "Generated To"
+msgstr "تم إنشاؤها إلى"
+
+#. modules: hr_contract
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"

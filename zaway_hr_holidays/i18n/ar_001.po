@@ -1,0 +1,1471 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* zaway_hr_holidays
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-02 15:48+0000\n"
+"PO-Revision-Date: 2022-09-02 18:21+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: zaway_hr_holidays
+#: model:mail.template,body_html:zaway_hr_holidays.sick_template_id
+msgid ""
+"<div class=\"page\">\n"
+"                    <html>\n"
+"                        <body>\n"
+"                            <font style=\"font-family:'serif';\">\n"
+"                                <div style=\"margin: 0px; padding: 3px;\" "
+"class=\"text-right\" dir=\"rtl\">\n"
+"                                    <center>\n"
+"                                        <table width=\"800\">\n"
+"                                            <tbody>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">التاريخ : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.date_request\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">الرقم المتسلسل : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.sequence\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إسم الإجازة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.holiday_status_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">سبب الإجازة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.name\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <u><span style=\"font-"
+"weidght: bold;\">بيانات الموظف </span></u>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إسم العامل : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.employee_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إسم الوظيفة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.job_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">مكان السكن : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.employee_id.home_address\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">القسم : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.department_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">تاريخ التعيين : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.contract_start_date\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إسم الموظف البديل : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.alternative_employee_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">مكان إنقضاء الإجازة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.time_off_location\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">العنوان بالإجازة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.time_off_address\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إسم أقرب الأقربين : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.relative_name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">الهاتف : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.relative_phone\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">التاريخ من : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.request_date_from\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">التاريخ إلى : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.request_date_to\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">عدد الأيام : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"int(object.number_of_days)\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">التاريخ العودة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.back_date\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">عدد الأيام المتبقية : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.request_date_from\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">نوع المرض : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.disease_type\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <u><span style=\"font-"
+"weidght: bold;\">المعلومات المالية </span></u>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">بدل الإجازة </span>\n"
+"                                                        <!-- <span style="
+"\"margin-left:20px;border:1px solid black;height:22px;width:20px;display:"
+"inline-block;\"> -->\n"
+"                                                            <t t-if=\"object."
+"need_allowance\">\n"
+"                                                                <img src=\"/"
+"zaway_hr_holidays/static/description/src/true_icon4.jpeg\" style=\"max-"
+"height:0.7cm; max-width:1cm;margin-bottom:10px;\"/>\n"
+"                                                             </t>\n"
+"                                                        <!-- </span> -->\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">المرتب مقدما </span>\n"
+"                                                        <!-- <span style="
+"\"margin-left:20px;border:1px solid black;height:22px;width:20px;display:"
+"inline-block;\"> -->\n"
+"                                                            <t t-if=\"object."
+"need_advance_salary\">\n"
+"                                                                <img src=\"/"
+"zaway_hr_holidays/static/description/src/true_icon4.jpeg\" style=\"max-"
+"height:0.7cm; max-width:1cm;margin-bottom:10px;\"/>\n"
+"                                                             </t>\n"
+"                                                        <!-- </span> -->\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr>\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">مصروفات الإجازة </span>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                            </tbody>\n"
+"                                        </table>\n"
+"                                        <br/><br/>\n"
+"                                        <strong>\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:150px\" class=\"text-right\">مقدم الطلب:</span>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:200px\" class=\"text-right\">رئيس القسم/مدير الإدارة:</span>\n"
+"                                        </strong>\n"
+"                                        <br/>\n"
+"                                        <span>\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:50px\" class=\"text-right\">الأسم</span>\n"
+"                                            <span style=\"font-weidght: bold;"
+"\" class=\"text-right"
+"\">................................................................</span>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:100px\" class=\"text-right"
+"\">.................................................................</span>\n"
+"                                        </span>\n"
+"                                        <br/>\n"
+"                                        <span>\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:50px\" class=\"text-right\">التوقيع</span>\n"
+"                                            <span style=\"font-weidght: bold;"
+"\" class=\"text-right"
+"\">...............................................................</span>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:100px\" class=\"text-right"
+"\">.................................................................</span>\n"
+"                                        </span>\n"
+"                                        <br/>\n"
+"                                        <strong>\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:150px\" class=\"text-right\">مدير الموارد البشرية:</span>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:180px\" class=\"text-right\">المدير العام أو المدير التنفيذي:</"
+"span>\n"
+"                                        </strong>\n"
+"                                        <br/>\n"
+"                                        <span>\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:50px\" class=\"text-right\">الأسم</span>\n"
+"                                            <span style=\"font-weidght: bold;"
+"\" class=\"text-right"
+"\">................................................................</span>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:100px\" class=\"text-right"
+"\">.................................................................</span>\n"
+"                                        </span>\n"
+"                                        <br/>\n"
+"                                        <span>\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:50px\" class=\"text-right\">التوقيع</span>\n"
+"                                            <span style=\"font-weidght: bold;"
+"\" class=\"text-right"
+"\">...............................................................</span>\n"
+"\n"
+"                                            <span style=\"font-weidght: bold;"
+"margin-right:100px\" class=\"text-right"
+"\">.................................................................</span>\n"
+"                                        </span>\n"
+"                                    </center>\n"
+"                                </div>\n"
+"                            </font>\n"
+"                        </body>\n"
+"                    </html>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:mail.template,body_html:zaway_hr_holidays.leave_certificate_template_id
+msgid ""
+"<div>\n"
+"                    <html>\n"
+"                        <body>\n"
+"                            <font style=\"font-family:'serif';\">\n"
+"                                <div style=\"margin: 0px; padding: 3px;\" "
+"class=\"text-right\" dir=\"rtl\">\n"
+"                                    <center>\n"
+"                                        <table width=\"800\">\n"
+"                                            <tbody>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">التاريخ : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.date_request\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-center\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <u><span style=\"font-"
+"weidght: bold;\"> شهادة إجازة </span></u>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">الأسم : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.employee_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">القسم : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.department_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">الوظيفة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.job_id.name\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">منح إجازة وقدرها : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"int(object.number_of_days)\"/> يوم\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">إعتبارا من : </span>\n"
+"                                                        <span>تاريخ </"
+"span><span style=\"font-weidght: bold;\" t-esc=\"object.request_date_from\"/>\n"
+"                                                        <span>وحتى تاريخ </"
+"span><span style=\"font-weidght: bold;\" t-esc=\"object.request_date_to\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">يعود للعمل في : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.back_date\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">قضاء الإجازة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.time_off_location\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td colspan=\"2\">\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">العنوان بالإجازة : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.time_off_address\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                                <tr class=\"text-right\">\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">أقرب الأقربين : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.relative_name\"/>\n"
+"                                                    </td>\n"
+"                                                    <td>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\">تلفون : </span>\n"
+"                                                        <span style=\"font-"
+"weidght: bold;\" t-esc=\"object.relative_phone\"/>\n"
+"                                                    </td>\n"
+"                                                </tr>\n"
+"                                            </tbody>\n"
+"                                        </table>\n"
+"                                        <br/>\n"
+"                                        <span class=\"text-left\" style=\"font-"
+"weidght: bold;margin-right:400px\">مدير الشؤون الإدارية والموارد البشرية</"
+"span><br/><br/>\n"
+"                                        <span class=\"text-left\" style=\"font-"
+"weidght: bold;margin-right:400px"
+"\">.............................................................</span>\n"
+"\n"
+"                                        <br/><br/>\n"
+"                                        <span class=\"text-right\" style="
+"\"font-weidght: bold;margin-left:400px\">صورة إلى :-</span><br/><br/>\n"
+"                                        <span class=\"text-right\" style="
+"\"font-weidght: bold;margin-left:400px\">- الموارد البشرية</span>\n"
+"                                    </center>\n"
+"                                </div>\n"
+"                            </font>\n"
+"                        </body>\n"
+"                    </html>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.report_leave_certificate_document
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.report_sick_document
+msgid "<font style=\"font-family:'serif';\">إدارة الشؤون الإدارية</font>"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.report_leave_certificate_document
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.report_sick_document
+msgid "<font style=\"font-family:'serif';\">قسم الموارد البشرية</font>"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_res_config_settings_form_inherit
+msgid "<span class=\"o_form_label\">Clearance</span>"
+msgstr "مخالصة"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_res_config_settings_form_inherit
+msgid "<span class=\"o_form_label\">Sick Time Off Template</span>"
+msgstr "إجازة مرضية"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_res_config_settings_form_inherit
+msgid "<span class=\"o_form_label\">Time Off Certificate Template</span>"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_res_config_settings_form_inherit
+msgid "<span class=\"o_form_label\">Time Off Salary/Expenses Account</span>"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.report_sick_document
+msgid ""
+"<span style=\"font-weidght: bold;\">هنالك بعض الإجازات التي يتم معها خلو طرف "
+"كمناديب المبيعات أو السائقين أو أمناء المخازن والخزينة.</span>"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.report_sick_document
+msgid "<u><font style=\"font-family:'serif';\">طلب إجازة</font></u>"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_res_config_settings_form_inherit
+msgid "Account"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__address
+msgid "Address"
+msgstr "العنوان"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__advance_salary
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Advance Salary"
+msgstr "راتب مقدما\""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__alternative_employee_id
+msgid "Alternative Employee"
+msgstr "الموظف البديل"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_employee__annual_remaining_days
+msgid "Annual Remaining Days"
+msgstr "الرصيد المتبقي"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_form_view
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__approve_by
+msgid "Approve By"
+msgstr "موافقة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee__current_leave_state__validate
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_base__current_leave_state__validate
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_public__current_leave_state__validate
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_leave__state__validate
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__sell_time_off__state__approve
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__back_date
+msgid "Back Date"
+msgstr "تاريخ الرجوع"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "الموظف العادي "
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__leave_certificate_website_description
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__sick_website_description
+msgid "Body Template"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave_type__can_be_sold
+msgid "Can Be Sold"
+msgstr "قابلة للشراء"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__sell_time_off__state__cancel
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.stop_holiday_view_form
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_account_payment_request_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_res_config_settings_form_inherit
+msgid "Choose your Template"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__leave_clearance_ids
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_res_company__leave_clearance_ids
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_res_config_settings__leave_clearance_ids
+msgid "Clearance Department"
+msgstr "مخالصة القسم"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__need_clearance
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave_type__need_clearance
+msgid "Clearance Is Required"
+msgstr "مطلوب المخالصة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__cleared
+msgid "Cleared"
+msgstr "خلصت"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__sequence
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__sequence
+msgid "Code"
+msgstr "الكود"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_res_company
+msgid "Companies"
+msgstr "الشركات "
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__company_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Confirm"
+msgstr "تاكيد"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__contract_start_date
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__contract_start_date
+msgid "Contract Start Date"
+msgstr "تاريخ بداية العقد"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Create Advance Salary"
+msgstr "إنشاء راتب مقدما\""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Create Incentive"
+msgstr "إنشاء حافز"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop__create_uid
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__create_uid
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__create_uid
+msgid "Created by"
+msgstr "أنشئت بواسطة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop__create_date
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__create_date
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__create_date
+msgid "Created on"
+msgstr "تم إنشاءها"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_employee__current_leave_state
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_employee_base__current_leave_state
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_employee_public__current_leave_state
+msgid "Current Time Off Status"
+msgstr "حالة الإجازة الحالية "
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__date_request
+msgid "Date Request"
+msgstr "تاريخ الطلب"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__days_to_sell
+msgid "Days To Sell"
+msgstr "أيام البيع"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__department_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__department_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Department Approve"
+msgstr "موافقة القسم"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__disease_type
+msgid "Disease Type"
+msgstr "نوع المرض"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop__display_name
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__display_name
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__display_name
+msgid "Display Name"
+msgstr "الإسم"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__sell_time_off__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__employee_id
+msgid "Employee Name"
+msgstr "إسم الموظف"
+
+#. module: zaway_hr_holidays
+#: model:ir.actions.act_window,name:zaway_hr_holidays.act_employee_time_off
+msgid "Employee Time Off"
+msgstr "إجازات الموظف"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "GM Approve"
+msgstr "موافقة المدير العام"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "HR Approve"
+msgstr "موافقة مدير الموارد البشرية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_incentive
+msgid "HR Incentive"
+msgstr "حافز الموارد البشرية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_loan
+msgid "HR Loan Request"
+msgstr "طلب السلفية من الموارد البشرية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__address
+msgid "Home Address"
+msgstr "عنوان المنزل"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop__id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__id
+msgid "ID"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__message_needaction
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__message_has_error
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Incentics"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__incentive_ids
+msgid "Incentive"
+msgstr "الحافز"
+
+#. module: zaway_hr_holidays
+#: model:ir.actions.act_window,name:zaway_hr_holidays.act_employee_incentive
+msgid "Incentives"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__is_annual
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave_type__is_annual
+msgid "Is Annual Time Off "
+msgstr "هل إجازة سنوية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_account_payment__is_sell_timeoff
+msgid "Is Sell Timeoff"
+msgstr "هل بي بيع إجازة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__is_sick
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave_type__is_sick
+msgid "Is Sick Time Off "
+msgstr "هل هي إجازة مرضية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__is_work_injury
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave_type__is_work_injury
+msgid "Is Work Injury"
+msgstr "هل هي إصابة عمل"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__job_id
+msgid "Job Position"
+msgstr "الوظيفة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__job_id
+msgid "Job Title"
+msgstr "المنصب الوظيفي"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop____last_update
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line____last_update
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop__write_uid
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__write_uid
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop__write_date
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__write_date
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop__leave_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_incentive__leave_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_loan__leave_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__leave_id
+msgid "Leave"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__loan_ids
+msgid "Loan"
+msgstr "سلفية"
+
+#. module: zaway_hr_holidays
+#: model:ir.actions.act_window,name:zaway_hr_holidays.act_employee_loan
+msgid "Loans"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__move_id
+msgid "Move"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__relative_name
+msgid "Name of nearest relative "
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__need_advance_salary
+msgid "Need Advance Salary"
+msgstr "يحتاج راتب مقدما\""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__need_allowance
+msgid "Need Allowance"
+msgstr "يحتاج بدلات"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_leave_clearance_line__notes
+msgid "Notes"
+msgstr "توضيح"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__paid
+msgid "Paid"
+msgstr "مدفوعه"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال دفع "
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_form_view
+msgid "Payment"
+msgstr "دفعية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__payslip_id
+msgid "Payslip"
+msgstr "تقسيمة الراتب"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__relative_phone
+msgid "Phone of nearest relative "
+msgstr "هاتف أقرب الأقربين"
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid "Please Add Manager To %s Department"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid "Please Add User To %s "
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid "Please Enter Partner For This Employee"
+msgstr "الرجاء إدخال شريك للموظف"
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid "Please Enter Time Off Salary/Expenses Account In Setting"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee__current_leave_state__refuse
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_base__current_leave_state__refuse
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_public__current_leave_state__refuse
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_leave__state__refuse
+msgid "Refused"
+msgstr "مرفوض"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_form_view
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_account_payment_request_form
+msgid "Register Payment"
+msgstr "تسجيل دفعية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__total_time_off
+msgid "Remaining Days"
+msgstr "الرصيد المتبقي"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__request_date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__requested
+msgid "Requested"
+msgstr "طلب"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_res_config_settings_form_inherit
+msgid "Required Departments"
+msgstr "إدخال القسم"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_form_view
+msgid "Reset To Draft"
+msgstr "إرجاع لي مسودة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "قاعدة الراتب "
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_res_company__salary_expences_account_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_res_config_settings__salary_expences_account_id
+msgid "Salary/Expenses Account"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee__current_leave_state__validate1
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_base__current_leave_state__validate1
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_public__current_leave_state__validate1
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_leave__state__validate1
+msgid "Second Approval"
+msgstr "الموافقة الثانية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_account_payment__sell_timeoff_id
+msgid "Sell Employee Time Off Ref"
+msgstr "بيع إجازة الموظف"
+
+#. module: zaway_hr_holidays
+#: model:ir.actions.act_window,name:zaway_hr_holidays.action_sell_time_off
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_payslip__sell_timeoff_ids
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_tree_view
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_hr_payslip_form_inherit
+msgid "Sell Time Off"
+msgstr "بيع الإجازات"
+
+#. module: zaway_hr_holidays
+#: model:ir.ui.menu,name:zaway_hr_holidays.menu_sell_time_off_request
+msgid "Sell Time Off Request"
+msgstr "طلبات بيع الإجازة "
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_form_view
+msgid "Sell Time Off Requests"
+msgstr "طلبات بيع الإجازة"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_form_view
+msgid "Sent To Department Manager"
+msgstr "إرسال إلي رئيس القسم"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_form_view
+msgid "Sent To GM"
+msgstr "إرسال إلي المدير العام"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_form_view
+msgid "Sent To HR Manager"
+msgstr "إرسال إلي الموارد البشرية"
+
+#. module: zaway_hr_holidays
+#: model:ir.actions.act_window,name:zaway_hr_holidays.leave_config_settings_action
+#: model:ir.ui.menu,name:zaway_hr_holidays.leave_menu_configuration
+msgid "Settings"
+msgstr "الإعدادت"
+
+#. module: zaway_hr_holidays
+#: model:ir.actions.report,name:zaway_hr_holidays.action_sick_report
+msgid "Sick Time Off"
+msgstr "الإجازات المرضية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__sick_template_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_res_company__sick_template_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_res_config_settings__sick_template_id
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Sick Time Off Template"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_hr_leave__contract_start_date
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__contract_start_date
+msgid "Start date of the contract."
+msgstr "تاريخ بداية العقد"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__state
+msgid "State"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__stop
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.stop_holiday_view_form
+msgid "Stop"
+msgstr "إيقاف"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop__stop_date
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__stop_date
+msgid "Stop Date"
+msgstr "تاريخ الإيقاف"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_holidays_stop__stop_reason
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__stop_reason
+msgid "Stop Reason"
+msgstr "سبب الإيقاف"
+
+#. module: zaway_hr_holidays
+#: model:ir.actions.act_window,name:zaway_hr_holidays.stop_holiday_action
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.stop_holiday_view_form
+msgid "Stop Time Off"
+msgstr "إيقاف الإجازة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee__current_leave_state__stop
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_base__current_leave_state__stop
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_public__current_leave_state__stop
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_leave__state__stop
+msgid "Stoped"
+msgstr "إيقاف"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__sell_time_off__state__submit
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.form_sell_time_off_form_view
+msgid "Submit"
+msgstr "تاكيد"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Supporting Document"
+msgstr "مرفقات"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.report_sick_document
+msgid "THIS REPORT PRINTED FOR SICK TIME OFF ONLY !!!"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_res_config_settings_form_inherit
+msgid "Template"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid ""
+"The following employees are not supposed to work during that period:\n"
+" %s"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_hr_leave__state
+msgid ""
+"The status is set to 'To Submit', when a time off request is created.\n"
+"The status is 'To Approve', when time off request is confirmed by user.\n"
+"The status is 'Refused', when time off request is refused by manager.\n"
+"The status is 'Approved', when time off request is approved by manager."
+msgstr ""
+"يتم تعين الحالة إلى 'للإرسال'، عندما يتم إنشاء طلب إجازة.\n"
+"تكون الحالة 'للموافقة'، عندما تتم الموافقة على طلب الإجازة من قِبَل المستخدم.\n"
+"تكون الحالة 'تم الرفض'، عندما يتم رفض طلب الإجازة من قِبَل المدير.\n"
+"تكون الحالة 'تمت الموافقة'، عندما تتم الموافقة على طبي الإجازة من قِبَل المدير."
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid "This time off required supported document, Please attach it ."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_leave
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_salary_rule__use_type__time_off
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_employee_form_sell_inherit
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_res_config_settings_form_inherit
+msgid "Time Off"
+msgstr "الإجازات "
+
+#. module: zaway_hr_holidays
+#: model:mail.template,name:zaway_hr_holidays.leave_certificate_template_id
+msgid "Time Off : Certificate Template"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:mail.template,name:zaway_hr_holidays.sick_template_id
+msgid "Time Off : Sick Template"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__time_off_address
+msgid "Time Off Address"
+msgstr "عنوان الإجازة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_leave_allocation
+msgid "Time Off Allocation"
+msgstr "مخصص الإجازات "
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_payslip__time_off_amount
+msgid "Time Off Amount"
+msgstr "مبلغ الإجازة"
+
+#. module: zaway_hr_holidays
+#: model:ir.actions.report,name:zaway_hr_holidays.action_leave_certificate_report
+msgid "Time Off Certificate"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__leave_certificate_template_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_res_company__leave_certificate_template_id
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_res_config_settings__leave_certificate_template_id
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Time Off Certificate Template"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Time Off Clearance"
+msgstr "مخالصة الإجازة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__leave_expences
+msgid "Time Off Expenses"
+msgstr "مصروف الإجازة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__time_off_location
+msgid "Time Off Location"
+msgstr "موقع الإجازة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__old_number_of_days
+msgid "Time Off Old Duration"
+msgstr "مدة الإجازة القديمة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_leave__old_end_date
+msgid "Time Off Old End Date"
+msgstr "تاريخ إنتهاء الإجازة"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.hr_leave_view_form_inh2
+msgid "Time Off Stop Details"
+msgstr "تفاصيل الإجازات الموقوفة"
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "نوع الإجازة "
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid ""
+"Time off request must be confirmed (\"GM Approve\") in order to approve it."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid "Time off request must be confirmed in order to approve it."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee__current_leave_state__confirm
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_base__current_leave_state__confirm
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_public__current_leave_state__confirm
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_leave__state__confirm
+msgid "To Approve"
+msgstr "للاعتماد"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee__current_leave_state__draft
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_base__current_leave_state__draft
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_public__current_leave_state__draft
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_leave__state__draft
+msgid "To Submit"
+msgstr "للإرسال"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__total_amount
+msgid "Total Amount"
+msgstr "إجمالي المبلغ"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_hr_salary_rule__use_type
+msgid "Use Type"
+msgstr "نوع الاستخدام"
+
+#. module: zaway_hr_holidays
+#: model_terms:ir.ui.view,arch_db:zaway_hr_holidays.view_account_payment_request_form
+msgid "Validate"
+msgstr "تاكيد"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee__current_leave_state__wait_dept_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_base__current_leave_state__wait_dept_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_public__current_leave_state__wait_dept_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_leave__state__wait_dept_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__sell_time_off__state__wait_dept_approve
+msgid "Waiting Department Manager Approval"
+msgstr "إنتظار موافقة رئيس القسم"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee__current_leave_state__wait_gm_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_base__current_leave_state__wait_gm_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_public__current_leave_state__wait_gm_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_leave__state__wait_gm_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__sell_time_off__state__wait_gm_approve
+msgid "Waiting GM Approval"
+msgstr "إنتظار موافقة المدير العام"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee__current_leave_state__wait_hr_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_base__current_leave_state__wait_hr_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_employee_public__current_leave_state__wait_hr_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__hr_leave__state__wait_hr_approve
+#: model:ir.model.fields.selection,name:zaway_hr_holidays.selection__sell_time_off__state__wait_hr_approve
+msgid "Waiting HR Approval"
+msgstr "إنتظار موافقة الموارد البشرية"
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,field_description:zaway_hr_holidays.field_sell_time_off__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model.fields,help:zaway_hr_holidays.field_sell_time_off__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid "You can not have 2 time off that overlaps on the same day."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid "You must complete your clearance firstly."
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: code:addons/zaway_hr_holidays/models/leave.py:0
+#, python-format
+msgid "Your %(leave_type)s planned on %(date)s has been accepted"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_hr_holidays_stop
+msgid "hr.holidays.stop"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_leave_clearance_line
+msgid "leave.clearance.line"
+msgstr ""
+
+#. module: zaway_hr_holidays
+#: model:ir.model,name:zaway_hr_holidays.model_sell_time_off
+msgid "sell.time.off"
+msgstr ""

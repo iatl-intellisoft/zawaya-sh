@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_punishment,hr_puishment_user,model_hr_punishment,,1,1,1,1
+access_hr_violation,hr_violation_user,model_hr_violation,,1,1,1,1
+access_hr_violation_line,hr_violation_line_name,model_hr_violation_line,,1,1,1,1
+access_hr_penalty,hr_penalty_name,model_hr_penalty,,1,1,1,1
+access_penalty_cancel_wizard,penalty_cancel_wizard,model_penalty_cancel_wizard,,1,1,1,1

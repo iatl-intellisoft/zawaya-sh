@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="edit_holiday_status_form_inh" model="ir.ui.view">
+            <field name="name">hr.leave.type.form.inherit</field>
+            <field name="model">hr.leave.type</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='request_unit']" position="after">
+                    <field name="is_annual"/>
+                    <field name="is_sick"/>
+                    <field name="is_work_injury" attrs="{'invisible':[('is_sick','!=',True)]}"/>
+                    <field name="need_clearance"/>
+                    <field name="can_be_sold"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

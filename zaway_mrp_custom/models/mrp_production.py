@@ -89,7 +89,7 @@ class MrpProduction(models.Model):
     @api.onchange('product_id','bom_id','move_raw_ids')
     def compute_weight_product(self):
         for rec in self.move_raw_ids:
-            if rec.product_id.weight_product <= 0:
+            if rec.product_id.categ_id.has_weigth and rec.product_id.weight_product <= 0:
 
                 rec.product_id.weight_product = rec.product_id.thickness *  rec.product_id.width *  rec.product_id.density * rec.product_id.length
 

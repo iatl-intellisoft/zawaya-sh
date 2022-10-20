@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+
+        <report
+                string="Service Termination Form"
+                id="action_service_termination_report"
+                model="hr.service.termination"
+                report_type="qweb-pdf"
+                name="hr_service_termination.report_service_termination_document"
+                file="hr_service_termination.report_service_termination_document"/>
+                
+    </data>
+</odoo>

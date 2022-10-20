@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<record id="view_res_config_settings_form_inherit" model="ir.ui.view">
+            <field name="name">view.res.config.settings.form.inherit</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@data-key='hr']" position="inside">
+                    <h2>Time Off</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Clearance</span>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <label for="leave_clearance_ids" string="Required Departments"
+                                               class="col-3 col-lg-3 o_light_label"/>
+                                        <field name="leave_clearance_ids" class="oe_inline" widget="many2many_tags"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Time Off Certificate Template</span>
+                                <div class="text-muted">
+                                    Choose your Template
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <label for="leave_certificate_template_id" string="Template"
+                                               class="col-3 col-lg-3 o_light_label"/>
+                                        <field name="leave_certificate_template_id" class="oe_inline"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Sick Time Off Template</span>
+                                <div class="text-muted">
+                                    Choose your Template
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <label for="sick_template_id" string="Template"
+                                               class="col-3 col-lg-3 o_light_label"/>
+                                        <field name="sick_template_id" class="oe_inline"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Time Off Salary/Expenses Account</span>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <label for="salary_expences_account_id" string="Account"
+                                               class="col-3 col-lg-3 o_light_label"/>
+                                        <field name="salary_expences_account_id" class="oe_inline"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="leave_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'hr', 'bin_size': False}</field>
+        </record>
+
+        <menuitem id="leave_menu_configuration"
+            name="Settings"
+            parent="hr_holidays.menu_hr_holidays_configuration"
+            sequence="-1"
+            action="leave_config_settings_action"
+            />
+    </data>
+</odoo>

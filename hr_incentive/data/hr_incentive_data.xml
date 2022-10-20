@@ -8,43 +8,8 @@
             <field name="category_id" ref="hr_payroll.ALW"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
-            <field name="struct_id" ref="hr_payroll_custom.structure_employee_almoshraf_1"></field>
+            <field name="struct_id" ref="zaway_hr_contract.zawaya_structure_employee"></field>
             <field name="amount_python_compute">result=payslip.total_incentive_amount</field>
-            <!-- <field name="company_id" ref="base.main_company"/> -->
         </record>
-        <record id="hr_incentive_alwatania_rule" model="hr.salary.rule">
-            <field name="name">Employee Payments</field>
-            <field name="sequence" eval="100"/>
-            <field name="code">INC</field>
-            <field name="category_id" ref="hr_payroll.ALW"/>
-            <field name="condition_select">none</field>
-            <field name="amount_select">code</field>
-            <field name="struct_id" ref="hr_payroll_custom.structure_employee_alwatania_1"></field>
-            <field name="amount_python_compute">result=payslip.total_incentive_amount</field>
-            <!-- <field name="company_id" ref="base_custom.alwatania_company"/> -->
-        </record>
-        <record id="hr_incentive_aldowlia_rule" model="hr.salary.rule">
-            <field name="name">Employee Payments</field>
-            <field name="sequence" eval="100"/>
-            <field name="code">INC</field>
-            <field name="category_id" ref="hr_payroll.ALW"/>
-            <field name="condition_select">none</field>
-            <field name="amount_select">code</field>
-            <field name="struct_id" ref="hr_payroll_custom.structure_employee_aldowlia_1"></field>
-            <field name="amount_python_compute">result=payslip.total_incentive_amount</field>
-            <!-- <field name="company_id" ref="base_custom.aldowlia_company"/> -->
-        </record>
-        <record id="hr_incentive_ajwaa_rule" model="hr.salary.rule">
-            <field name="name">Employee Payments</field>
-            <field name="sequence" eval="100"/>
-            <field name="code">INC</field>
-            <field name="category_id" ref="hr_payroll.ALW"/>
-            <field name="condition_select">none</field>
-            <field name="amount_select">code</field>
-            <field name="struct_id" ref="hr_payroll_custom.structure_employee_ajwaa_1"></field>
-            <field name="amount_python_compute">result=payslip.total_incentive_amount</field>
-            <!-- <field name="company_id" ref="base_custom.ajwaa_company"/> -->
-        </record>
-
     </data>
 </odoo>

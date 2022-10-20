@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RTL have problem with ODOO v11  so we gonna use additional styles + IF-->
+<odoo>
+
+    <data>
+        <record id="leave_certificate_template_id" model="mail.template">
+            <field name="name">Time Off : Certificate Template</field>
+            <field name="model_id" ref="zaway_hr_holidays.model_hr_leave"/>
+            <field name="body_html" type="html">
+                <div>
+                    <html>
+                        <body>
+                            <font style="font-family:'serif';">
+                                <div style="margin: 0px; padding: 3px;" class="text-right" dir="rtl">
+                                    <center>
+                                        <table width='800'>
+                                            <tbody>
+                                                <tr class="text-right">
+                                                    <td colspan="2">
+                                                        <span style="font-weidght: bold;">التاريخ : </span>
+                                                        <span style="font-weidght: bold;" t-esc="object.date_request"/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-center">
+                                                    <td colspan="2">
+                                                        <u><span style="font-weidght: bold;"> شهادة إجازة </span></u>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-right">
+                                                    <td colspan="2">
+                                                        <span style="font-weidght: bold;">الأسم : </span>
+                                                        <span style="font-weidght: bold;" t-esc="object.employee_id.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-right">
+                                                    <td colspan="2">
+                                                        <span style="font-weidght: bold;">القسم : </span>
+                                                        <span style="font-weidght: bold;" t-esc="object.department_id.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-right">
+                                                    <td colspan="2">
+                                                        <span style="font-weidght: bold;">الوظيفة : </span>
+                                                        <span style="font-weidght: bold;" t-esc="object.job_id.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-right">
+                                                    <td colspan="2">
+                                                        <span style="font-weidght: bold;">منح إجازة وقدرها : </span>
+                                                        <span style="font-weidght: bold;" t-esc="int(object.number_of_days)"/> يوم
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-right">
+                                                    <td colspan="2">
+                                                        <span style="font-weidght: bold;">إعتبارا من : </span>
+                                                        <span>تاريخ </span><span style="font-weidght: bold;" t-esc="object.request_date_from"/>
+                                                        <span>وحتى تاريخ </span><span style="font-weidght: bold;" t-esc="object.request_date_to"/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-right">
+                                                    <td colspan="2">
+                                                        <span style="font-weidght: bold;">يعود للعمل في : </span>
+                                                        <span style="font-weidght: bold;" t-esc="object.back_date"/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-right">
+                                                    <td colspan="2">
+                                                        <span style="font-weidght: bold;">قضاء الإجازة : </span>
+                                                        <span style="font-weidght: bold;" t-esc="object.time_off_location"/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-right">
+                                                    <td colspan="2">
+                                                        <span style="font-weidght: bold;">العنوان بالإجازة : </span>
+                                                        <span style="font-weidght: bold;" t-esc="object.time_off_address"/>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-right">
+                                                    <td>
+                                                        <span style="font-weidght: bold;">أقرب الأقربين : </span>
+                                                        <span style="font-weidght: bold;" t-esc="object.relative_name"/>
+                                                    </td>
+                                                    <td>
+                                                        <span style="font-weidght: bold;">تلفون : </span>
+                                                        <span style="font-weidght: bold;" t-esc="object.relative_phone"/>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br/>
+                                        <span class="text-left" style="font-weidght: bold;margin-right:400px">مدير الشؤون الإدارية والموارد البشرية</span><br/><br/>
+                                        <span class="text-left" style="font-weidght: bold;margin-right:400px">.............................................................</span>
+
+                                        <br/><br/>
+                                        <span class="text-right" style="font-weidght: bold;margin-left:400px">صورة إلى :-</span><br/><br/>
+                                        <span class="text-right" style="font-weidght: bold;margin-left:400px">- الموارد البشرية</span>
+                                    </center>
+                                </div>
+                            </font>
+                        </body>
+                    </html>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <act_window 
+            id="act_employee_incentive"
+            name="Incentives"
+            context="{'default_leave_id': active_id,'create':0,'edit':0}"
+            domain="[('leave_id','=',active_id)]"
+            res_model="hr.incentive"
+            />
+
+        <act_window 
+            id="act_employee_loan"
+            name="Loans"
+            context="{'default_leave_id': active_id,'create':0,'edit':0}"
+            domain="[('leave_id','=',active_id)]"
+            res_model="hr.loan"
+            />
+
+        <record id="hr_leave_view_form_inh2" model="ir.ui.view">
+            <field name="name">hr.leave.form.inherit</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//header/button[@name='action_confirm']" position="before">
+                    <button string="Confirm" name="first_confirm" states="confirm" type="object" class="oe_highlight" groups="hr_holidays.group_hr_holidays_user"/>
+                    <button string="Department Approve" name="dept_confirm" states="wait_dept_approve" type="object" class="oe_highlight" groups="hr_holidays.group_hr_holidays_user"/>
+                    <button string="HR Approve" name="hr_confirm" states="wait_hr_approve" type="object" class="oe_highlight" groups="hr_holidays.group_hr_holidays_user"/>
+                </xpath>
+
+                <xpath expr="//header/button[@name='action_approve']" position="after">
+                    <field name="incentive_ids" invisible="1"/>
+                    <field name="loan_ids" invisible="1"/>
+                    <button string="Create Incentive"
+                            class="oe_highlight"
+                            type="object"
+                            name="open_incentive"
+                            attrs="{'invisible':['|',('need_allowance','=',False),('incentive_ids','!=',False)]}"/>
+                    <button string="Create Advance Salary"
+                            class="oe_highlight"
+                            type="object"
+                            name="open_loans"
+                            attrs="{'invisible':['|',('need_advance_salary','=',False),('loan_ids','!=',False)]}"/>
+                </xpath>
+
+                <xpath expr="//header/button[@name='action_approve']" position="replace">
+                    <button string="GM Approve" name="action_approve" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('can_approve', '=', False), ('state', '!=', 'wait_gm_approve')]}"/>
+                </xpath>
+
+                <xpath expr="//header/button[@name='action_refuse']" position="before">
+                    <field name="is_annual" invisible="1"/>
+                    <button string="Stop Time Off" name="%(stop_holiday_action)d"  type="action" groups="hr_holidays.group_hr_holidays_user" attrs="{'invisible':['|','|',('employee_id','=',False),('state', '!=', 'validate'),('is_annual','=',False)]}"/>
+                </xpath>
+
+                <xpath expr="//header/field[@name='state']" position="replace">
+                    <field name="state" widget="statusbar" statusbar_visible="confirm,wait_dept_approve,wait_hr_approve,wait_gm_approve,validate"/>
+                </xpath>
+
+                <xpath expr="//sheet/div[1]" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(act_employee_incentive)d"
+                            string="Incentics"
+                            class="oe_stat_button"
+                            icon="fa-money"
+                            type="action"
+                            attrs="{'invisible':[('need_allowance','=',False)]}">
+                        </button>
+
+                        <button name="%(act_employee_loan)d"
+                            string="Advance Salary"
+                            class="oe_stat_button"
+                            icon="fa-money"
+                            type="action"
+                            attrs="{'invisible':[('need_advance_salary','=',False)]}">
+                        </button>
+                    </div>
+                </xpath>
+
+                <xpath expr="//sheet/div[@name='title']" position="replace">
+                    <div name="title">
+                        <field name="display_name" invisible="1"/>
+                        <field name="employee_id" readonly="1" force_save="1"/>
+                        <field name="employee_ids" invisible="1"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="department_id"/>
+                            <field name="job_id"/>
+                            <field name="address"/>
+                            <field name="contract_start_date"/>
+                            <field name="company_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="alternative_employee_id"/>
+                            <field name="relative_name"/>
+                            <field name="relative_phone"/>
+                        </group>
+                    </group>
+                </xpath>
+
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="disease_type" attrs="{'invisible':[('is_sick','=',False)]}"/>
+                    <field name="back_date"/>
+                    <field name="time_off_location"/>
+                    <field name="time_off_address"/>
+                    <field name="is_sick" invisible="1"/>
+                </xpath>
+
+                <xpath expr="//sheet" position="inside">
+                    <group>
+                        <group>
+                            <field name="need_allowance" attrs="{'invisible':[('employee_id','=',False)]}"/>
+                            <field name="need_advance_salary" attrs="{'invisible':[('employee_id','=',False)]}"/>
+                            <field name="need_clearance" invisible="1"/>
+                            <field name="stop" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="leave_expences"/>
+                            <field name="advance_salary" attrs="{'invisible':[('need_advance_salary','!=',True)]}"/>
+                            <field name="move_id" attrs="{'invisible':[('move_id','=',False)]}"/>
+                        </group>
+                    </group>
+
+                    <group string='Time Off Clearance' name="clearance" attrs="{'invisible':[('need_clearance','!=',True)]}">
+                        <field name='leave_clearance_ids' nolabel="1">
+                            <tree editable="True" readonly='1' delete='0' create='0' nolabel="1">
+                                <field name="department_id" readonly='1'/>
+                                <field name="cleared" readonly='1'/>
+                                <field name="notes" readonly='1'/>
+                                <field name="approve_by" readonly="True"/>
+                                <button name="set_approve" type="object" string="Approve" icon="fa-check" attrs="{'invisible': [('cleared', '=', True)]}"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                </xpath>
+                
+                <xpath expr="//group[@name='clearance']" position="after">
+                   <notebook attrs="{'invisible':[('employee_id','=',False)]}">
+                        <page string="Time Off Stop Details" attrs="{'invisible':[('stop','!=',True)]}">
+                            <group col="4">
+                                <field name="stop_date"/>
+                                <field name="stop_reason" readonly="1"/>
+                                <field name="old_end_date" readonly="1"/>
+                                <field name="old_number_of_days" readonly="1"/>
+                            </group>
+                        </page>
+                        <page string='Sick Time Off Template' attrs="{'invisible':[('is_sick','!=',True)]}">
+                            <field name='sick_website_description'/>
+                        </page>
+                        <page string='Time Off Certificate Template'>
+                            <field name='leave_certificate_website_description'/>
+                        </page>
+                   </notebook>
+               </xpath>
+
+                <xpath expr="//label[@for='supported_attachment_ids']" position="replace">
+                    <label for="supported_attachment_ids" string="Supporting Document" attrs="{'invisible': [('leave_type_support_document', '=', False)]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='supported_attachment_ids']" position="replace">
+                    <field name="supported_attachment_ids" widget="many2many_binary" nolabel="1" attrs="{'invisible': [('leave_type_support_document', '=', False)]}"/>
+                </xpath>
+
+
+            </field>
+        </record>
+
+        <record id="hr_leave_view_form_inh1" model="ir.ui.view">
+            <field name="name">hr.leave.form.inherit</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@name='title']" position="after">
+                    <div class="oe_title">
+                        <h5>
+                            <field name="sequence"/>
+                        </h5>
+                    </div>
+                </xpath>
+                <field name="department_id" position="replace"/>
+                <field name="job_id" position="replace"/>
+                <field name="address" position="replace"/>
+                <field name="contract_start_date" position="replace"/>
+                <field name="alternative_employee_id" position="replace"/>
+                <field name="relative_name" position="replace"/>
+                <field name="relative_phone" position="replace"/>
+            </field>
+        </record>
+
+    </data>
+</odoo>

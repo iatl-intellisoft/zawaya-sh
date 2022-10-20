@@ -597,7 +597,7 @@ msgstr "بحث الأجر الإضافي"
 #: model:ir.model.fields,field_description:hr_overtime.field_res_config_settings__overtime_template_id
 #: model_terms:ir.ui.view,arch_db:hr_overtime.overtime_batch_form_view
 msgid "Overtime Template"
-msgstr ""
+msgstr "نموذج الأجر الإضافي"
 
 #. module: hr_overtime
 #: model:ir.model.fields,field_description:hr_overtime.field_hr_overtime__company_overtime_type
@@ -702,7 +702,7 @@ msgstr "هيكل الراتب "
 #: model:ir.model.fields,field_description:hr_overtime.field_hr_overtime__sequence
 #: model:ir.model.fields,field_description:hr_overtime.field_hr_overtime_batch__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "تسلسل"
 
 #. module: hr_overtime
 #: model:ir.model.fields,field_description:hr_overtime.field_hr_overtime__start_date
@@ -714,7 +714,7 @@ msgstr "تاريخ البداية"
 #: model:ir.model.fields,field_description:hr_overtime.field_hr_overtime__state
 #: model:ir.model.fields,field_description:hr_overtime.field_hr_overtime_batch__state
 msgid "State"
-msgstr ""
+msgstr "الحالة"
 
 #. module: hr_overtime
 #: model:ir.model.fields,field_description:hr_overtime.field_hr_overtime_line__state
@@ -748,13 +748,13 @@ msgstr "النموذج"
 #: code:addons/hr_overtime/models/hr_overtime.py:0
 #, python-format
 msgid "The Date should be within overtime range !"
-msgstr ""
+msgstr "يجب أن يكون التاريخ ضمن نطاق العمل الإضافي!"
 
 #. module: hr_overtime
 #: code:addons/hr_overtime/models/hr_overtime.py:0
 #, python-format
 msgid "There is no running contract for this Employee %s."
-msgstr ""
+msgstr "لا يوجد عقد قيد التشغيل لهذا الموظف %s."
 
 #. module: hr_overtime
 #: model:ir.model.fields.selection,name:hr_overtime.selection__res_company__overtime_type__payroll

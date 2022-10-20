@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_hr_holidays_stop,hr_holidays_stop,model_hr_holidays_stop,,1,1,1,1
+access_leave_clearance_line,leave_clearance_line,model_leave_clearance_line,,1,1,1,1
+access_sell_time_off_holiday_manager,sell.time.off,model_sell_time_off,,1,1,1,1

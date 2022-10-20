@@ -27,22 +27,23 @@
                                                         <strong>بيانات الطلب</strong>
                                                     </td>
                                                     <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="2">
+                                                        colspan="4">
                                                         <span t-field="o.name"/>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;">
-                                                        <strong>التاريخ:</strong>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;" class="text-center">
-                                                        <span t-field="o.cc_date"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td style="border: 1 px solid black;">
+                                                        <strong>التاريخ:</strong>
+                                                    </td>
+                                                    <td style="border: 1 px solid black;">
+                                                        <span t-field="o.cc_date"/>
+                                                    </td>
+                                                    <td style="border: 1 px solid black;"></td>
+                                                    <td style="border: 1 px solid black;">
                                                         <strong>مقدم الطلب:</strong>
                                                     </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="4">
+                                                    <td style="border: 1 px solid black;"
+                                                    >
                                                         <span t-field="o.requester"/>
                                                     </td>
                                                 </tr>
@@ -50,189 +51,124 @@
                                                     <td style="border: 1 px solid black;">
                                                         <strong>المبلغ:</strong>
                                                     </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="2">
+                                                    <td style="border: 1 px solid black;" 
+                                                    >
                                                         <t t-esc="'{0:,.2f}'.format(int(o.clearance_amount))"/>
                                                     </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="2">
+                                                    <td style="border: 1 px solid black;"
+                                                        >
                                                         <strong>
                                                             <span t-field="o.clearance_currency.narration_ar_un"/>
                                                         </strong>
                                                     </td>
-                                                </tr>
-                                                <tr>
                                                     <td style="border: 1 px solid black;">
                                                         <strong>المبلغ كتابتة:</strong>
                                                     </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="4">
+                                                    <td style="border: 1 px solid black;"
+                                                        >
                                                         <span t-field="o.clearance_amount_words"/>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td style="border: 1 px solid black;" colspan="5">
+                                                <tr class="text-right">
+                                                    <td style="border: 1 px solid black;">
                                                         <strong>الغرض:</strong>
                                                     </td>
-                                                </tr>
-                                                <tr>
                                                     <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="5">
+                                                        colspan="3">
                                                         <span t-field="o.reason"/>
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="border: none;"></td>
-                                                    <td style="border: none;"></td>
-                                                    <td style="border: none;"></td>
-                                                    <td style="border: none;"></td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="text-right">الرقم</th>
-                                                    <th class="text-right">البند</th>
-                                                    <th class="text-right">مركز التكلفة</th>
-                                                    <th class="text-right">المبلخ</th>
-                                                    <th class="text-right">ملاحظات</th>
-                                                </tr>
-                                                <tr>
-                                                    <t t-foreach="o.custody_clearance_line_ids" t-as="m">
-                                                        <tr>
-                                                            <td style="border: 1 px solid black;">
-                                                                <span t-esc="sr"/>
-                                                                <t t-set="sr" t-value="sr + 1"/>
-                                                            </td>
-                                                            <td style="border: 1 px solid black;">
-                                                                <span t-field="m.name"/>
-                                                            </td>
-                                                            <td style="border: 1 px solid black;">
-                                                                <span t-field="m.analytic_account"/>
-                                                            </td>
-                                                            <td style="border: 1 px solid black;">
-                                                                <t t-esc="'{0:,.2f}'.format(m.amount)"/>
-                                                                <t t-set="total" t-value="total + m.amount"/>
-                                                            </td>
-                                                            <td style="border: 1 px solid black;">
-                                                                <span t-field="m.notes"/>
-                                                            </td>
-                                                        </tr>
-                                                    </t>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3">
-                                                        <strong>المجموع:</strong>
-                                                    </td>
-                                                    <td colspan="2">
-                                                        <t t-esc="'{0:,.2f}'.format(total)"/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3">
-                                                        <strong>الفرق:</strong>
-                                                    </td>
-                                                    <td colspan="2">
-                                                        <t t-esc="'{0:,.2f}'.format(o.difference_amount)"/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="border: none;"></td>
-                                                    <td style="border: none;"></td>
-                                                    <td style="border: none;"></td>
-                                                    <td style="border: none;"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="border: 1 px solid black;">
-                                                        <strong>مدير االادارة/القسم:</strong>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;" class="text-center">
-                                                        <span t-field="o.mn_app_id.name"/>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;">
-                                                        <strong>الامضاء:</strong>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="2">
-                                                        <span t-if="o.mn_app_id.resized_user_signature"
-                                                              t-field="o.mn_app_id.resized_user_signature"
-                                                              t-field-options='{"widget": "image"}'/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <!--<td style="border: 1 px solid black;">-->
-                                                        <!--<strong>المحاسب:</strong>-->
-                                                    <!--</td>-->
-                                                    <!--<td style="border: 1 px solid black;" class="text-center">-->
-                                                        <!--<span t-field="o.at_app_id.name"/>-->
-                                                    <!--</td>-->
-                                                    <!--<td style="border: 1 px solid black;">-->
-                                                        <!--<strong>الامضاء:</strong>-->
-                                                    <!--</td>-->
-                                                    <!--<td style="border: 1 px solid black;" class="text-center"-->
-                                                        <!--colspan="2">-->
-                                                        <!--<span t-if="o.at_app_id.resized_user_signature"-->
-                                                              <!--t-field="o.at_app_id.resized_user_signature"-->
-                                                              <!--t-field-options='{"widget": "image"}'/>-->
-                                                    <!--</td>-->
-                                                </tr>
-                                                <tr>
-                                                    <td style="border: 1 px solid black;">
-                                                        <strong>رئيس الحسابات:</strong>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="2">
-                                                        <span t-field="o.au_app_id.name"/>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;">
-                                                        <strong>الامضاء:</strong>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="2">
-                                                        <span t-if="o.au_app_id.resized_user_signature"
-                                                              t-field="o.au_app_id.resized_user_signature"
-                                                              t-field-options='{"widget": "image"}'/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="border: 1 px solid black;">
-                                                        <strong>المدير المالي:</strong>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="2">
-                                                        <span t-field="o.fm_app_id.name"/>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;">
-                                                        <strong>الامضاء:</strong>
-                                                    </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="2">
-                                                        <span t-if="o.fm_app_id.resized_user_signature"
-                                                              t-field="o.fm_app_id.resized_user_signature"
-                                                              t-field-options='{"widget": "image"}'/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="border: none;"></td>
-                                                    <td style="border: none;"></td>
-                                                    <td style="border: none;"></td>
-                                                    <td style="border: none;"></td>
-                                                </tr>
-                                                <tr>
                                                     <td style="border: 1 px solid black;">
                                                         <strong>استلام/سداد الفرق:</strong>
                                                     </td>
-                                                    <td style="border: 1 px solid black;" class="text-center"
-                                                        colspan="4">
+                                                    <td>
                                                         <span t-field="o.journal_id"/>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <!--<td style="border: 1 px solid black;">-->
-                                                        <!--<strong>رئيس الحسابات:</strong>-->
-                                                    <!--</td>-->
-                                                    <!--<td style="border: 1 px solid black;" class="text-center"-->
-                                                        <!--colspan="4">-->
-                                                    <!--</td>-->
+                                               <tr class="text-right">
+                                                    <table width="90%" style=" border: 1px solid black ; margin-top:5px background-color:#f2f2f2;" dir="rtl">
+                                                        <thead style="display:table-header-group; background-color:#f2f2f2;">
+                                                            <tr style="text-align: right;">
+                                                                <td style=" border: 1px solid black;text-align: right;"  class="text-right">الرقم</td>
+                                                                <td style=" border: 1px solid black;text-align: right;"  class="text-right">البند</td>
+                                                                <td style=" border: 1px solid black;text-align: right;"  class="text-right">مركز التكلفة</td>
+                                                                <td style=" border: 1px solid black;text-align: right;"  class="text-right">المبلغ</td>
+                                                                <td style=" border: 1px solid black;text-align: right;"  class="text-right">ملاحظات</td>
+                                                            </tr>
+                                                        </thead>
+                                                        <t t-foreach="o.custody_clearance_line_ids" t-as="m">
+                                                            <tr style="background-color:white;color:black;text-align: right;">
+                                                                <td style="border: 1px solid black;position:relative;text-align:right">
+                                                                    <span t-esc="sr"/>
+                                                                    <t t-set="sr" t-value="sr + 1"/>
+                                                                </td>
+                                                                <td style="border: 1px solid black;position:relative;text-align:right">
+                                                                    <span t-field="m.name"/>
+                                                                </td>
+                                                                <td style="border: 1px solid black;position:relative;text-align:right">
+                                                                    <span t-field="m.analytic_account"/>
+                                                                </td>
+                                                                <td style="border: 1px solid black;position:relative;text-align:right">
+                                                                    <t t-esc="'{0:,.2f}'.format(m.amount)"/>
+                                                                    <t t-set="total" t-value="total + m.amount"/>
+                                                                </td>
+                                                                <td style="border: 1px solid black;position:relative;text-align:right">
+                                                                    <span t-field="m.notes"/>
+                                                                </td>
+                                                            </tr>
+                                                        </t>
+                                                        <tr class="is-total">
+                                                            <td colspan="3">المجموع</td>
+                                                            <td>
+                                                                <t t-esc="'{0:,.2f}'.format(total)"/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="is-total">
+                                                            <td colspan="3">الفرق</td>
+                                                            <td>
+                                                                <t t-esc="'{0:,.2f}'.format(o.difference_amount)"/>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
                                                 </tr>
+                                                <table class="table table-borderless" width="50%" style="margin-top: 10px" dir ="rtl">
+                        <!-- style="margin-top: 25%" -->
+                                                    <tr class="text-right">
+                                                        <td> </td>
+                                                        <td><strong>مدير االادارة/القسم:</strong></td>
+                                                        <td><strong>المدير المالي:</strong></td>
+                                                        <td><strong>مدير الإنتاج</strong></td>
+                                                    </tr>
+                                                    <tr class="text-right">
+                                                        <td><strong>الإسم</strong></td>
+                                                        <td>
+                                                        <span t-field="o.mn_app_id.name"/>
+                                                        </td>
+                                                        <td>
+                                                        <span t-field="o.fm_app_id.name"/>
+
+                                                        </td>
+                                                        <td>
+                                                        .......................................
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="text-right">
+                                                        <td><strong>التوقيع</strong></td>
+                                                        <td><span t-if="o.mn_app_id.resized_user_signature"
+                                                              t-field="o.mn_app_id.resized_user_signature"
+                                                              t-field-options='{"widget": "image"}'/></td>
+                                                        <td><span t-if="o.fm_app_id.resized_user_signature"
+                                                              t-field="o.fm_app_id.resized_user_signature"
+                                                              t-field-options='{"widget": "image"}'/></td>
+                                                        <td>
+                                                        .......................................
+
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
                                             </table>
+
                                         </group>
                                     </div>
                                 </div>

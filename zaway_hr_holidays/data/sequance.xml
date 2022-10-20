@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data noupdate='0'>
+
+        <record id="hr_leave" model="ir.sequence">
+            <field name="name">hr.leave</field>
+            <field name="code">hr.leave</field>
+            <field name="prefix">TIME OFF/ </field>
+            <field name="padding">4</field>
+            <field name="active">True</field>
+            <field eval="1" name="number_increment"/>
+        </record>
+
+
+        <record id="hr_leave_sell" model="ir.sequence">
+            <field name="name">hr.leave.sell</field>
+            <field name="code">hr.leave.sell</field>
+            <field name="prefix">TA</field>
+            <field name="padding">4</field>
+            <field name="active">True</field>
+            <field eval="1" name="number_increment"/>
+        </record>
+
+    </data>
+</odoo>

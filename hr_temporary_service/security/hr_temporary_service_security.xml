@@ -7,6 +7,20 @@
             <field name="global" eval="True"/>
             <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
         </record>
+
+        <record model="ir.module.category" id="zaway_hr_temporary_service_category">
+            <field name="name">HR Temporary Service</field>
+        </record>
+        <record id="hr_temporary_service_user" model="res.groups">
+            <field name="name">HR Temporary Service User</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="zaway_hr_temporary_service_category"/>
+        </record>
+        <record id="hr_temporary_service_manager" model="res.groups">
+            <field name="name">HR Temporary Service Manager</field>
+            <field name="implied_ids" eval="[(4, ref('hr_temporary_service_user'))]"/>
+            <field name="category_id" ref="zaway_hr_temporary_service_category"/>
+        </record>
     </data>
 </odoo>
 

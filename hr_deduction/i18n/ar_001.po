@@ -290,6 +290,7 @@ msgstr "الإستقطاع"
 
 #. module: hr_deduction
 #: model:ir.actions.act_window,name:hr_deduction.action_hr_deduction_batch
+#: model:ir.ui.menu,name:hr_deduction.menu_hr_deduction_batch
 #: model_terms:ir.ui.view,arch_db:hr_deduction.view_hr_deduction_batch_tree
 msgid "Deduction Batch"
 msgstr "دفعة الإستقطاع"
@@ -653,7 +654,7 @@ msgstr "نموذج"
 #: code:addons/hr_deduction/models/models.py:0
 #, python-format
 msgid "The Amount must be more than zero!"
-msgstr "يجب أن يكون المبلغ أكثر  من زيرو"
+msgstr "يجب أن يكون المبلغ أكبر  من صفر"
 
 #. module: hr_deduction
 #: model:ir.model.fields,field_description:hr_deduction.field_hr_payslip__total_deduct_amount

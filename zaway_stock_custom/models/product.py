@@ -24,6 +24,9 @@ class ProductTemplate(models.Model):
     density = fields.Float(string="Density")
     length =fields.Float(string="Length")
     weight_product = fields.Float(string="Weight")
+    location_id = fields.Many2one('stock.location',string="Location")
+    weight_categ = fields.Boolean(related='categ_id.has_weigth')
+
 
     def action_open_quants_pack(self):
         res = super(ProductTemplate, self).action_open_quants()
@@ -42,3 +45,4 @@ class ProductCategory(models.Model):
     _inherit = 'product.category'
 
     has_weigth = fields.Boolean(string="Has Weight?")
+    location_id = fields.Many2one('stock.location',string="Location")

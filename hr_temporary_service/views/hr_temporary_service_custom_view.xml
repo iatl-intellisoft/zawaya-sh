@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>        <!--Start of HR Temporary Service labor_job_type -->
+
+    <record id="zaway_labor_job_type_tree" model="ir.ui.view">
+        <field name="name">zaway_labor_job_type_tree</field>
+        <field name="model">labor.job.type</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="day_rate"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="zaway_labor_job_type_form" model="ir.ui.view">
+        <field name="name">zaway_labor_job_type_form</field>
+        <field name="model">labor.job.type</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="day_rate"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="zaway_labor_job_type_action" model="ir.actions.act_window">
+        <field name="name">Labor Job Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">labor.job.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="zaway_labor_job_type_menu" name="Labor Job Type"
+              parent="hr_temporary_service.menu_temporary_service_config"
+              action="zaway_labor_job_type_action"
+              sequence="100"/>
+    <!--End of HR Temporary Service labor_job_type #########################################-->
+
+    <!-- HR Temporary service inherit Records -->
+    <record id="view_temporary_service_form_inherit" model="ir.ui.view">
+        <field name="name">hr.temporary.service.form.inherit</field>
+        <field name="model">hr.temporary.service</field>
+        <field name="inherit_id" ref="hr_temporary_service.hr_temporary_service_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pay_type']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']" position="replace">
+                <field name="line_ids" attrs="{'readonly': [('state','!=', 'draft')]}"
+                       context="{'default_no_days': work_day}">
+                    <tree editable="bottom">
+                        <field name="labor_id" domain="[('labor','=',True)]" required="1"/>
+                        <field name="no_days"
+                               attrs="{'column_invisible':[('parent.pay_type','!=','days')],'column_required':[('parent.pay_type','=','days')]}"/>
+                        <field name="no_hours"
+                               attrs="{'column_invisible':[('parent.pay_type','!=','hours')],'required':[('parent.pay_type','=','hours')]}"/>
+                        <field name="extra_pay"/>
+                        <field name="wage" readonly="1"/>
+                        <!-- <field name="location" invisible="1"/> -->
+                    </tree>
+                </field>
+            </xpath>
+            <xpath expr="//field[@name='wage_day']" position="replace">
+                <field name="work_day" attrs="{'readonly': [('state','!=','draft')]}"/>
+                <!--                <field name="working_hours" readonly="1"/>-->
+            </xpath>
+            <!-- <xpath expr="//field[@name='move_id']" position="replace">
+                <field name="location" attrs="{'readonly': [('state','!=','draft')]}"/>
+            </xpath> -->
+            <xpath expr="//page/field[@name='line_ids']/tree/field[@name='no_days']" position="after">
+                <field name="extra_hour" widget="float_time"/>
+                <!--                <field name="extra_hour_holiday" widget="float_time"/>-->
+            </xpath>
+            <xpath expr="//page/field[@name='line_ids']/tree/field[@name='no_days']" position="before">
+                <field name="job_type_id"/>
+                <field name="day_rate"/>
+            </xpath>
+<!--            <xpath expr="//sheet" position="after">-->
+<!--                <div class="oe_chatter">-->
+<!--                    <field name="message_follower_ids"/>-->
+<!--                    <field name="activity_ids"/>-->
+<!--                    <field name="message_ids"/>-->
+<!--                </div>-->
+<!--            </xpath>-->
+            <xpath expr="//header" position="replace">
+                <!-- Add your fields or attributes here -->
+                <header>
+                    <button name="confirmed" type="object" string="Confirm" states="draft" class="oe_highlight"/>
+                    <button name="get_labors" type="object" string="Get Labors" states="draft" class="oe_highlight"/>
+                    <button type="object" name="action_compute_wage" string="Compute" icon="fa-calculator"
+                            colspan="4" states="draft"/>
+                    <button name="action_confirmed"
+                            groups="hr_temporary_service.hr_temporary_service_manager"
+                            type="object" string="Approve" states="confirmed" class="oe_highlight"/>
+                    <button name="create_finance_approval" string="Create Payment Request" type="object"
+                            class="btn-primary"
+                            groups="hr_temporary_service.hr_temporary_service_manager"
+                            attrs="{'invisible': ['|',('state','!=','approved'),('payment_count', '>',0)]}"/>
+
+                    <button name="action_cancel" type="object" string="Cancel" states="approved"
+                            groups="hr_temporary_service.hr_temporary_service_manager"
+                            class="oe_inline"/>
+
+                    <button name="set_to_draft" type="object" string="Set To Draft" class="oe_inline"
+                            groups="hr_temporary_service.hr_temporary_service_manager"
+                            states="confirmed,cancel"/>
+
+
+                    <field name="state" widget="statusbar"/>
+                </header>
+            </xpath>
+            <xpath expr="//div[@class='oe_title']" position="before">
+                <field name="payment_count" invisible="1"/>
+                <field name="payment_done" invisible="1"/>
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_finace" class="oe_stat_button" icon="fa-book" type="object"
+                            attrs="{'invisible': [('payment_count', '=',0)]}" string="Finance Approval">
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="zaway_view_partner_form_labor" model="ir.ui.view">
+        <field name="name">zaway.res.partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <!-- Add your fields or attributes here -->
+                <field name="labor" invisible="1"/>
+                <field name="job_type_id"
+                       attrs="{'invisible':[('labor','=',False)],'required':[('labor','!=',False)]}"/>
+               <!--  <field name="location" attrs="{'invisible':[('labor','=',False)],'required':[('labor','!=',False)]}"/> -->
+            </xpath>
+        </field>
+    </record>
+    <menuitem id="hr_temporary_service.menu_temporary_service_root"
+              name="Temporary Service"
+              sequence="99"
+              groups="hr_temporary_service.hr_temporary_service_user"
+              web_icon="hr_temporary_service,static/description/icon.png"
+    />
+    <menuitem id="hr_temporary_service.menu_temporary_service_config"
+              name="Configuration"
+              parent="hr_temporary_service.menu_temporary_service_root"
+              sequence="2"
+              groups="hr_temporary_service.hr_temporary_service_manager"
+    />
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

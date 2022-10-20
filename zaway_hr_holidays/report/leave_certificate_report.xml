@@ -1,0 +1,29 @@
+<odoo>
+
+    <template id="report_leave_certificate_document">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <t t-if="o.employee_id">
+                        <div class="page">
+                            <center>
+                                <strong>
+                                    <h4>
+                                        <font style="font-family:'serif';">إدارة الشؤون الإدارية</font>
+                                    </h4>
+                                    <h4>
+                                        <font style="font-family:'serif';">قسم الموارد البشرية</font>
+                                    </h4>
+                                </strong>
+                            </center>
+                        
+                            <br/>
+                            <div  id="template_introduction" t-field="o.leave_certificate_website_description" class='oe_no_empty'>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

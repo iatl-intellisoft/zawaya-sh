@@ -176,7 +176,9 @@ class HrLoan(models.Model):
 		"""
 		A method to compute employee salary.
 		"""
+		self.emp_salary = 0.0
 		for rec in self:
+
 			rec.emp_salary = rec.employee_id.contract_id.wage
 
 	@api.depends('loan_line_ids.paid_amount')
@@ -184,11 +186,18 @@ class HrLoan(models.Model):
 		"""
 		A method to compute total paid loan amount.
 		"""
+		# total = 0.0
+		# for rec in self:
+		# 	if rec.loan_line_ids:
+		# 		self._cr.execute("select sum(paid_amount)as total from hr_loan_line where loan_id = %s ", (rec.id,))
+		# 		total = self._cr.fetchall()[0][0]
+		# 	rec.total_loan = total
+
 		total = 0.0
 		for rec in self:
-			if rec.loan_line_ids:
-				self._cr.execute("select sum(paid_amount)as total from hr_loan_line where loan_id = %s ", (rec.id,))
-				total = self._cr.fetchall()[0][0]
+			for line in rec.loan_line_ids:
+				# self._cr.execute("select sum(paid_amount)as total from hr_loan_line where loan_id = %s ", (rec.id,))
+				total += line.paid_amount
 			rec.total_loan = total
 
 	@api.constrains('employee_id')
@@ -389,6 +398,7 @@ class HrLoan(models.Model):
 		A method to compute loan amount ber record using number of month.
 		"""
 		if self.loan_amount > (self.emp_salary * 2):
+			print("___________________________",self.loan_amount,self.emp_salary)
 			raise ValidationError(_('The Loan amount cannot exceed twice the salary.'))
 		dates = []
 		diff = 0.0

@@ -22,7 +22,7 @@
                 </xpath>
         	</field>
         </record>
-        <record id="view_sale_partner_form" model="ir.ui.view">
+        <!-- <record id="view_sale_partner_form" model="ir.ui.view">
         <field name="name">sale_partner_view_form</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
@@ -31,7 +31,7 @@
                 <field name="code"/>
             </xpath>
         </field>
-    </record>
+    </record> -->
     </odoo>
 
 

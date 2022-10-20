@@ -316,7 +316,7 @@
 
         <!--    START MENU ITEM    -->
         <menuitem id="overtime_main_menu" name="Overtime" groups="hr.group_hr_user"
-                  parent="hr_contract_kambal.menu_hr_employee_process"/>
+                  parent="zaway_hr_contract.menu_hr_employee_process"/>
 
         <menuitem id="overtime_menu" name=" Employee Overtime" parent="overtime_main_menu" action="overtime_action"
                   sequence="1" groups="hr.group_hr_user"/>

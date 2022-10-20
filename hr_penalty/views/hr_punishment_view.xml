@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_punishment_view_form" model="ir.ui.view">
+            <field name="name">hr.punishment</field>
+            <field name="model">hr.punishment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="punishment_type" required="1"/>
+                                <field name="deduct_type_id"
+                                       attrs="{'invisible':[('required_deduction','!=',True)] ,'required' : [('required_deduction','=',True)]}"/>
+                                <field name="period"/>
+                            </group>
+                            <group>
+                                <field name="required_deduction" required="1"/>
+                                <!-- <field name="termination_reason_id"
+                                       attrs="{'invisible':[('punishment_type','!=','terminate')] ,'required' : [('punishment_type','=','terminate')]}"/> -->
+                                <field name="deduct_by"
+                                       attrs="{'invisible':[('required_deduction','!=',True)] ,'required' : [('required_deduction','=',True)]}"/>
+                                <field name="hours"
+                                       attrs="{'invisible':['|','|',('deduct_by','=','fix_amount'),('deduct_by','=','days'),('required_deduction','!=',True)]}"/>
+                                <field name="days"
+                                       attrs="{'invisible':['|',('deduct_by','=','fix_amount'),('deduct_by','=','hours')]}"/>
+                                <field name="fix_amount"
+                                       attrs="{'invisible':['|','|',('deduct_by','=','days'),('deduct_by','=','hours'),('required_deduction','!=',True)] ,'required' : [('deduct_by','=','fix_amount')]}"/>
+                                <field name="rule_id"
+                                       attrs="{'required':['|',('deduct_by','=','days'),('deduct_by','=','hours')] ,'invisible' : ['|',('deduct_by','=','fix_amount'),('required_deduction','!=',True)]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hr_punishment_view_tree" model="ir.ui.view">
+            <field name="name">hr.punishment.tree</field>
+            <field name="model">hr.punishment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="punishment_type"/>
+                    <field name="deduct_type_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="punishment_action">
+            <field name="name">Punishment</field>
+            <field name="res_model">hr.punishment</field>
+            <!--field name="view_type">form</field-->
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_violation_view_form">
+            <field name="name">violation form</field>
+            <field name="model">hr.violation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Violation Name" required="1"/>
+                            </h1>
+                        </div>
+
+                        <notebook>
+                            <page string="Punishments">
+
+
+                                <field name="line_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="punishment_ids" required="1"/>
+
+                                        <field name="sequence" required="1"/>
+
+                                    </tree>
+
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_violation_view_tree" model="ir.ui.view">
+            <field name="name">hr.violation.tree</field>
+            <field name="model">hr.violation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="violation_action">
+            <field name="name">Violation</field>
+            <field name="res_model">hr.violation</field>
+            <!--field name="view_type">form</field-->
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!--    START MENU ITEM    -->
+        <menuitem id="pernalty_root" name="Penalty Configuration" parent="hr.menu_human_resources_configuration"/>
+        <menuitem id="Punishment_menu_id" name="Punishment" parent="pernalty_root" action="punishment_action"/>
+        <menuitem id="violation_menu_id" name="Violation" parent="pernalty_root" action="violation_action"/>
+    </data>
+</odoo>

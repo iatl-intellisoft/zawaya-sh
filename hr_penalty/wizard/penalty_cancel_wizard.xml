@@ -1,0 +1,27 @@
+<odoo>
+	<data>
+
+		<record model="ir.ui.view" id="penalty_cancel_wizard_view">
+		    <field name="name">penalty.cancel.wizard.wizard</field>
+		    <field name="model">penalty.cancel.wizard</field>
+		    <field name="arch" type="xml">
+		      	<form>
+		      		<group>
+		      			<group>
+		      				<field name="cancel_reason"/>
+		      			</group>
+		      			<group></group>
+		      		</group>
+		      		
+		      		<footer>
+		      			<button name='submit' string='Submit' type='object' class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+		      		</footer>
+		      	</form>
+		    </field>
+		</record>
+        
+
+	</data>
+</odoo>

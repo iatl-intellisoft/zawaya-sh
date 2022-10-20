@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Custody Request Sequence-->
+
+        <record id="custody_request_seq" model="ir.sequence">
+            <field name="name">Custody Request Sequence</field>
+            <field name="code">custody.request.seq</field>
+            <field name="padding">4</field>
+            <field name="prefix">CR</field>
+            <field eval="False" name="company_id"/>
+        </record>
+
+     <!-- Custody Exchange Sequence-->
+
+        <record id="custody_exchange_seq" model="ir.sequence">
+            <field name="name">Custody Exchange Sequence</field>
+            <field name="code">custody.exchange.seq</field>
+            <field name="padding">4</field>
+            <field name="prefix">CE</field>
+            <field eval="False" name="company_id"/>
+        </record>
+
+     <!-- Custody Clearance Sequence-->
+
+        <record id="custody_clearance_seq" model="ir.sequence">
+            <field name="name">Custody Clearance Sequence</field>
+            <field name="code">custody.return.seq</field>
+            <field name="padding">4</field>
+            <field name="prefix">CC</field>
+            <field eval="False" name="company_id"/>
+        </record>
+        
+    </data>
+</odoo>

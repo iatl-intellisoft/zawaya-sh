@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="penalty_action_domain">
+            <field name="name">Penalty Filter</field>
+            <field name="res_model">hr.penalty</field>
+            <field name="domain">[('employee_id','=',active_id)]</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_employee_form_penalty_inherit" model="ir.ui.view">
+            <field name="name">view.employee.form.penalty.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="hr_penalty.penalty_action_domain" icon="fa-warning" type="action">
+                        <field name="penalty_count" widget="statinfo" string="Penalty"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+        <act_window name="Deductions Details"
+                    context="{'default_penalty_id': active_id,'create':0,'edit':0}"
+                    domain="[('penalty_id','=',active_id)]"
+                    res_model="hr.deduction"
+                    id="act_employee_deduct"/>
+
+        <record id="hr_penalty_view_form" model="ir.ui.view">
+            <field name="name">hr.penalty</field>
+            <field name="model">hr.penalty</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_confirm" type="object" string="Confirm" states="draft"
+                                class="oe_highlight"/>
+                        <button name="action_dept_approve" type="object" string="Submit" class="oe_highlight"
+                                states="submit"/>
+                        <button name="action_hr_approve" type="object" string="Department Approve" class="oe_highlight"
+                                states="dept_approve"/>
+                        <button name="action_gm_approve" type="object" string="HR Approve" class="oe_highlight"
+                                states="hr_approve"/>
+                        <button name="action_approve" type="object" string="GM Approve" class="oe_highlight"
+                                states="gm_approve"/>
+                        <button name="action_refuse" type="object" string="Refuse" states="submit"/>
+                        <button name="action_draft" type="object" string="Set To Draft" states="refuse"/>
+                        <!-- <button name="action_mail_send" type="object" string="Send Email"/> -->
+                        <!-- <button name="unsuspend_employee" type="object" string="Unsuspend" class="oe_highlight"
+                                attrs="{'invisible': [('employee_active', '=', True),('state','in',['submit','draft'])]}"/> -->
+                        <button name="penalty_cancel_wizard_action" string="Cancel" type="object" states="approve"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,submit,dept_approve,hr_approve,gm_approve,approve"/>
+                        <field name="employee_active" invisible="1"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box" attrs="{'invisible':[('total_deduction','=',0)]}">
+                            <button name="%(act_employee_deduct)d"
+                                class="oe_stat_button"
+                                icon="fa-money"
+                                type="action">
+                                <field name="total_deduction" widget="statinfo" string="Deductions"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="employee_id"
+                                       required="1" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                                <field name="department_id"/>
+                                <field name="job_id"/>
+                                <field name="violation_id" required="1"
+                                       attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                                <field name="penalty_template_id" invisible="1"/>
+                                <field name="punishment_ids"/>
+                                <field name="next_punshment_id" invisible="0"/>
+                                <field name="required_deduction" invisible="1"/>
+                                <field name="amount" attrs="{'invisible':[('required_deduction','!=',True)]}"/>
+                            </group>
+                            <group>
+                                <field name="Date"/>
+                                <field name="requestor_id"/>
+                                <field name="violation_date" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                                <field name="punishment_type" invisible="1"/>
+                                <field name="first_witness"/>
+                                <field name="second_witness"/>
+                                
+                                <!-- <field name="deduction_id"
+                                    attrs="{'invisible':['|',('deduction_id','=',False),
+                                    ('punishment_type','=','warning')]}" readonly="1"/> -->
+                                <!-- <field name="service_termination_id" 
+                                    attrs="{'invisible':[('punishment_type','!=','terminate')]}" readonly="1"/> -->
+                            </group>
+                            <group>
+                                <field name="deduct_by" invisible="1"/>
+                                <field name="hours" attrs="{'invisible':[('deduct_by','!=','hours')]}"/>
+                                <field name="days" attrs="{'invisible':[('deduct_by','!=','days')]}"/>
+                            </group>
+                            <group>
+                                <field name="company_id" readonly="1"/>
+                                <field name="last_penalty_id" invisible="1"/>
+                            </group>
+                        </group>
+                        <group attrs="{'invisible':[('cancel_reason','=',False)]}">
+                            <field name="cancel_reason"/>
+                        </group>
+                        <notebook>
+                            <page string="Penalty Template">
+                                <field name="website_description"/>
+
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_penalty_view_tree" model="ir.ui.view">
+            <field name="name">hr.penalty.tree</field>
+            <field name="model">hr.penalty</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="violation_id"/>
+                    <field name="punishment_ids"/>
+                    <field name="violation_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="penalty_menu_action">
+            <field name="name">Penalty</field>
+            <field name="res_model">hr.penalty</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="hr_penalty_menu" name="Penalty" groups="hr.group_hr_user"
+        parent="zaway_hr_contract.menu_hr_employee_process" action="penalty_menu_action" sequence="100"/>
+    </data>
+</odoo>

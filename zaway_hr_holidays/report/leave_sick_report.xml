@@ -1,0 +1,37 @@
+<odoo>
+    <template id="report_sick_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <t t-if="o.is_sick">
+                        <div class="header2">
+                            <center>
+                                <strong>
+                                    <h4>
+                                        <font style="font-family:'serif';">إدارة الشؤون الإدارية</font>
+                                    </h4>
+                                    <h5>
+                                        <font style="font-family:'serif';">قسم الموارد البشرية</font>
+                                    </h5>
+                                    <h5>
+                                        <u><font style="font-family:'serif';">طلب إجازة</font></u>
+                                    </h5>
+                                </strong>
+                            </center>
+                        </div>
+                        
+                        <div id="template_introduction1" t-field="o.sick_website_description" class='oe_no_empty'>
+                        </div>
+                        <br/>
+                        <div class="text-right" dir="rtl">
+                            <span style="font-weidght: bold;">هنالك بعض الإجازات التي يتم معها خلو طرف كمناديب المبيعات أو السائقين أو أمناء المخازن والخزينة.</span>
+                        </div>
+                    </t>
+                    <t t-else="">
+                    <h4>THIS REPORT PRINTED FOR SICK TIME OFF ONLY !!!</h4>
+                </t>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

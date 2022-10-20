@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it Service Termination-->
+        <record id="view_inherit_service_termination_form" model="ir.ui.view">
+            <field name="name">view.inherit.service.termination.form</field>
+            <field name="model">hr.service.termination</field>
+            <field name="inherit_id" ref="hr_service_termination.view_service_termination_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_draft']" position="attributes">
+                    <attribute name="states">cancel,waiting_calculation</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_submit']" position="after">
+                    <button name="action_done" type="object" string="Confirm" attrs="{'invisible' : [('state' , 'not in',('waiting_calculation'))]}"
+                    class='oe_highlight'/>
+                    <button name="action_compute_details" type="object" string="Re-compute" attrs="{'invisible' : [('state' , 'in',('draft','cancel','done'))]}"
+                    class='oe_highlight'/>
+
+                </xpath>
+                <xpath expr="//div[@class='oe_button_box']" position="inside">
+                     <button name="get_batch" class="oe_stat_button" icon="fa-money" type="object" string="Termination batch"/>
+                </xpath>
+                <xpath expr="//form/sheet/group/group[2]" position="after">
+                    <group string='Running financial processes'>
+                        <field name="loans_amount" readonly="1"/>
+                        <field name="deductions_amount" readonly="1"/>
+                        <!-- <field name="incentives_amount" readonly="1"/> -->
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='working_days']" position="before">
+                    <field name="has_custody"/>
+                    <field name="custody_clear_id" attrs="{'required': [('has_custody', '=', True)]}"/>
+
+                    <!-- domain="['|',('requester_id','=', employee_id),('state','=','done')]"  -->
+                </xpath>
+                <xpath expr="//field[@name='working_days']" position="after">
+                    <field name="remaining_days"/>
+                </xpath>
+                <xpath expr="//field[@name='notice_month']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='date_join']" position="after">
+                    <field name="last_joining_date"/>
+                </xpath>
+                <xpath expr="//field[@name='other_deduction']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='other_allowances']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='move_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='working_days']" position="attributes">
+                    <attribute name="attrs"></attribute>
+                </xpath>
+                <xpath expr="//page[2]" position="after">
+                    <page string="Employee Unpaid Installments">
+                        <field name="installments_ids" readonly="1"/>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

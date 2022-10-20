@@ -1,0 +1,58 @@
+<odoo>
+	<data noupdate="1">
+		<record id="zawaya_structure_employee" model="hr.payroll.structure">
+            <field name="name">Zaway Structure</field>
+            <field name="type_id" ref="hr_contract.structure_type_employee"/>
+            <field name="country_id" eval="False"/>
+        </record>
+
+
+<!-- Zaway Structure Rules -->
+        <record id="hr_salary_basic" model="hr.salary.rule">
+            <field name="name">Basic Salary</field>
+            <field name="code">BASIC</field>
+            <field name="category_id" ref="hr_payroll.BASIC"/>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="zaway_hr_contract.zawaya_structure_employee"/>
+            <field name="sequence" eval="1"/>
+            <field name="amount_python_compute">result = contract.wage * 0.36</field>
+        </record>
+        <record id="hr_salary_cola" model="hr.salary.rule">
+            <field name="name">Cost Of Living</field>
+            <field name="code">COLA</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="zaway_hr_contract.zawaya_structure_employee"/>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = contract.wage * 0.23</field>
+        </record>
+
+        <record id="hr_salary_hos" model="hr.salary.rule">
+            <field name="name">Housing</field>
+            <field name="code">HOS</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="zaway_hr_contract.zawaya_structure_employee"/>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = contract.wage * 0.21</field>
+        </record>
+        <record id="hr_salary_trans" model="hr.salary.rule">
+            <field name="name">Transportation</field>
+            <field name="code">TRANS</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="zaway_hr_contract.zawaya_structure_employee"/>
+            <field name="sequence" eval="5"/>
+            <field name="amount_python_compute">result = contract.wage * 0.20</field>
+        </record>
+<!--         <record id="hr_salary_bouns" model="hr.salary.rule">
+            <field name="name">Bouns</field>
+            <field name="code">BOUNS</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="amount_select">code</field>
+            <field name="struct_id" ref="zawaya_structure_employee"/>
+            <field name="sequence" eval="150"/>
+            <field name="amount_python_compute">result = contract.bouns</field>
+        </record> -->
+    </data>
+</odoo>

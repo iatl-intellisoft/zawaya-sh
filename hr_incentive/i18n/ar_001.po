@@ -112,6 +112,7 @@ msgstr "المؤسسات"
 
 #. module: hr_incentive
 #: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__company_id
+#: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive_line__company_id
 #: model:ir.model.fields,field_description:hr_incentive.field_res_config_settings__company_id
 msgid "Company"
 msgstr "المؤسسة"
@@ -600,6 +601,179 @@ msgid "Staff Payments Template"
 msgstr "نموذج حوافز الموظفين"
 
 #. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_res_config_settings_form_inherit_incentive
+msgid "<span class=\"o_form_label\">Staff Payments Template</span>"
+msgstr "<span class=\"o_form_label\">نموذج حوافز الموظفين</span>"
+
+#. module: hr_incentive
 #: model:ir.model.fields,field_description:hr_incentive.field_hr_incentive__end_date
 msgid "End Date"
 msgstr "تاريخ الانتهاء"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+msgid "TO"
+msgstr "إلي"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_res_config_settings_form_inherit_incentive
+msgid "Choose your Template"
+msgstr "إختر نموذج"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_res_config_settings_form_inherit_incentive
+msgid "Template"
+msgstr "نموذج"
+
+#. module: hr_incentive
+#: model:mail.template,name:hr_incentive.hr_incentive_teamplate
+msgid "Staff Payment Form"
+msgstr "الحوافز: نموذج الحوافز"
+
+#. module: hr_incentive
+#: code:addons/hr_incentive/models/hr_incentive.py:0
+#: model_terms:ir.ui.view,arch_db:hr_incentive.view_hr_incentive_form
+#, python-format
+msgid "Recipts"
+msgstr "الإيصالات"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.res_config_settings_view_form_inh
+msgid "<span class=\"o_form_label\">Payments Validation Amount</span>"
+msgstr "<span class=\"o_form_label\">مبلغ التحقق من المدفوعات</span>"
+
+#. module: hr_incentive
+#: model_terms:ir.ui.view,arch_db:hr_incentive.res_config_settings_view_form_inh
+msgid "<span class=\"o_form_label\">Payments Validation</span>"
+msgstr "<span class=\"o_form_label\">التحقق من صحة المدفوعات</span>"
+
+#. module: hr_incentive
+#: model:mail.template,body_html:hr_incentive.hr_incentive_teamplate
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"\n"
+"                        <table width=\"800\">\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>Requester:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.request_id.name}</td>\n"
+"                            </tr>\n"
+"\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>Date:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.date}</td>\n"
+"                            </tr>\n"
+"\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>Types:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.types}</td>\n"
+"                            </tr>\n"
+"\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>Company:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.company_id.name}</td>\n"
+"                            </tr>\n"
+"\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>Payment Type:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.incentive_type_id.name}</td>\n"
+"                            </tr>\n"
+"                        </table>\n"
+"\n"
+"                        <table class=\"table table-condensed\">\n"
+"                            <thead>\n"
+"                                <tr>\n"
+"                                    <th>Employee</th>\n"
+"                                    <th>Job Title</th>\n"
+"                                    <th>Department</th>\n"
+"                                    <th>Amount</th>\n"
+"                                </tr>\n"
+"                            </thead>\n"
+"                            <tbody>\n"
+"                                % for line in object.incentive_line:\n"
+"                                <tr>\n"
+"                                    <td>${line.employee_id.name}</td>\n"
+"                                    <td>${line.job_id.name}</td>\n"
+"                                    <td>${line.department_id.name}</td>\n"
+"                                    <td>${line.amount}</td>\n"
+"                                </tr>\n"
+"                                % endfor\n"
+"                            </tbody>\n"
+"                        </table>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"\n"
+"                        <table width=\"800\">\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>مقدم الطلب:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.request_id.name}</td>\n"
+"                            </tr>\n"
+"\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>التاريخ:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.date}</td>\n"
+"                            </tr>\n"
+"\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>النوع:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.types}</td>\n"
+"                            </tr>\n"
+"\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>الشركة:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.company_id.name}</td>\n"
+"                            </tr>\n"
+"\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    <strong>نوع الدفع:</strong>\n"
+"                                </td>\n"
+"                                <td>${object.incentive_type_id.name}</td>\n"
+"                            </tr>\n"
+"                        </table>\n"
+"\n"
+"                        <table class=\"table table-condensed\">\n"
+"                            <thead>\n"
+"                                <tr>\n"
+"                                    <th>الموظف</th>\n"
+"                                    <th>المسمى الوظيفي</th>\n"
+"                                    <th>القسم</th>\n"
+"                                    <th>المبلغ</th>\n"
+"                                </tr>\n"
+"                            </thead>\n"
+"                            <tbody>\n"
+"                                % for line in object.incentive_line:\n"
+"                                <tr>\n"
+"                                    <td>${line.employee_id.name}</td>\n"
+"                                    <td>${line.job_id.name}</td>\n"
+"                                    <td>${line.department_id.name}</td>\n"
+"                                    <td>${line.amount}</td>\n"
+"                                </tr>\n"
+"                                % endfor\n"
+"                            </tbody>\n"
+"                        </table>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "

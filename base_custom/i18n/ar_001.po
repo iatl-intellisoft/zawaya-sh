@@ -12669,7 +12669,7 @@ msgstr ""
 
 #. module: base
 #: model:ir.module.module,summary:base.module_hr
-#: model:ir.module.module,summary:base.module_hr_contract_kambal
+#: model:ir.module.module,summary:base.module_zaway_hr_contract
 msgid "Centralize employee information"
 msgstr ""
 
@@ -40129,7 +40129,7 @@ msgid "Zaway Custody Clearance"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_hr_contract_kambal
+#: model:ir.module.module,shortdesc:base.module_zaway_hr_contract
 msgid "Zaway HR Management"
 msgstr ""
 

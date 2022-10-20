@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <record id="mt_service_terminated" model="mail.message.subtype">
+            <field name="name">Service terminated</field>
+            <field name="res_model">hr.service.termination</field>
+            <field name="default" eval="True"/>
+        </record>
+    </data>
+</odoo>

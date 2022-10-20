@@ -1,0 +1,7 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+custody_request_access_right,custody.request,model_custody_request,,1,1,1,1
+custody_request_line_access_right,custody.request.line,model_custody_request_line,,1,1,1,1
+custody_details_access_right,custody.details,model_custody_details,,1,1,1,1
+custody_exchange_access_right,custody.exchange,model_custody_exchange,,1,1,1,1
+custody_exchange_line_access_right,custody.exchange.line,model_custody_exchange_line,,1,1,1,1
+custody_return_access_right,custody.return,model_custody_return,,1,1,1,1

@@ -1,0 +1,173 @@
+<odoo>
+    <data>
+        <report
+                id="penalty_report"
+                model="hr.penalty"
+                report_type="qweb-pdf"
+                string="Form Report"
+                name="hr_penalty.print_penalty_report"
+                file="hr_penalty.print_penalty_report"
+
+        />
+         <template id="custom_stoc_layout">
+               <link rel="stylesheet" href="/hr_payslip_aseelia/static/src/css/font.css"/>
+                            <font style="font-family: 'Amiri', 'serif';">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+            <div class="header">
+                <div>
+                    <div class="text-center">
+                        <br/>
+                        <table style="border: 2px solid black;" width="100%">
+                            <tr style="border: 2px solid black;">
+                                 <td style="border: 1px solid black;font-size:12px;" class="text-center" colspan="2">
+                                    <strong style="font-size:14px;font-weight: bold">Zaway Company</strong>
+                                </td>
+                                <td style="border: 1px solid black;font-size:12px;" class="text-center" colspan="2">
+                                    <strong class="text-center" style="font-size:14px;font-weight: bold">Form No:
+                                    <br/>
+                                         <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"
+                                         width='100%'/>
+                                    </strong>
+                                </td>
+                                <td style="border: 1px solid black;" class="text-center" colspan="3" width='40%'>
+                                    test
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+
+                    </div>
+                    <div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="text-left">
+                            <table dir="rtl" class="table table-bordered">
+                                <tr>
+
+                                </tr>
+
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+                            </font>
+        </template>
+        <template id="print_penalty_report">
+            <t t-call="web.html_container">
+                <t t-call="hr_penalty.custom_stoc_layout">
+                    <t t-foreach="docs" t-as="doc">
+                        <link rel="stylesheet" href="/hr_payslip_aseelia/static/src/css/font.css"/>
+                        <font style="font-family: 'Amiri', 'serif';">
+                            <table dir="rtl" class="table table-bordered" style="border: 2px solid black;">
+                                <tr>
+                                    <td colspan="3" style="border: 2px solid black; background-color:#c5c6c7"
+                                        class="text-center">
+                                        <strong style="font-size:30px">
+                                            <u>إستيضاح</u>
+                                        </strong>
+                                    </td>
+
+                                </tr>
+                            </table>
+                            <table dir="rtl" class="table table-borderless">
+                                <tr>
+                                    <td class="text-right" width="50%">
+                                        <strong>التاريخ :
+                                            <span t-field="doc.Date"/>
+                                        </strong>
+                                        <br/>
+                                        <br/>
+                                        <strong>الإسم :
+                                            <span t-field="doc.employee_id.name"/>
+                                        </strong>
+
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="text-center" width="50%">
+                                        <strong style="font-size:18px;font-weight: bold">السلام عليكم ورحمة الله تعالى وبركاته</strong>
+                                        <br/>
+                                        <br/>
+                                    </td>
+                                </tr>
+                                <tr>
+  <td class="text-right" width="50%">
+                                        <strong class="text-right">
+                                            نرجو التكرم بتوضيح الأسباب الأتية ...................................................................................................................................................................................................
+                                            <br/>
+                                            <br/>
+                                            ........................................................................................................................................................
+                                            <br/>
+                                            <br/>
+                                            توقيع مدير الشئون الإدارية والموارد البشرية ...............................................
+                                        </strong>
+                                          <br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                      <td class="text-right" width="50%">
+
+                                    <strong>________________________________________________________________________________________________________________________________________________</strong>
+                                          <br/>
+                                          <br/>
+                                          <strong>
+                                              السبب : ..................................................................................................................................................................................................................
+                                              <br/>
+                                               ...........................................................................................................................................................التوقيع......................................................
+                                              <br/>
+                                              _______________________________________________________________________________________________________________________________________________
+                                              <br/>
+                                          </strong>
+
+                                      </td>
+                                </tr>
+                            </table>
+                            <table dir="rtl" class="table table-borderless">
+
+
+                             <tr>
+                                        <td class="text-right" width="50%">
+                                            <strong>
+                                                    توجيه مدير الشئون الإدارية والموارد البشرية
+                                                <br/>
+                                                ....................................................................................................................................
+                                                <br/>
+                                                <br/>
+                                                ...................................................................................................................................................
+                                                <br/>
+                                                <br/>
+                                                ........................................التوقيع............................................................................................
+                                              </strong>
+                                        </td>
+                                    </tr>
+                            </table>
+                        </font>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

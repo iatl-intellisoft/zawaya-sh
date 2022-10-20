@@ -1,16 +1,5 @@
 <odoo>
     <data>
-        <record model="ir.cron" id="ir_cron_labor_task2">
-            <field name="name">Send Notification2</field>
-            <field name="model_id" ref="model_hr_labor"/>
-            <field name="state">code</field>
-            <field name="code">model.send_notification_in_chatter()</field>
-            <field name="interval_number">1</field>
-            <field name="interval_type">minutes</field>
-            <field name="numbercall">-1</field>
-            <field name="doall" eval="False"/>
-        </record>
-
         <record model="ir.ui.view" id="hr_temporary_service_form">
             <field name="name">Hr Temporary Service</field>
             <field name="model">hr.temporary.service</field>
@@ -18,24 +7,19 @@
                 <form string="Temporary Service">
                     <header>
                         <button name="confirmed" type="object" string="Confirm" states="draft" class="oe_highlight"/>
-                        <button name="approved_hr_adm" type="object" string="Confirm" states="confirmed_sup_labor" class="oe_highlight"/>
-                        <button name="create_account_move" type="object" string="approved" states="approved_hr_adm" class="oe_highlight"/>
                         <button type="object" name="action_compute_wage" string="Compute" icon="fa-calculator"
                                 colspan="4" states="draft"/>
-<!--                        <button name="create_account_move" type="object" string="Create Journal Entries" states="approved_finance"-->
-<!--                                class="oe_highlight" />-->
-                        <button name="action_cancel" type="object" string="Cancel" states="approved_finance"
+                        <button name="create_invoice" type="object" string="Create Receipt" states="confirmed"
+                                class="oe_highlight"/>
+                        <button name="action_cancel" type="object" string="Cancel" states="approved"
                                 class="oe_highlight"/>
 
                         <button name="set_to_draft" type="object" string="Set To Draft" class="oe_highlight"
-                                states="confirmed_sup_labor,cancel"/>
+                                states="confirmed,cancel"/>
 
                         <button name="%(action_hr_service_partner)d" type="action" string="Generate Labor"
                                 class="oe_highlight"
                                 attrs="{'invisible':[('state','!=','draft')]}"/>
-                        <button name="%(action_hr_service_refuse)d" type="action" string="Refuse"
-                                class="oe_highlight"
-                                attrs="{'invisible':['|',('state','=','draft'),('state','=','refuse')]}"/>
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
@@ -48,8 +32,8 @@
                         <group>
                             <group>
                                 <field name="name" attrs="{'readonly': [('state','!=', 'draft')],'required':True}"/>
-                                <!-- <field name="analytic_account_id"
-                                       attrs="{'readonly': [('state','!=', 'draft')],'required':True}"/> -->
+                                <field name="analytic_account_id"
+                                       attrs="{'readonly': [('state','!=', 'draft')]}"/>
                                 <label for="date_from" string="Period"/>
                                 <div class="o_row" name="service_duration">
                                     <field name="date_from" attrs="{'readonly':[('state','not in',['draft'])]}"/>
@@ -66,16 +50,13 @@
                                        attrs="{'invisible':[('pay_type','!=','hours')],'required':[('pay_type','=','hours')],'readonly':[('state','not in',['draft'])]}"/>
                                 <field name="wage_day"
                                        attrs="{'invisible':[('pay_type','!=','days')],'required':[('pay_type','=','days')],'readonly':[('state','not in',['draft'])]}"/>
-                                <field name="currency_id"/>
                             </group>
                         </group>
                         <notebook>
                             <page string="Laborer">
                                 <field name="line_ids" attrs="{'readonly': [('state','!=', 'draft')]}">
                                     <tree editable="bottom">
-                                        <field name="labor"/>
-                                        <field name="function"/>
-                                        <field name="department_id"/>
+                                        <field name="labor_id" domain="[('labor','=',True)]" required="1"/>
                                         <field name="no_days"
                                                attrs="{'column_invisible':[('parent.pay_type','!=','days')],'column_required':[('parent.pay_type','=','days')]}"/>
                                         <field name="no_hours"
@@ -94,6 +75,12 @@
                         </notebook>
 
                     </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
         </record>
@@ -125,64 +112,6 @@
             </field>
         </record>
 
-         <record id="view_hr_labor_tree" model="ir.ui.view">
-            <field name="name">hr.labor.tree</field>
-            <field name="model">hr.labor</field>
-            <field name="arch" type="xml">
-                <tree string="Temporary Service">
-                    <field name="name"/>
-                    <field name="department_id"/>
-                    <field name="job_id"/>
-                    <field name="phone"/>
-                    <field name="address"/>
-                </tree>
-            </field>
-        </record>
-
-        <record model="ir.ui.view" id="hr_labor_service_form">
-            <field name="name">Hr Temporary Labor</field>
-            <field name="model">hr.labor</field>
-            <field name="arch" type="xml">
-                <form string="Temporary Service">
-                    <header>
-                    </header>
-                    <sheet>
-                        <group colspan="4" col="4">
-                            <field name="name"/>
-                            <field name="phone"/>
-                            <field name="address"/>
-                            <field name="department_id"/>
-                            <field name="job_id"/>
-                            <field name="attachment_ids" widget="many2many_binary"/>
-                            <field name="active" invisible="1"/>
-
-                        </group>
-                         <notebook>
-                            <page string="work card">
-                                <group colspan="4" col="4">
-                                <field name="start_date_work"/>
-                                <field name="end_date_work"/>
-                                </group>
-                            </page>
-                             <page string="Health Card">
-                                 <group colspan="4" col="4">
-                                 <field name="start_date_health"/>
-                                 <field name="end_date_health"/>
-                                 </group>
-                             </page>
-                         </notebook>
-
-
-                    </sheet>
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids"/>
-                        <field name="activity_ids"/>
-                        <field name="message_ids"/>
-                    </div>
-                </form>
-            </field>
-        </record>
-
 
         <record model="ir.actions.act_window" id="action_hr_temporary_service">
             <field name="name">Hr Temporary Service</field>
@@ -191,18 +120,12 @@
             <field name="view_id" ref="view_hr_temporary_service_tree"/>
         </record>
 
-        <!--        <record model="ir.actions.act_window" id="action_hr_temporary_service_labor">-->
-        <!--            <field name="name">Temporary Service Labor</field>-->
-        <!--            <field name="res_model">res.partner</field>-->
-        <!--            <field name="view_mode">tree,form</field>-->
-        <!--            <field name="context">{'default_labor': True}</field>-->
-        <!--            <field name="domain">[('labor', '=', True)]</field>-->
-
-        <!--        </record>-->
-        <record model="ir.actions.act_window" id="action_hr_labor">
-            <field name="name">Temporary Labor</field>
-            <field name="res_model">hr.labor</field>
+        <record model="ir.actions.act_window" id="action_hr_temporary_service_labor">
+            <field name="name">Temporary Service Labor</field>
+            <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
+            <field name="context">{'default_labor': True}</field>
+            <field name="domain">[('labor', '=', True)]</field>
 
         </record>
 
@@ -213,18 +136,11 @@
         />
 
 
-        <!--        <menuitem id="menu_temporary_service_labor"-->
-        <!--                  name="Labor"-->
-        <!--                  parent="menu_temporary_service_root"-->
-        <!--                  sequence="2"-->
-        <!--                  action="action_hr_temporary_service_labor"/>-->
-
-
-        <menuitem id="menu_temporary_labor"
+        <menuitem id="menu_temporary_service_labor"
                   name="Labor"
                   parent="menu_temporary_service_root"
                   sequence="2"
-                  action="action_hr_labor"/>
+                  action="action_hr_temporary_service_labor"/>
 
 
         <menuitem id="menu_temporary_service_sub"
