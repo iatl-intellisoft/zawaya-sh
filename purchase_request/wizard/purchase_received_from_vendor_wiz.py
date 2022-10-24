@@ -64,7 +64,6 @@ class PurchaseVendorReceivedReport(models.AbstractModel):
                             line.price_unit, line.price_subtotal
                         ])
 
-            print(partner_dict, 'AAAAAAAAAAAAAAAAAAAAAAAAAa')
         return {
             'partner_bank': partner_bank,
             'partner_dict': partner_dict,

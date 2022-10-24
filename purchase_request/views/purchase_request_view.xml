@@ -133,7 +133,7 @@
                             <field name="is_department_manager" invisible="1"/>
                             <field name="vendor_id" attrs="{'required': [('state','=','purchase_approve')]}"/>
                             <field name="date_start"/>
-<!--                            <field name="requester_sign_date"/>-->
+                            <!--                            <field name="requester_sign_date"/>-->
                             <field name="requested_by"/>
                             <field name="department_id"/>
                         </group>
@@ -156,7 +156,7 @@
                                     <field name="product_uom_id"/>
                                     <field name="qty_available"/>
                                     <field name="product_qty"/>
-                                    <field name="price_unit"/>
+                                    <field name="price_unit" required="1"/>
                                     <field name="price_subtotal" widget="monetary"/>
                                     <field name="company_id" groups="base.group_multi_company" widget="selection"
                                            invisible="1"/>

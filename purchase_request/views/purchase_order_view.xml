@@ -8,21 +8,58 @@
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_ref']" position="after">
-                <field name="purchase_request_id" />
+                <field name="currency_name" invisible="1"/>
+                <field name="purchase_request_id"
+                       attrs="{'readonly': [('state', 'in', ('sent','to approve','manager approval','purchase','done'))]}"/>
+            </xpath>
+            <xpath expr="//button[@name='button_confirm']" position="after">
+                <button name="button_manager_approval"
+                        class="oe_highlight"
+                        states='purchase'
+                        string="Manager Approval"
+                        type="object"
+                        groups="purchase_request.group_purchase_manager"/>
+            </xpath>
+            <xpath expr="//button[@name='button_cancel']" position="replace">
+                <button name="button_cancel" states="draft,to approve,manager approval,sent,purchase" string="Cancel"
+                        type="object"
+                        data-hotkey="x"/>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="replace">
+                <field name="state" widget="statusbar" statusbar_visible="draft,sent,purchase"
+                       readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']"
+                   position="after">
+
+                <field name="price_exchange_sdg"
+                       attrs="{'column_invisible': [('parent.currency_name', '=', 'SDG')]}"/>
+                <field name="price_exchange_usd"
+                       attrs="{'column_invisible': [('parent.currency_name','=','USD')] }"/>
+                <field name="company_currency_id" invisible="1"/>
             </xpath>
         </field>
     </record>
 
-   <record id="view_purchase_requisition_inherite_form" model="ir.ui.view">
+    <record id="view_purchase_requisition_inherite_form" model="ir.ui.view">
         <field name="name">purchase.requisition</field>
         <field name="model">purchase.requisition</field>
         <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='vendor_id']" position="after">
-                <field name="purchase_request_id" attrs="{'invisible': [('is_request', '!=', False)]}" />
-                <field name="is_request" invisible="1" />
+                <field name="purchase_request_id" attrs="{'invisible': [('is_request', '!=', False)]}"/>
+                <field name="is_request" invisible="1"/>
             </xpath>
         </field>
     </record>
 
+    <template id="template_purchase_report_inherit" name="template_purchase_report"
+              inherit_id="purchase.report_purchaseorder_document">
+        <xpath expr="//div[@t-if='o.date_order']" position="replace">
+            <div t-if="o.date_planned">
+                <strong>Receipt Date:</strong>
+                <p t-field="o.date_planned"/>
+            </div>
+        </xpath>
+    </template>
 </odoo>

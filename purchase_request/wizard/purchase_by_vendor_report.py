@@ -42,6 +42,8 @@ class PurchaseVendorReport(models.AbstractModel):
         from_date = data['form']['from_date']
         to_date = data['form']['to_date']
         date = data['form']['date']
+        pay_cash = ''
+        pay_bank = ''
         list_data = []
         partner_dict = {}
         partner_bank = {}
@@ -59,7 +61,7 @@ class PurchaseVendorReport(models.AbstractModel):
                         [('ref', '=', inv.name), ('state', '=', 'posted'), ])
                     for pay in payment:
                         if pay.journal_id.type == 'cash':
-                            pay_type = pay.journal_id.type
+                            pay_cash = pay.journal_id.type
                             inventory_list = self.env['stock.picking'].search(
                                 [('scheduled_date', '>=', from_date), ('scheduled_date', '<=', to_date),
                                  ('purchase_id', '=', rec.id)])
@@ -69,6 +71,7 @@ class PurchaseVendorReport(models.AbstractModel):
                                         line.product_id.name, order.name, line.product_qty, line.product_uom.name,
                                         line.price_unit, line.price_subtotal,
                                     ])
+                        print('LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL', partner_dict)
                         if pay.journal_id.type == 'bank':
                             pay_bank = pay.journal_id.type
                             inventory_list = self.env['stock.picking'].search(
@@ -80,11 +83,11 @@ class PurchaseVendorReport(models.AbstractModel):
                                         line.product_id.name, order.name, line.product_qty, line.product_uom.name,
                                         line.price_unit, line.price_subtotal,
                                     ])
-            print(partner_dict, 'BBBBBBBBBBBBBBBBBBBBBBBBBB')
+                        print(partner_dict, 'BBBBBBBBBBBBBBBBBBBBBBBBBB')
         return {
             'partner_bank': partner_bank,
             'partner_dict': partner_dict,
-            'pay_type': pay_type,
+            'pay_cash': pay_cash,
             'pay_bank': pay_bank,
             'date': date,
             'doc_ids': docids,
