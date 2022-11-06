@@ -79,7 +79,7 @@ class LaborJobType(models.Model):
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
-    job_type_id = fields.Many2one(comodel_name="labor.job.type", string="Job", required=False, )
+    # job_type_id = fields.Many2one(comodel_name="labor.job.type", string="Job", required=False, )
     # location = fields.Selection(string="Location", selection=[('axxa', 'Axxa'), ('elbagir', 'Elbagir'), ],
     #                             required=True, )
 

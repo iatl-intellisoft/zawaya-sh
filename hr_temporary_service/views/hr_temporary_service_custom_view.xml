@@ -137,7 +137,7 @@
             <xpath expr="//field[@name='type']" position="after">
                 <!-- Add your fields or attributes here -->
                 <field name="labor" invisible="1"/>
-                <field name="job_type_id"
+<!--                <field name="job_type_id"-->
                        attrs="{'invisible':[('labor','=',False)],'required':[('labor','!=',False)]}"/>
                <!--  <field name="location" attrs="{'invisible':[('labor','=',False)],'required':[('labor','!=',False)]}"/> -->
             </xpath>
