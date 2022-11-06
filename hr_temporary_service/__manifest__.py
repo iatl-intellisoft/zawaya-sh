@@ -29,7 +29,7 @@
         'data/temporary_service_data.xml',
         'wizard/hr_partener_service.xml',
         'views/hr_temporary_service_view.xml',
-        'views/temporary_service_config_view.xml',
+        # 'views/temporary_service_config_view.xml',
         'views/hr_temporary_service_custom_view.xml',
         'views/hr_temporary_service_attendance.xml',
     ],
