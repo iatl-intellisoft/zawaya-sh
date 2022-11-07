@@ -28,8 +28,8 @@ class StockPicking(models.Model):
         ('wait_manufac_approve', 'Waiting Manufacturer Approval'),
         ('wait_gm_approve', 'Stock Manger'),
         ('waiting', 'Waiting Another Operation'),
-        ('confirmed', 'Stock Manger'),
-        ('assigned', 'Stock Manger'),
+        ('confirmed', 'Waiting'),
+        ('assigned', 'Ready'),
         ('done', 'Done'),
         ('cancel', 'Cancelled'),
     ], string='Status', compute='_compute_state',
@@ -45,6 +45,7 @@ class StockPicking(models.Model):
     it_sign = fields.Many2one('res.users')
     manufac_sign = fields.Many2one('res.users')
     sale_sign = fields.Many2one('res.users')
+    check_it =fields.Boolean(defaul=False)
 
 #Date
     stock_manger_date = fields.Date(string="Date")
@@ -57,6 +58,7 @@ class StockPicking(models.Model):
         self.write({'state': 'wait_manufac_approve'})
         self.sale_sign = self.env.user
         self.sale_date = fields.date.today()
+        self.check_it = True
 
 
 
@@ -75,6 +77,11 @@ class StockPicking(models.Model):
     def action_it_approve(self):
         if self.picking_type_id.code == 'outgoing' and self.sale_id:
             self.write({'state': 'wait_gm_approve'})
+            self.it_sign = self.env.user
+            self.it_date = fields.date.today()
+
+        elif self.picking_type_id.code == 'incoming' and self.purchase_id:
+            self.write({'state': 'wait_manufac_approve'})
             self.it_sign = self.env.user
             self.it_date = fields.date.today()
 
@@ -98,7 +105,7 @@ class StockMoveInheirt(models.Model):
     qty_sale = fields.Float(related='sale_line_id.product_uom_qty',string="Quantity Sale")
     count_package = fields.Float(string="Number Of Package",compute='compute_count_package')
 
-    @api.onchange('product_id','product_packaging_id')
+    @api.depends('product_id','product_packaging_id')
     def compute_count_package(self):
         self.count_package = 0
 
