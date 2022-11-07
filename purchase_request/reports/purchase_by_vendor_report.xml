@@ -9,7 +9,7 @@
     <template id="template_purchase_vendor">
         <t t-call="web.external_layout">
             <t t-call="web.html_container">
-                <div class="page" style="margin-top:-0.1%">
+                <t class="page" style="margin-top:-0.1%">
                     <br/>
                     <div style="text-align:center">
                         <div>
@@ -21,7 +21,6 @@
                             من تاريخ:
                         </strong>
                         <span t-esc="from_date"/>
-
                         <strong>
                             إلى تاريخ:
                         </strong>
@@ -29,263 +28,217 @@
                         <br/>
                         <br/>
                         <br/>
-                        <table dir="rtl" width="100%" style=" border: 1px solid black; ">
-                            <thead style="display:table-header-group">
-                                <tr>
-                                    <td style="text-align: right;"
-                                        class="text-right">الرقم:
+                        <t t-if="from_date and to_date and vendor_id">
+                            <t t-if="pay_cash">
+                                <table dir="rtl" width="100%" style=" border: 1px solid black; ">
+                                    <thead style="display:table-header-group">
+                                        <tr>
+                                            <td style="text-align: right;"
+                                                class="text-right">الرقم:
+                                            </td>
+                                            <td style="text-align: right;"
+                                                class="text-right">رقم الإيصال:
+                                            </td>
+                                            <td style="text-align: right;"
+                                                class="text-right">التاريخ:
+                                                <t t-esc="date"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: right;"
+                                                class="text-right">المورد:
+                                                <t t-esc="vendor_id"/>
+                                            </td>
+                                            <td style="text-align: right;"
+                                                class="text-right">نوع السداد:
+                                                <t t-esc="pay_cash"/>
+                                            </td>
+                                            <td style="text-align: right;">
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <table dir="rtl" width="100%" style=" border: 1px solid black; ">
+                                    <thead style="display:table-header-group">
+                                        <tr style="border: 1px solid black; text-align: center;">
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الكود
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الصنف
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">رقم الإذن
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الكمية
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الوحدة
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">السعر
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الإجمالي
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-set="counter" t-value="1"/>
+                                        <t t-foreach="partner_dict" t-as="obj">
+                                            <t t-foreach="partner_dict[obj]" t-as="cash">
+                                                <tr style="background-color:white;color:black;text-align: center;">
+                                                    <t t-if="counter == 1">
+                                                        <td style=" border: 1px solid black;text-align: center;"
+                                                            class="text-center" t-att-rowspan="len(partner_dict[obj])">
+                                                            <t t-esc="obj"/>
+                                                        </td>
+                                                    </t>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="cash[0]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="cash[1]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="cash[2]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="cash[3]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="cash[4]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="cash[5]"/>
+                                                    </td>
+                                                    <t t-set="counter" t-value="counter+1"/>
+                                                </tr>
+                                            </t>
+                                            <t t-set="counter" t-value="1"/>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </t>
 
-                                    </td>
-                                    <td style="text-align: right;"
-                                        class="text-right">رقم الإيصال:
-                                        <!--                                        <t t-esc="vendor_id"/>-->
-                                    </td>
-                                    <td style="text-align: right;"
-                                        class="text-right">التاريخ:
-                                        <t t-esc="date"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: right;"
-                                        class="text-right">المورد:
-                                        <t t-esc="vendor_id"/>
-                                    </td>
-                                    <td style="text-align: right;"
-                                        class="text-right">نوع السداد:
-                                        <t t-esc="pay_type"/>
-                                    </td>
-                                    <td style="text-align: right;">
-                                    </td>
-                                </tr>
-                            </thead>
-                        </table>
+                            <!--                    #########################################################################################-->
+                            <!--                    #########################################################################################-->
+                            <!--                    #########################################################################################-->
+                            <!--                    #########################################################################################-->
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <t t-if="pay_bank">
+                                <table dir="rtl" width="100%" style=" border: 1px solid black; ">
+                                    <thead style="display:table-header-group">
+                                        <tr>
+                                            <td style="text-align: right;"
+                                                class="text-right">الرقم:
+                                            </td>
+                                            <td style="text-align: right;"
+                                                class="text-right">رقم الإيصال:
+                                            </td>
+                                            <td style="text-align: right;"
+                                                class="text-right">التاريخ:
+                                                <t t-esc="date"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: right;"
+                                                class="text-right">المورد:
+                                                <t t-esc="vendor_id"/>
+                                            </td>
+                                            <td style="text-align: right;"
+                                                class="text-right">نوع السداد:
+                                                <t t-esc="pay_bank"/>
+                                            </td>
+                                            <td style="text-align: right;">
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <table dir="rtl" width="100%" style=" border: 1px solid black; ">
+                                    <thead style="display:table-header-group">
+                                        <tr style="border: 1px solid black; text-align: center;">
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الكود
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الصنف
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">رقم الإذن
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الكمية
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الوحدة
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">السعر
+                                            </td>
+                                            <td style=" border: 1px solid black;text-align: center;" width="15%"
+                                                class="text-center">الإجمالي
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-set="counter" t-value="1"/>
+                                        <t t-foreach="partner_bank" t-as="obj">
+                                            <t t-foreach="partner_bank[obj]" t-as="bank">
+                                                <tr style="background-color:white;color:black;text-align: center;">
+                                                    <t t-if="counter == 1">
+                                                        <td style=" border: 1px solid black;text-align: center;"
+                                                            class="text-center" t-att-rowspan="len(partner_dict[obj])">
+                                                            <t t-esc="obj"/>
+                                                        </td>
+                                                    </t>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="bank[0]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="bank[1]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="bank[2]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="bank[3]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="bank[4]"/>
+                                                    </td>
+                                                    <td style=" border: 1px solid black;text-align: center;"
+                                                        class="text-center">
+                                                        <t t-esc="bank[5]"/>
+                                                    </td>
+                                                    <t t-set="counter" t-value="counter+1"/>
+                                                </tr>
+                                            </t>
+                                            <t t-set="counter" t-value="1"/>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </t>
+                        </t>
                     </div>
-                    <table dir="rtl" width="100%" style=" border: 1px solid black; ">
-                        <thead style="display:table-header-group">
-                            <tr style="border: 1px solid black; text-align: center;">
-                                <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                    class="text-center">الكود
-                                </td>
-                                <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                    class="text-center">الصنف
-                                </td>
-                                <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                    class="text-center">رقم الإذن
-                                </td>
-                                <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                    class="text-center">الكمية
-                                </td>
-                                <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                    class="text-center">الوحدة
-                                </td>
-                                <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                    class="text-center">السعر
-                                </td>
-                                <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                    class="text-center">الإجمالي
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <t t-set="counter" t-value="1"/>
-                            <t t-foreach="partner_dict" t-as="obj">
-                                <t t-foreach="partner_dict[obj]" t-as="loan">
-                                    <tr style="background-color:white;color:black;text-align: center;">
-                                        <t t-if="counter == 1">
-                                            <td style=" border: 1px solid black;text-align: center;"
-                                                class="text-center" t-att-rowspan="len(partner_dict[obj])">
-                                                <t t-esc="obj"/>
-                                            </td>
-                                        </t>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[0]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[1]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[2]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[3]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[4]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[5]"/>
-                                        </td>
-                                        <t t-set="counter" t-value="counter+1"/>
-                                    </tr>
-                                </t>
-                                <t t-set="counter" t-value="1"/>
-                            </t>
-
-                        </tbody>
-                    </table>
-                    <!--                    #########################################################################################-->
-                    <!--                    #########################################################################################-->
-                    <!--                    #########################################################################################-->
-                    <!--                    #########################################################################################-->
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-<!--                    <br/>-->
-<!--                    <br/>-->
-<!--                    <br/>-->
-<!--                    <br/>-->
-                    <table dir="rtl" width="100%" style=" border: 1px solid black; ">
-                        <thead style="display:table-header-group">
-                            <tr>
-                                <td style="text-align: right;"
-                                    class="text-right">الرقم:
-                                    <!--                                        <t t-esc="1"/>-->
-                                </td>
-                                <td style="text-align: right;"
-                                    class="text-right">رقم الإيصال:
-                                    <!--                                        <t t-esc="vendor_id"/>-->
-                                </td>
-                                <td style="text-align: right;"
-                                    class="text-right">التاريخ:
-                                    <!--                                        <t t-esc="doc['date']"/>&ndash;&gt;-->
-                                    <t t-esc="date"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: right;"
-                                    class="text-right">المورد:
-                                    <t t-esc="vendor_id"/>
-                                </td>
-                                <td style="text-align: right;"
-                                    class="text-right">نوع السداد:
-                                    <t t-esc="pay_bank"/>
-                                </td>
-                                <td style="text-align: right;">
-                                </td>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-                <table dir="rtl" width="100%" style=" border: 1px solid black; ">
-                    <thead style="display:table-header-group">
-                        <tr style="border: 1px solid black; text-align: center;">
-                            <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                class="text-center">الكود
-                            </td>
-                            <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                class="text-center">الصنف
-                            </td>
-                            <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                class="text-center">رقم الإذن
-                            </td>
-                            <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                class="text-center">الكمية
-                            </td>
-                            <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                class="text-center">الوحدة
-                            </td>
-                            <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                class="text-center">السعر
-                            </td>
-                            <td style=" border: 1px solid black;text-align: center;" width="15%"
-                                class="text-center">الإجمالي
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-if="pay_cash">
-                            <t t-set="counter" t-value="1"/>
-                            <t t-foreach="partner_dict" t-as="obj">
-                                <t t-foreach="partner_dict[obj]" t-as="loan">
-                                    <tr style="background-color:white;color:black;text-align: center;">
-                                        <t t-if="counter == 1">
-                                            <td style=" border: 1px solid black;text-align: center;"
-                                                class="text-center" t-att-rowspan="len(partner_dict[obj])">
-                                                <t t-esc="obj"/>
-                                            </td>
-                                        </t>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[0]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[1]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[2]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[3]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[4]"/>
-                                        </td>
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center">
-                                            <t t-esc="loan[5]"/>
-                                        </td>
-                                        <t t-set="counter" t-value="counter+1"/>
-                                    </tr>
-                                </t>
-                                <t t-set="counter" t-value="1"/>
-                            </t>
-                        </t>
-                        <t t-set="counter" t-value="1"/>
-                        <t t-foreach="partner_bank" t-as="obj">
-                            <t t-foreach="partner_bank[obj]" t-as="loan">
-                                <tr style="background-color:white;color:black;text-align: center;">
-                                    <t t-if="counter == 1">
-                                        <td style=" border: 1px solid black;text-align: center;"
-                                            class="text-center" t-att-rowspan="len(partner_dict[obj])">
-                                            <t t-esc="obj"/>
-                                        </td>
-                                    </t>
-                                    <td style=" border: 1px solid black;text-align: center;"
-                                        class="text-center">
-                                        <t t-esc="loan[0]"/>
-                                    </td>
-                                    <td style=" border: 1px solid black;text-align: center;"
-                                        class="text-center">
-                                        <t t-esc="loan[1]"/>
-                                    </td>
-                                    <td style=" border: 1px solid black;text-align: center;"
-                                        class="text-center">
-                                        <t t-esc="loan[2]"/>
-                                    </td>
-                                    <td style=" border: 1px solid black;text-align: center;"
-                                        class="text-center">
-                                        <t t-esc="loan[3]"/>
-                                    </td>
-                                    <td style=" border: 1px solid black;text-align: center;"
-                                        class="text-center">
-                                        <t t-esc="loan[4]"/>
-                                    </td>
-                                    <td style=" border: 1px solid black;text-align: center;"
-                                        class="text-center">
-                                        <t t-esc="loan[5]"/>
-                                    </td>
-                                    <t t-set="counter" t-value="counter+1"/>
-                                </tr>
-                            </t>
-                            <t t-set="counter" t-value="1"/>
-                        </t>
-                        <!--                            </t>-->
-                    </tbody>
-                </table>
-                <!--                                </div>-->
+                </t>
             </t>
         </t>
     </template>

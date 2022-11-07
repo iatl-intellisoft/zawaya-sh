@@ -54,6 +54,7 @@ class PurchaseRequest(models.Model):
 
     name = fields.Char(string="Request Reference", readonly="1", track_visibility="onchange",
                        states={'done': [('readonly', True)]})
+    price_exchange = fields.Monetary(string='Exchange')
     vendor_id = fields.Many2one(comodel_name="res.partner", string="Vendor")
     origin = fields.Char(string="Source Document", states={'done': [('readonly', True)]})
     date_start = fields.Date(string="Request date", help="Date when the user initiated the request.",
@@ -61,7 +62,9 @@ class PurchaseRequest(models.Model):
                              states={'done': [('readonly', True)]})
     user_id = fields.Many2one(comodel_name="res.users", string="User ", copy=False, tracking=True,
                               default=_get_default_requested_by, index=True, )
-    requested_by = fields.Many2one(comodel_name="hr.employee", string="Requested by", compute='_get_requester')
+    # requested_by = fields.Many2one(comodel_name="hr.employee", string="Requested by", compute='_get_requester')
+    requested_by = fields.Many2one('hr.employee', store=True, default=lambda self: self.env.user.employee_id.id, )
+
     request_type = fields.Selection([('local', 'Local Request'), ('external', 'External Request')],
                                     string='Request Type', required=True, default='local',
                                     states={'done': [('readonly', True)]})
@@ -130,6 +133,13 @@ class PurchaseRequest(models.Model):
 
     # # Notification + status buttons
     def button_confirm(self):
+        if not (self.line_ids and self.line_ids.price_unit):
+            raise UserError(
+                _(
+                    "You can't request an approval for a purchase request "
+                    "which is empty or unit price. (%s)"
+                )
+            )
         self.activity_id.unlink()
         if self.env.user.has_group("purchase_request.group_direct_manager"):
             vals = {
@@ -190,7 +200,6 @@ class PurchaseRequest(models.Model):
             'gm_sign_sign_date': self.datesign,
         })
 
-
     def button_rejected(self):
         return self.write({"state": "rejected"})
 
@@ -227,7 +236,6 @@ class PurchaseRequest(models.Model):
         requisition_line_obj = self.env['purchase.order.line']
         res = self._prepare_purchase_request()
         request = requisition_obj.create(res)
-
         for res in self:
             for rec in res.line_ids:
                 res.env['purchase.order.line'].create({'order_id': request.id,
@@ -271,23 +279,26 @@ class PurchaseRequestLine(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _order = "id desc"
 
-    name = fields.Char(string="Description", required=True, track_visibility="onchange")
+    name = fields.Char(string="Description", related='product_id.name', required=True, track_visibility="onchange")
     product_id = fields.Many2one(comodel_name="product.product", string="Product", track_visibility="onchange")
     qty_available = fields.Float(related="product_id.qty_available", string="Quantity On Hand")
     product_qty = fields.Float(string="Requested Quantity", track_visibility="onchange",
                                digits="Product Unit of Measure")
-    product_uom_id = fields.Many2one(comodel_name="uom.uom", string="UoM", track_visibility="onchange")
+    product_uom_id = fields.Many2one(related='product_id.uom_id', string="UoM", track_visibility="onchange")
     request_id = fields.Many2one(comodel_name="purchase.request", string="Purchase Request", ondelete="cascade",
                                  readonly=True, index=True)
     company_id = fields.Many2one(comodel_name="res.company", related="request_id.company_id", string="Company",
                                  store=True)
-    requested_by = fields.Many2one(comodel_name="hr.employee", related="request_id.requested_by", string="Requested by",
-                                   store=True)
+    # requested_by = fields.Many2one(comodel_name="hr.employee", related="request_id.requested_by", string="Requested by",
+    #                                store=True)
+    requested_by = fields.Many2one('hr.employee', store=True, default=lambda self: self.env.user.employee_id.id, )
     # department_id = fields.Many2one( comodel_name="hr.department",  related="request_id.department_id", store=True, string="Department", readonly=True )
 
     taxes_id = fields.Many2many('account.tax', string='Taxes',
                                 domain=['|', ('active', '=', False), ('active', '=', True)])
-    price_unit = fields.Float(string='Unit Price', required=True, digits='Product Price')
+    price_unit = fields.Float(string='Unit Price', required=True,
+                              digits='Product Price')
+    # related = 'product_id.standard_price',
     price_subtotal = fields.Monetary(compute='_compute_amount', string='Subtotal', store=True)
     price_total = fields.Monetary(compute='_compute_amount', string='Total', store=True)
     price_tax = fields.Float(compute='_compute_amount', string='Tax', store=True)

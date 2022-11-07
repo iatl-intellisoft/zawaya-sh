@@ -79,7 +79,7 @@ class LaborJobType(models.Model):
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
-    job_type_id = fields.Many2one(comodel_name="labor.job.type", string="Job", required=False, )
+    # job_type_id = fields.Many2one(comodel_name="labor.job.type", string="Job", required=False, )
     # location = fields.Selection(string="Location", selection=[('axxa', 'Axxa'), ('elbagir', 'Elbagir'), ],
     #                             required=True, )
 
@@ -205,10 +205,10 @@ class HrTemporaryServiceLine(models.Model):
     mount_hour_holiday = fields.Float("Price of Hours", compute='_compute_price_hour')
     no_days = fields.Integer(string="Number Of Days", required=False, default=_get_no_days)
     # day_rate = fields.Float(string="Wage", required=False)
-    day_rate = fields.Float(string="Wage", required=False, related='job_type_id.day_rate')
+    day_rate = fields.Float(string="Wage", required=False)
     wage = fields.Float(string="Wage", required=False, compute='_compute_wage')
     job_type_id = fields.Many2one(comodel_name="labor.job.type", string="Job", required=False,
-                                  related='labor_id.job_type_id')
+                                  )
 
     ov_hour_in_work_day_rate = fields.Float(string='Hour In a Work Day:')
     ov_hour_in_holiday_rate = fields.Float(string='Hour In a Holiday:')

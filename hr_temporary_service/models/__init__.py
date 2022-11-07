@@ -7,6 +7,6 @@
 ###############################################################################
 
 from . import hr_temporary_service
-from . import temporary_service_config
+# from . import temporary_service_config
 from . import hr_temporary_service_custom
 
