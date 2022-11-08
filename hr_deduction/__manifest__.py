@@ -19,7 +19,7 @@
     'author': "IATL Intellisoft International",
     'website': "http://www.iatl-intellisoft.com",
     'category': 'Human Resource',
-    'depends': ['base_custom','zaway_hr_contract','hr_payroll_custom'],
+    'depends': ['zaway_hr_contract','hr_payroll_custom'],
 
     'data': [
         'security/ir.model.access.csv',
