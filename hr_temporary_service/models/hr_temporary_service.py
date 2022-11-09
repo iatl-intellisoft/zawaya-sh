@@ -24,7 +24,7 @@ class HrTemporaryService(models.Model):
     company_id = fields.Many2one('res.company', string='Company', required=True,
                                  default=lambda self: self.env.company)
     analytic_account_id = fields.Many2one('account.analytic.account', 'analytic account',
-                                          related='company_id.analytic_account_id', readonly=False)
+                                          readonly=False)
     total_amount = fields.Float(string="Total Amount", compute='_compute_total_amount')
     date_from = fields.Date(string="Date From", required=True)
     date_to = fields.Date(string="Date To", required=True, )

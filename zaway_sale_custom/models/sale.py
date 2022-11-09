@@ -45,7 +45,7 @@ class SaleOrder(models.Model):
                     'user_id': user.id,
                     'summary': 'You need to Approva Discount For ' + rec.name,
                         }
-            self.activity_ids = self.env['mail.activity'].sudo().create(vals)
+                self.activity_ids = self.env['mail.activity'].sudo().create(vals)
 
             rec.state = 'dep_manger'
 
