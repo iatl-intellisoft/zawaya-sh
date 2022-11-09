@@ -10,7 +10,6 @@
     'summary': 'Centralize employee information',
     'description': "",
     'depends': [
-        'base_custom',
         'hr',
         'hr_contract',
         'hr_payroll',

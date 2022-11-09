@@ -9,7 +9,7 @@
     'category': 'Human Resources',
     'summary': 'Provide Holidays for Zaway Company',
     'description': "",
-    'depends': ['base_custom',
+    'depends': [
         'hr_holidays','zaway_hr_contract','hr_incentive','hr_loan','account','hr_payroll_custom'
     ],
     'data': [

@@ -9,7 +9,7 @@
     'summary': '',
     'description': """ """,
 
-    'depends': ['hr','hr_payroll','hr_contract','base_custom'],
+    'depends': ['hr','hr_payroll','hr_contract'],
     'data': [
         'security/ir.model.access.csv',
         'security/security.xml',
