@@ -11,7 +11,7 @@ from odoo import fields, models, api
 class AccountInvoice(models.Model):
     _inherit = 'account.move'
 
-    custom_rate = fields.Float('Currency Rate',default=1.0, help="Set new currency rate to apply on the invoice")
+    custom_rate = fields.Float('Currency Rate', help="Set new currency rate to apply on the invoice")
     currency_rate = fields.Float('Currency Rate',digits=(12, 6),help="Technical field used to get acctual Currency Rate As 1/custom_rate",compute="_get_currency_rate")
 
     @api.depends('custom_rate')
@@ -51,8 +51,7 @@ class AccountInvoice(models.Model):
     @api.onchange('date', 'currency_id')
     def _onchange_currency(self):
         today = fields.Date.today()
-        self.custom_rate = self.currency_id._get_conversion_rate(self.company_id.currency_id,
-            self.currency_id, self.company_id, self.date or today)
+        self.custom_rate = self.currency_id._get_conversion_rate(self.currency_id, self.company_id.currency_id,self.company_id, self.date or today)
         return super(AccountInvoice, self.with_context(custom_rate=self.custom_rate))._onchange_currency()
 
     def _recompute_dynamic_lines(self, recompute_all_taxes=False, recompute_tax_base_amount=False):

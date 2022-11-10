@@ -12,7 +12,7 @@
     'summary': 'Allows to change currency of invoice',
     'author': 'IATL International',
     'website': 'http://www.iatl-sd.com',
-    'depends': ['ii_journal_entry_change_currency_rate'],
+    'depends': ['ii_journal_entry_change_currency_rate','sale'],
     'data': [
         'views/account_invoice.xml',
     ],

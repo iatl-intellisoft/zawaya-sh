@@ -22,10 +22,10 @@ class Currency(models.Model):
                 currency_rates = (from_currency + to_currency)._get_rates(company, date)
                 res = currency_rates.get(to_currency.id) / custom_rate 
 
-            return res
+        #     return res
 
-        else:
-            return res
+        # else:
+        return res
 
 
     # @api.model
