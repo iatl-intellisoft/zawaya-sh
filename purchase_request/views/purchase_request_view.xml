@@ -86,7 +86,7 @@
                             string="Create Purchase Quotation"
                             type="object"
                             class="oe_highlight"
-                            attrs="{'invisible': ['|',('purchase_count','=', 0),('state','!=','done'),'|',('vendor_type','!=','multi')]}"
+                            attrs="{'invisible': ['|',('purchase_count','=', 0),('state','!=','done'),'|',('vendor_type','=','multi')]}"
                             groups="purchase_request.group_purchase_request_user,purchase_request.group_purchase_request_manager"
                     />
                     <button
@@ -95,7 +95,7 @@
                             string="Create Purchase Tender"
                             type="object"
                             class="oe_highlight"
-                            attrs="{'invisible': ['|',('Requisition_count','=', 0),('state','!=','done'),'|',('vendor_type','!=','single')]}"
+                            attrs="{'invisible': ['|',('Requisition_count','=', 0),('state','!=','done'),'|',('vendor_type','=','single')]}"
                             groups="purchase_request.group_purchase_request_user,purchase_request.group_purchase_request_manager"
                     />
                     <field

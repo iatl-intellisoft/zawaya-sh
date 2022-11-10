@@ -2,7 +2,7 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl-3.0).
 
 {
-    "name": "Purchase Request",
+    "name": "Zawaya Purchase Request",
     "author": "Iatl_intellisoft",
     "version": "14.0.1.0.0",
     "summary": "Use this module to have notification of requirements of "
