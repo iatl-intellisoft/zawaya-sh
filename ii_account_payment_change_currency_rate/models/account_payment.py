@@ -22,18 +22,11 @@ class account_payment(models.Model):
 
     @api.depends('custom_rate')
     def _get_currency_rate(self):
-        print("CCCCCCCCCCCCCCCCself.currency_rate ",self.currency_rate)
-        print("CCCCCCCCCCCCCCCCself.custom_rate ",self.custom_rate )
-
         """
         get acctual Currency Rate As 1/custom_rate
         """
         for rec in self:
             rec.currency_rate = 1 / rec.custom_rate
-
-            print("CCCCCCCCCCCCCCCCrec.currency_rate ",rec.currency_rate)
-            print("CCCCCCCCCCCCCCCCrec.custom_rate ",rec.custom_rate )
-
 
     def post(self):
         """Overrides post(), that Creates the journal items for the payment and
@@ -46,22 +39,12 @@ class account_payment(models.Model):
     @api.onchange('currency_id', 'payment_date')
     def _onchange_currency_date(self):
         # Update custom rate value onchange of date value
-        print("************************")
+
         today = fields.Date.today()
-        self.custom_rate = self.currency_id._get_conversion_rate(self.company_id.currency_id,self.currency_id,
+        self.custom_rate = self.currency_id._get_conversion_rate(self.currency_id,self.company_id.currency_id,
                                                                  self.company_id, self.payment_date or today)
 
-        print("::::::::::::::::::::::;",self.custom_rate,self.currency_rate)
-    # def _prepare_payment_moves(self):
-    #     """Overrides _prepare_payment_moves(),That prepares the creation of journal entries (account.move) by creating a list of python dictionary to be passed
-    #     to the 'create' method.
-    #     """
-    #     res = super(account_payment, self)._prepare_payment_moves()
-    #     for rec in res:
-    #         for line in rec['line_ids']:
-    #             if line[2]:
-    #                 line[2]['custom_rate'] = self.custom_rate
-    #     return res
+
 
     def _prepare_move_line_default_vals(self, write_off_line_vals=None):
         res = super(account_payment, self.with_context(custom_rate=self.custom_rate))._prepare_move_line_default_vals(write_off_line_vals=write_off_line_vals)

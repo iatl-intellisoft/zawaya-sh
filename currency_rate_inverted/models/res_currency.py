@@ -15,7 +15,7 @@ class ResCurrency(models.Model):
     @api.model
     def _get_conversion_rate(self, from_currency, to_currency, company, date):
         res = super(ResCurrency, self)._get_conversion_rate(from_currency, to_currency, company, date)
-        return 1/res
+        return res
 
     # @api.model
     # def _get_conversion_rate(self, from_currency, to_currency):

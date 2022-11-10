@@ -13,7 +13,7 @@ class AccountPaymentRegister(models.TransientModel):
     def _onchange_curreny_id_custom_rate(self):
         today = fields.Date.today()
         if self.currency_id:
-            self.custom_rate = self.company_id.currency_id._get_conversion_rate(self.company_id.currency_id,self.currency_id, self.company_id, self.payment_date or today)
+            self.custom_rate = self.company_id.currency_id._get_conversion_rate(self.currency_id, self.company_id.currency_id,self.company_id, self.payment_date or today)
             # if base_rate:
             #     self.custom_rate = base_rate
             # else:
