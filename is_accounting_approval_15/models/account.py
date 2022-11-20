@@ -72,7 +72,7 @@ class FinanceApproval(models.Model):
     name = fields.Char('Details', compute='_get_description', store=True, readonly=True)
     fa_date = fields.Date('Date', default=datetime.now(), required=True)
     requester = fields.Char('Requester', required=True, default=lambda self: self.env.user.name, readonly=True)
-    request_amount = fields.Float('Requested Amount', required=True)
+    request_amount = fields.Float('Requested Amount', required=True, track_visibility='onchange')
     request_currency = fields.Many2one('res.currency', 'Currency',
                                        default=lambda self: self.env.user.company_id.currency_id)
     f_limit = fields.Float('Finance Manager Limit', default=lambda self: self.env.user.company_id.f_limit)
