@@ -135,18 +135,17 @@
                         </t>
                     </tbody>
                 </table>
-                <table dir="rtl" width="100%">
-                    <t t-foreach="docs" t-as="doc">
-                        <tr style="text-align: right;">
-                            <td style="text-align: right;"
-                                class="text-right">يرجى توفير المواد أعلاه في موعد أقصاه :
-                                <!--                                <td style="text-align: right;" width="15%" colspan="1">-->
-                                <t t-esc="doc.last_date"/>
-                                <!--                                </td>-->
-                            </td>
-                        </tr>
-                    </t>
-                </table>
+                <br/>
+                <!--                <table dir="ltr" width="100%">-->
+                <t t-foreach="docs" t-as="doc">
+                    <tr style="text-align: right;">
+                        <td style="text-align: right;"
+                            class="text-right">يرجى توفير المواد أعلاه في موعد أقصاه :
+                            <t t-esc="doc.last_date"/>
+                        </td>
+                    </tr>
+                </t>
+                <!--                </table>-->
                 <br/>
                 <br/>
                 <br/>
@@ -158,7 +157,6 @@
                                 class="text-right">اسم مقدم الطلب:
                                 <t t-esc="doc.requester_sign.name"/>
                             </td>
-
                             <td style="text-align: right;" width="35%"
                                 class="text-right">التوقيع :
                             </td>

@@ -15,14 +15,14 @@ class PurchaseOrder(models.Model):
     state = fields.Selection([
         ('draft', 'RFQ'),
         ('sent', 'RFQ Sent'),
+        ('confirm', 'Confirm'),
         ('to approve', 'To Approve'),
         ('purchase', 'Purchase Order'),
-        ('manager approval', 'Manager Approved'),
         ('done', 'Locked'),
         ('cancel', 'Cancelled')
     ], string='Status', readonly=True, index=True, copy=False, default='draft', tracking=True)
-    def button_manager_approval(self):
-        # self.acvtivity_id.unlink()
+
+    def button_confirm_manager(self):
         pu_group_id = self.env['res.groups'].sudo().search(
             [('id', '=', self.env.ref('purchase_request.group_purchase_manager').id)], limit=1).id
         self.env.cr.execute('''SELECT uid FROM res_groups_users_rel WHERE gid = %s order by uid''' % (pu_group_id))
@@ -40,13 +40,12 @@ class PurchaseOrder(models.Model):
                 'user_id': fm[0] or 2,
                 'summary': u'Reminder To Pay Vendor Bill',
             }
-            print(vals, 'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS')
             activity_id = self.env['mail.activity'].sudo().create(vals)
-        self.write({"state": "manager approval"})
+        self.write({"state": "confirm"})
 
     def button_confirm(self):
         for order in self:
-            if order.state not in ['draft', 'sent']:
+            if order.state not in ['draft', 'sent', 'confirm']:
                 continue
             order._add_supplier_to_product()
             # Deal with double validation process
