@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--  Register Voucher Receipt Report -->
+        <report id="report_voucherreceipt"
+                string="Print Voucher"
+                model="account.payment"
+                report_type="qweb-pdf"
+                file="zawaya_payment.report_voucher_receipt"
+                name="zawaya_payment.report_voucher_receipt"
+                menu="True"
+        />
+
+<!--         <report id="report_voucherre_payment"-->
+<!--                string="Payment Voucher"-->
+<!--                model="account.payment"-->
+<!--                report_type="qweb-pdf"-->
+<!--                file="zawaya_payment.report_voucher_payment"-->
+<!--                name="zawaya_payment.report_voucher_payment"-->
+<!--                menu="True"-->
+<!--        />-->
+    </data>
+</odoo>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_voucher_receipt">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <table class="table">
+                                <tr class="text-center">
+                                    <td colspan="12" style="border: none;">
+                                         <t t-if="o.payment_type== 'inbound'">
+                                        <h4>
+                                            <u>
+                                                <strong>سند استلام</strong>
+                                            </u>
+                                        </h4>
+                                         </t>
+                                         <t t-if="o.payment_type== 'outbound'">
+                                        <h4>
+                                            <u>
+                                                <strong>سند صرف</strong>
+                                            </u>
+                                        </h4>
+                                         </t>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="border: 1px solid;direction:rtl; width: 100%;">
+                                <tr style="border: 1px solid">
+
+                                    <td style="border: 1px solid; text-align:center;width: 20%;">
+                                        <strong>الرقم</strong>
+                                    </td>
+                                   <td style="border: 1px solid; text-align:center ;width: 30%;">
+                                        <span t-field="o.name"/>
+                                    </td>
+                                    <td style="border: 1px solid; text-align:center ;width: 20%;">
+                                    </td>
+                                    <td style="border: 1px solid; text-align:center ;width: 30%;">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid; text-align:center ;width: 20%;">
+                                        <strong>الاسم</strong>
+                                    </td>
+                                    <td style="border: 1px solid; text-align:center ;width: 30%;">
+                                        <span t-field="o.partner_id"/>
+                                    </td>
+                                    <td style="border: 1px solid; text-align:center ;width: 20%;">
+                                        <strong>الصفة</strong>
+                                    </td>
+                                    <td style="border: 1px solid; text-align:center ;width: 30%;">
+                                        <span t-field="o.partner_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid; text-align:center ;width: 20%;">
+                                        <strong>المبلغ</strong>
+                                    </td>
+                                    <td style="border: 1px solid; text-align:center ;width: 30%;">
+                                        <span t-esc="o.currency_id.symbol"/>
+                                    </td>
+                                    <td style="border: 1px solid; text-align:center ;width: 20%;">
+                                    </td>
+                                    <td style="border: 1px solid; text-align:center;width: 30%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                   <td style="border: 1px solid; text-align:center">
+                                        <strong>:المبلغ بالاحرف</strong>
+                                    </td>
+                                   <td colspan="4" style="border: 1px solid; text-align:center">
+                                        <span t-field="o.check_amount_in_words"/>
+                                        <b>
+                                            <span t-esc="o.currency_id.symbol"/>
+                                        </b>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                            <br></br>
+                                 <br></br>
+                                 <br></br>
+                              <table style=" solid;direction:rtl; width: 100%;">
+
+                                <tr>
+                                     <td style="text-align:right ;" >
+                                         وذلــك لـ/<span t-field="o.ref"/>
+                                     </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right ;" >
+                                         بتاريخ/<span t-field="o.date"/>
+                                     </td>
+                                </tr>
+                            </table>
+
+
+
+                            <table style="border: 1px solid;direction:rtl; width: 100%;">
+                                <t t-if="o.Check_no">
+
+                                    <br></br>
+                                    <br></br>
+                                    <tr>
+                                        <td>
+                                            <strong>معــلـومات الـشـيك</strong>
+                                        </td>
+                                    </tr>
+                                   <tr style="border: 1px solid">
+                                       <td style="border: 1px solid; text-align:center">
+                                            <strong>Check No</strong>
+                                        </td>
+
+                                       <td style="border: 1px solid; text-align:center">
+                                            style="border: none; border-bottom: 1px dotted black;">
+                                            <h4>
+                                                <span t-field="o.Check_no"/>
+                                            </h4>
+                                        </td>
+                                       <td style="border: 1px solid; text-align:center">
+                                            <strong>:شيك رقم</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: none;">
+                                            <strong>On Bank:</strong>
+                                        </td>
+
+                                       <td style="border: 1px solid; text-align:center">
+                                            style="border: none; border-bottom: 1px dotted black;">
+                                            <h4>
+                                                <span t-field="o.bank_name"/>
+                                            </h4>
+                                        </td>
+                                        <td style="border: 1px solid; text-align:center">
+                                            <strong>:بنك</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                       <td style="border: 1px solid; text-align:center">
+                                            style="border: none; border-bottom: 1px dotted black;">
+                                            <h4>
+                                                <span t-field="o.clearance_date"/>
+                                            </h4>
+                                        </td>
+                                       <td style="border: 1px solid; text-align:center">
+                                            <strong>:بتاريخ</strong>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <br></br>
+                                <br></br>
+
+                            </table>
+                            <table style="border: none;direction:rtl; width: 100%;">
+                                <tr>
+                                    <td colspan="2" style="text-align:right">
+                                        <strong>الإعتـمــادات:</strong>
+                                    </td>                                </tr>
+                                <tr>
+                                    <td style="text-align:right">
+                                        <strong>مدير الموارد البشرية</strong>
+                                    </td>
+                                    <td style=" text-align:right">
+                                    </td>
+                                    <td style="text-align:right">
+                                        <strong>مدير المصنع</strong>
+                                    </td>
+                                    <td style=" text-align:right">
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=" text-align:right">
+                                        <strong>محاسب الخزينة</strong>
+                                    </td>
+                                    <td style=" text-align:right">
+
+                                    </td>
+                                   <td style="text-align:right">
+                                        <strong>المستلم</strong>
+                                    </td>
+                                    <td style="text-align:right">
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

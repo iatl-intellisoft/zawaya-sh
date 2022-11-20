@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_voucher_payment">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="oe_structure">
+                                <div class="row row-centered">
+                                    <div class="col-md-12 col-centered">
+                                        <group string="Voucher Payment">
+                                            <table class="table">
+                                                <tr class="text-center">
+                                                    <td colspan="12" style="border: none;">
+                                                        <h4>
+                                                            <u>
+                                                                <strong>سند صرف </strong>
+                                                            </u>
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-center">
+                                                    <td colspan="12" style="border: none;">
+                                                        <h4>
+                                                            <u>
+                                                                <strong>Internal Payment Voucher</strong>
+                                                            </u>
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid black;">
+                                                        <strong>Voucher No.:</strong>
+                                                    </td>
+                                                    <td style="border: 1 px solid black;" class="text-center">
+                                                        <span t-field="o.name"/>
+                                                    </td>
+                                                    <td style="border: none; border-top: 1 px solid white;"></td>
+                                                    <td style="border: 1 px solid black;">
+                                                        <strong>Voucher Date:</strong>
+                                                    </td>
+                                                    <td style="border: 1 px solid black;" class="text-center">
+                                                        <span t-field="o.payment_date"/>
+                                                    </td>
+                                                </tr>
+
+      
+
+
+                                                <tr>
+                                                    <td style="border: 1 px solid black;">
+                                                        <strong>Amount:</strong>
+                                                    </td>
+                                                     <td style="border: none;" class="text-center">
+                                                        <t t-esc="'{0:,.2f}'.format(o.amount)"/>
+                                                        <span>&#160;</span>
+                                                        <b>
+                                                            <span t-esc="o.currency_id.symbol"/>
+                                                        </b>
+                                                    </td>
+                                                    <td style="border: none; border-top: 1 px solid white;"></td>
+                                                    <td style="border: 1 px solid black;">
+                                                        <strong>Memo:</strong>
+                                                    </td>
+                                                    <td style="border: 1 px solid black;" class="text-center">
+                                                        <span t-field="o.communication"/>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td style="border: none;">
+                                                        <strong>Pay To Mr./Ms.:</strong>
+                                                    </td>
+                                                    <td colspan="3"
+                                                        style="border: none; border-bottom: 1px dotted black;"
+                                                        class="text-center">
+                                                        <h4>
+                                                            <span t-field="o.partner_id"/>
+                                                        </h4>
+                                                    </td>
+                                                    <td style="border: none;" class="text-right">
+                                                        <strong>:ادفعوا للسيد/السادة</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: none;">
+                                                        <strong>The Sum of:</strong>
+                                                    </td>
+                                                    <td colspan="3"
+                                                        style="border: none; border-bottom: 1px dotted black;"
+                                                        class="text-center">
+                                                        <h4>
+                                                            <span t-field="o.check_amount_in_words"/>
+                                                            <b>
+                                                                <span t-esc="o.currency_id.symbol"/>
+                                                            </b>
+                                                        </h4>
+                                                    </td>
+                                                    <td style="border: none;" class="text-right">
+                                                        <strong>:مبلغ</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: none;">
+                                                        <strong>On Account of:</strong>
+                                                    </td>
+                                                    <td colspan="3"
+                                                        style="border: none; border-bottom: 1px dotted black;"
+                                                        class="text-center">
+                                                        <h4>
+                                                            <span t-field="o.journal_id.default_account_id.name"/>
+                                                        </h4>
+                                                    </td>
+                                                    <td style="border: none;" class="text-right">
+                                                        <strong>:على حساب</strong>
+                                                    </td>
+                                                </tr>
+                                                <t t-if="o.Check_no">
+                                                    <tr>
+                                                        <td style="border: none;">
+                                                            <strong>Check No.:</strong>
+                                                        </td>
+                                                        <td colspan="3" class="text-center"
+                                                            style="border: none; border-bottom: 1px dotted black;">
+                                                            <h4>
+                                                                <span t-field="o.Check_no"/>
+                                                            </h4>
+                                                        </td>
+                                                        <td style="border: none;" class="text-right">
+                                                            <strong>:شيك رقم</strong>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                                <tr>
+                                                    <td style="border: none;"></td>
+                                                    <td style="border: none;"></td>
+                                                    <td style="border: none;"></td>
+                                                    <td style="border: none;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: none;">
+                                                        <strong>Narration:</strong>
+                                                    </td>
+                                                    <td colspan="3" class="text-center"
+                                                        style="border: none; border-bottom: 1px dotted black;">
+                                                        <span t-field="o.narration"/>
+                                                    </td>
+                                                    <td style="border: none;" class="text-right">
+                                                        <strong>:البيان</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: none;"></td>
+                                                    <td style="border: none;"></td>
+                                                    <td style="border: none;"></td>
+                                                    <td style="border: none;"></td>
+                                                </tr>
+                                            </table>
+                                            <div class="col-xs-12">
+                                                <table>
+                                                    <td class="col-xs-3 text-center"
+                                                        style="border: none; border-top: 1px dotted black">
+                                                        <strong>Authorized By: اعتمدت بواسطة</strong>
+                                                    </td>
+                                                    <td class="col-xs-1 text-center"
+                                                        style="border: none;"></td>
+                                                    <td class="col-xs-3 text-center"
+                                                        style="border-top: 1px dotted black">
+                                                        <strong>Accountant Sign: توقيع المحاسب</strong>
+                                                    </td>
+                                                    <td class="col-xs-1 text-center"
+                                                        style="border: none;"></td>
+
+                                                    <td class="col-xs-3 text-center"
+                                                        style="border-top: 1px dotted black">
+                                                        <strong>Receiver's Sign: توقيع المستلم</strong>
+                                                    </td>
+                                                </table>
+                                            </div>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
