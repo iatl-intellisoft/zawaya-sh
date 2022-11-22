@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_stock_extended" model="ir.ui.view">
+        <field name="name">stock.picking.form.view.inherit.stock</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/header/button[last()]" position="after">
+                <button name="action_stock_import" string="Import" class="btn btn-primary" type="object" attrs="{'invisible': ['|',('picking_type_code', 'not in', ('outgoing', 'incoming')),('state', '=', 'done')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_stock_moveline_form_stock" model="ir.ui.view">
+        <field name="name">stock.move.line.form.view.inherit</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='lot_name']" position="after">
+                <field name="package_name" invisible="1"/>
+                <field name="package_type" invisible="1"/>
+                <field name="package_type_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
