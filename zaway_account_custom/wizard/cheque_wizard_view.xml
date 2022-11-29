@@ -1,0 +1,54 @@
+<odoo>
+<!-- Cheque Report Wizard Pdf  -->
+    <record id="cheque_wizard_form" model="ir.ui.view">
+        <field name="name">Cheque Wizard</field>
+        <field name="model">cheque.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cheque Wizard">
+                <group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="customer_id" widget="many2many_tags"/>
+
+                    </group>
+                    <group >
+                        <field name="date_to"/>
+                        <field name="state"/>
+                    </group>
+                    <!-- <group string="Cheque State">
+                        <group>
+                            <field name="under_collection"/>
+                            <field name="in_bank"/>
+                            <field name="rejected"/>
+                            <field name="return_to"/>
+                        </group>
+                        <group>
+                            <field name="out_standing"/>
+                            <field name="withdrawal"/>
+                            <field name="done"/>
+                            <field name="cancel"/>
+                        </group>
+                    </group> -->
+                </group>
+                <footer>
+                    <button name="print_report" string="Print"  type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="cheque_wizard_action" model="ir.actions.act_window">
+        <field name="name">Cheques Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cheque.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="cheque_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Cheques Report" 
+        action="cheque_wizard_action" 
+        id="menu_cheque_wizard" 
+        parent= "account_reports.account_reports_audit_reports_menu"/>
+
+</odoo>

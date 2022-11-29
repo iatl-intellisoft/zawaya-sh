@@ -13,9 +13,11 @@
     'category': 'Sales',
     'depends': ['account'],
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/account_payment_view.xml',
         'report/invoice_report.xml',
+        'report/cheque_report_view.xml',
+        'wizard/cheque_wizard_view.xml',
 
     ],
 }

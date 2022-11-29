@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <!--                mrp_bom_form_view_inherit_-->
+        <record id="mrp_bom_form_view_inherit_" model="ir.ui.view">
+            <field name="name">mrp_bom_form_view_inherit_</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+                <!-- position values: after|before|replace|attributes|inside -->
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="fixed"/>
+                </xpath>
+            </field>
+        </record>
+        <!-- Inherit Form View to Modify it -->
+        <record id="mrp_production_form_view_is_fixed" model="ir.ui.view">
+            <field name="name">mrp_production_form_view_is_fixed</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+
+                <!-- position: after|before|replace|attributes|inside -->
+                <xpath expr="//field[@name='bom_id']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="is_fixed"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

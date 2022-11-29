@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="cheque_report_id"
+            model="cheque.wizard"
+            string="Cheque Report"
+            report_type="qweb-pdf"
+            name="zaway_account_custom.cheque_template"
+            file="zaway_account_custom.cheque_template"
+            menu="False"/>
+
+        <template id="cheque_template">
+            <t t-call="web.html_container">
+                <!-- <t t-foreach="docs" t-as="o"> -->
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div style="border: 2px solid #753e06;padding: 10px;border-radius: 25px;">
+                                <t t-set="info" t-value="get_info"/>
+                                <!-- <t t-if="o.payment_type== 'inbound'"> -->
+                                    <strong><center>Customer Checks
+                                    
+                                    <br/>
+                                    From (<t t-esc="info['date_from']"/> To <t t-esc="info['date_to']"/>) 
+                                    </center></strong>
+                                    
+                                    <strong>Customer:</strong>
+                                    <t t-esc="info['customer_name']"/>
+                                    <t t-foreach="get_report" t-as="obj">
+                                        <br/>
+                                        <tr><strong>Check State: </strong>
+                                            <td t-esc="obj"></td>
+                                        </tr>
+                                        <t t-if ="info['customer_id']">
+                                            <table width="100%" style=" border: 1px solid black ; margin-top:5px background-color:#f2f2f2;">
+                                                <tr style="background-color:#ded9d5;text-center;">
+                                                    <td style="border: 1px solid black; text-center;">Due Date</td>
+                                                    <td style="border: 1px solid black;text-center;">Check No</td>
+                                                    <td style="border: 1px solid black;text-center;">Date</td>
+                                                    <td style="border: 1px solid black;text-center;">Bank</td>
+                                                    <td style="border: 1px solid black;text-center;">Branch</td>
+                                                    <td style="border: 1px solid black;text-center;">Amount</td>
+                                                </tr>
+                                                
+                                                <t t-foreach="get_report[obj]" t-as="line">
+                                                    <tr>
+                                                        <td style="border: 1px solid black;"><t t-esc="line[0]"/></td>
+                                                        <td style="border: 1px solid black;"><t t-esc="line[1]"/></td>
+                                                        <td style="border: 1px solid black;"><span t-esc="line[2]"/></td>
+                                                        <td style="border: 1px solid black;"><span t-esc="line[3]"/></td>
+                                                        <td style="border: 1px solid black;"><span t-esc="line[4]"/></td>
+                                                        <td style="border: 1px solid black;"><span t-esc="line[4]"/></td>
+                                                  </tr>
+                                              </t>
+                                            </table>
+                                        </t> 
+                                        <t t-if ="not info['customer_id']">
+                                            <table width="100%" style=" border: 1px solid black ; margin-top:5px background-color:#f2f2f2;">
+                                                <tr style="background-color:#ded9d5;text-center;">
+                                                    <td style="border: 1px solid black; text-center;">Due Date</td>
+                                                    <td style="border: 1px solid black;text-center;">Check No</td>
+                                                    <td style="border: 1px solid black;text-center;">Date</td>
+                                                    <td style="border: 1px solid black;text-center;">Bank</td>
+                                                    <td style="border: 1px solid black;text-center;">Branch</td>
+                                                    <td style="border: 1px solid black;text-center;">Amount</td>
+                                                </tr>
+                                                <!-- <tr> -->
+                                                <t t-foreach="obj['data_list']" t-as="line">
+                                                    <tr>
+                                                        <td style="border: 1px solid black;"><t t-esc="line"/></td>
+                                                        <td style="border: 1px solid black;"><t t-esc="line[1]"/></td>
+                                                        <td style="border: 1px solid black;"><span t-esc="line[2]"/></td>
+                                                        <td style="border: 1px solid black;"><span t-esc="line[3]"/></td>
+                                                        <td style="border: 1px solid black;"><span t-esc="line[4]"/></td>
+                                                        <td style="border: 1px solid black;"><span t-esc="line[4]"/></td>
+                                                  </tr>
+                                              </t>
+                                            </table>
+                                        </t>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    <!-- </t> -->
+                </t>
+            </template>
+        </data>
+    </odoo>

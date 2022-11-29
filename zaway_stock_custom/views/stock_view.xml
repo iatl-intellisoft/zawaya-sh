@@ -10,15 +10,21 @@
                     <field name="operation_code" invisible="1"/>
                     <field name="sale_id" invisible="1"/>
                     <field name="purchase_id"/>
+                    <field name="operation_pick"/>
                     <button name="action_sale_manger" string="Confirm Sale" type="object"  attrs="{'invisible': ['|','|',('sale_id', '=', False),('operation_code','!=','outgoing'),('state', '!=', 'draft')]}" class="oe_highlight" groups="zaway_stock_custom.group_stock_sale_manager" />
 
-                    <!-- <button name="action_it_approve" string="Confirm IT" type="object" class="oe_highlight" groups="zaway_stock_custom.group_stock_it_manager"  states="wait_it_approve"/> -->
+                    <button name="action_it_approve" string="Confirm IT" type="object" class="oe_highlight" groups="zaway_stock_custom.group_stock_it_manager" attrs="{'invisible': ['|',('state', 'not in',['assigned','draft','confirmed']),('operation_pick', '=', False)]}"/>
 
                     <button name="action_it_approve" string="Confirm IT" type="object" class="oe_highlight" groups="zaway_stock_custom.group_stock_it_manager"  attrs="{'invisible': ['|',('state', 'not in',['assigned','draft']),('purchase_id', '=', False)]}"/>
 
                     <button name="action_it_approve" string="Confirm IT" type="object" class="oe_highlight" groups="zaway_stock_custom.group_stock_it_manager"  attrs="{'invisible': ['|',('sale_id', '=', False),('state', '!=','wait_it_approve')]}"/>
 
                     <button name="action_manufac_approve" string="Approve" type="object"   class="oe_highlight" groups="zaway_stock_custom.group_stock_manufacturer_manager"  states="wait_manufac_approve"/>
+                </xpath>
+                
+
+                <xpath expr="//button[@name='action_assign']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|',('state', '!=','wait_gm_approve'),('operation_pick', '=', False)]}</attribute>
                 </xpath>
                 <xpath expr="//button[@name='action_confirm']" position="attributes">
                     <!-- <attribute name="states">[]</attribute> -->

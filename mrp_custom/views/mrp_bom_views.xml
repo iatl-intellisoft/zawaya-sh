@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mrp_bom_form_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.bom.form.inherit</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="before">
+                    <field name="share_costing_method"/>
+                    <field name="fix_product" attrs="{'invisible': [('share_costing_method', '!=', 'formula_cost_share')],'required': [('share_costing_method', '=', 'formula_cost_share')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='byproduct_ids']/tree/field[@name='product_uom_id']" position="after">
+                    <field name="cost_share" optional="hide" attrs="{'column_invisible': [('parent.share_costing_method', '!=', 'cost_share')]}"/>
+                    <field name="have_cost"  attrs="{'column_invisible': [('parent.share_costing_method', '=', False)]}" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

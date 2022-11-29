@@ -46,6 +46,7 @@ class StockPicking(models.Model):
     manufac_sign = fields.Many2one('res.users')
     sale_sign = fields.Many2one('res.users')
     check_it =fields.Boolean(defaul=False)
+    operation_pick = fields.Boolean(related="picking_type_id.pick_components")
 
 #Date
     stock_manger_date = fields.Date(string="Date")
@@ -120,3 +121,11 @@ class StockPickingType(models.Model):
     _inherit = 'stock.picking.type'
 
     pick_components = fields.Boolean(string="Pick Components")
+
+
+
+
+# class StockMoveLine(models.Model):
+#     _inherit = "stock.move.line"
+
+#     package_name = fields.Char('Package Name')
