@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_cron_contract_end_cron" model="ir.cron">
+            <field name="name">HR Contract: End Contract Notification</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_hr_contract"/>
+            <field name="code">model._check_contract_end()</field>
+        </record>
+    </data>
+</odoo>
