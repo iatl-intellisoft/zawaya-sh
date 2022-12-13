@@ -33,12 +33,17 @@ class StockImportWizard(models.TransientModel):
         return package and package.id or False
 
     def _find_package_type_id(self, package_type,product):
-        package_type = self.env['stock.package.type'].sudo().search([('name', '=', package_type)], limit=1)
-        if len (package_type) == 0:
-            print("*************************",len (package))
-            package_type = self.env['stock.package.type'].sudo().create({'name':package_type})
-        # print("___________________Type___________",package_type)
-        return package_type and package_type.id or False
+        print("?111111111111?????????????????????package_type",package_type)
+        package_type1 = self.env['stock.package.type'].sudo().search([('name', '=', package_type)], limit=1)
+        print("???????????????????????????????package_type",package_type)
+        if len (package_type1) == 0:
+            print("*************************",package_type)
+            vals = {
+                'name': package_type}
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!vals0",vals)
+            package_type1 = self.env['stock.package.type'].sudo().create(vals)
+        print("___________________Type___________",package_type)
+        return package_type and package_type1.id or False
 
     
 
@@ -72,11 +77,13 @@ class StockImportWizard(models.TransientModel):
                 lot_name = int(line.get('Lot'))if isinstance(line.get('Lot'), float) else line.get('Lot')
 
                 package_name = int(line.get('Package'))if isinstance(line.get('Package'), float) else line.get('Package')
-                package_type = int(line.get('Type'))if isinstance(line.get('Type'), float) else line.get('Type')
+                package_type = int(line.get('Type'))if isinstance(line.get('Type'), int) else line.get('Type')
                 print("______________________________________package_type",package_type)
 
 
                 product_name = int(line.get('product'))if isinstance(line.get('product'), float) else line.get('product')
+                quantity = int(line.get('QTY'))if isinstance(line.get('QTY'), int) else line.get('QTY')
+
 
                 if move.product_id.name == product_name:
                     vals = {
@@ -86,14 +93,15 @@ class StockImportWizard(models.TransientModel):
                         'location_id': move.location_id.id,
                         'location_dest_id': move.location_dest_id.id,
                         'picking_id': move.picking_id.id,
-                        'lot_name': lot_name if move.picking_code == 'incoming' else False,
-                        'lot_id' : self._find_lot_id(lot_name, move.product_id) if move.picking_code in ('outgoing', 'internal') else False,
+                        # 'lot_name': lot_name if move.picking_code == 'incoming' else False,
+                        # 'lot_id' : self._find_lot_id(lot_name, move.product_id) if move.picking_code in ('outgoing', 'internal') else False,
                         'package_name' : package_name,
                         'package_type':  package_type,
                         'package_type_id': self._find_package_type_id(package_type, move.product_id) ,
                         'result_package_id': self._find_package_id(package_name, package_type ,move.product_id) ,
-                        'qty_done': 1 if move.product_id.tracking == 'serial' else line.get('Qty'),
+                        'qty_done': quantity,
                     }
+                    # 1 if move.product_id.tracking == 'serial' else line.get('QTY')
 
 
                     print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&",vals)
